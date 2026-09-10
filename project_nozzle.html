@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybrid Rocket Nozzle | Alexander Tong</title>
+    <link rel="stylesheet" href="Gemini_CSS.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        .project-header { padding: 100px 10% 50px; background: #111; border-bottom: 1px solid #333; }
+        .project-header h1 { font-size: 3rem; margin-bottom: 15px; }
+        .project-header h1 span { color: #E63946; }
+        .content-section { padding: 50px 10%; display: flex; flex-wrap: wrap; gap: 40px; border-bottom: 1px solid #222; }
+        .text-block { flex: 1; min-width: 300px; }
+        .text-block h2 { color: #E63946; margin-bottom: 20px; font-size: 1.8rem; }
+        .text-block ul { margin-left: 20px; margin-top: 15px; }
+        .text-block li { margin-bottom: 10px; color: #ccc; }
+        .image-block { flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 20px; }
+        .img-placeholder { width: 100%; background-color: #222; border: 1px dashed #555; min-height: 250px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 0.9rem; text-align: center; padding: 20px; background-size: cover; background-position: center; }
+        .caption { font-size: 0.8rem; color: #888; text-align: center; margin-top: -10px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">ALEXANDER TONG <span>// MECHE</span></div>
+        <ul>
+            <li><a href="index.html#projects">Back to Portfolio</a></li>
+        </ul>
+    </nav>
+
+    <header class="project-header">
+        <h1>Hybrid Parabolic <span>Rocket Nozzle</span></h1>
+        <p style="color: #bbb; max-width: 800px;">Optimized de Laval nozzle achieving a 73% mass reduction and 7.8 FOS for a 45,000 ft target altitude.</p>
+    </header>
+
+    <div style="padding: 0 10%; margin-top: -1px;">
+        <div class="img-placeholder" style="min-height: 400px; border: none; background-image: url('assets/hotfire_video.gif');">
+            [Insert Hotfire Test Slow Motion Video/GIF Here]
+        </div>
+    </div>
+
+    <section class="content-section">
+        <div class="text-block">
+            <h2>Outcome & Impact</h2>
+            <p style="color: #ccc;">As my first project with BURPG in Fall 2024, I led a five-person team to design, optimize, and physically hotfire a theoretical 7.86 lbf thrust hybrid rocket nozzle. We optimized the nozzle for 45,000 ft, successfully reducing the mass by 73% and increasing thrust by 5%. The system was fully validated structurally during a successful 2-second live hotfire test.</p>
+            
+            <h2 style="margin-top: 40px;">Experience & Skills</h2>
+            <p style="color: #ccc;"><strong>Role:</strong> Overall and Design Lead</p>
+            <p style="color: #ccc;">I directed the project through three iterative design reviews, coordinating the subteams responsible for the test fire computer, engineering drawings, and FEA. To mitigate early-undergrad procrastination, I managed cross-team communication and enforced a system of soft and hard deadlines.</p>
+            <ul>
+                <li><strong>Nozzle Design & CAD:</strong> Modeled an 80% parabolic de Laval nozzle in SolidWorks. Mapped a Bezier curve across three points for the diverging section and used circular curves for the converging and throat sections, strictly following G.V.R. Rao’s optimization methods.</li>
+                <li><strong>FEA & Structural Optimization:</strong> Validated the system using SolidWorks FEA, which I learned and troubleshooted from scratch. Initially optimized the contour to a 2.0 FOS to aggressively cut weight, but after a design review flagged handling concerns, I thickened the geometry to a final 7.8 FOS in yield.</li>
+                <li><strong>Manufacturing:</strong> The nozzle was manufactured using a Formlabs SLA printer in ABS resin, intended for a single-use hotfire.</li>
+            </ul>
+        </div>
+        <div class="image-block">
+            <div class="img-placeholder" style="background-image: url('assets/nozzle_isometric.jpg');">
+                [Insert Isometric View of Nozzle Here]
+            </div>
+            <p class="caption">SolidWorks Isometric View</p>
+            
+            <div class="img-placeholder" style="background-image: url('assets/nozzle_drawing.jpg');">
+                [Insert SolidWorks Drawing Here]
+            </div>
+            <p class="caption">Engineering Drawing & Dimensions</p>
+        </div>
+    </section>
+
+    <section class="content-section" style="border-bottom: none;">
+        <div class="image-block">
+            <div class="img-placeholder" style="background-image: url('assets/fea_meshing.jpg');">
+                [Insert FEA Meshing Image Here]
+            </div>
+            <p class="caption">SolidWorks FEA Meshing (7.8 FOS)</p>
+
+            <div class="img-placeholder" style="background-image: url('assets/calc_spreadsheet.jpg');">
+                [Insert Calculation Spreadsheet Here]
+            </div>
+            <p class="caption">Isentropic Flow & Parameter Calculations</p>
+        </div>
+        <div class="text-block">
+            <h2>Testing & Validation</h2>
+            <p style="color: #ccc;"><strong>Hotfire & Data Acquisition:</strong> The system was successfully fired for a 2-second burn. We integrated a LabJack DAQ system and a load cell to capture thrust data. Unfortunately, the load cell broke prior to data collection—a valuable, hands-on lesson in the importance of hardware redundancy and pre-test sensor validation.</p>
+            
+            <h2 style="margin-top: 40px;">Motivation & Constraints</h2>
+            <p style="color: #ccc;"><strong>Objective:</strong> The Hybrid Introductory Project (HIP) is BURPG's hands-on trial for new members to learn compressible flow, nozzle design, and FEA. The goal was to calculate, design, and build a nozzle and test computer that maximized thrust and minimized weight.</p>
+            <ul>
+                <li><strong>Optimization Target:</strong> 45,000 feet</li>
+                <li><strong>Design Constraints:</strong> Strict parameters for optimization pressure, mass flow rate, and maximum diameter.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer style="padding: 5rem 10%; background: #000; color: #666; font-size: 0.8rem; border-top: 1px solid #333; margin-top: 50px;">
+        <p>ALEXANDER TONG // BU MECHANICAL ENGINEERING // HYBRID ROCKET NOZZLE</p>
+    </footer>
+</body>
+</html>

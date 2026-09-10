@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>135-lbm Recovery System | Alexander Tong</title>
+    <link rel="stylesheet" href="Gemini_CSS.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Extra styles specifically for project pages */
+        .project-header {
+            padding: 100px 10% 50px;
+            background: #111;
+            border-bottom: 1px solid #333;
+        }
+        .project-header h1 { font-size: 3rem; margin-bottom: 15px; }
+        .project-header h1 span { color: #E63946; }
+        
+        .content-section {
+            padding: 50px 10%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            border-bottom: 1px solid #222;
+        }
+        .text-block { flex: 1; min-width: 300px; }
+        .text-block h2 { color: #E63946; margin-bottom: 20px; font-size: 1.8rem; }
+        .text-block ul { margin-left: 20px; margin-top: 15px; }
+        .text-block li { margin-bottom: 10px; color: #ccc; }
+        
+        .image-block {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .img-placeholder {
+            width: 100%;
+            background-color: #222;
+            border: 1px dashed #555;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 20px;
+            background-size: cover;
+            background-position: center;
+        }
+        .caption { font-size: 0.8rem; color: #888; text-align: center; margin-top: -10px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">ALEXANDER TONG <span>// MECHE</span></div>
+        <ul>
+            <li><a href="index.html#projects">Back to Portfolio</a></li>
+        </ul>
+    </nav>
+
+    <header class="project-header">
+        <h1>135-lbm Bipropellant <span>Recovery System</span></h1>
+        <p style="color: #bbb; max-width: 800px;">Redesigning and validating a dual-deploy parachute recovery architecture for a 100,000 ft apogee.</p>
+    </header>
+
+    <div style="padding: 0 10%; margin-top: -1px;">
+        <div class="img-placeholder" style="min-height: 400px; border: none; background-image: url('assets/hero_test.gif');">
+            [Insert Hero Image/GIF of Subscale Testing Here]
+        </div>
+    </div>
+
+    <section class="content-section">
+        <div class="text-block">
+            <h2>Outcome & Impact</h2>
+            <p style="color: #ccc;">Currently deep in the testing phase, I led the complete redesign of a dual-deploy parachute recovery system for a 135-lbm liquid bipropellant rocket. The goal is to safely recover the vehicle from a 100,000 ft apogee. Right now, we are running integrated 1-atm deployment tests, validating our vinyl black powder (BP) charges, and testing the flight computers in a custom vacuum chamber to simulate high-altitude conditions.</p>
+            
+            <h2 style="margin-top: 40px;">Experience & Skills</h2>
+            <p style="color: #ccc;"><strong>Role:</strong> Separation and Recovery (SepRec) Lead / Hardware Consultant</p>
+            <p style="color: #ccc;">I took a look at the legacy architecture and redesigned everything that could be redesigned (excluding the bulkhead) to a minimum 2.0 Factor of Safety (FOS) per NASA standards.</p>
+            <ul>
+                <li><strong>Component Selection:</strong> Individually selected literally all COTS hardware—down to the AIM Xtra GPS flight computer and batteries—balancing our strict 20-lbm weight limit against redundancy, lead time, and cost.</li>
+                <li><strong>Precision Machining:</strong> Drew up machining diagrams and personally manufactured aluminum test cable cutters on a manual lathe, cutting the mass by 49.5%.</li>
+                <li><strong>Analytical Calculations:</strong> Pulled from five different aerospace papers to calculate our parachute opening shock (823 lbf) and snatch loads (1,230 lbf) by hand, as open-source scripts proved inaccurate.</li>
+            </ul>
+        </div>
+        <div class="image-block">
+            <div class="img-placeholder" style="background-image: url('assets/lines_diagram.jpg');">
+                [Insert Lines Diagram Here]
+            </div>
+            <p class="caption">System Architecture & Lines Diagram</p>
+            
+            <div class="img-placeholder" style="background-image: url('assets/connection_diagram.jpg');">
+                [Insert Simplified Connection Diagram Here]
+            </div>
+            <p class="caption">Simplified Component Connection Diagram</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="image-block">
+            <div class="img-placeholder" style="background-image: url('assets/vacuum_chamber.jpg');">
+                [Insert BP Vacuum Testing Photo Here]
+            </div>
+            <p class="caption">Custom 263.6 L Vacuum Chamber at 0.011 atm</p>
+
+            <div class="img-placeholder" style="background-image: url('assets/pt_graph.jpg');">
+                [Insert PT Data Graph Here]
+            </div>
+            <p class="caption">Pressure Transducer Data for BP Charge Validation</p>
+        </div>
+        <div class="text-block">
+            <h2>System Validation & Testing</h2>
+            <p style="color: #ccc;">We needed to physically validate our math before flight, so we pushed the hardware to its limits:</p>
+            <ul>
+                <li><strong>"Gunpowder Cannon" Splice Testing:</strong> Used a custom gunpowder cannon setup to hit our untested line splices with a 2,000 lbf shock load. They survived easily, proving a >1.5 FOS.</li>
+                <li><strong>Vacuum Chamber Validation:</strong> Designed a 263.6 L medium vacuum chamber to validate sealed pyrotechnic charges and avionics at 0.011 atm. Designed the face seal using a 381 square O-ring based on the Parker O-Ring Handbook.</li>
+                <li><strong>Pump Architecture:</strong> Used a Robinair 15310 3CFM roughing pump for rapid pull-down, paired with an Alcatel 2008a to reach target absolute pressure.</li>
+                <li><strong>Pyrotechnic Data:</strong> Tested BP charges inside the vacuum chamber using a Pressure Transducer (PT) to track pressure spikes and validate shear pin failure loads.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="content-section" style="border-bottom: none;">
+        <div class="text-block">
+            <h2>Motivation & Constraints</h2>
+            <p style="color: #ccc;"><strong>Objective:</strong> Safely recover a 135-lbm dry mass vehicle from 100k feet.</p>
+            <p style="color: #ccc; margin-top: 15px;">Premature deployment at that altitude is a massive safety risk, and drifting into government-restricted zones carries severe legal repercussions. Building this infrastructure is step one toward the club's ultimate goal of a collegiate liquid bipropellant spaceshot.</p>
+            <ul>
+                <li><strong>Mass Budget:</strong> < 20 lbm (Achieved 18.7 lbm)</li>
+                <li><strong>Financial Budget:</strong> $1,076</li>
+                <li><strong>Development Time:</strong> 4 months (pre-testing phase)</li>
+            </ul>
+        </div>
+        <div class="image-block">
+            <div class="img-placeholder" style="background-image: url('assets/packing_plan.jpg');">
+                [Insert Detailed Packing Plan / Nosecone Diagram Here]
+            </div>
+            <p class="caption">Nosecone & Shell Packing Plan</p>
+        </div>
+    </section>
+
+    <footer style="padding: 5rem 10%; background: #000; color: #666; font-size: 0.8rem; border-top: 1px solid #333; margin-top: 50px;">
+        <p>ALEXANDER TONG // BU MECHANICAL ENGINEERING // 135-LBM RECOVERY SYSTEM</p>
+    </footer>
+</body>
+</html>
