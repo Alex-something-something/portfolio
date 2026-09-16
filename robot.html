@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hybrid Rocket Nozzle | Alexander Tong</title>
+    <title>Line-Following Autonomous Vehicle | Alexander Tong</title>
     <link rel="stylesheet" href="Gemini_CSS.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
@@ -104,63 +104,65 @@
     </nav>
 
     <header class="project-header">
-        <a href="index.html#ground-systems" class="back-link">&larr; Ground Systems &amp; Testing</a>
-        <h1>Hybrid Parabolic <span>Rocket Nozzle</span></h1>
-        <p class="project-meta-line">Lead Engineer · BURPG · September–November 2024 · Hotfire tested</p>
-        <p class="project-overview">Led design and hotfire testing of a de Laval nozzle optimized for 45,000 ft, reducing mass by 73% relative to the initial design.</p>
+        <a href="index.html#projects" class="back-link">&larr; Additional Projects</a>
+        <h1>Line-Following <span>Autonomous Vehicle</span></h1>
+        <p class="project-meta-line">Lead Engineer · EK 210 · February–May 2025 · Tested prototype</p>
+        <p class="project-overview">A client-commissioned vehicle designed to complete a 12 ft path in under 90 seconds while avoiding obstacles and carrying a 250 g load.</p>
     </header>
 
     <div class="project-hero-media" style="padding: 0 10%; margin-top: -1px;">
-        <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Hotfire.mp4" data-media-type="video" data-fit="cover" data-alt="Hotfire Test Slow Motion Video/GIF" title="Pictures/Nozzle/Hotfire.mp4"><span class="media-filename">Pictures/Nozzle/Hotfire.mp4</span></div>
+        <div class="img-placeholder media-slot" data-media="Pictures/Robot/Vehicle.jpg" data-media-type="image" data-fit="cover" data-alt="Vehicle Photo or Test Video" title="Pictures/Robot/Vehicle.jpg"><span class="media-filename">Pictures/Robot/Vehicle.jpg</span></div>
     </div>
 
     <section class="content-section">
         <div class="text-block">
             <h2>Contribution &amp; Results</h2>
-            <p style="color: #ccc;">As my first project with BURPG in Fall 2024, I led a five-person team to design, optimize, and physically hotfire a parabolic hybrid rocket nozzle with a 7.86 lbf design thrust. Relative to my initial design, the final geometry reduced mass by 73% and increased predicted thrust by 5%. Mechanical stress analysis gave a 7.8 factor of safety for the nozzle alone; thermal effects were excluded. The nozzle survived an approximately two-second hotfire, but a load-cell malfunction prevented thrust-data collection.</p>
-            
-            <h2 style="margin-top: 40px;">Experience & Skills</h2>
-            <p style="color: #ccc;"><strong>Role:</strong> Overall and Design Lead</p>
-            <p style="color: #ccc;">I directed the project through three iterative design reviews, coordinating the subteams responsible for the test fire computer, engineering drawings, and FEA. I coordinated cross-team communication and intermediate milestones to keep design reviews and testing on schedule.</p>
+            <p style="color: #ccc;">As lead engineer, I led a four-person team through the design, prototyping, calibration, and performance testing of an autonomous line-following vehicle for EK 210. I performed all wiring and programming. The final vehicle carried a 250 g payload through six successful course trials, with completion times of 70–86 seconds and a mean of 78.5 seconds.</p>
+
+            <h2 style="margin-top: 40px;">Systems Engineering</h2>
+            <p style="color: #ccc;">I interviewed the client to define objectives, trade-offs, and feedback, then translated those needs into two design reviews and a final technical report. I managed the development timeline with a Gantt chart, coordinated system integration, and directed iterative prototyping and calibration within a $200 budget.</p>
             <ul>
-                <li><strong>Nozzle Design & CAD:</strong> Modeled an 80%-length Rao parabolic de Laval nozzle in SolidWorks using isentropic-flow equations, G.V.R. Rao’s contour methods, <em>Rocket Propulsion Elements</em>, and ANSI standards. Mapped a Bézier curve across three points for the diverging section and used circular curves for the converging and throat sections.</li>
-                <li><strong>FEA & Structural Optimization:</strong> Assessed nozzle stresses using SolidWorks FEA, which I learned and troubleshooted from scratch. Initially optimized the contour to a 2.0 FOS to aggressively cut weight, but after a design review raised manufacturing and assembly fragility concerns, I thickened the geometry to a final 7.8 FOS in yield under the modeled mechanical loads. Thermal effects were not included.</li>
-                <li><strong>Manufacturing:</strong> The nozzle was manufactured using a Formlabs SLA printer in ABS-like resin, intended for a single-use hotfire.</li>
+                <li><strong>Sensor Architecture:</strong> Programmed one Arduino Uno to read three HiLetgo IR sensors, two for line following and one for obstacle detection. An IR remote and TSOP38238 receiver provided touchless activation. Two L298 drivers controlled four 6 V DC motors using differential steering.</li>
+                <li><strong>Measured Performance:</strong> Recorded zero errors across 60 obstacle-detection trials covering white, black, and cardboard targets, with 20 trials per target type. Separate distance tests showed 100% detection at 10 cm for flat targets, but 50% for angled/chamfered targets.</li>
+                <li><strong>Manufacturing:</strong> Designed a PLA chassis and laser-cut acrylic motor mounts, using Wago connectors for tool-free wiring connections.</li>
             </ul>
         </div>
         <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Isometric.png" data-media-type="image" data-fit="contain" data-alt="Isometric View of Nozzle" title="Pictures/Nozzle/Isometric.png"><span class="media-filename">Pictures/Nozzle/Isometric.png</span></div>
-            <p class="caption">SolidWorks Isometric View</p>
-            
-            <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Drawing.png" data-media-type="image" data-fit="contain" data-alt="SolidWorks Drawing" title="Pictures/Nozzle/Drawing.png"><span class="media-filename">Pictures/Nozzle/Drawing.png</span></div>
-            <p class="caption">Engineering Drawing & Dimensions</p>
+            <div class="img-placeholder media-slot" data-media="Pictures/Robot/Chassis.png" data-media-type="image" data-fit="contain" data-alt="Chassis CAD or Assembly Photo" title="Pictures/Robot/Chassis.png"><span class="media-filename">Pictures/Robot/Chassis.png</span></div>
+            <p class="caption">Autonomous Vehicle Chassis</p>
+            <div class="img-placeholder media-slot" data-media="Pictures/Robot/Course-Test.jpg" data-media-type="image" data-fit="cover" data-alt="Course-Test Photo or Results Plot" title="Pictures/Robot/Course-Test.jpg"><span class="media-filename">Pictures/Robot/Course-Test.jpg</span></div>
+            <p class="caption">Line-Following and Obstacle-Avoidance Validation</p>
+        </div>
+    </section>
+
+    <section class="content-section" id="architecture">
+        <div class="text-block">
+            <h2>Drivetrain Iteration</h2>
+            <p style="color: #ccc;">The initial vehicle used two Arduino Unos, 28BYJ-48 stepper motors, and ULN2003 drivers. Speed and torque under load drove the switch to DC motors. The final vehicle used one Arduino Uno, two L298 drivers, and four 6 V DC motors.</p>
+            <h2 style="margin-top: 32px;">Testing &amp; Calibration</h2>
+            <p style="color: #ccc;">All six course trials completed successfully. After obstacle-sensor adjustment, the last four trials recorded stopping distances of 10–13 cm. The first two trials stopped closer than the 10 cm objective, making calibration an important part of the iteration.</p>
+            <p style="color: #ccc;">Line-sensor testing recorded 100% accuracy at 0.5, 1.0, and 1.5 cm, and 95% at 2.0 cm, across 20 trials per distance. Obstacle performance depended on distance and target geometry; it was not universally 100% at 10 cm.</p>
+            <p style="color: #ccc;">Power testing covered one hour of idle operation after two course runs, with power remaining. This test did not establish one hour of continuous driving.</p>
         </div>
     </section>
 
     <section class="content-section" style="border-bottom: none;">
         <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/FEA.png" data-media-type="image" data-fit="contain" data-alt="FEA Meshing Image" title="Pictures/Nozzle/FEA.png"><span class="media-filename">Pictures/Nozzle/FEA.png</span></div>
-            <p class="caption">SolidWorks FEA: 7.8 Mechanical FOS; Thermal Effects Excluded</p>
-
-            <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Calculations.png" data-media-type="image" data-fit="contain" data-alt="Calculation Spreadsheet" title="Pictures/Nozzle/Calculations.png"><span class="media-filename">Pictures/Nozzle/Calculations.png</span></div>
-            <p class="caption">Isentropic Flow & Parameter Calculations</p>
+            <div class="img-placeholder media-slot" data-media="Pictures/Robot/Wiring.png" data-media-type="image" data-fit="contain" data-alt="Sensor Layout or Wiring Diagram" title="Pictures/Robot/Wiring.png"><span class="media-filename">Pictures/Robot/Wiring.png</span></div>
+            <p class="caption">IR Sensor and Power-System Layout</p>
         </div>
         <div class="text-block">
-            <h2>Testing & Validation</h2>
-            <p style="color: #ccc;"><strong>Hotfire &amp; Data Acquisition:</strong> The system fired successfully for approximately two seconds. A load-cell malfunction on the day of the test prevented collection of usable thrust data. The 5% thrust improvement therefore remains a prediction, not a measured result.</p>
-            <p style="color: #ccc;"><strong>Launch Computer:</strong> I led the team responsible for designing, soldering, and programming the launch computer used to actuate the test. The planned measurement setup included LabJack acquisition and a load cell.</p>
-            
-            <h2 style="margin-top: 40px;">Motivation & Constraints</h2>
-            <p style="color: #ccc;"><strong>Objective:</strong> The Hybrid Introductory Project (HIP) is BURPG's hands-on trial for new members to learn compressible flow, nozzle design, and FEA. The goal was to calculate, design, and build a nozzle and test computer that maximized thrust and minimized weight.</p>
+            <h2>Design Constraints</h2>
+            <p style="color: #ccc;"><strong>Objective:</strong> Deliver a reliable, low-cost autonomous vehicle that could follow a client-defined path, avoid obstacles, and carry its required payload without exceeding the time limit.</p>
             <ul>
-                <li><strong>Optimization Target:</strong> 45,000 feet</li>
-                <li><strong>Design Constraints:</strong> Strict parameters for optimization pressure, mass flow rate, and maximum diameter.</li>
+                <li><strong>Course Length:</strong> 12 ft</li>
+                <li><strong>Time Limit:</strong> Under 90 seconds</li>
+                <li><strong>Payload:</strong> 250 g</li>
+                <li><strong>Recorded Component Cost:</strong> $73.94 of a $200 budget</li>
             </ul>
         </div>
     </section>
 
-    <footer style="padding: 5rem 10%; background: #000; color: #666; font-size: 0.8rem; border-top: 1px solid #333; margin-top: 50px;">
-        <p>ALEXANDER TONG // BU MECHANICAL ENGINEERING // HYBRID ROCKET NOZZLE</p>
-    </footer>
+    <footer style="padding: 5rem 10%; background: #000; color: #666; font-size: 0.8rem; border-top: 1px solid #333; margin-top: 50px;"><p>ALEXANDER TONG // BU MECHANICAL ENGINEERING // AUTONOMOUS VEHICLE</p></footer>
 </body>
 </html>

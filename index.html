@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexander Tong | Mechanical Engineering Portfolio</title>
+    <link rel="stylesheet" href="Gemini_CSS.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .vegas-details summary:focus-visible { outline: 2px solid #E63946; outline-offset: 4px; }
+        .vegas-details summary { display: block; cursor: pointer; list-style: none; }
+        .vegas-details summary::-webkit-details-marker { display: none; }
+        .vegas-details .card-heading { display: block; padding: 0 20px; font-size: 1.17em; font-weight: 700; }
+        .vegas-details .card-description { display: block; padding: 0 20px; color: #999; font-size: .85rem; margin-top: 10px; }
+        .vegas-details .expand-icon { float: right; color: #E63946; }
+        .vegas-details[open] .expand-icon { transform: rotate(180deg); }
+        .experience-card { border: 1px solid #333; transition: border-color .2s, background-color .2s, box-shadow .2s; }
+        .experience-card:hover, .experience-card:focus-visible { background-color: #222 !important; border-color: #E63946; box-shadow: 0 6px 20px rgba(0, 0, 0, .25); }
+        .experience-card:focus-visible { outline: 2px solid #E63946; outline-offset: 4px; }
+        .experience-link { display: flex; justify-content: flex-start; align-items: center; gap: 10px; margin-top: 10px; padding-top: 8px; border-top: 1px solid #333; color: #E63946; font-size: 1rem; font-weight: 700; }
+        .experience-card:hover .experience-link, .experience-card:focus-visible .experience-link { text-decoration: underline; text-underline-offset: 4px; }
+        .experience-open { display: inline-flex; width: 30px; height: 30px; flex-shrink: 0; align-items: center; justify-content: center; background: #E63946; color: #fff; border-radius: 50%; font-size: 1rem; }
+        .experience-card:hover .experience-open, .experience-card:focus-visible .experience-open { background: #fff; color: #111; }
+        .card .card-skills { color: #E63946; font-size: .75rem; margin-top: 14px; line-height: 1.7; }
+    </style>
+
+    <style>
+        /* Shared presentation overrides; the original stylesheet is preserved. */
+        html { scroll-padding-top: 120px; }
+        body { overflow-wrap: break-word; }
+        nav { gap: 24px; padding-top: 24px; padding-bottom: 24px; }
+        nav ul { flex-wrap: wrap; gap: 12px 24px; }
+        nav ul li { margin-left: 0; }
+        a:focus-visible, summary:focus-visible { outline: 2px solid #E63946; outline-offset: 5px; }
+        .project-header { padding: 64px 10% 36px; }
+        .project-header h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; max-width: 1000px; }
+        .project-header .project-meta-line { color: #bbb; margin: 0 0 20px; font-size: .95rem; }
+        .project-header .project-overview { color: #ccc; max-width: 800px; }
+        .project-header .back-link { margin-bottom: 24px; }
+        .content-section { padding: 40px 10%; gap: 36px; }
+        .text-block, .image-block { min-width: 0; flex: 1 1 320px; }
+        .text-block h2 { font-size: 1.5rem; }
+        .text-block p + p { margin-top: 16px; }
+        .img-placeholder { min-height: 120px !important; color: #aaa; border-color: #444; }
+        .caption { font-size: .85rem; color: #aaa; line-height: 1.5; }
+        footer { padding: 40px 10% !important; margin-top: 0 !important; }
+        @media (max-width: 1000px) {
+            nav { flex-wrap: wrap; }
+            nav .logo { font-size: .9rem; }
+            .hero { gap: 28px; }
+            .headshot-img { width: 240px; height: 240px; }
+        }
+        @media (max-width: 650px) {
+            html { scroll-padding-top: 160px; }
+            nav { padding: 18px 6%; gap: 14px; }
+            nav .logo span { display: block; font-size: .75rem; }
+            nav ul { gap: 10px 16px; }
+            nav ul li a { font-size: .75rem; }
+            .hero { flex-direction: column; align-items: flex-start; padding: 40px 6%; min-height: 0; }
+            .hero h1 { font-size: 3rem; }
+            .hero p { font-size: 1rem; }
+            .hero-headshot { align-self: center; }
+            .headshot-img { width: 200px; height: 200px; }
+            .hero .btn { padding: 10px 18px; }
+            .project-grid, .content-section, .project-header { padding-left: 6%; padding-right: 6%; }
+            .project-grid { padding-top: 48px; padding-bottom: 48px; }
+            .container { grid-template-columns: minmax(0, 1fr); }
+            .text-block, .image-block { flex-basis: 100%; }
+            footer { padding: 32px 6% !important; }
+            #contact > div > div:last-child { flex-wrap: wrap; gap: 24px !important; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+            .fade-in-up, .scroll-fade { opacity: 1; transform: none; }
+        }
+    </style>
+
+    <style>
+        .section-title { font-size: clamp(1.65rem, 2.4vw, 2rem); line-height: 1.25; margin-bottom: 32px; }
+        #flight-hardware, #ground-systems { font-size: 1.35rem !important; text-transform: none !important; letter-spacing: 0 !important; color: #fff !important; }
+        .vehicle-title { font-size: 1.25rem; line-height: 1.25; margin-bottom: 18px; }
+        .container { align-items: stretch; }
+        [data-project-category] { align-items: start; }
+        [data-project-category] > .project-card { height: auto; }
+        [data-project-category] > .vegas-details { align-self: start; }
+        .carousel-track > .scroll-fade { opacity: 1; transform: none; }
+        .project-card { display: flex !important; flex-direction: column; height: 100%; }
+        .project-card h4 { font-size: 1.2rem; line-height: 1.35; padding: 0 20px; min-height: 0; }
+        .project-card > p:not(.card-skills), .vegas-details .card-description { font-size: .9rem; color: #bbb; min-height: 0; margin-top: 6px; }
+        .project-status { display: block; padding: 0 20px; margin-bottom: 6px; color: #aaa; font-size: .75rem; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; }
+        .card .card-skills { font-size: .85rem; line-height: 1.65; padding-top: 0; margin-top: 8px; }
+        .project-action { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 12px 20px 0; padding-top: 10px; border-top: 1px solid #333; color: #E63946; font-size: .9rem; font-weight: 700; }
+        .card:hover .project-action, .card:focus-visible .project-action { text-decoration: underline; text-underline-offset: 4px; }
+        .vegas-details summary { height: 100%; display: flex; flex-direction: column; }
+        .vegas-details[open] summary { height: auto; }
+        .vegas-details .card-heading { font-size: 1.2rem; line-height: 1.35; min-height: 0; }
+        .when-open, .vegas-details[open] .when-closed { display: none; }
+        .vegas-details[open] .when-open { display: inline; }
+        .card-img { flex-shrink: 0; display: flex !important; align-items: center; justify-content: center; text-align: center; color: #999; font-size: .85rem; padding: 16px; }
+        .experience-card h3 { font-size: 1.25rem; line-height: 1.35; }
+        @media (max-width: 650px) {
+            .project-card h4, .project-card > p:not(.card-skills), .vegas-details .card-heading, .vegas-details .card-description { min-height: 0; }
+            .card .card-skills { margin-top: 8px; }
+        }
+    </style>
+    <style>
+        .carousel-track { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: calc((100% - 60px) / 3); overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px 0 18px; scrollbar-color: #E63946 #222; }
+        .carousel-track > .card { min-width: 0; scroll-snap-align: start; }
+        .carousel-track > .card:focus-visible { outline-offset: -3px; }
+        .carousel-controls { display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin: -8px 0 16px; flex-wrap: wrap; }
+        .carousel-controls[hidden] { display: none; }
+        .carousel-controls button { background: #1a1a1a; color: #fff; border: 1px solid #555; padding: 9px 14px; font-size: .9rem; cursor: pointer; }
+        .carousel-controls button:hover { border-color: #E63946; }
+        .carousel-controls button:focus-visible { outline: 2px solid #E63946; outline-offset: 3px; }
+        .carousel-controls button:disabled { color: #aaa; cursor: default; }
+        .carousel-status { color: #bbb; font-size: .85rem; }
+        @media (max-width: 1000px) { .carousel-track { grid-auto-columns: calc((100% - 30px) / 2); } }
+        @media (max-width: 650px) { .carousel-track { grid-auto-columns: 100%; } .carousel-controls { justify-content: flex-start; gap: 8px; } }
+    </style>
+    <script src="portfolio-carousel.js" defer></script>
+    <style>
+        .site-nav { opacity: 1; transform: none; transition: opacity .6s ease; }
+        .site-nav.is-awaiting-hero { opacity: 0; visibility: hidden; pointer-events: none; transition: none; }
+        .hero { position: relative; isolation: isolate; overflow: hidden; background: #0b0b0b; }
+        .hero-launch { position: absolute; inset: 0; z-index: -2; pointer-events: none; }
+        .hero-launch::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,11,11,.9), rgba(11,11,11,.55) 42%, transparent 75%); }
+        .launch-scene { width: 100%; height: 100%; position: absolute; inset: 0; }
+        .hero .fade-in-up { animation: none; opacity: 1; transform: none; }
+        .hero-skip { position: absolute; top: 20px; right: 6%; background: #111; color: #bbb; border: 1px solid #555; padding: 9px 12px; cursor: pointer; font-size: .75rem; z-index: 2; }
+        .hero-skip[hidden], .launch-replay[hidden], .argo-replay[hidden] { display: none; }
+        .hero-skip:focus-visible, .launch-replay:focus-visible, .argo-replay:focus-visible { outline: 2px solid #E63946; outline-offset: 4px; }
+        .launch-replay { display: block; background: none; border: none; color: #aaa; font-size: .8rem; margin-top: 22px; cursor: pointer; padding: 4px 0; }
+        .launch-replay:hover, .argo-replay:hover { color: #fff; }
+        .launch-vehicle, .launch-smoke, .launch-glow { opacity: 0; }
+        .hero.is-launching .launch-vehicle { opacity: 1; animation: rocket-ascent 2.8s .5s cubic-bezier(.55,.05,.75,.5) both; }
+        .hero.is-launching .launch-flame { transform-origin: 600px 555px; animation: plume-grow 2.8s .25s ease-out both; }
+        .hero.is-launching .launch-glow { animation: ignition-glow 3.3s ease-in-out both; }
+        .hero.is-launching .launch-smoke { transform-origin: 600px 620px; animation: smoke-spread 3.4s ease-out both; }
+        .hero.is-launching h1 { animation: hero-reveal 1s 1.25s both; }
+        .hero.is-launching .hero-content > p { animation: hero-reveal 1s 1.95s both; }
+        .hero.is-launching .hero-content > div { animation: hero-reveal 1s 2.6s both; }
+        .hero.is-launching .hero-headshot { animation: hero-reveal 1.1s 3.5s both; }
+        .hero.is-launching .welcome-underline { transform-origin: left; animation: ignition-underline 1s 1.25s both; }
+        @keyframes rocket-ascent { 0%, 8% { transform: translateY(0); } 100% { transform: translateY(-740px); } }
+        @keyframes plume-grow { 0% { opacity: 0; transform: scaleY(.1); } 15% { opacity: 1; transform: scaleY(.5); } 100% { opacity: 1; transform: scaleY(1.5); } }
+        @keyframes ignition-glow { 0% { opacity: 0; } 22%, 45% { opacity: .85; } 100% { opacity: 0; } }
+        @keyframes smoke-spread { 0% { opacity: 0; transform: scale(.2); } 30% { opacity: .6; } 100% { opacity: 0; transform: scale(3,1.25); } }
+        @keyframes hero-reveal { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+        @keyframes ignition-underline { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+        .argo-blueprint { border: 1px solid #333; padding: 18px 20px 0; background-color: #101013; background-image: linear-gradient(#ffffff03 1px,transparent 1px), linear-gradient(90deg,#ffffff03 1px,transparent 1px); background-size: 30px 30px; }
+        .argo-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; color: #aaa; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; }
+        .argo-replay { color: #aaa; background: none; border: 0; padding: 8px 0; cursor: pointer; font-size: .75rem; }
+        .argo-blueprint svg { display: block; width: 100%; height: auto; overflow: visible; }
+        .argo-blueprint.is-waiting svg { visibility: hidden; }
+        .argo-outline { stroke: #e4e1df; stroke-width: 1.6; fill: none; }
+        .argo-detail { stroke: #9e9699; stroke-width: 1; fill: none; }
+        .argo-accent { stroke: #e63946; stroke-width: 1.5; fill: none; }
+        .argo-guide { stroke: #686165; stroke-width: 1; fill: none; }
+        .argo-centerline { stroke: #e63946; stroke-width: .6; stroke-dasharray: 10 7; opacity: .45; }
+        .argo-labels { fill: #a8a0a4; font-family: Arial,sans-serif; font-size: 12px; letter-spacing: 2px; }
+        .argo-solid { fill: #b1a4ab; opacity: .045; }
+        .argo-blueprint.is-drawing .argo-trace { stroke-dasharray: 1; stroke-dashoffset: 1; animation: argo-draw 2s .25s ease-in-out forwards; }
+        .argo-blueprint.is-drawing .argo-detail .argo-trace { animation-delay: 1.25s; animation-duration: 1.5s; }
+        .argo-blueprint.is-drawing .argo-accent { animation-delay: 1.7s; animation-duration: 1.2s; }
+        .argo-blueprint.is-drawing .argo-annotations { animation: argo-labels .8s 2.5s both; }
+        .argo-blueprint.is-drawing .argo-solid { animation: argo-fill 1.4s 2.8s both; }
+        @keyframes argo-draw { to { stroke-dashoffset: 0; } }
+        @keyframes argo-labels { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes argo-fill { from { opacity: 0; } to { opacity: .045; } }
+        @media (max-width: 650px) {
+            .hero-launch { right: -25%; left: -25%; }
+            .hero-launch::after { background: linear-gradient(180deg,rgba(11,11,11,.6),rgba(11,11,11,.2)); }
+            .argo-blueprint { padding: 12px 8px; }
+            .argo-toolbar { font-size: .6rem; gap: 8px; letter-spacing: .04em; }
+            .argo-labels { font-size: 16px; letter-spacing: 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .launch-replay, .hero-skip, .argo-replay { display: none; }
+            .hero.is-launching .launch-vehicle, .hero.is-launching .launch-smoke, .hero.is-launching .launch-glow { opacity: 0; }
+            .argo-blueprint.is-drawing .argo-trace { stroke-dashoffset: 0; }
+        }
+    </style>
+    <script src="portfolio-intro.js" defer></script>
+    <style>
+        /* Final layout review: consistent touch targets and a compact mobile header. */
+        .site-nav { background: #080808; }
+        .carousel-controls button, .argo-replay, .launch-replay, .hero-skip { min-height: 44px; }
+        .experience-link { min-height: 44px; }
+        @media (max-width: 650px) {
+            .site-nav ul { width: 100%; flex-wrap: nowrap; justify-content: space-between; gap: 8px; }
+            .site-nav ul li a { font-size: clamp(.65rem, 2.95vw, .75rem); min-height: 44px; display: inline-flex; align-items: center; }
+        }
+    </style>
+    <style>@media (max-width: 360px) { .site-nav ul { flex-wrap: wrap; justify-content: flex-start; gap: 0 16px; } }</style>
+    <noscript><style>.scroll-fade { opacity: 1; transform: none; }</style></noscript>
+    <style>
+        .media-slot { position: relative; overflow: hidden; }
+        .media-slot .media-filename { display: block; padding: 16px; color: #aaa; font-size: .8rem; line-height: 1.6; text-align: center; overflow-wrap: anywhere; }
+        .media-slot.has-media > .media-filename { display: none; }
+        .media-slot > img, .media-slot > video { display: block; width: 100%; height: auto; max-height: 560px; object-fit: contain; }
+        .img-placeholder.media-slot.has-media { padding: 0; border-style: solid; background: #151515; }
+        .card-img.media-slot { padding: 0; }
+        .card-img.media-slot > img { width: 100%; height: 100%; object-fit: cover; }
+        .card-img.media-slot[data-fit="contain"] > img { object-fit: contain; }
+        .headshot-img.media-slot > img { width: 100%; height: 100%; object-fit: cover; object-position: 62% center; }
+    </style>
+    <script src="portfolio-media.js" defer></script>
+</head>
+<body>
+    <nav class="site-nav">
+        <div class="logo">ALEXANDER TONG <span>// MECHE @ BOSTON UNIVERSITY</span></div>
+<ul>
+            <li><a href="#BURPG">BURPG</a></li>
+            <li><a href="#Experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="Alexander_Tong_Resume.pdf" target="_blank">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-launch" aria-hidden="true"><svg class="launch-scene" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+                <radialGradient id="launch-haze"><stop stop-color="#57292e"/><stop offset="1" stop-color="#0b0b0b"/></radialGradient>
+                <radialGradient id="launch-light"><stop stop-color="#f8bc80" stop-opacity=".8"/><stop offset=".3" stop-color="#E63946" stop-opacity=".35"/><stop offset="1" stop-color="#E63946" stop-opacity="0"/></radialGradient>
+                <linearGradient id="launch-exhaust" x2="0" y2="1"><stop stop-color="#fff5df"/><stop offset=".25" stop-color="#ffb783"/><stop offset=".7" stop-color="#E63946" stop-opacity=".8"/><stop offset="1" stop-color="#E63946" stop-opacity="0"/></linearGradient>
+            </defs>
+            <rect width="1200" height="800" fill="#0b0b0b"/>
+            <g transform="translate(160 0)"><ellipse cx="600" cy="530" rx="530" ry="380" fill="url(#launch-haze)" opacity=".7"/>
+            <g fill="#b8adb0" opacity=".35"><circle cx="310" cy="190" r="1"/><circle cx="710" cy="125" r="1"/><circle cx="875" cy="330" r=".8"/><circle cx="520" cy="280" r=".8"/><circle cx="980" cy="150" r="1"/><circle cx="210" cy="390" r=".7"/></g>
+            <ellipse class="launch-glow" cx="600" cy="600" rx="250" ry="200" fill="url(#launch-light)"/>
+            <path d="M0 613 L90 600 170 607 260 590 370 605 475 598 580 613 730 594 820 604 930 588 1040 605 1200 593 V800 H0Z" fill="#080809"/>
+            <path d="M0 647 Q260 619 600 633 T1200 626 V800 H0Z" fill="#050506"/>
+            <g fill="#09090a" stroke="#292126" stroke-width="1"><path d="M565 611V524H571V611Z"/><path d="M568 534H591M568 550H591M562 611L571 562 580 611" fill="none"/><path d="M582 615H619L615 610H586Z"/></g>
+            <g class="launch-smoke" fill="#58464b"><ellipse cx="582" cy="616" rx="30" ry="8"/><ellipse cx="620" cy="618" rx="34" ry="9"/><ellipse cx="600" cy="605" rx="20" ry="13"/></g>
+            <g class="launch-vehicle">
+                <path class="launch-flame" d="M595 556 Q588 583 600 620 Q612 583 605 556Z" fill="url(#launch-exhaust)"/>
+                <path d="M600 505 Q593 515 594 525V547L589 558 595 555H605L611 558 606 547V525Q607 515 600 505Z" fill="#040405" stroke="#755457" stroke-width=".65"/>
+                <path d="M597 557H603" stroke="#ffe2bb" stroke-width="1.5"/>
+            </g>
+            </g>
+        </svg></div>
+        <button type="button" class="hero-skip" hidden>Skip animation &rarr;</button>
+        <div class="hero-content">
+            <h1 class="fade-in-up delay-2" style="display: table; padding-bottom: 18px; position: relative;">WELCOME!
+                <span class="welcome-underline" aria-hidden="true" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 5px; background: #E63946; clip-path: polygon(0 0, 100% 0, calc(100% - 8px) 100%, 0 100%);"></span>
+            </h1>
+            <p class="fade-in-up delay-3">I’m a Boston University mechanical engineering student focused on structures and spaceflight hardware. I co-lead BURPG’s separation and recovery work and lead its Argo aerocover design, alongside experience in research fixtures, manufacturing, and vacuum systems.</p>
+            <div class="fade-in-up delay-4" style="margin-top: 30px;">
+                <a href="#BURPG" class="btn">View Projects</a>
+                <a href="#contact" class="btn" style="background: transparent; border: 1px solid #E63946; margin-left: 15px;">Contact</a>
+                <button type="button" class="launch-replay" hidden>Replay launch &nearr;</button>
+            </div>
+        </div>
+        
+        <div class="hero-headshot fade-in-up delay-4">
+            <div class="headshot-img media-slot" data-media="Pictures/Headshot.jpg" data-media-type="image" data-fit="cover" data-alt="Portrait of Alexander Tong" title="Pictures/Headshot.jpg"><span class="media-filename">Pictures/Headshot.jpg</span></div>
+        </div>
+    </header>
+
+    <section id="BURPG" class="project-grid">
+        <h2 class="section-title scroll-fade">
+            <a href="https://burpg.org/" target="_blank" class="header-link">Boston University Rocket Propulsion Group <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
+        </h2>
+        <h3 id="flight-hardware" style="color: #E63946; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px;">Flight Hardware</h3>
+        <div style="margin-bottom: 36px;">
+            <h4 class="vehicle-title">Argo Bipropellant Flight Vehicle</h4>
+            <div class="argo-blueprint" role="group" aria-label="Argo side-profile blueprint">
+                <div class="argo-toolbar"><span>Argo / Side profile</span><button type="button" class="argo-replay" hidden>Replay drawing &nearr;</button></div>
+<svg viewBox="0 0 1746 390" role="img" aria-labelledby="argo-drawing-title argo-drawing-description">
+<title id="argo-drawing-title">Argo flight vehicle and highlighted contributions</title>
+<desc id="argo-drawing-description">Side profile labeled from nose to engine: Separation and Recovery Bay, Avionics Bay, Upper Tank, Intertank, Lower Tank, and Engine. The downcomer runs along the lower tank under a streamlined aerocover. Red highlights mark the recovery nose, hoist rings, front bulkhead, and aerocover. The cover is a schematic outline, not a finalized CAD profile.</desc>
+<g transform="translate(0 45)">
+<path class="argo-centerline" d="M35 130H1705"/>
+<path class="argo-solid" d="M60 130Q176 104 299 107H1507L1589 67H1619V110H1652V149H1619V194H1589L1507 153H299Q176 157 60 130Z"/>
+<g class="argo-outline">
+<path class="argo-trace" pathLength="1" d="M311 107H1507M311 153H1507"/>
+<path class="argo-trace" pathLength="1" d="M1507 107L1589 67H1619V120H1581V145H1619V194H1589L1507 153M1619 110H1652V149H1619M1652 117H1665V144H1652"/>
+</g>
+<g class="argo-detail">
+<path class="argo-trace" pathLength="1" d="M386 107V153M393 107V153M1101 107V153M1108 107V153M1160 107V153M1168 107V153M1500 107V153M1508 108V152"/>
+<path class="argo-trace" pathLength="1" d="M1508 116L1608 80V116H1508M1520 111L1608 67M1608 67V120M1508 145H1608V194M1518 151L1589 194M1508 119H1581V145H1508"/>
+<path class="argo-trace" pathLength="1" d="M389 109V151M1105 109V151M1164 109V151M1504 109V151M335 111V115M335 146V150M360 111V115M360 146V150M370 120V123M370 130V133M1122 137V144M1517 137V141M1546 142H1552"/>
+</g>
+<g class="argo-accent" style="stroke-width:2">
+<path class="argo-trace" pathLength="1" d="M60 130Q176 104 299 107H311V153H299Q176 157 60 130Z"/>
+<path class="argo-trace" pathLength="1" d="M299 107V153M302 109H307V151H302ZM299 116H290Q280 116 280 128V133Q280 145 290 145H300M299 121H290Q285 121 285 129V133Q285 140 290 140H299"/>
+</g>
+<path class="argo-accent argo-trace" pathLength="1" style="fill:#E63946;fill-opacity:.12;stroke-width:2" d="M1137 107Q1150 89 1195 87H1467Q1490 88 1510 107H1137Z"/>
+<path class="argo-outline argo-trace" pathLength="1" d="M1145 118Q1143 101 1160 101H1508V112"/>
+<g class="argo-annotations">
+<g class="argo-guide">
+<path d="M190 110V48H70M348 153V216H310M728 107V48H655M1127 153V245H1010M1340 153V208H1270M1410 88V20H1340M1190 101L1208 130V272H1150M1636 116V48H1590M1575 174L1625 245H1660"/>
+<circle cx="190" cy="110" r="3"/><circle cx="348" cy="153" r="3"/><circle cx="728" cy="107" r="3"/><circle cx="1127" cy="153" r="3"/><circle cx="1340" cy="153" r="3"/><circle cx="1410" cy="88" r="3"/><circle cx="1190" cy="101" r="3"/><circle cx="1636" cy="116" r="3"/><circle cx="1575" cy="174" r="3"/>
+</g>
+<g class="argo-labels" style="font-size:15px;letter-spacing:1px">
+<text x="70" y="33" style="fill:#E63946">SEPARATION &amp; RECOVERY BAY</text>
+<text x="310" y="239">AVIONICS BAY</text>
+<text x="655" y="33">UPPER TANK</text>
+<text x="1010" y="267">INTERTANK</text>
+<text x="1270" y="231">LOWER TANK</text>
+<text x="1340" y="7" style="fill:#E63946">AEROCOVER</text>
+<text x="1150" y="296">DOWNCOMER</text>
+<text x="1590" y="33">ENGINE</text>
+<text x="1520" y="270">FIN ASSEMBLY</text>
+</g>
+<path d="M65 291H100" stroke="#E63946" stroke-width="2"/>
+<text class="argo-labels" x="112" y="296" style="font-size:14px;letter-spacing:1px">HIGHLIGHTED CONTRIBUTIONS · COVER SHOWN SCHEMATICALLY</text>
+</g>
+</g></svg>
+            </div>
+        </div>
+
+        <div class="container" data-project-category="Flight Hardware">
+            <a href="project_recovery.html" class="card scroll-fade project-card" style="text-decoration: none; color: inherit;">
+                    <div class="card-img media-slot" data-media="Pictures/Recovery/Assembly.png" data-media-type="image" data-fit="contain" data-alt="Recovery system image" title="Pictures/Recovery/Assembly.png"><span class="media-filename">Pictures/Recovery/Assembly.png</span></div>
+                    <span class="project-status">In progress</span>
+                <h4>Separation and Recovery Subsystem</h4>
+                    <p>Co-leading redundant parachute recovery for a 135 lb rocket targeting 100,000 ft.</p>
+                <p class="card-skills">Recovery Systems · Load Analysis · Testing</p>
+                            <span class="project-action">View project <span aria-hidden="true">&rarr;</span></span>
+            </a>
+
+            <a href="project_co2.html" class="card scroll-fade project-card" style="text-decoration: none; color: inherit;">
+                <div class="card-img media-slot" data-media="Pictures/CO2/Assembly.png" data-media-type="image" data-fit="contain" data-alt="CO₂ deployment hardware image" title="Pictures/CO2/Assembly.png"><span class="media-filename">Pictures/CO2/Assembly.png</span></div>
+                <span class="project-status">Hardware tested; integration in progress</span>
+                <h4>CO₂ Deployment Mechanism</h4>
+                <p>Designed, manufactured, and tested CO₂-cartridge deployment hardware with a three-person team.</p>
+                <p class="card-skills">Fusion 360 · Stress Analysis · Machining · Testing</p>
+                <span class="project-action">View project <span aria-hidden="true">&rarr;</span></span>
+            </a>
+
+            <a href="project_aerocover.html" class="card scroll-fade project-card" style="text-decoration: none; color: inherit; display: flex;">
+                <div class="card-img media-slot" data-media="Pictures/Aerocover/Assembly.png" data-media-type="image" data-fit="contain" data-alt="Aerocover CAD Image" title="Pictures/Aerocover/Assembly.png"><span class="media-filename">Pictures/Aerocover/Assembly.png</span></div>
+                <span class="project-status">In progress</span>
+                <h4>Argo Aerocover Design</h4>
+                <p>Leading an in-progress aerocover design to protect Argo’s external downcomer and reduce drag.</p>
+                <p class="card-skills">Planned methods: CFD · Adjoint CFD · FEA · SolidWorks</p>
+                            <span class="project-action">View project <span aria-hidden="true">&rarr;</span></span>
+            </a>
+
+        </div>
+
+        <h3 id="ground-systems" style="color: #E63946; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; margin-top: 48px; margin-bottom: 20px;">Ground Systems &amp; Testing</h3>
+        <div class="container" data-project-category="Ground Systems &amp; Testing">
+            <a href="project_vacuum.html" class="card scroll-fade project-card" style="text-decoration: none; color: inherit; display: flex;">
+                <div class="card-img media-slot" data-media="Pictures/Vacuum/Chamber.jpg" data-media-type="image" data-fit="cover" data-alt="Vacuum chamber image" title="Pictures/Vacuum/Chamber.jpg"><span class="media-filename">Pictures/Vacuum/Chamber.jpg</span></div>
+                <span class="project-status">Test infrastructure</span>
+                <h4>Vacuum Test Chamber</h4>
+                <p>Developed a vacuum chamber to evaluate recovery charges and avionics at reduced pressure.</p>
+                <p class="card-skills">Vacuum Systems · Seal Design · Test Instrumentation</p>
+                            <span class="project-action">View project <span aria-hidden="true">&rarr;</span></span>
+            </a>
+
+            <a href="project_nozzle.html" class="card scroll-fade project-card" style="text-decoration: none; color: inherit;">
+                    <div class="card-img media-slot" data-media="Pictures/Nozzle/Isometric.png" data-media-type="image" data-fit="contain" data-alt="Nozzle CAD image" title="Pictures/Nozzle/Isometric.png"><span class="media-filename">Pictures/Nozzle/Isometric.png</span></div>
+                    <span class="project-status">Hotfire tested</span>
+                <h4>Hybrid Rocket Nozzle</h4>
+                    <p>Led a five-person team to design and hotfire a mass-optimized hybrid rocket nozzle.</p>
+                <p class="card-skills">SolidWorks · Nozzle Design · Hotfire Testing</p>
+                            <span class="project-action">View project <span aria-hidden="true">&rarr;</span></span>
+            </a>
+            <details class="card scroll-fade vegas-details" style="align-self: start; transition-delay: 0.2s;">
+                <summary>
+                    <span class="card-img media-slot" data-media="Pictures/VEGAS/Assembly.png" data-media-type="image" data-fit="contain" data-alt="VEGAS image" title="Pictures/VEGAS/Assembly.png"><span class="media-filename">Pictures/VEGAS/Assembly.png</span></span>
+                    <span class="project-status">Design work complete; not assembled</span>
+                    <span class="card-heading">VEGAS Fire Suppression</span>
+                    <span class="card-description">Planned mounting, fabrication, and pipe routing for a CO₂ fire-suppression system.</span>
+                    <span class="card-skills" style="display: block; padding: 0 20px;">SolidWorks · Mounting Design · Pipe Routing</span>
+                    <span class="project-action"><span class="when-closed">Show details</span><span class="when-open">Hide details</span><span class="expand-icon" aria-hidden="true">⌄</span></span>
+                </summary>
+                <div style="padding: 20px 20px 0;">
+                    <p style="padding: 0; margin: 0 0 16px; color: #E63946;">February–May 2025 · BURPG</p>
+                    <p style="padding: 0;">Developed assembly and mounting designs in SolidWorks for an existing suppression-system concept, including 3D-printed adapters, mounting hardware, and sheet-metal fixtures for the VEGAS stand.</p>
+                    <ul style="padding-left: 20px; margin-top: 16px; color: #bbb; font-size: .9rem;">
+                        <li>Planned fabrication and pipe routing with pipe-bending guidance.</li>
+                        <li>Worked from previously established component selections and assembly sequence.</li>
+                        <li>The 0.23 kg/s design flow, 1,070 PSI pressure value, and spreadsheet yield factor of safety of 4 were inherited design inputs.</li>
+                        <li>The system was never assembled; the club redirected available funds and parts to the flight vehicle.</li>
+                    </ul>
+                </div>
+            </details>
+
+        </div>
+    </section>
+
+
+
+    <section id="Experience" class="project-grid">
+        <h2 class="section-title scroll-fade">Experience & Research</h2>
+        
+        <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;">
+            
+            <a href="plummer.html" class="scroll-fade experience-card" style="padding: 20px 20px 12px; background: #1a1a1a; border-left: 3px solid #E63946; color: inherit; text-decoration: none; display: block;">
+                <h3 style="margin-bottom: 5px;">BU Plummer Laboratory</h3>
+                <p style="color: #E63946; font-size: 0.9rem; font-weight: bold; margin-bottom: 15px;">Mechanical Engineering Intern · June 2026–Present</p>
+                <ul style="list-style-position: inside; color: #bbb; font-size: 0.9rem; line-height: 1.8;">
+                    <li>Designing and machining dynamic-test fixtures, experimental apparatus, and precision components.</li>
+                    <li>Conducting independent Instron measurements to investigate physical Ising behavior and inform mathematical models.</li>
+                    <li>Building modular camera infrastructure and developing hydrogel-test equipment.</li>
+                </ul>
+                <span class="experience-link"><span class="experience-open" aria-hidden="true">&nearr;</span> View experience</span>
+            </a>
+
+            <a href="culturon.html" class="scroll-fade experience-card" style="padding: 20px 20px 12px; background: #1a1a1a; border-left: 3px solid #E63946; transition-delay: 0.1s; color: inherit; text-decoration: none; display: block;">
+                <h3 style="margin-bottom: 5px;">Culturon</h3>
+                <p style="color: #E63946; font-size: 0.9rem; font-weight: bold; margin-bottom: 15px;">Mechanical Engineering Intern · February–June 2026</p>
+                <ul style="list-style-position: inside; color: #bbb; font-size: 0.9rem; line-height: 1.8;">
+                    <li>Designed Onshape sample racks and personally planned and executed full-scale nanoparticle deposition mapping.</li>
+                    <li>Connected microscopy, chamber experiments, and fluid-dynamics reasoning to contamination-control concepts.</li>
+                    <li style="font-style: italic;">Experimental work and component-level design; public details limited by NDA.</li>
+                </ul>
+                <span class="experience-link"><span class="experience-open" aria-hidden="true">&nearr;</span> View experience</span>
+            </a>
+
+            <a href="appt.html" class="scroll-fade experience-card" style="padding: 20px 20px 12px; background: #1a1a1a; border-left: 3px solid #E63946; color: inherit; text-decoration: none; display: block;">
+                <h3 style="margin-bottom: 5px;">Ablative Pulsed Plasma Thruster</h3>
+                <p style="color: #E63946; font-size: .9rem; font-weight: bold; margin-bottom: 15px;">Volunteer · May–June 2026</p>
+                <p style="color: #bbb; font-size: .9rem;">Designed an ABS inductor spool, performed coil-winding calculations, checked outgassing suitability, and assisted with operating-procedure documentation.</p>
+                <span class="experience-link"><span class="experience-open" aria-hidden="true">&nearr;</span> View experience</span>
+            </a>
+
+        </div>
+    </section>
+
+    <section id="projects" class="project-grid" style="background-color: #111;">
+        <h2 id="additional-projects-title" class="section-title scroll-fade">Additional Projects</h2>
+        <div class="project-carousel" role="region" aria-roledescription="carousel" aria-labelledby="additional-projects-title">
+        <div class="carousel-controls" hidden>
+            <button type="button" data-carousel="previous" aria-label="Previous projects" aria-controls="additional-projects-track">&larr;</button>
+            <span class="carousel-status" aria-live="off"></span>
+            <button type="button" data-carousel="next" aria-label="Next projects" aria-controls="additional-projects-track">&rarr;</button>
+        </div>
+        <div id="additional-projects-track" class="container carousel-track">
+            <a href="dbf.html" class="card project-card" style="text-decoration: none; color: inherit; display: flex;">
+                <div class="card-img media-slot" data-media="Pictures/AIAA/Aircraft.jpg" data-media-type="image" data-fit="cover" data-alt="Wing design image" title="Pictures/AIAA/Aircraft.jpg"><span class="media-filename">Pictures/AIAA/Aircraft.jpg</span></div>
+                <span class="project-status">Design & fabrication</span>
+                <h4>Wing Structural Lead (AIAA)</h4>
+                <p>Led two wing designs, achieving a 50% lighter prototype and 300% faster manufacturing turnaround.</p>
+                <p class="card-skills">Fusion 360 · Wing Structures · Manufacturing</p>
+                            <span class="project-action">View project <span aria-hidden="true">&rarr;</span></span>
+            </a>
+
+
+
+            <a href="robot.html" class="card project-card" style="text-decoration: none; color: inherit; display: flex; transition-delay: 0.1s;">
+                <div class="card-img media-slot" data-media="Pictures/Robot/Vehicle.jpg" data-media-type="image" data-fit="cover" data-alt="Vehicle image" title="Pictures/Robot/Vehicle.jpg"><span class="media-filename">Pictures/Robot/Vehicle.jpg</span></div>
+                <span class="project-status">Tested</span>
+                <h4>Line-Following Autonomous Vehicle</h4>
+                <p>Led a four-person team and completed all wiring and programming for an autonomous payload vehicle.</p>
+                <p class="card-skills">Arduino · Motor Control · Testing</p>
+                            <span class="project-action">View project <span aria-hidden="true">&rarr;</span></span>
+            </a>
+
+            <a href="manufacturing.html" class="card project-card" style="text-decoration: none; color: inherit;">
+                <div class="card-img media-slot" data-media="Pictures/Manufacturing/Hammer.jpg" data-media-type="image" data-fit="cover" data-alt="Machining image" title="Pictures/Manufacturing/Hammer.jpg"><span class="media-filename">Pictures/Manufacturing/Hammer.jpg</span></div>
+                <span class="project-status">Fabricated &amp; used</span>
+                <h4>Manufacturing &amp; Machining</h4>
+                <p>Manual and CNC machining, composite layups, and fixtures for research and flight hardware.</p>
+                <p class="card-skills">CNC Milling · Manual Machining · Composites</p>
+                <span class="project-action">View project <span aria-hidden="true">&rarr;</span></span>
+            </a>
+
+            <a href="me360.html" class="card project-card" style="text-decoration: none; color: inherit; display: flex;">
+                <div class="card-img media-slot" data-media="Pictures/ME360/Project.jpg" data-media-type="image" data-fit="cover" data-alt="Course Project Photo" title="Pictures/ME360/Project.jpg"><span class="media-filename">Pictures/ME360/Project.jpg</span></div>
+                <span class="project-status">Course placeholder</span>
+                <h4>ME 360: Electromechanical Design</h4>
+                <p><strong>Placeholder:</strong> Course portfolio beginning with a Cartesian motion system.</p>
+                <p class="card-skills">Course focus: CAD · Arduino · Motion Control</p>
+                            <span class="project-action">View project <span aria-hidden="true">&rarr;</span></span>
+            </a>
+        </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="scroll-fade" style="padding: 5rem 10%; background: #000; color: #fff; border-top: 1px solid #333;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px;">
+            
+            <div>
+                <p style="font-size: 1.2rem; font-weight: 800; color: #fff; letter-spacing: 1px; margin-bottom: 5px;">ALEXANDER TONG</p>
+                <p style="color: #E63946;">BU MECHANICAL ENGINEERING</p>
+            </div>
+            
+            <div style="display: flex; gap: 40px; text-align: center;">
+                <div>
+                    <a href="https://www.linkedin.com/in/alto335/" target="_blank" aria-label="LinkedIn profile" class="contact-icon" style="background: #000; color: #fff; border-color: #fff;"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <p style="font-size: 0.8rem; margin-top: 10px; color: #fff;">LinkedIn</p>
+                </div>
+                
+                <div>
+                    <a href="mailto:alto335@bu.edu" aria-label="Email Alexander Tong" class="contact-icon" style="background: #000; color: #fff; border-color: #fff;"><i class="fa-solid fa-envelope"></i></a>
+                    <p style="font-size: 0.8rem; margin-top: 10px; color: #fff;">alto335@bu.edu</p>
+                </div>
+                
+                <div>
+                    <a href="Alexander_Tong_Resume.pdf" target="_blank" aria-label="View resume PDF" class="contact-icon" style="background: #000; color: #fff; border-color: #fff;"><i class="fa-solid fa-file-lines"></i></a>
+                    <p style="font-size: 0.8rem; margin-top: 10px; color: #fff;">Resume</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const elementsToAnimate = document.querySelectorAll('.scroll-fade');
+            elementsToAnimate.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hybrid Rocket Nozzle | Alexander Tong</title>
+    <title>Manufacturing &amp; Machining | Alexander Tong</title>
     <link rel="stylesheet" href="Gemini_CSS.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
@@ -99,68 +99,45 @@
     <script src="portfolio-media.js" defer></script>
 </head>
 <body>
-    <nav>
-        <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">ALEXANDER TONG <span>// MECHE</span></a></div>
-    </nav>
-
-    <header class="project-header">
-        <a href="index.html#ground-systems" class="back-link">&larr; Ground Systems &amp; Testing</a>
-        <h1>Hybrid Parabolic <span>Rocket Nozzle</span></h1>
-        <p class="project-meta-line">Lead Engineer · BURPG · September–November 2024 · Hotfire tested</p>
-        <p class="project-overview">Led design and hotfire testing of a de Laval nozzle optimized for 45,000 ft, reducing mass by 73% relative to the initial design.</p>
+<nav><div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">ALEXANDER TONG <span>// MECHE</span></a></div></nav>
+<header class="project-header">
+        <a href="index.html#projects" class="back-link">&larr; Additional Projects</a>
+        <h1>Manufacturing <span>&amp; Machining</span></h1>
+        <p class="project-meta-line">Selected fabrication work</p>
+        <p class="project-overview">CNC machining, manual turning and milling, and composite fabrication across research, flight hardware, and personal projects.</p>
     </header>
-
-    <div class="project-hero-media" style="padding: 0 10%; margin-top: -1px;">
-        <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Hotfire.mp4" data-media-type="video" data-fit="cover" data-alt="Hotfire Test Slow Motion Video/GIF" title="Pictures/Nozzle/Hotfire.mp4"><span class="media-filename">Pictures/Nozzle/Hotfire.mp4</span></div>
-    </div>
-
+    <main>
     <section class="content-section">
         <div class="text-block">
-            <h2>Contribution &amp; Results</h2>
-            <p style="color: #ccc;">As my first project with BURPG in Fall 2024, I led a five-person team to design, optimize, and physically hotfire a parabolic hybrid rocket nozzle with a 7.86 lbf design thrust. Relative to my initial design, the final geometry reduced mass by 73% and increased predicted thrust by 5%. Mechanical stress analysis gave a 7.8 factor of safety for the nozzle alone; thermal effects were excluded. The nozzle survived an approximately two-second hotfire, but a load-cell malfunction prevented thrust-data collection.</p>
-            
-            <h2 style="margin-top: 40px;">Experience & Skills</h2>
-            <p style="color: #ccc;"><strong>Role:</strong> Overall and Design Lead</p>
-            <p style="color: #ccc;">I directed the project through three iterative design reviews, coordinating the subteams responsible for the test fire computer, engineering drawings, and FEA. I coordinated cross-team communication and intermediate milestones to keep design reviews and testing on schedule.</p>
-            <ul>
-                <li><strong>Nozzle Design & CAD:</strong> Modeled an 80%-length Rao parabolic de Laval nozzle in SolidWorks using isentropic-flow equations, G.V.R. Rao’s contour methods, <em>Rocket Propulsion Elements</em>, and ANSI standards. Mapped a Bézier curve across three points for the diverging section and used circular curves for the converging and throat sections.</li>
-                <li><strong>FEA & Structural Optimization:</strong> Assessed nozzle stresses using SolidWorks FEA, which I learned and troubleshooted from scratch. Initially optimized the contour to a 2.0 FOS to aggressively cut weight, but after a design review raised manufacturing and assembly fragility concerns, I thickened the geometry to a final 7.8 FOS in yield under the modeled mechanical loads. Thermal effects were not included.</li>
-                <li><strong>Manufacturing:</strong> The nozzle was manufactured using a Formlabs SLA printer in ABS-like resin, intended for a single-use hotfire.</li>
-            </ul>
-        </div>
-        <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Isometric.png" data-media-type="image" data-fit="contain" data-alt="Isometric View of Nozzle" title="Pictures/Nozzle/Isometric.png"><span class="media-filename">Pictures/Nozzle/Isometric.png</span></div>
-            <p class="caption">SolidWorks Isometric View</p>
-            
-            <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Drawing.png" data-media-type="image" data-fit="contain" data-alt="SolidWorks Drawing" title="Pictures/Nozzle/Drawing.png"><span class="media-filename">Pictures/Nozzle/Drawing.png</span></div>
-            <p class="caption">Engineering Drawing & Dimensions</p>
+            <h2>CNC Milling: Shaker Adapter</h2>
+            <p style="color: #ccc;">Generated G-code and machined a 6061-T6 adapter plate on a Haas VF-2, drilling and tapping 12 holes to ±0.005 in. Applied ISO clearances, tolerance-stack analysis, and edge breaks.</p>
+            <p><a href="plummer.html#precision-manufacturing" style="color: #E63946;">View the Plummer machining work &rarr;</a></p>
+            <h2 style="margin-top: 32px;">Manual Machining: Recovery Hardware</h2>
+            <p style="color: #ccc;">Redesigned legacy cable cutters, created an engineering drawing, and machined the aluminum hardware on a manual mill and lathe, and contributed across design, drawings, fabrication, and testing of CO₂ deployment hardware.</p>
+            <p><a href="project_recovery.html#machining" style="color: #E63946;">View the cable-cutter machining &rarr;</a></p>
+            <p><a href="project_co2.html#design-manufacturing" style="color: #E63946;">View the CO₂ mechanism’s design and manufacturing &rarr;</a></p>
+            <h2 style="margin-top: 32px;">Composite Fabrication: AIAA Aircraft</h2>
+            <p style="color: #ccc;">Contributed fiberglass fuselage layups, balsa airframe and Clark-Y wing fabrication, and detailed internal-wing CAD for the 2024–2025 competition aircraft.</p>
+            <p><a href="dbf.html#composites" style="color: #E63946;">View the aircraft fabrication work &rarr;</a></p>
         </div>
     </section>
-
-    <section class="content-section" style="border-bottom: none;">
-        <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/FEA.png" data-media-type="image" data-fit="contain" data-alt="FEA Meshing Image" title="Pictures/Nozzle/FEA.png"><span class="media-filename">Pictures/Nozzle/FEA.png</span></div>
-            <p class="caption">SolidWorks FEA: 7.8 Mechanical FOS; Thermal Effects Excluded</p>
-
-            <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Calculations.png" data-media-type="image" data-fit="contain" data-alt="Calculation Spreadsheet" title="Pictures/Nozzle/Calculations.png"><span class="media-filename">Pictures/Nozzle/Calculations.png</span></div>
-            <p class="caption">Isentropic Flow & Parameter Calculations</p>
-        </div>
+    <section class="content-section">
         <div class="text-block">
-            <h2>Testing & Validation</h2>
-            <p style="color: #ccc;"><strong>Hotfire &amp; Data Acquisition:</strong> The system fired successfully for approximately two seconds. A load-cell malfunction on the day of the test prevented collection of usable thrust data. The 5% thrust improvement therefore remains a prediction, not a measured result.</p>
-            <p style="color: #ccc;"><strong>Launch Computer:</strong> I led the team responsible for designing, soldering, and programming the launch computer used to actuate the test. The planned measurement setup included LabJack acquisition and a load cell.</p>
-            
-            <h2 style="margin-top: 40px;">Motivation & Constraints</h2>
-            <p style="color: #ccc;"><strong>Objective:</strong> The Hybrid Introductory Project (HIP) is BURPG's hands-on trial for new members to learn compressible flow, nozzle design, and FEA. The goal was to calculate, design, and build a nozzle and test computer that maximized thrust and minimized weight.</p>
+            <h2>Personal Machining Projects</h2>
             <ul>
-                <li><strong>Optimization Target:</strong> 45,000 feet</li>
-                <li><strong>Design Constraints:</strong> Strict parameters for optimization pressure, mass flow rate, and maximum diameter.</li>
+                <li><strong>Machinist’s Hammer:</strong> Turned an aluminum handle and milled an HDPE head, working to ±0.001 in tolerances.</li>
+                <li><strong>Turned Rings:</strong> Manufactured six rings on a manual lathe: three aluminum and three stainless steel.</li>
             </ul>
+            <p style="color: #ccc; margin-top: 20px;">Mentored junior engineers in practical machining techniques.</p>
+        </div>
+        <div class="image-block">
+            <div class="img-placeholder media-slot" data-media="Pictures/Manufacturing/Hammer.jpg" data-media-type="image" data-fit="cover" data-alt="Machinist’s Hammer Photo" title="Pictures/Manufacturing/Hammer.jpg"><span class="media-filename">Pictures/Manufacturing/Hammer.jpg</span></div>
+            <p class="caption">Manual Turning and Milling</p>
+            <div class="img-placeholder media-slot" data-media="Pictures/Manufacturing/Rings.jpg" data-media-type="image" data-fit="cover" data-alt="Turned Rings Photo" title="Pictures/Manufacturing/Rings.jpg"><span class="media-filename">Pictures/Manufacturing/Rings.jpg</span></div>
+            <p class="caption">Aluminum and Stainless-Steel Rings</p>
         </div>
     </section>
-
-    <footer style="padding: 5rem 10%; background: #000; color: #666; font-size: 0.8rem; border-top: 1px solid #333; margin-top: 50px;">
-        <p>ALEXANDER TONG // BU MECHANICAL ENGINEERING // HYBRID ROCKET NOZZLE</p>
-    </footer>
+    </main>
+<footer style="padding: 40px 10%; background: #000; color: #888; border-top: 1px solid #333; font-size: .8rem;">ALEXANDER TONG // BU MECHANICAL ENGINEERING // MANUFACTURING &amp; MACHINING</footer>
 </body>
 </html>

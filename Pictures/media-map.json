@@ -1,0 +1,326 @@
+[
+  {
+    "path": "Pictures/Headshot.jpg",
+    "page": "index.html",
+    "location": "Portrait of Alexander Tong",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Recovery/Assembly.png",
+    "page": "index.html",
+    "location": "Recovery system image",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/CO2/Assembly.png",
+    "page": "index.html",
+    "location": "CO₂ deployment hardware image",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/Assembly.png",
+    "page": "index.html",
+    "location": "Aerocover CAD Image",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Vacuum/Chamber.jpg",
+    "page": "index.html",
+    "location": "Vacuum chamber image",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Nozzle/Isometric.png",
+    "page": "index.html",
+    "location": "Nozzle CAD image",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/VEGAS/Assembly.png",
+    "page": "index.html",
+    "location": "VEGAS image",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/AIAA/Aircraft.jpg",
+    "page": "index.html",
+    "location": "Wing design image",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Robot/Vehicle.jpg",
+    "page": "index.html",
+    "location": "Vehicle image",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Manufacturing/Hammer.jpg",
+    "page": "index.html",
+    "location": "Machining image",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/ME360/Project.jpg",
+    "page": "index.html",
+    "location": "Course Project Photo",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/AIAA/Aircraft.jpg",
+    "page": "dbf.html",
+    "location": "Aircraft or Wing Assembly Photo",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/AIAA/Prototype-1.png",
+    "page": "dbf.html",
+    "location": "Prototype 1 Wing CAD or Photo",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/AIAA/Design-Review.png",
+    "page": "dbf.html",
+    "location": "Trade Study or Design Review Graphic",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/AIAA/Prototype-2.png",
+    "page": "dbf.html",
+    "location": "Prototype 2 Wing CAD or Drawing",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/AIAA/Fiberglass-Layup.jpg",
+    "page": "dbf.html",
+    "location": "Fiberglass Layup Process Photo",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/AIAA/Completed-Layup.jpg",
+    "page": "dbf.html",
+    "location": "Completed Fiberglass Layup Photo",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Manufacturing/Hammer.jpg",
+    "page": "manufacturing.html",
+    "location": "Machinist’s Hammer Photo",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Manufacturing/Rings.jpg",
+    "page": "manufacturing.html",
+    "location": "Turned Rings Photo",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Plummer/Lab-Overview.jpg",
+    "page": "plummer.html",
+    "location": "Dynamic-Test Fixture or Laboratory Photo",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Plummer/Shaker-Analysis.png",
+    "page": "plummer.html",
+    "location": "Shaker-Adapter CAD or FEA",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Plummer/Machined-Plate.jpg",
+    "page": "plummer.html",
+    "location": "Machined Plate Photo",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Plummer/Camera-Stand.jpg",
+    "page": "plummer.html",
+    "location": "Camera-Mount or Lab Buildout Photo",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Plummer/Lab-Fixtures.jpg",
+    "page": "plummer.html",
+    "location": "Laboratory Layout or Fixture Photo",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/Assembly.png",
+    "page": "project_aerocover.html",
+    "location": "Argo Aerocover Assembly CAD",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/Profile-Comparison.png",
+    "page": "project_aerocover.html",
+    "location": "Candidate Profile Comparison",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/Baseline-Comparison.png",
+    "page": "project_aerocover.html",
+    "location": "Icarus Baseline and Argo Concept",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/CFD.png",
+    "page": "project_aerocover.html",
+    "location": "CFD Visualization",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/FEA.png",
+    "page": "project_aerocover.html",
+    "location": "Structural Analysis",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/Mold-Mounting.png",
+    "page": "project_aerocover.html",
+    "location": "Mold or Mounting Concept",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/CO2/Assembly.png",
+    "page": "project_co2.html",
+    "location": "CO₂ Deployment Assembly CAD",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/CO2/Machined-Parts.jpg",
+    "page": "project_co2.html",
+    "location": "Machined CO₂ Deployment Hardware Photo",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Nozzle/Hotfire.mp4",
+    "page": "project_nozzle.html",
+    "location": "Hotfire Test Slow Motion Video/GIF",
+    "type": "video"
+  },
+  {
+    "path": "Pictures/Nozzle/Isometric.png",
+    "page": "project_nozzle.html",
+    "location": "Isometric View of Nozzle",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Nozzle/Drawing.png",
+    "page": "project_nozzle.html",
+    "location": "SolidWorks Drawing",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Nozzle/FEA.png",
+    "page": "project_nozzle.html",
+    "location": "FEA Meshing Image",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Nozzle/Calculations.png",
+    "page": "project_nozzle.html",
+    "location": "Calculation Spreadsheet",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Recovery/Subscale-Test.mp4",
+    "page": "project_recovery.html",
+    "location": "Hero Image/GIF of Subscale Testing",
+    "type": "video"
+  },
+  {
+    "path": "Pictures/Recovery/Lines-Diagram.png",
+    "page": "project_recovery.html",
+    "location": "Lines Diagram",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Recovery/Connections.png",
+    "page": "project_recovery.html",
+    "location": "Simplified Connection Diagram",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Recovery/Assembly.png",
+    "page": "project_recovery.html",
+    "location": "Recovery Assembly CAD",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Recovery/Hardware-Assembly.jpg",
+    "page": "project_recovery.html",
+    "location": "Recovery Hardware Assembly Photo",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Recovery/Cable-Cutter-Drawing.png",
+    "page": "project_recovery.html",
+    "location": "Cable-Cutter Engineering Drawing",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Recovery/Cable-Cutters.jpg",
+    "page": "project_recovery.html",
+    "location": "Machined Cable-Cutter Hardware Photo",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Vacuum/Chamber.jpg",
+    "page": "project_recovery.html",
+    "location": "Vacuum-Chamber Recovery Test Photo",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Recovery/Line-Verification.mp4",
+    "page": "project_recovery.html",
+    "location": "Recovery-Line Verification Video",
+    "type": "video"
+  },
+  {
+    "path": "Pictures/Recovery/Subscale-Launch.jpg",
+    "page": "project_recovery.html",
+    "location": "Subscale Rocket Retrofit and Launch Photo",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Recovery/Packing-Plan.png",
+    "page": "project_recovery.html",
+    "location": "Detailed Packing Plan / Nosecone Diagram",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Vacuum/Chamber.jpg",
+    "page": "project_vacuum.html",
+    "location": "BP Vacuum Testing Photo",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Vacuum/Pressure-Data.png",
+    "page": "project_vacuum.html",
+    "location": "PT Data Graph",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Robot/Vehicle.jpg",
+    "page": "robot.html",
+    "location": "Vehicle Photo or Test Video",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Robot/Chassis.png",
+    "page": "robot.html",
+    "location": "Chassis CAD or Assembly Photo",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Robot/Course-Test.jpg",
+    "page": "robot.html",
+    "location": "Course-Test Photo or Results Plot",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Robot/Wiring.png",
+    "page": "robot.html",
+    "location": "Sensor Layout or Wiring Diagram",
+    "type": "image"
+  }
+]

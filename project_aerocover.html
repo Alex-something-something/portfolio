@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hybrid Rocket Nozzle | Alexander Tong</title>
+    <title>Argo Aerocover Design | Alexander Tong</title>
     <link rel="stylesheet" href="Gemini_CSS.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
@@ -99,68 +99,56 @@
     <script src="portfolio-media.js" defer></script>
 </head>
 <body>
-    <nav>
-        <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">ALEXANDER TONG <span>// MECHE</span></a></div>
-    </nav>
-
+    <nav><div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">ALEXANDER TONG <span>// MECHE</span></a></div></nav>
     <header class="project-header">
-        <a href="index.html#ground-systems" class="back-link">&larr; Ground Systems &amp; Testing</a>
-        <h1>Hybrid Parabolic <span>Rocket Nozzle</span></h1>
-        <p class="project-meta-line">Lead Engineer · BURPG · September–November 2024 · Hotfire tested</p>
-        <p class="project-overview">Led design and hotfire testing of a de Laval nozzle optimized for 45,000 ft, reducing mass by 73% relative to the initial design.</p>
+        <a href="index.html#flight-hardware" class="back-link">&larr; Flight Hardware</a>
+        <h1>Argo Aerocover <span>Design</span></h1>
+        <p class="project-meta-line">Project Lead · BURPG · In progress</p>
+        <p class="project-overview">Leading aerocover development to protect Argo’s external downcomer and wiring while reducing drag.</p>
     </header>
-
-    <div class="project-hero-media" style="padding: 0 10%; margin-top: -1px;">
-        <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Hotfire.mp4" data-media-type="video" data-fit="cover" data-alt="Hotfire Test Slow Motion Video/GIF" title="Pictures/Nozzle/Hotfire.mp4"><span class="media-filename">Pictures/Nozzle/Hotfire.mp4</span></div>
-    </div>
-
+    <div class="project-hero-media" style="padding: 0 10%; margin-top: -1px;"><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Assembly.png" data-media-type="image" data-fit="contain" data-alt="Argo Aerocover Assembly CAD" title="Pictures/Aerocover/Assembly.png"><span class="media-filename">Pictures/Aerocover/Assembly.png</span></div></div>
     <section class="content-section">
         <div class="text-block">
-            <h2>Contribution &amp; Results</h2>
-            <p style="color: #ccc;">As my first project with BURPG in Fall 2024, I led a five-person team to design, optimize, and physically hotfire a parabolic hybrid rocket nozzle with a 7.86 lbf design thrust. Relative to my initial design, the final geometry reduced mass by 73% and increased predicted thrust by 5%. Mechanical stress analysis gave a 7.8 factor of safety for the nozzle alone; thermal effects were excluded. The nozzle survived an approximately two-second hotfire, but a load-cell malfunction prevented thrust-data collection.</p>
-            
-            <h2 style="margin-top: 40px;">Experience & Skills</h2>
-            <p style="color: #ccc;"><strong>Role:</strong> Overall and Design Lead</p>
-            <p style="color: #ccc;">I directed the project through three iterative design reviews, coordinating the subteams responsible for the test fire computer, engineering drawings, and FEA. I coordinated cross-team communication and intermediate milestones to keep design reviews and testing on schedule.</p>
-            <ul>
-                <li><strong>Nozzle Design & CAD:</strong> Modeled an 80%-length Rao parabolic de Laval nozzle in SolidWorks using isentropic-flow equations, G.V.R. Rao’s contour methods, <em>Rocket Propulsion Elements</em>, and ANSI standards. Mapped a Bézier curve across three points for the diverging section and used circular curves for the converging and throat sections.</li>
-                <li><strong>FEA & Structural Optimization:</strong> Assessed nozzle stresses using SolidWorks FEA, which I learned and troubleshooted from scratch. Initially optimized the contour to a 2.0 FOS to aggressively cut weight, but after a design review raised manufacturing and assembly fragility concerns, I thickened the geometry to a final 7.8 FOS in yield under the modeled mechanical loads. Thermal effects were not included.</li>
-                <li><strong>Manufacturing:</strong> The nozzle was manufactured using a Formlabs SLA printer in ABS-like resin, intended for a single-use hotfire.</li>
-            </ul>
+            <h2>Project Scope &amp; Leadership</h2>
+            <p style="color: #ccc;">I am leading BURPG’s Argo aerocover design project. The cover is intended to protect the external downcomer pipe and wiring from aerodynamic and thermal loading while reducing the drag associated with the protruding hardware.</p>
+            <p style="color: #ccc; margin-top: 16px;">The team is developing multiple candidate profiles in parallel, comparing leading edges, midsections, and boattails against the previous Icarus aerocover. Concept selection also considers mounting, composite fabrication, surface finish, and cost.</p>
+            <h2 style="margin-top: 40px;">Current Status</h2>
+            <p style="color: #ccc;">The September 2026 conceptual design review documents candidate geometries and manufacturing approaches. Detailed CAD, simulation, optimization, and validation remain in progress; final performance results will be added as the design develops.</p>
         </div>
         <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Isometric.png" data-media-type="image" data-fit="contain" data-alt="Isometric View of Nozzle" title="Pictures/Nozzle/Isometric.png"><span class="media-filename">Pictures/Nozzle/Isometric.png</span></div>
-            <p class="caption">SolidWorks Isometric View</p>
-            
-            <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Drawing.png" data-media-type="image" data-fit="contain" data-alt="SolidWorks Drawing" title="Pictures/Nozzle/Drawing.png"><span class="media-filename">Pictures/Nozzle/Drawing.png</span></div>
-            <p class="caption">Engineering Drawing & Dimensions</p>
+            <div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Profile-Comparison.png" data-media-type="image" data-fit="contain" data-alt="Candidate Profile Comparison" title="Pictures/Aerocover/Profile-Comparison.png"><span class="media-filename">Pictures/Aerocover/Profile-Comparison.png</span></div>
+            <p class="caption">Leading Edge, Midsection, and Boattail Concepts</p>
+            <div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Baseline-Comparison.png" data-media-type="image" data-fit="contain" data-alt="Icarus Baseline and Argo Concept" title="Pictures/Aerocover/Baseline-Comparison.png"><span class="media-filename">Pictures/Aerocover/Baseline-Comparison.png</span></div>
+            <p class="caption">Baseline Comparison: Design in Progress</p>
         </div>
     </section>
-
-    <section class="content-section" style="border-bottom: none;">
-        <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/FEA.png" data-media-type="image" data-fit="contain" data-alt="FEA Meshing Image" title="Pictures/Nozzle/FEA.png"><span class="media-filename">Pictures/Nozzle/FEA.png</span></div>
-            <p class="caption">SolidWorks FEA: 7.8 Mechanical FOS; Thermal Effects Excluded</p>
-
-            <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Calculations.png" data-media-type="image" data-fit="contain" data-alt="Calculation Spreadsheet" title="Pictures/Nozzle/Calculations.png"><span class="media-filename">Pictures/Nozzle/Calculations.png</span></div>
-            <p class="caption">Isentropic Flow & Parameter Calculations</p>
-        </div>
+    <section class="content-section">
         <div class="text-block">
-            <h2>Testing & Validation</h2>
-            <p style="color: #ccc;"><strong>Hotfire &amp; Data Acquisition:</strong> The system fired successfully for approximately two seconds. A load-cell malfunction on the day of the test prevented collection of usable thrust data. The 5% thrust improvement therefore remains a prediction, not a measured result.</p>
-            <p style="color: #ccc;"><strong>Launch Computer:</strong> I led the team responsible for designing, soldering, and programming the launch computer used to actuate the test. The planned measurement setup included LabJack acquisition and a load cell.</p>
-            
-            <h2 style="margin-top: 40px;">Motivation & Constraints</h2>
-            <p style="color: #ccc;"><strong>Objective:</strong> The Hybrid Introductory Project (HIP) is BURPG's hands-on trial for new members to learn compressible flow, nozzle design, and FEA. The goal was to calculate, design, and build a nozzle and test computer that maximized thrust and minimized weight.</p>
+            <h2>Analysis &amp; Design Plan</h2>
             <ul>
-                <li><strong>Optimization Target:</strong> 45,000 feet</li>
-                <li><strong>Design Constraints:</strong> Strict parameters for optimization pressure, mass flow rate, and maximum diameter.</li>
+                <li><strong>SolidWorks Design:</strong> Model candidate cover profiles and their interfaces with Argo, allowing clearance for the downcomer and wiring.</li>
+                <li><strong>CFD:</strong> Characterize flow and loading at Mach 2, 2.5, and 2.81, comparing candidate designs with the baseline.</li>
+                <li><strong>Adjoint CFD:</strong> Explore leading-edge optimization while checking the resulting geometry against physical and manufacturing constraints.</li>
+                <li><strong>FEA:</strong> Use aerodynamic loads from CFD to evaluate structural response.</li>
+                <li><strong>Flight Performance:</strong> Investigate the effect of aerocover drag using OpenRocket.</li>
             </ul>
         </div>
+        <div class="image-block">
+            <div class="img-placeholder media-slot" data-media="Pictures/Aerocover/CFD.png" data-media-type="image" data-fit="contain" data-alt="CFD Visualization" title="Pictures/Aerocover/CFD.png"><span class="media-filename">Pictures/Aerocover/CFD.png</span></div>
+            <p class="caption">Flow Characterization: Results Pending</p>
+            <div class="img-placeholder media-slot" data-media="Pictures/Aerocover/FEA.png" data-media-type="image" data-fit="contain" data-alt="Structural Analysis" title="Pictures/Aerocover/FEA.png"><span class="media-filename">Pictures/Aerocover/FEA.png</span></div>
+            <p class="caption">Aerodynamic Load Transfer and FEA: Results Pending</p>
+        </div>
     </section>
-
-    <footer style="padding: 5rem 10%; background: #000; color: #666; font-size: 0.8rem; border-top: 1px solid #333; margin-top: 50px;">
-        <p>ALEXANDER TONG // BU MECHANICAL ENGINEERING // HYBRID ROCKET NOZZLE</p>
-    </footer>
+    <section class="content-section" style="border-bottom: none;">
+        <div class="text-block">
+            <h2>Manufacturing &amp; Integration</h2>
+            <p style="color: #ccc;">The design review considers composite wet layup over 3D-printed or machined foam molds, with attention to surface finish, dimensional control, and material cost. Mounting concepts address protruding fasteners and their aerodynamic effects.</p>
+            <p style="color: #ccc; margin-top: 16px;">Open work includes resin temperature limits, mounting feasibility, layup trials, and practical validation methods. These studies will inform the final geometry and manufacturing process.</p>
+            <p style="color: #888; font-size: .85rem; margin-top: 30px;">Project context: Aerocover Design Doc and Argo Aerocover CoDR, September 3, 2026. Candidate concepts and analysis plans are preliminary.</p>
+        </div>
+        <div class="image-block"><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Mold-Mounting.png" data-media-type="image" data-fit="contain" data-alt="Mold or Mounting Concept" title="Pictures/Aerocover/Mold-Mounting.png"><span class="media-filename">Pictures/Aerocover/Mold-Mounting.png</span></div><p class="caption">Composite Manufacturing and Mounting Development</p></div>
+    </section>
+    <footer style="padding: 5rem 10%; background: #000; color: #666; font-size: .8rem; border-top: 1px solid #333; margin-top: 50px;">ALEXANDER TONG // BU MECHANICAL ENGINEERING // ARGO AEROCOVER</footer>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>135-lbm Recovery System | Alexander Tong</title>
+    <title>Separation and Recovery Subsystem | Alexander Tong</title>
     <link rel="stylesheet" href="Gemini_CSS.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
@@ -52,74 +52,200 @@
         }
         .caption { font-size: 0.8rem; color: #888; text-align: center; margin-top: -10px; }
     </style>
+
+    <style>
+        /* Shared presentation overrides; the original stylesheet is preserved. */
+        html { scroll-padding-top: 120px; }
+        body { overflow-wrap: break-word; }
+        nav { gap: 24px; padding-top: 24px; padding-bottom: 24px; }
+        nav ul { flex-wrap: wrap; gap: 12px 24px; }
+        nav ul li { margin-left: 0; }
+        a:focus-visible, summary:focus-visible { outline: 2px solid #E63946; outline-offset: 5px; }
+        .project-header { padding: 64px 10% 36px; }
+        .project-header h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; max-width: 1000px; }
+        .project-header .project-meta-line { color: #bbb; margin: 0 0 20px; font-size: .95rem; }
+        .project-header .project-overview { color: #ccc; max-width: 800px; }
+        .project-header .back-link { margin-bottom: 24px; }
+        .content-section { padding: 40px 10%; gap: 36px; }
+        .text-block, .image-block { min-width: 0; flex: 1 1 320px; }
+        .text-block h2 { font-size: 1.5rem; }
+        .text-block p + p { margin-top: 16px; }
+        .img-placeholder { min-height: 120px !important; color: #aaa; border-color: #444; }
+        .caption { font-size: .85rem; color: #aaa; line-height: 1.5; }
+        footer { padding: 40px 10% !important; margin-top: 0 !important; }
+        @media (max-width: 1000px) {
+            nav { flex-wrap: wrap; }
+            nav .logo { font-size: .9rem; }
+            .hero { gap: 28px; }
+            .headshot-img { width: 240px; height: 240px; }
+        }
+        @media (max-width: 650px) {
+            html { scroll-padding-top: 160px; }
+            nav { padding: 18px 6%; gap: 14px; }
+            nav .logo span { display: block; font-size: .75rem; }
+            nav ul { gap: 10px 16px; }
+            nav ul li a { font-size: .75rem; }
+            .hero { flex-direction: column; align-items: flex-start; padding: 40px 6%; min-height: 0; }
+            .hero h1 { font-size: 3rem; }
+            .hero p { font-size: 1rem; }
+            .hero-headshot { align-self: center; }
+            .headshot-img { width: 200px; height: 200px; }
+            .hero .btn { padding: 10px 18px; }
+            .project-grid, .content-section, .project-header { padding-left: 6%; padding-right: 6%; }
+            .project-grid { padding-top: 48px; padding-bottom: 48px; }
+            .container { grid-template-columns: minmax(0, 1fr); }
+            .text-block, .image-block { flex-basis: 100%; }
+            footer { padding: 32px 6% !important; }
+            #contact > div > div:last-child { flex-wrap: wrap; gap: 24px !important; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+            .fade-in-up, .scroll-fade { opacity: 1; transform: none; }
+        }
+    </style>
+    <style>
+        /* Final layout review: readable footers and consistent mobile spacing. */
+        nav { background: #080808; }
+        footer { color: #aaa !important; }
+        .back-link { min-height: 44px; display: inline-flex; align-items: center; }
+        @media (max-width: 650px) {
+            .project-header { padding-top: 36px; padding-bottom: 28px; }
+            .project-header h1 { font-size: 1.75rem; }
+            .project-header .back-link { margin-bottom: 16px; }
+            .project-hero-media { padding-left: 6% !important; padding-right: 6% !important; }
+            .content-section { padding-top: 32px; padding-bottom: 32px; gap: 24px; }
+            .content-section > .text-block { order: 0; }
+            .content-section > .image-block { order: 1; }
+        }
+    </style>
+    <style>
+        .media-slot { position: relative; overflow: hidden; }
+        .media-slot .media-filename { display: block; padding: 16px; color: #aaa; font-size: .8rem; line-height: 1.6; text-align: center; overflow-wrap: anywhere; }
+        .media-slot.has-media > .media-filename { display: none; }
+        .media-slot > img, .media-slot > video { display: block; width: 100%; height: auto; max-height: 560px; object-fit: contain; }
+        .img-placeholder.media-slot.has-media { padding: 0; border-style: solid; background: #151515; }
+        .card-img.media-slot { padding: 0; }
+        .card-img.media-slot > img { width: 100%; height: 100%; object-fit: cover; }
+        .card-img.media-slot[data-fit="contain"] > img { object-fit: contain; }
+        .headshot-img.media-slot > img { width: 100%; height: 100%; object-fit: cover; object-position: 62% center; }
+    </style>
+    <script src="portfolio-media.js" defer></script>
 </head>
 <body>
     <nav>
-        <div class="logo">ALEXANDER TONG <span>// MECHE</span></div>
-        <ul>
-            <li><a href="index.html#projects">Back to Portfolio</a></li>
-        </ul>
+        <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">ALEXANDER TONG <span>// MECHE</span></a></div>
     </nav>
 
     <header class="project-header">
-        <h1>135-lbm Bipropellant <span>Recovery System</span></h1>
-        <p style="color: #bbb; max-width: 800px;">Redesigning and validating a dual-deploy parachute recovery architecture for a 100,000 ft apogee.</p>
+        <a href="index.html#flight-hardware" class="back-link">&larr; Flight Hardware</a>
+        <h1>Separation and <span>Recovery Subsystem</span></h1>
+        <p class="project-meta-line">Co-Lead Engineer · BURPG · June 2025–Present · In progress</p>
+        <p class="project-overview">Co-leading the design and validation of a single-separation, dual-deploy recovery architecture for a 135 lb liquid rocket targeting a 100,000 ft apogee.</p>
     </header>
 
-    <div style="padding: 0 10%; margin-top: -1px;">
-        <div class="img-placeholder" style="min-height: 400px; border: none; background-image: url('assets/hero_test.gif');">
-            [Insert Hero Image/GIF of Subscale Testing Here]
-        </div>
+    <div class="project-hero-media" style="padding: 0 10%; margin-top: -1px;">
+        <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Subscale-Test.mp4" data-media-type="video" data-fit="cover" data-alt="Hero Image/GIF of Subscale Testing" title="Pictures/Recovery/Subscale-Test.mp4"><span class="media-filename">Pictures/Recovery/Subscale-Test.mp4</span></div>
     </div>
 
     <section class="content-section">
         <div class="text-block">
-            <h2>Outcome & Impact</h2>
-            <p style="color: #ccc;">Currently deep in the testing phase, I led the complete redesign of a dual-deploy parachute recovery system for a 135-lbm liquid bipropellant rocket. The goal is to safely recover the vehicle from a 100,000 ft apogee. Right now, we are running integrated 1-atm deployment tests, validating our vinyl black powder (BP) charges, and testing the flight computers in a custom vacuum chamber to simulate high-altitude conditions.</p>
+            <h2>Contribution &amp; Results</h2>
+            <p style="color: #ccc;">As co-lead engineer, I designed a single-separation, dual-deploy parachute recovery system for a 135 lb, 100,000 ft apogee liquid rocket. The architecture targets a 2.0 factor of safety per NASA standards and has been presented through four iterative design reviews to club executives. Completed testing includes sealed-charge and avionics evaluation under vacuum and integrated testing of the previous vinyl-charge configuration. The revised CO₂ deployment hardware has been tested and is being refined ahead of its integrated system test.</p>
             
             <h2 style="margin-top: 40px;">Experience & Skills</h2>
-            <p style="color: #ccc;"><strong>Role:</strong> Separation and Recovery (SepRec) Lead / Hardware Consultant</p>
-            <p style="color: #ccc;">I took a look at the legacy architecture and redesigned everything that could be redesigned (excluding the bulkhead) to a minimum 2.0 Factor of Safety (FOS) per NASA standards.</p>
+            <p style="color: #ccc;"><strong>Role:</strong> Co-Lead Engineer, Separation and Recovery</p>
+            <p style="color: #ccc;">I conducted a trade study of system architectures, COTS flight computers, and vacuum-tolerant separation mechanisms, balancing an 18.7 lbm mass within a 20 lbm budget and a $1,076 system cost.</p>
             <ul>
-                <li><strong>Component Selection:</strong> Individually selected literally all COTS hardware—down to the AIM Xtra GPS flight computer and batteries—balancing our strict 20-lbm weight limit against redundancy, lead time, and cost.</li>
-                <li><strong>Precision Machining:</strong> Drew up machining diagrams and personally manufactured aluminum test cable cutters on a manual lathe, cutting the mass by 49.5%.</li>
-                <li><strong>Analytical Calculations:</strong> Pulled from five different aerospace papers to calculate our parachute opening shock (823 lbf) and snatch loads (1,230 lbf) by hand, as open-source scripts proved inaccurate.</li>
+                <li><strong>Functional Redundancy:</strong> Designed the architecture around four cable cutters, two in-series tender descenders, and two flight computers.</li>
+                <li><strong>Hardware Development:</strong> Redesigned, manufactured, and tested legacy cable cutters, supported by engineering drawings and load analysis.</li>
+                <li><strong>Analytical Calculations:</strong> Synthesized five research-paper methods to calculate an 823 lbf parachute shock load and a 1,230 lbf snatch load. For the earlier configuration, calculated pyrotechnic-charge values from shear-pin failure and system volume, resulting in 270 lbf across all three charges. Current load verification includes in-house stress-strain testing.</li>
             </ul>
         </div>
         <div class="image-block">
-            <div class="img-placeholder" style="background-image: url('assets/lines_diagram.jpg');">
-                [Insert Lines Diagram Here]
-            </div>
+            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Lines-Diagram.png" data-media-type="image" data-fit="contain" data-alt="Lines Diagram" title="Pictures/Recovery/Lines-Diagram.png"><span class="media-filename">Pictures/Recovery/Lines-Diagram.png</span></div>
             <p class="caption">System Architecture & Lines Diagram</p>
             
-            <div class="img-placeholder" style="background-image: url('assets/connection_diagram.jpg');">
-                [Insert Simplified Connection Diagram Here]
-            </div>
+            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Connections.png" data-media-type="image" data-fit="contain" data-alt="Simplified Connection Diagram" title="Pictures/Recovery/Connections.png"><span class="media-filename">Pictures/Recovery/Connections.png</span></div>
             <p class="caption">Simplified Component Connection Diagram</p>
         </div>
     </section>
 
-    <section class="content-section">
-        <div class="image-block">
-            <div class="img-placeholder" style="background-image: url('assets/vacuum_chamber.jpg');">
-                [Insert BP Vacuum Testing Photo Here]
-            </div>
-            <p class="caption">Custom 263.6 L Vacuum Chamber at 0.011 atm</p>
-
-            <div class="img-placeholder" style="background-image: url('assets/pt_graph.jpg');">
-                [Insert PT Data Graph Here]
-            </div>
-            <p class="caption">Pressure Transducer Data for BP Charge Validation</p>
-        </div>
+    <section class="content-section" id="recovery-sequence">
         <div class="text-block">
-            <h2>System Validation & Testing</h2>
-            <p style="color: #ccc;">We needed to physically validate our math before flight, so we pushed the hardware to its limits:</p>
+            <h2>How the Recovery System Works</h2>
+            <p style="color: #ccc;">Argo uses a single-separation, dual-deploy recovery architecture: one vehicle separation and two stages of parachute deployment.</p>
             <ul>
-                <li><strong>"Gunpowder Cannon" Splice Testing:</strong> Used a custom gunpowder cannon setup to hit our untested line splices with a 2,000 lbf shock load. They survived easily, proving a >1.5 FOS.</li>
-                <li><strong>Vacuum Chamber Validation:</strong> Designed a 263.6 L medium vacuum chamber to validate sealed pyrotechnic charges and avionics at 0.011 atm. Designed the face seal using a 381 square O-ring based on the Parker O-Ring Handbook.</li>
-                <li><strong>Pump Architecture:</strong> Used a Robinair 15310 3CFM roughing pump for rapid pull-down, paired with an Alcatel 2008a to reach target absolute pressure.</li>
-                <li><strong>Pyrotechnic Data:</strong> Tested BP charges inside the vacuum chamber using a Pressure Transducer (PT) to track pressure spikes and validate shear pin failure loads.</li>
+                <li><strong>Drogue Deployment:</strong> For Argo, drogue deployment is planned near its target apogee of 100,000 ft to control the initial descent.</li>
+                <li><strong>Main Deployment:</strong> The main parachute is intended to remain packed in the downward freestream during drogue-only descent, then deploy at a planned 2,000 ft above ground level to slow Argo for landing.</li>
             </ul>
+            <p style="color: #ccc; margin-top: 16px;">The line and connection diagrams describe the system architecture; the shock- and snatch-load calculations above inform the structural requirements. Redundancy is provided through the paired flight computers and deployment components.</p>
+        </div>
+    </section>
+
+    <section class="content-section" id="assembly">
+        <div class="text-block">
+            <h2>Assembly CAD &amp; Packaging</h2>
+            <p style="color: #ccc;">The recovery assembly brings together the parachutes, recovery lines, deployment components, and their interfaces within Argo’s available packaging space. The design balances load paths, component arrangement, and the 20 lbm subsystem mass budget.</p>
+            <p style="color: #ccc;">The assembly CAD and hardware views will document how the system fits together, complementing the line diagrams and nosecone packing plan.</p>
+            <h2 style="margin-top: 32px;">Design Roadmap &amp; Reviews</h2>
+            <p style="color: #ccc;">I compared system architectures, flight computers, and separation mechanisms throughout subsystem development. Four iterative design reviews with club executives supported development of the subsystem, followed by component and integrated testing.</p>
+        </div>
+        <div class="image-block">
+            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Assembly.png" data-media-type="image" data-fit="contain" data-alt="Recovery Assembly CAD" title="Pictures/Recovery/Assembly.png"><span class="media-filename">Pictures/Recovery/Assembly.png</span></div>
+            <p class="caption">Overall Recovery Assembly and Component Arrangement</p>
+            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Hardware-Assembly.jpg" data-media-type="image" data-fit="cover" data-alt="Recovery Hardware Assembly Photo" title="Pictures/Recovery/Hardware-Assembly.jpg"><span class="media-filename">Pictures/Recovery/Hardware-Assembly.jpg</span></div>
+            <p class="caption">Physical Assembly and Packaging</p>
+        </div>
+    </section>
+
+    <section class="content-section" id="separation-components">
+        <div class="text-block" id="machining">
+            <h2>Cable-Cutter Redesign &amp; Testing</h2>
+            <p style="color: #ccc;">I redesigned legacy cable cutters and created an engineering drawing to support manufacturing. I machined the aluminum hardware on a manual mill and lathe and tested it using hoop-stress and cord-failure analysis.</p>
+            <p style="color: #ccc;">The cable-cutter work achieved a 2.01 factor of safety over six trials and a 49.5% mass reduction from the previous vehicle’s design.</p>
+            <p><a href="project_co2.html" style="color: #E63946;">View the separate CO₂ deployment mechanism &rarr;</a></p>
+        </div>
+        <div class="image-block">
+            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Cable-Cutter-Drawing.png" data-media-type="image" data-fit="contain" data-alt="Cable-Cutter Engineering Drawing" title="Pictures/Recovery/Cable-Cutter-Drawing.png"><span class="media-filename">Pictures/Recovery/Cable-Cutter-Drawing.png</span></div>
+            <p class="caption">Legacy Cable-Cutter Redesign and Manufacturing Drawing</p>
+            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Cable-Cutters.jpg" data-media-type="image" data-fit="cover" data-alt="Machined Cable-Cutter Hardware Photo" title="Pictures/Recovery/Cable-Cutters.jpg"><span class="media-filename">Pictures/Recovery/Cable-Cutters.jpg</span></div>
+            <p class="caption">Manufactured and Tested Cable Cutters</p>
+        </div>
+    </section>
+
+    <section class="content-section" id="deployment-hardware">
+        <div class="text-block">
+            <h2>Vacuum Testing &amp; Deployment Iteration</h2>
+            <p style="color: #ccc;">I built and used a 352 L vacuum chamber operating at 0.011 atm to evaluate recovery hardware at reduced pressure. Testing progressed from legacy black-powder glove-tip charges to vinyl-tubing charges based on Jim Jarvis’s method, then to CO₂-canister piercing devices. All three approaches were tested in the vacuum chamber.</p>
+            <p style="color: #ccc;">The testing informed our transition to CO₂ deployment. A fully integrated test of the entire recovery system with the CO₂ configuration is planned in the vacuum chamber.</p>
+            <p><a href="project_vacuum.html" style="color: #E63946;">View the vacuum chamber: design, instrumentation, and testing &rarr;</a></p>
+        </div>
+        <div class="image-block">
+            <div class="img-placeholder media-slot" data-media="Pictures/Vacuum/Chamber.jpg" data-media-type="image" data-fit="cover" data-alt="Vacuum-Chamber Recovery Test Photo" title="Pictures/Vacuum/Chamber.jpg"><span class="media-filename">Pictures/Vacuum/Chamber.jpg</span></div>
+            <p class="caption">Reduced-Pressure Testing Across Deployment Iterations</p>
+        </div>
+    </section>
+
+    <section class="content-section" id="recovery-line-verification">
+        <div class="text-block">
+            <h2>Recovery-Line Verification</h2>
+            <p style="color: #ccc;">Conducted dynamic testing of spliced recovery lines, confirming a minimum 1.5 factor of safety. Further test details are limited at the project director’s request.</p>
+        </div>
+        <div class="image-block">
+            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Line-Verification.mp4" data-media-type="video" data-fit="cover" data-alt="Recovery-Line Verification Video" title="Pictures/Recovery/Line-Verification.mp4"><span class="media-filename">Pictures/Recovery/Line-Verification.mp4</span></div>
+            <p class="caption">Dynamic Testing of Spliced Recovery Lines</p>
+        </div>
+    </section>
+
+    <section class="content-section" id="subscale-flight-testing">
+        <div class="text-block">
+            <h2>Subscale Rocket Retrofit &amp; Flight Testing</h2>
+            <p style="color: #ccc;">My fellow lead and I co-led the retrofit and launch of a subscale solid rocket to test our new separation and recovery architecture.</p>
+            <p style="color: #ccc;">The subscale flight work evaluates the recovery approach intended for Argo: keeping the main parachute packed in the downward freestream during drogue-only descent before releasing it for landing. Argo’s planned drogue deployment at 100,000 ft and main deployment at 2,000 ft above ground are full-scale targets, not the subscale rocket’s test altitudes.</p>
+        </div>
+        <div class="image-block">
+            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Subscale-Launch.jpg" data-media-type="image" data-fit="cover" data-alt="Subscale Rocket Retrofit and Launch Photo" title="Pictures/Recovery/Subscale-Launch.jpg"><span class="media-filename">Pictures/Recovery/Subscale-Launch.jpg</span></div>
+            <p class="caption">Subscale Flight Testing of the Recovery Architecture</p>
         </div>
     </section>
 
@@ -127,17 +253,14 @@
         <div class="text-block">
             <h2>Motivation & Constraints</h2>
             <p style="color: #ccc;"><strong>Objective:</strong> Safely recover a 135-lbm dry mass vehicle from 100k feet.</p>
-            <p style="color: #ccc; margin-top: 15px;">Premature deployment at that altitude is a massive safety risk, and drifting into government-restricted zones carries severe legal repercussions. Building this infrastructure is step one toward the club's ultimate goal of a collegiate liquid bipropellant spaceshot.</p>
+            <p style="color: #ccc; margin-top: 15px;">The design balances reliable deployment, structural margin, mass, packaging, and testability. Ground-test infrastructure supports the club’s continuing development of high-altitude liquid-rocket recovery systems.</p>
             <ul>
-                <li><strong>Mass Budget:</strong> < 20 lbm (Achieved 18.7 lbm)</li>
+                <li><strong>Mass Budget:</strong> &lt; 20 lbm (Achieved 18.7 lbm)</li>
                 <li><strong>Financial Budget:</strong> $1,076</li>
-                <li><strong>Development Time:</strong> 4 months (pre-testing phase)</li>
             </ul>
         </div>
         <div class="image-block">
-            <div class="img-placeholder" style="background-image: url('assets/packing_plan.jpg');">
-                [Insert Detailed Packing Plan / Nosecone Diagram Here]
-            </div>
+            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Packing-Plan.png" data-media-type="image" data-fit="contain" data-alt="Detailed Packing Plan / Nosecone Diagram" title="Pictures/Recovery/Packing-Plan.png"><span class="media-filename">Pictures/Recovery/Packing-Plan.png</span></div>
             <p class="caption">Nosecone & Shell Packing Plan</p>
         </div>
     </section>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plummer Laboratory | Alexander Tong</title>
+    <link rel="stylesheet" href="Gemini_CSS.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        .project-header { padding: 100px 10% 50px; background: #111; border-bottom: 1px solid #333; }
+        .project-header h1 { font-size: 3rem; margin-bottom: 15px; }
+        .project-header h1 span { color: #E63946; }
+        .content-section { padding: 50px 10%; display: flex; flex-wrap: wrap; gap: 40px; border-bottom: 1px solid #222; }
+        .text-block { flex: 1; min-width: 300px; }
+        .text-block h2 { color: #E63946; margin-bottom: 20px; font-size: 1.8rem; }
+        .text-block ul { margin-left: 20px; margin-top: 15px; }
+        .text-block li { margin-bottom: 10px; color: #ccc; }
+        .image-block { flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 20px; }
+        .img-placeholder { width: 100%; background-color: #222; border: 1px dashed #555; min-height: 250px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 0.9rem; text-align: center; padding: 20px; background-size: cover; background-position: center; }
+        .caption { font-size: 0.8rem; color: #888; text-align: center; margin-top: -10px; }
+    </style>
+
+    <style>
+        /* Shared presentation overrides; the original stylesheet is preserved. */
+        html { scroll-padding-top: 120px; }
+        body { overflow-wrap: break-word; }
+        nav { gap: 24px; padding-top: 24px; padding-bottom: 24px; }
+        nav ul { flex-wrap: wrap; gap: 12px 24px; }
+        nav ul li { margin-left: 0; }
+        a:focus-visible, summary:focus-visible { outline: 2px solid #E63946; outline-offset: 5px; }
+        .project-header { padding: 64px 10% 36px; }
+        .project-header h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; max-width: 1000px; }
+        .project-header .project-meta-line { color: #bbb; margin: 0 0 20px; font-size: .95rem; }
+        .project-header .project-overview { color: #ccc; max-width: 800px; }
+        .project-header .back-link { margin-bottom: 24px; }
+        .content-section { padding: 40px 10%; gap: 36px; }
+        .text-block, .image-block { min-width: 0; flex: 1 1 320px; }
+        .text-block h2 { font-size: 1.5rem; }
+        .text-block p + p { margin-top: 16px; }
+        .img-placeholder { min-height: 120px !important; color: #aaa; border-color: #444; }
+        .caption { font-size: .85rem; color: #aaa; line-height: 1.5; }
+        footer { padding: 40px 10% !important; margin-top: 0 !important; }
+        @media (max-width: 1000px) {
+            nav { flex-wrap: wrap; }
+            nav .logo { font-size: .9rem; }
+            .hero { gap: 28px; }
+            .headshot-img { width: 240px; height: 240px; }
+        }
+        @media (max-width: 650px) {
+            html { scroll-padding-top: 160px; }
+            nav { padding: 18px 6%; gap: 14px; }
+            nav .logo span { display: block; font-size: .75rem; }
+            nav ul { gap: 10px 16px; }
+            nav ul li a { font-size: .75rem; }
+            .hero { flex-direction: column; align-items: flex-start; padding: 40px 6%; min-height: 0; }
+            .hero h1 { font-size: 3rem; }
+            .hero p { font-size: 1rem; }
+            .hero-headshot { align-self: center; }
+            .headshot-img { width: 200px; height: 200px; }
+            .hero .btn { padding: 10px 18px; }
+            .project-grid, .content-section, .project-header { padding-left: 6%; padding-right: 6%; }
+            .project-grid { padding-top: 48px; padding-bottom: 48px; }
+            .container { grid-template-columns: minmax(0, 1fr); }
+            .text-block, .image-block { flex-basis: 100%; }
+            footer { padding: 32px 6% !important; }
+            #contact > div > div:last-child { flex-wrap: wrap; gap: 24px !important; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+            .fade-in-up, .scroll-fade { opacity: 1; transform: none; }
+        }
+    </style>
+    <style>
+        /* Final layout review: readable footers and consistent mobile spacing. */
+        nav { background: #080808; }
+        footer { color: #aaa !important; }
+        .back-link { min-height: 44px; display: inline-flex; align-items: center; }
+        @media (max-width: 650px) {
+            .project-header { padding-top: 36px; padding-bottom: 28px; }
+            .project-header h1 { font-size: 1.75rem; }
+            .project-header .back-link { margin-bottom: 16px; }
+            .project-hero-media { padding-left: 6% !important; padding-right: 6% !important; }
+            .content-section { padding-top: 32px; padding-bottom: 32px; gap: 24px; }
+            .content-section > .text-block { order: 0; }
+            .content-section > .image-block { order: 1; }
+        }
+    </style>
+    <style>
+        .media-slot { position: relative; overflow: hidden; }
+        .media-slot .media-filename { display: block; padding: 16px; color: #aaa; font-size: .8rem; line-height: 1.6; text-align: center; overflow-wrap: anywhere; }
+        .media-slot.has-media > .media-filename { display: none; }
+        .media-slot > img, .media-slot > video { display: block; width: 100%; height: auto; max-height: 560px; object-fit: contain; }
+        .img-placeholder.media-slot.has-media { padding: 0; border-style: solid; background: #151515; }
+        .card-img.media-slot { padding: 0; }
+        .card-img.media-slot > img { width: 100%; height: 100%; object-fit: cover; }
+        .card-img.media-slot[data-fit="contain"] > img { object-fit: contain; }
+        .headshot-img.media-slot > img { width: 100%; height: 100%; object-fit: cover; object-position: 62% center; }
+    </style>
+    <script src="portfolio-media.js" defer></script>
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">ALEXANDER TONG <span>// MECHE</span></a></div>
+    </nav>
+
+    <header class="project-header">
+        <a href="index.html#Experience" class="back-link">&larr; Experience &amp; Research</a>
+        <h1>Plummer Laboratory <span>Mechanical Engineering Internship</span></h1>
+        <p class="project-meta-line">June 2026–Present</p>
+        <p class="project-overview">Structural design, dynamic-test fixtures, precision manufacturing, and research laboratory development.</p>
+    </header>
+
+    <div class="project-hero-media" style="padding: 0 10%; margin-top: -1px;"><div class="img-placeholder media-slot" data-media="Pictures/Plummer/Lab-Overview.jpg" data-media-type="image" data-fit="cover" data-alt="Dynamic-Test Fixture or Laboratory Photo" title="Pictures/Plummer/Lab-Overview.jpg"><span class="media-filename">Pictures/Plummer/Lab-Overview.jpg</span></div></div>
+
+    <section class="content-section">
+        <div class="text-block">
+            <h2 id="shaker-adapter">Structural Design &amp; Dynamic Testing</h2>
+            <p style="color: #ccc;">I design and manufacture mechanical fixtures for dynamic research experiments, supporting design reviews with analysis, cost comparison, and tolerance-driven fabrication planning. I reduced estimated hardware cost from $1,170 outsourced to $71.11 through in-house fabrication and fastener selection. The in-house cost comprised $3.96 for bolts and $67.15 for the plate.</p>
+            <ul>
+                <li><strong>Material Trade Study:</strong> Pivoted a shaker-adapter design from an orthotropic honeycomb matrix to a solid 1/4 in 6061-T6 aluminum plate, improving confidence in isotropic failure-mode characterization and reducing manufacturing risk.</li>
+                <li><strong>Dynamic Fixture Design:</strong> Designed an adapter for a physical Ising-model test fixture, predicting a 0.44 mm maximum deflection under a 3 kg load at 20.1 Hz using SolidWorks Dynamic FEA.</li>
+                <li><strong>Fastener Analysis:</strong> Calculated preload and thread-shear performance for Class 8.8 and stainless hardware, calculating a 21.7 ft·lbf tightening torque to achieve the intended Class 8.8 bolt preload and confirming a 1.49 FOS for 3,710 lbf peak forces at 11 G and a minimum 2.46 FOS for thread, plate-bearing, and pull-through modes.</li>
+            </ul>
+
+            <h2 id="precision-manufacturing" style="margin-top: 40px;">Precision Manufacturing</h2>
+            <p style="color: #ccc;">Generated G-code and machined an adapter plate on a Haas VF-2 CNC mill, drilling and tapping 12 holes to ± 0.005 in tolerances. I calculated ISO 273 clearances and added 0.5 mm edge breaks based on a worst-case tolerance stack-up for ISO 4017 M10 hardware.</p>
+            <p style="color: #ccc;">I presented a mini design review of the shaker adapter, covering design iterations, finished hardware, and results, as my flash-talk update at a multi-lab research meeting.</p>
+        </div>
+        <div class="image-block">
+            <div class="img-placeholder media-slot" data-media="Pictures/Plummer/Shaker-Analysis.png" data-media-type="image" data-fit="contain" data-alt="Shaker-Adapter CAD or FEA" title="Pictures/Plummer/Shaker-Analysis.png"><span class="media-filename">Pictures/Plummer/Shaker-Analysis.png</span></div>
+            <p class="caption">Dynamic-Test Adapter Design</p>
+            <div class="img-placeholder media-slot" data-media="Pictures/Plummer/Machined-Plate.jpg" data-media-type="image" data-fit="cover" data-alt="Machined Plate Photo" title="Pictures/Plummer/Machined-Plate.jpg"><span class="media-filename">Pictures/Plummer/Machined-Plate.jpg</span></div>
+            <p class="caption">CNC-Machined Adapter Plate</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="image-block">
+            <div class="img-placeholder media-slot" data-media="Pictures/Plummer/Camera-Stand.jpg" data-media-type="image" data-fit="cover" data-alt="Camera-Mount or Lab Buildout Photo" title="Pictures/Plummer/Camera-Stand.jpg"><span class="media-filename">Pictures/Plummer/Camera-Stand.jpg</span></div>
+            <p class="caption">Laboratory Test-Equipment Development</p>
+        </div>
+        <div class="text-block">
+            <h2>Laboratory Commissioning &amp; Apparatus</h2>
+            <p style="color: #ccc;">I supported the operational build-out of a mechanics-of-materials research laboratory by evaluating and procuring equipment, tooling, and supplies against a $3,500 startup budget.</p>
+            <ul>
+                <li><strong>High-Speed Camera Mount:</strong> Designed, built, and used an adjustable overhead stand from 45 × 45 mm 80/20 aluminum extrusion. Calculated deflection below 0.1 mm under a conservative load of twice the expected 2.0 kg static camera mass. Rigidity and axial-buckling calculations used a 68 GPa Young’s modulus and 106,217 mm⁴ area moment of inertia; this was calculated performance, not a measured deflection result.</li>
+                <li><strong>Cost-Conscious Design:</strong> Prioritized long, modular extrusion stock that could be reused in more stable future apparatus. Balanced a $390 budget, six-foot stock lengths, and freight constraints while preserving 100% material reusability. The stand was an investment in the laboratory’s future equipment-building capability.</li>
+                <li><strong>Metamaterials Research:</strong> Iterated resin-printed pins for mechanical Ising models to maintain ± 0.02 mm clearances, using ball bearings to constrain all degrees of freedom except rotation. The modular hardware was designed to transition from one-dimensional to two-dimensional experiments without revising the individual pins.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="content-section" id="ising-testing">
+        <div class="text-block">
+            <h2>Ising-Model Testing &amp; Investigation</h2>
+            <p style="color: #ccc;">I independently collect force measurements of approximately 50–120 mN using an Instron 68SC-5 on pin-based physical Ising systems, investigating buckling energy and coupling between neighboring nodes across buckled-up and buckled-down states.</p>
+            <p style="color: #ccc;">Comparison with the mathematical models is ongoing. The investigation aims to validate or lend support to the current models, identify where they may need adjustment, and guide further “perfect pin” physical Ising designs. More repeatable hardware also supports investigation of a previously observed data anomaly.</p>
+        </div>
+    </section>
+
+    <section class="content-section" style="border-bottom: none;">
+        <div class="text-block">
+            <h2>Research Infrastructure</h2>
+            <p style="color: #ccc;"><strong>Objective:</strong> Increase experimental reliability and laboratory throughput through structurally sound, manufacturable apparatus and a well-equipped, organized workspace.</p>
+            <ul>
+                <li>Developed a hydrogel-saturation fixture with custom 3D-printed hexagonal airflow platforms and COTS fluid hardware. Improved drying uniformity is the design objective; testing is ongoing. Separately performed thermal calibration on legacy ovens up to 68°C for plastics processing.</li>
+                <li>Designed tiered contamination-control stations for SLA resin printing, with separated uncured, washed, and cured zones, spill trays, and dedicated tool holders.</li>
+                <li>Implemented acrylic chemistry/soldering dividers, custom hazardous-material fixtures, 5S workstation topology, and foam-shadowed tool drawers.</li>
+            </ul>
+        </div>
+        <div class="image-block"><div class="img-placeholder media-slot" data-media="Pictures/Plummer/Lab-Fixtures.jpg" data-media-type="image" data-fit="cover" data-alt="Laboratory Layout or Fixture Photo" title="Pictures/Plummer/Lab-Fixtures.jpg"><span class="media-filename">Pictures/Plummer/Lab-Fixtures.jpg</span></div><p class="caption">Experimental Infrastructure and Fixtures</p></div>
+    </section>
+
+    <footer style="padding: 5rem 10%; background: #000; color: #666; font-size: 0.8rem; border-top: 1px solid #333; margin-top: 50px;"><p>ALEXANDER TONG // BU MECHANICAL ENGINEERING // PLUMMER LABORATORY</p></footer>
+</body>
+</html>
