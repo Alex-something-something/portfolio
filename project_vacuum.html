@@ -130,11 +130,15 @@
         .headshot-img.media-slot > img { width: 100%; height: 100%; object-fit: cover; object-position: 62% center; }
     </style>
     <script src="portfolio-media.js" defer></script>
+    <style>
+        .ui-arrow { display: inline-block; width: 1em; height: 1em; flex-shrink: 0; vertical-align: -.12em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+        .back-link { gap: 8px; }
+    </style>
 </head>
 <body>
     <nav><div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">ALEXANDER TONG <span>// MECHE</span></a></div></nav>
     <header class="project-header">
-        <a href="index.html#ground-systems" class="back-link">&larr; Ground Systems &amp; Testing</a>
+        <a href="index.html#ground-systems" class="back-link"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4M10 6l-6 6 6 6"/></svg> Ground Systems &amp; Testing</a>
         <h1>Vacuum <span>Test Chamber</span></h1>
         <p class="project-meta-line">Chamber Design &amp; Testing · BURPG · Test infrastructure</p>
         <p class="project-overview">Developed ground-test infrastructure for recovery charges and flight-computer evaluation at reduced pressure.</p>
@@ -151,7 +155,7 @@
                 <li><strong>DAQ &amp; Signal Conditioning:</strong> Built and used a LabJack data-acquisition system with a pressure transducer and two-amplifier signal conditioning. A physical gauge provided a secondary indication, not an independent redundant DAQ path.</li>
                 <li><strong>Resourceful Fabrication:</strong> Reused pumps and other equipment found in the lab, along with available stock for the adapter and door assembly.</li>
             </ul>
-            <p style="margin-top: 24px;"><a href="project_recovery.html" style="color: #E63946;">View the separation and recovery system &rarr;</a></p>
+            <p style="margin-top: 24px;"><a href="project_recovery.html" style="color: #E63946;">View the separation and recovery system <svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></p>
         </div>
         <div class="image-block">
             <div class="img-placeholder media-slot" data-media="Pictures/Vacuum/Chamber.jpg" data-media-type="image" data-fit="cover" data-alt="BP Vacuum Testing Photo" title="Pictures/Vacuum/Chamber.jpg"><span class="media-filename">Pictures/Vacuum/Chamber.jpg</span></div>

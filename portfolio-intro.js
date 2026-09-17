@@ -2,11 +2,10 @@
     const hero = document.querySelector('.hero');
     const nav = document.querySelector('.site-nav');
     const replay = document.querySelector('.launch-replay');
-    const skip = document.querySelector('.hero-skip');
     const blueprint = document.querySelector('.argo-blueprint');
     const drawingReplay = document.querySelector('.argo-replay');
     const motion = matchMedia('(prefers-reduced-motion: reduce)');
-    if (!hero || !replay || !skip || !blueprint || !drawingReplay) return;
+    if (!hero || !replay || !blueprint || !drawingReplay) return;
     let timeout;
     function hideNavigation() {
         if (!nav) return;
@@ -21,8 +20,6 @@
     function finish() {
         clearTimeout(timeout);
         hero.classList.remove('is-launching');
-        if (document.activeElement === skip) replay.focus({ preventScroll: true });
-        skip.hidden = true;
         revealNavigation();
     }
     function play() {
@@ -32,8 +29,7 @@
         hideNavigation();
         void hero.offsetWidth;
         hero.classList.add('is-launching');
-        skip.hidden = false;
-        timeout = setTimeout(finish, 4700);
+        timeout = setTimeout(finish, matchMedia('(max-width: 650px)').matches ? 7100 : 4700);
     }
     function draw() {
         blueprint.classList.remove('is-waiting');
@@ -43,7 +39,6 @@
         blueprint.classList.add('is-drawing');
     }
     replay.addEventListener('click', play);
-    skip.addEventListener('click', finish);
     hero.addEventListener('keydown', event => { if (event.key === 'Escape') finish(); });
     drawingReplay.addEventListener('click', () => {
         stopBlueprintWatch();
@@ -86,6 +81,8 @@
     function watchBlueprint() {
         clearTimeout(blueprintTimer);
         blueprintObserver?.disconnect();
+        const navHeight = Math.ceil(nav?.getBoundingClientRect().height || 0);
+        document.documentElement.style.setProperty('--site-nav-height', `${navHeight}px`);
         if (blueprintStarted || document.hidden) return;
         // Exclude the sticky navigation so it cannot cover part of the box.
         const topInset = Math.ceil(nav?.getBoundingClientRect().height || 0);

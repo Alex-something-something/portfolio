@@ -126,10 +126,13 @@
         .hero-launch { position: absolute; inset: 0; z-index: -2; pointer-events: none; }
         .hero-launch::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,11,11,.9), rgba(11,11,11,.55) 42%, transparent 75%); }
         .launch-scene { width: 100%; height: 100%; position: absolute; inset: 0; }
+        .hero-eyebrow { display: block; color: #aaa; font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 14px; }
+        .hero.is-launching .hero-eyebrow { animation: hero-reveal 1s 1.25s both; }
+        .hero-content { order: 0; }
+        .hero-headshot { order: 1; }
         .hero .fade-in-up { animation: none; opacity: 1; transform: none; }
-        .hero-skip { position: absolute; top: 20px; right: 6%; background: #111; color: #bbb; border: 1px solid #555; padding: 9px 12px; cursor: pointer; font-size: .75rem; z-index: 2; }
-        .hero-skip[hidden], .launch-replay[hidden], .argo-replay[hidden] { display: none; }
-        .hero-skip:focus-visible, .launch-replay:focus-visible, .argo-replay:focus-visible { outline: 2px solid #E63946; outline-offset: 4px; }
+        .launch-replay[hidden], .argo-replay[hidden] { display: none; }
+        .launch-replay:focus-visible, .argo-replay:focus-visible { outline: 2px solid #E63946; outline-offset: 4px; }
         .launch-replay { display: block; background: none; border: none; color: #aaa; font-size: .8rem; margin-top: 22px; cursor: pointer; padding: 4px 0; }
         .launch-replay:hover, .argo-replay:hover { color: #fff; }
         .launch-vehicle, .launch-smoke, .launch-glow { opacity: 0; }
@@ -151,8 +154,8 @@
         .argo-blueprint { border: 1px solid #333; padding: 18px 20px 0; background-color: #101013; background-image: linear-gradient(#ffffff03 1px,transparent 1px), linear-gradient(90deg,#ffffff03 1px,transparent 1px); background-size: 30px 30px; }
         .argo-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; color: #aaa; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; }
         .argo-replay { color: #aaa; background: none; border: 0; padding: 8px 0; cursor: pointer; font-size: .75rem; }
-        .argo-blueprint svg { display: block; width: 100%; height: auto; overflow: visible; }
-        .argo-blueprint.is-waiting svg { visibility: hidden; }
+        .argo-blueprint svg[role="img"] { display: block; width: 100%; height: auto; overflow: visible; }
+        .argo-blueprint.is-waiting svg[role="img"] { visibility: hidden; }
         .argo-outline { stroke: #e4e1df; stroke-width: 1.6; fill: none; }
         .argo-detail { stroke: #9e9699; stroke-width: 1; fill: none; }
         .argo-accent { stroke: #e63946; stroke-width: 1.5; fill: none; }
@@ -176,7 +179,7 @@
             .argo-labels { font-size: 16px; letter-spacing: 0; }
         }
         @media (prefers-reduced-motion: reduce) {
-            .launch-replay, .hero-skip, .argo-replay { display: none; }
+            .launch-replay, .argo-replay { display: none; }
             .hero.is-launching .launch-vehicle, .hero.is-launching .launch-smoke, .hero.is-launching .launch-glow { opacity: 0; }
             .argo-blueprint.is-drawing .argo-trace { stroke-dashoffset: 0; }
         }
@@ -185,7 +188,7 @@
     <style>
         /* Final layout review: consistent touch targets and a compact mobile header. */
         .site-nav { background: #080808; }
-        .carousel-controls button, .argo-replay, .launch-replay, .hero-skip { min-height: 44px; }
+        .carousel-controls button, .argo-replay, .launch-replay { min-height: 44px; }
         .experience-link { min-height: 44px; }
         @media (max-width: 650px) {
             .site-nav ul { width: 100%; flex-wrap: nowrap; justify-content: space-between; gap: 8px; }
@@ -206,6 +209,33 @@
         .headshot-img.media-slot > img { width: 100%; height: 100%; object-fit: cover; object-position: 62% center; }
     </style>
     <script src="portfolio-media.js" defer></script>
+    <style>
+        .argo-blueprint svg.argo-vertical { display: none; }
+        .mobile-labels { fill: #c4bec1; font: 17px Arial, sans-serif; }
+        .mobile-labels .contribution-label { fill: #E63946; }
+        .schematic-part { transition: filter .16s ease; }
+        .is-highlighting-recovery [data-part="recovery"], .is-highlighting-aerocover [data-part="aerocover"] { filter: drop-shadow(0 0 7px #E63946) drop-shadow(0 0 2px #ff9da5); }
+        @media (max-width: 650px) {
+            .argo-blueprint svg.argo-horizontal { display: none; }
+            .argo-blueprint svg.argo-vertical { display: block; max-height: calc(100svh - var(--site-nav-height, 140px) - 110px); }
+            .argo-vertical .argo-trace { vector-effect: non-scaling-stroke; stroke-width: 1px; }
+            .argo-toolbar { flex-wrap: wrap; gap: 0 8px; }
+            .argo-toolbar > span { font-size: .7rem; }
+            .hero { gap: 24px; }
+            .hero-launch { position: relative; inset: auto; order: 0; z-index: 0; width: calc(100% + 12vw); height: 280px; flex: none; margin: -40px -6vw 0; }
+            .hero-headshot { order: 1; position: relative; z-index: 1; }
+            .hero-content { order: 2; width: 100%; }
+            .hero.is-launching .hero-eyebrow, .hero.is-launching h1 { animation-delay: 4.7s; }
+            .hero.is-launching .welcome-underline { animation-delay: 4.7s; }
+            .hero.is-launching .hero-content > p { animation-delay: 5.3s; }
+            .hero.is-launching .hero-content > div { animation-delay: 5.9s; }
+        }
+    </style>
+    <script src="portfolio-schematic.js" defer></script>
+    <style>
+        .ui-arrow { display: inline-block; width: 1em; height: 1em; flex-shrink: 0; vertical-align: -.12em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+        .back-link { gap: 8px; }
+    </style>
 </head>
 <body>
     <nav class="site-nav">
@@ -241,8 +271,11 @@
             </g>
             </g>
         </svg></div>
-        <button type="button" class="hero-skip" hidden>Skip animation &rarr;</button>
+        <div class="hero-headshot fade-in-up delay-4">
+            <div class="headshot-img media-slot" data-media="Pictures/Headshot.jpg" data-media-type="image" data-fit="cover" data-alt="Portrait of Alexander Tong" title="Pictures/Headshot.jpg"><span class="media-filename">Pictures/Headshot.jpg</span></div>
+        </div>
         <div class="hero-content">
+            <span class="hero-eyebrow">Mechanical Engineering Portfolio</span>
             <h1 class="fade-in-up delay-2" style="display: table; padding-bottom: 18px; position: relative;">WELCOME!
                 <span class="welcome-underline" aria-hidden="true" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 5px; background: #E63946; clip-path: polygon(0 0, 100% 0, calc(100% - 8px) 100%, 0 100%);"></span>
             </h1>
@@ -250,13 +283,11 @@
             <div class="fade-in-up delay-4" style="margin-top: 30px;">
                 <a href="#BURPG" class="btn">View Projects</a>
                 <a href="#contact" class="btn" style="background: transparent; border: 1px solid #E63946; margin-left: 15px;">Contact</a>
-                <button type="button" class="launch-replay" hidden>Replay launch &nearr;</button>
+                <button type="button" class="launch-replay" hidden>Replay launch <svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
             </div>
         </div>
         
-        <div class="hero-headshot fade-in-up delay-4">
-            <div class="headshot-img media-slot" data-media="Pictures/Headshot.jpg" data-media-type="image" data-fit="cover" data-alt="Portrait of Alexander Tong" title="Pictures/Headshot.jpg"><span class="media-filename">Pictures/Headshot.jpg</span></div>
-        </div>
+
     </header>
 
     <section id="BURPG" class="project-grid">
@@ -267,8 +298,8 @@
         <div style="margin-bottom: 36px;">
             <h4 class="vehicle-title">Argo Bipropellant Flight Vehicle</h4>
             <div class="argo-blueprint" role="group" aria-label="Argo side-profile blueprint">
-                <div class="argo-toolbar"><span>Argo / Side profile</span><button type="button" class="argo-replay" hidden>Replay drawing &nearr;</button></div>
-<svg viewBox="0 0 1746 390" role="img" aria-labelledby="argo-drawing-title argo-drawing-description">
+                <div class="argo-toolbar"><span>Argo / Side profile schematic</span><button type="button" class="argo-replay" hidden>Replay drawing <svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></button></div>
+<svg class="argo-horizontal" viewBox="0 0 1746 390" role="img" aria-labelledby="argo-drawing-title argo-drawing-description">
 <title id="argo-drawing-title">Argo flight vehicle and highlighted contributions</title>
 <desc id="argo-drawing-description">Side profile labeled from nose to engine: Separation and Recovery Bay, Avionics Bay, Upper Tank, Intertank, Lower Tank, and Engine. The downcomer runs along the lower tank under a streamlined aerocover. Red highlights mark the recovery nose, hoist rings, front bulkhead, and aerocover. The cover is a schematic outline, not a finalized CAD profile.</desc>
 <g transform="translate(0 45)">
@@ -283,22 +314,22 @@
 <path class="argo-trace" pathLength="1" d="M1508 116L1608 80V116H1508M1520 111L1608 67M1608 67V120M1508 145H1608V194M1518 151L1589 194M1508 119H1581V145H1508"/>
 <path class="argo-trace" pathLength="1" d="M389 109V151M1105 109V151M1164 109V151M1504 109V151M335 111V115M335 146V150M360 111V115M360 146V150M370 120V123M370 130V133M1122 137V144M1517 137V141M1546 142H1552"/>
 </g>
-<g class="argo-accent" style="stroke-width:2">
+<g class="argo-accent schematic-part" data-part="recovery" style="stroke-width:2">
 <path class="argo-trace" pathLength="1" d="M60 130Q176 104 299 107H311V153H299Q176 157 60 130Z"/>
 <path class="argo-trace" pathLength="1" d="M299 107V153M302 109H307V151H302ZM299 116H290Q280 116 280 128V133Q280 145 290 145H300M299 121H290Q285 121 285 129V133Q285 140 290 140H299"/>
 </g>
-<path class="argo-accent argo-trace" pathLength="1" style="fill:#E63946;fill-opacity:.12;stroke-width:2" d="M1137 107Q1150 89 1195 87H1467Q1490 88 1510 107H1137Z"/>
+<path class="argo-accent argo-trace schematic-part" data-part="aerocover" pathLength="1" style="fill:#E63946;fill-opacity:.12;stroke-width:2" d="M1137 107Q1150 89 1195 87H1467Q1490 88 1510 107H1137Z"/>
 <path class="argo-outline argo-trace" pathLength="1" d="M1145 118Q1143 101 1160 101H1508V112"/>
 <g class="argo-annotations">
 <g class="argo-guide">
-<path d="M190 110V48H70M348 153V216H310M728 107V48H655M1127 153V245H1010M1340 153V208H1270M1410 88V20H1340M1190 101L1208 130V272H1150M1636 116V48H1590M1575 174L1625 245H1660"/>
+<path d="M190 110V48H70M348 153V216H310M728 107V48H655M1127 153V208H1010M1340 153V208H1270M1410 88V20H1340M1190 101L1208 130V272H1150M1636 116V48H1590M1575 174L1625 245H1660"/>
 <circle cx="190" cy="110" r="3"/><circle cx="348" cy="153" r="3"/><circle cx="728" cy="107" r="3"/><circle cx="1127" cy="153" r="3"/><circle cx="1340" cy="153" r="3"/><circle cx="1410" cy="88" r="3"/><circle cx="1190" cy="101" r="3"/><circle cx="1636" cy="116" r="3"/><circle cx="1575" cy="174" r="3"/>
 </g>
 <g class="argo-labels" style="font-size:15px;letter-spacing:1px">
 <text x="70" y="33" style="fill:#E63946">SEPARATION &amp; RECOVERY BAY</text>
 <text x="310" y="239">AVIONICS BAY</text>
 <text x="655" y="33">UPPER TANK</text>
-<text x="1010" y="267">INTERTANK</text>
+<text x="1010" y="231">INTERTANK</text>
 <text x="1270" y="231">LOWER TANK</text>
 <text x="1340" y="7" style="fill:#E63946">AEROCOVER</text>
 <text x="1150" y="296">DOWNCOMER</text>
@@ -306,38 +337,75 @@
 <text x="1520" y="270">FIN ASSEMBLY</text>
 </g>
 <path d="M65 291H100" stroke="#E63946" stroke-width="2"/>
-<text class="argo-labels" x="112" y="296" style="font-size:14px;letter-spacing:1px">HIGHLIGHTED CONTRIBUTIONS · COVER SHOWN SCHEMATICALLY</text>
+<text class="argo-labels" x="112" y="296" style="font-size:14px;letter-spacing:1px">MY CONTRIBUTIONS</text>
 </g>
+</g></svg>
+<svg class="argo-vertical" viewBox="0 0 360 820" role="img" aria-labelledby="argo-mobile-title argo-mobile-description">
+<title id="argo-mobile-title">Argo vertical side-profile schematic</title>
+<desc id="argo-mobile-description">Nose at top, engine at bottom. Red highlights mark my recovery-bay, hoist-ring, bulkhead and aerocover contributions. The aerocover is shown schematically.</desc>
+<g transform="translate(235.9 5) rotate(90) scale(.43)">
+<path class="argo-centerline" d="M35 130H1705"/>
+<path class="argo-solid" d="M60 130Q176 104 299 107H1507L1589 67H1619V110H1652V149H1619V194H1589L1507 153H299Q176 157 60 130Z"/>
+<g class="argo-outline">
+<path class="argo-trace" pathLength="1" d="M311 107H1507M311 153H1507"/>
+<path class="argo-trace" pathLength="1" d="M1507 107L1589 67H1619V120H1581V145H1619V194H1589L1507 153M1619 110H1652V149H1619M1652 117H1665V144H1652"/>
+</g>
+<g class="argo-detail">
+<path class="argo-trace" pathLength="1" d="M386 107V153M393 107V153M1101 107V153M1108 107V153M1160 107V153M1168 107V153M1500 107V153M1508 108V152"/>
+<path class="argo-trace" pathLength="1" d="M1508 116L1608 80V116H1508M1520 111L1608 67M1608 67V120M1508 145H1608V194M1518 151L1589 194M1508 119H1581V145H1508"/>
+<path class="argo-trace" pathLength="1" d="M389 109V151M1105 109V151M1164 109V151M1504 109V151M335 111V115M335 146V150M360 111V115M360 146V150M370 120V123M370 130V133M1122 137V144M1517 137V141M1546 142H1552"/>
+</g>
+<g class="argo-accent schematic-part" data-part="recovery" style="stroke-width:2">
+<path class="argo-trace" pathLength="1" d="M60 130Q176 104 299 107H311V153H299Q176 157 60 130Z"/>
+<path class="argo-trace" pathLength="1" d="M299 107V153M302 109H307V151H302ZM299 116H290Q280 116 280 128V133Q280 145 290 145H300M299 121H290Q285 121 285 129V133Q285 140 290 140H299"/>
+</g>
+<path class="argo-accent argo-trace schematic-part" data-part="aerocover" pathLength="1" style="fill:#E63946;fill-opacity:.12;stroke-width:2" d="M1137 107Q1150 89 1195 87H1467Q1490 88 1510 107H1137Z"/>
+<path class="argo-outline argo-trace" pathLength="1" d="M1145 118Q1143 101 1160 101H1508V112"/>
+</g>
+<g class="argo-annotations">
+<g class="argo-guide"><path d="M180 89H144V67H126M180 155H220M180 318H128M180 490H130M180 581H130M193 545H218M198 625H218M159 683H127M180 710V740H218"/></g>
+<g class="mobile-labels">
+<text x="10" y="44" class="contribution-label"><tspan x="10">Separation &amp;</tspan><tspan x="10" dy="21">Recovery Bay</tspan></text>
+<text x="225" y="151"><tspan x="225">Avionics</tspan><tspan x="225" dy="21">Bay</tspan></text>
+<text x="12" y="309"><tspan x="12">Upper Tank</tspan></text>
+<text x="12" y="483">Intertank</text>
+<text x="12" y="574">Lower Tank</text>
+<text x="225" y="540">Downcomer</text>
+<text x="225" y="620" class="contribution-label">Aerocover</text>
+<text x="12" y="676"><tspan x="12">Fin Assembly</tspan></text>
+<text x="225" y="744">Engine</text>
+</g>
+<path d="M24 793H54" stroke="#E63946" stroke-width="2"/><text class="mobile-labels" x="66" y="799">My Contributions</text>
 </g></svg>
             </div>
         </div>
 
         <div class="container" data-project-category="Flight Hardware">
-            <a href="project_recovery.html" class="card scroll-fade project-card" style="text-decoration: none; color: inherit;">
+            <a href="project_recovery.html" data-schematic-part="recovery" class="card scroll-fade project-card" style="text-decoration: none; color: inherit;">
                     <div class="card-img media-slot" data-media="Pictures/Recovery/Assembly.png" data-media-type="image" data-fit="contain" data-alt="Recovery system image" title="Pictures/Recovery/Assembly.png"><span class="media-filename">Pictures/Recovery/Assembly.png</span></div>
                     <span class="project-status">In progress</span>
                 <h4>Separation and Recovery Subsystem</h4>
                     <p>Co-leading redundant parachute recovery for a 135 lb rocket targeting 100,000 ft.</p>
                 <p class="card-skills">Recovery Systems · Load Analysis · Testing</p>
-                            <span class="project-action">View project <span aria-hidden="true">&rarr;</span></span>
+                            <span class="project-action">View project <span aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span>
             </a>
 
-            <a href="project_co2.html" class="card scroll-fade project-card" style="text-decoration: none; color: inherit;">
+            <a href="project_co2.html" data-schematic-part="recovery" class="card scroll-fade project-card" style="text-decoration: none; color: inherit;">
                 <div class="card-img media-slot" data-media="Pictures/CO2/Assembly.png" data-media-type="image" data-fit="contain" data-alt="CO₂ deployment hardware image" title="Pictures/CO2/Assembly.png"><span class="media-filename">Pictures/CO2/Assembly.png</span></div>
                 <span class="project-status">Hardware tested; integration in progress</span>
                 <h4>CO₂ Deployment Mechanism</h4>
                 <p>Designed, manufactured, and tested CO₂-cartridge deployment hardware with a three-person team.</p>
                 <p class="card-skills">Fusion 360 · Stress Analysis · Machining · Testing</p>
-                <span class="project-action">View project <span aria-hidden="true">&rarr;</span></span>
+                <span class="project-action">View project <span aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span>
             </a>
 
-            <a href="project_aerocover.html" class="card scroll-fade project-card" style="text-decoration: none; color: inherit; display: flex;">
+            <a href="project_aerocover.html" data-schematic-part="aerocover" class="card scroll-fade project-card" style="text-decoration: none; color: inherit; display: flex;">
                 <div class="card-img media-slot" data-media="Pictures/Aerocover/Assembly.png" data-media-type="image" data-fit="contain" data-alt="Aerocover CAD Image" title="Pictures/Aerocover/Assembly.png"><span class="media-filename">Pictures/Aerocover/Assembly.png</span></div>
                 <span class="project-status">In progress</span>
                 <h4>Argo Aerocover Design</h4>
                 <p>Leading an in-progress aerocover design to protect Argo’s external downcomer and reduce drag.</p>
                 <p class="card-skills">Planned methods: CFD · Adjoint CFD · FEA · SolidWorks</p>
-                            <span class="project-action">View project <span aria-hidden="true">&rarr;</span></span>
+                            <span class="project-action">View project <span aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span>
             </a>
 
         </div>
@@ -350,7 +418,7 @@
                 <h4>Vacuum Test Chamber</h4>
                 <p>Developed a vacuum chamber to evaluate recovery charges and avionics at reduced pressure.</p>
                 <p class="card-skills">Vacuum Systems · Seal Design · Test Instrumentation</p>
-                            <span class="project-action">View project <span aria-hidden="true">&rarr;</span></span>
+                            <span class="project-action">View project <span aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span>
             </a>
 
             <a href="project_nozzle.html" class="card scroll-fade project-card" style="text-decoration: none; color: inherit;">
@@ -359,7 +427,7 @@
                 <h4>Hybrid Rocket Nozzle</h4>
                     <p>Led a five-person team to design and hotfire a mass-optimized hybrid rocket nozzle.</p>
                 <p class="card-skills">SolidWorks · Nozzle Design · Hotfire Testing</p>
-                            <span class="project-action">View project <span aria-hidden="true">&rarr;</span></span>
+                            <span class="project-action">View project <span aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span>
             </a>
             <details class="card scroll-fade vegas-details" style="align-self: start; transition-delay: 0.2s;">
                 <summary>
@@ -368,7 +436,7 @@
                     <span class="card-heading">VEGAS Fire Suppression</span>
                     <span class="card-description">Planned mounting, fabrication, and pipe routing for a CO₂ fire-suppression system.</span>
                     <span class="card-skills" style="display: block; padding: 0 20px;">SolidWorks · Mounting Design · Pipe Routing</span>
-                    <span class="project-action"><span class="when-closed">Show details</span><span class="when-open">Hide details</span><span class="expand-icon" aria-hidden="true">⌄</span></span>
+                    <span class="project-action"><span class="when-closed">Show details</span><span class="when-open">Hide details</span><span class="expand-icon" aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span></span>
                 </summary>
                 <div style="padding: 20px 20px 0;">
                     <p style="padding: 0; margin: 0 0 16px; color: #E63946;">February–May 2025 · BURPG</p>
@@ -400,7 +468,7 @@
                     <li>Conducting independent Instron measurements to investigate physical Ising behavior and inform mathematical models.</li>
                     <li>Building modular camera infrastructure and developing hydrogel-test equipment.</li>
                 </ul>
-                <span class="experience-link"><span class="experience-open" aria-hidden="true">&nearr;</span> View experience</span>
+                <span class="experience-link"><span class="experience-open" aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span> View experience</span>
             </a>
 
             <a href="culturon.html" class="scroll-fade experience-card" style="padding: 20px 20px 12px; background: #1a1a1a; border-left: 3px solid #E63946; transition-delay: 0.1s; color: inherit; text-decoration: none; display: block;">
@@ -411,14 +479,14 @@
                     <li>Connected microscopy, chamber experiments, and fluid-dynamics reasoning to contamination-control concepts.</li>
                     <li style="font-style: italic;">Experimental work and component-level design; public details limited by NDA.</li>
                 </ul>
-                <span class="experience-link"><span class="experience-open" aria-hidden="true">&nearr;</span> View experience</span>
+                <span class="experience-link"><span class="experience-open" aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span> View experience</span>
             </a>
 
             <a href="appt.html" class="scroll-fade experience-card" style="padding: 20px 20px 12px; background: #1a1a1a; border-left: 3px solid #E63946; color: inherit; text-decoration: none; display: block;">
                 <h3 style="margin-bottom: 5px;">Ablative Pulsed Plasma Thruster</h3>
                 <p style="color: #E63946; font-size: .9rem; font-weight: bold; margin-bottom: 15px;">Volunteer · May–June 2026</p>
                 <p style="color: #bbb; font-size: .9rem;">Designed an ABS inductor spool, performed coil-winding calculations, checked outgassing suitability, and assisted with operating-procedure documentation.</p>
-                <span class="experience-link"><span class="experience-open" aria-hidden="true">&nearr;</span> View experience</span>
+                <span class="experience-link"><span class="experience-open" aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span> View experience</span>
             </a>
 
         </div>
@@ -428,9 +496,9 @@
         <h2 id="additional-projects-title" class="section-title scroll-fade">Additional Projects</h2>
         <div class="project-carousel" role="region" aria-roledescription="carousel" aria-labelledby="additional-projects-title">
         <div class="carousel-controls" hidden>
-            <button type="button" data-carousel="previous" aria-label="Previous projects" aria-controls="additional-projects-track">&larr;</button>
+            <button type="button" data-carousel="previous" aria-label="Previous projects" aria-controls="additional-projects-track"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></button>
             <span class="carousel-status" aria-live="off"></span>
-            <button type="button" data-carousel="next" aria-label="Next projects" aria-controls="additional-projects-track">&rarr;</button>
+            <button type="button" data-carousel="next" aria-label="Next projects" aria-controls="additional-projects-track"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
         </div>
         <div id="additional-projects-track" class="container carousel-track">
             <a href="dbf.html" class="card project-card" style="text-decoration: none; color: inherit; display: flex;">
@@ -439,7 +507,7 @@
                 <h4>Wing Structural Lead (AIAA)</h4>
                 <p>Led two wing designs, achieving a 50% lighter prototype and 300% faster manufacturing turnaround.</p>
                 <p class="card-skills">Fusion 360 · Wing Structures · Manufacturing</p>
-                            <span class="project-action">View project <span aria-hidden="true">&rarr;</span></span>
+                            <span class="project-action">View project <span aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span>
             </a>
 
 
@@ -450,7 +518,7 @@
                 <h4>Line-Following Autonomous Vehicle</h4>
                 <p>Led a four-person team and completed all wiring and programming for an autonomous payload vehicle.</p>
                 <p class="card-skills">Arduino · Motor Control · Testing</p>
-                            <span class="project-action">View project <span aria-hidden="true">&rarr;</span></span>
+                            <span class="project-action">View project <span aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span>
             </a>
 
             <a href="manufacturing.html" class="card project-card" style="text-decoration: none; color: inherit;">
@@ -459,7 +527,7 @@
                 <h4>Manufacturing &amp; Machining</h4>
                 <p>Manual and CNC machining, composite layups, and fixtures for research and flight hardware.</p>
                 <p class="card-skills">CNC Milling · Manual Machining · Composites</p>
-                <span class="project-action">View project <span aria-hidden="true">&rarr;</span></span>
+                <span class="project-action">View project <span aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span>
             </a>
 
             <a href="me360.html" class="card project-card" style="text-decoration: none; color: inherit; display: flex;">
@@ -468,7 +536,7 @@
                 <h4>ME 360: Electromechanical Design</h4>
                 <p><strong>Placeholder:</strong> Course portfolio beginning with a Cartesian motion system.</p>
                 <p class="card-skills">Course focus: CAD · Arduino · Motion Control</p>
-                            <span class="project-action">View project <span aria-hidden="true">&rarr;</span></span>
+                            <span class="project-action">View project <span aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span>
             </a>
         </div>
         </div>

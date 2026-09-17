@@ -15,7 +15,7 @@
         const controls = document.createElement('div');
         controls.className = 'carousel-controls';
         controls.hidden = true;
-        controls.innerHTML = `<button type="button" data-carousel="previous" aria-label="Previous projects" aria-controls="${track.id}">&larr;</button><span class="carousel-status" aria-live="off"></span><button type="button" data-carousel="next" aria-label="Next projects" aria-controls="${track.id}">&rarr;</button>`;
+        controls.innerHTML = `<button type="button" data-carousel="previous" aria-label="Previous projects" aria-controls="${track.id}"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></button><span class="carousel-status" aria-live="off"></span><button type="button" data-carousel="next" aria-label="Next projects" aria-controls="${track.id}"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>`;
         region.prepend(controls);
     });
 
