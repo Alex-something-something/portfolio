@@ -4,7 +4,9 @@
     const replay = document.querySelector('.launch-replay');
     const blueprint = document.querySelector('.argo-blueprint');
     const drawingReplay = document.querySelector('.argo-replay');
+    const launchStage = hero?.querySelector('.launch-stage');
     const motion = matchMedia('(prefers-reduced-motion: reduce)');
+    const mobile = matchMedia('(max-width: 650px)');
     if (!hero || !replay || !blueprint || !drawingReplay) return;
     const introKey = 'portfolio:intro-complete';
     const schematicKey = 'portfolio:schematic-complete';
@@ -16,6 +18,11 @@
         try { sessionStorage.setItem(key, 'true'); }
         catch { /* Keep the animations functional when storage is unavailable. */ }
     }
+    function positionLaunchStage() {
+        if (!launchStage) return;
+        launchStage.setAttribute('transform', mobile.matches ? 'translate(0 -35)' : 'translate(160 0)');
+    }
+    positionLaunchStage();
     const introWasCompleted = isComplete(introKey);
     const schematicWasCompleted = isComplete(schematicKey);
     let timeout;
@@ -42,7 +49,7 @@
         hideNavigation();
         void hero.offsetWidth;
         hero.classList.add('is-launching');
-        timeout = setTimeout(finish, matchMedia('(max-width: 650px)').matches ? 7100 : 4700);
+        timeout = setTimeout(finish, mobile.matches ? 7100 : 4700);
     }
     function draw() {
         blueprint.classList.remove('is-waiting');
@@ -77,7 +84,10 @@
         }
     }
     window.addEventListener('scroll', skipOffscreenHero, { passive: true });
-    window.addEventListener('resize', skipOffscreenHero);
+    window.addEventListener('resize', () => {
+        positionLaunchStage();
+        skipOffscreenHero();
+    });
     // Each fresh page load gets one launch when the hero enters view.
     // This also handles refreshes that restore a lower scroll position.
     if (!introWasCompleted && !motion.matches) {
@@ -114,10 +124,11 @@
         blueprintObserver = new IntersectionObserver(entries => {
             clearTimeout(blueprintTimer);
             if (entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= .999)) {
+                const drawingDelay = mobile.matches ? 225 : 300;
                 blueprintTimer = setTimeout(() => {
                     stopBlueprintWatch();
                     draw();
-                }, 300);
+                }, drawingDelay);
             }
         }, { threshold: [0, .999, 1], rootMargin: `-${topInset}px 0px 0px 0px` });
         blueprintObserver.observe(blueprint);

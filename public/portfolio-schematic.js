@@ -19,6 +19,9 @@
             try {
                 sessionStorage.setItem('portfolio:internal-navigation', 'true');
                 sessionStorage.setItem('portfolio:schematic-complete', 'true');
+                if (matchMedia('(max-width: 650px)').matches) {
+                    sessionStorage.setItem('portfolio:mobile-return-to-hero', 'true');
+                }
             } catch {
                 // Navigation and highlighting still work when storage is unavailable.
             }

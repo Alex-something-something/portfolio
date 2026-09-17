@@ -13,7 +13,8 @@ const navigationKeys = {
   internal: 'portfolio:internal-navigation',
   homeVisited: 'portfolio:home-visited',
   introComplete: 'portfolio:intro-complete',
-  schematicComplete: 'portfolio:schematic-complete'
+  schematicComplete: 'portfolio:schematic-complete',
+  mobileReturnToHero: 'portfolio:mobile-return-to-hero'
 };
 
 let navigationContextInitialized = false;
@@ -79,6 +80,7 @@ export default function PageEnhancements({ isHome }) {
     const controller = new AbortController();
     const prefix = isHome ? '' : '../';
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mobile = window.matchMedia('(max-width: 650px)');
 
     const observer = new IntersectionObserver((entries, currentObserver) => {
       entries.forEach((entry) => {
@@ -125,10 +127,19 @@ export default function PageEnhancements({ isHome }) {
 
       const destination = new URL(link.href, location.href);
       if (destination.origin !== location.origin) return;
+      const isMobileReturnLink = !isHome && mobile.matches && link.classList.contains('back-link');
+      if (isMobileReturnLink) destination.hash = '';
       const sameDocument = destination.pathname === location.pathname && destination.search === location.search;
       if (sameDocument && destination.hash) return;
 
       event.preventDefault();
+      if (isHome && mobile.matches) {
+        try {
+          sessionStorage.setItem(navigationKeys.mobileReturnToHero, 'true');
+        } catch {
+          // The return transition still works when session storage is unavailable.
+        }
+      }
       markInternalNavigation();
       document.documentElement.classList.add('is-page-leaving');
       setTimeout(() => location.assign(destination.href), motion.matches ? 0 : 240);
@@ -136,10 +147,26 @@ export default function PageEnhancements({ isHome }) {
 
     function restorePage() {
       document.documentElement.classList.remove('is-page-leaving');
+      if (!isHome || !mobile.matches) return;
+      try {
+        if (sessionStorage.getItem(navigationKeys.mobileReturnToHero) !== 'true') return;
+        sessionStorage.removeItem(navigationKeys.mobileReturnToHero);
+        history.scrollRestoration = 'manual';
+        const returnToHero = () => window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+        returnToHero();
+        requestAnimationFrame(() => {
+          returnToHero();
+          setTimeout(returnToHero, 50);
+        });
+        setTimeout(() => { history.scrollRestoration = 'auto'; }, 150);
+      } catch {
+        // Browser scroll restoration remains available without session storage.
+      }
     }
 
     document.addEventListener('click', transitionToInternalPage);
     window.addEventListener('pageshow', restorePage);
+    restorePage();
 
     async function startEnhancements() {
       const requiredScripts = isHome ? scripts : scripts.slice(0, 1);
