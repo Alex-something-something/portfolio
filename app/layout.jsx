@@ -1,7 +1,8 @@
 import './globals.css';
 
 const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1];
-const publicBasePath = process.env.GITHUB_ACTIONS === 'true' && repositoryName
+const usesCustomDomain = Boolean(process.env.CUSTOM_DOMAIN);
+const publicBasePath = process.env.GITHUB_ACTIONS === 'true' && repositoryName && !usesCustomDomain
   ? `/${repositoryName}`
   : '';
 

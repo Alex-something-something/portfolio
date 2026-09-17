@@ -22,10 +22,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: yarn
       - run: corepack enable
+      - run: corepack prepare yarn@4.18.0 --activate
       - run: yarn install --immutable
       - run: yarn build
+        env:
+          CUSTOM_DOMAIN: alexandertong.space
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
