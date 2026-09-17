@@ -1,102 +1,116 @@
-# Alexander Tong Portfolio
+# Alexander Tong Engineering Portfolio
 
+A statically exported React and Next.js portfolio for GitHub Pages.
+
+## Technology
+
+- Next.js App Router
+- React
+- JavaScript and CSS
+- Static export to `out/`
+- GitHub Actions deployment
+
+## Project structure
+
+- `app/` contains the Next.js routes and shared stylesheet.
+- `components/` contains the React page and interaction components.
+- `content/` contains the portfolio page content preserved from the original HTML site.
+- `lib/portfolio-content.js` maps that content to clean Next.js routes.
+- `public/Pictures/` contains portfolio images, videos, and the exact-filename guide.
+- `public/Resume/` is the resume folder. The build uses the first PDF found there.
+- `public/portfolio-*.js` contains the existing launch, carousel, media, and schematic interactions.
 
 ## Adding pictures and videos
 
-See [Pictures/README.md](Pictures/README.md) for the exact filenames and folders. Empty media slots show their full paths on the website. Copy each file into its matching folder, then refresh.
+Open [public/Pictures/README.md](public/Pictures/README.md) for every required filename and folder. Copy a file into the matching location, keeping the filename exactly as shown. Empty media slots display the same path on the website.
+
+Example:
+
+```text
+public/Pictures/Recovery/Assembly.png
+```
+
+## Updating portfolio content
+
+The homepage content is in `content/index.html`. Each project or experience has a matching file in `content/`, such as `content/project_recovery.html` or `content/plummer.html`.
+
+Internal links can continue to use the familiar HTML filenames inside these content files. The Next.js build converts them to clean routes such as `/project_recovery/`.
 
 ## Adding project cards
 
-Add new cards to the existing category container in index.html. Flight Hardware and Ground Systems already have `data-project-category` labels. When either contains more than three cards, it automatically becomes a carousel on page load. Additional Projects already uses that carousel.
+Add cards to a category container in `content/index.html`. Categories with three or fewer cards remain a grid. Categories with four or more cards use the portfolio carousel automatically.
 
-For another category, use `<div class="container" data-project-category="Your category name">` around its cards. Three or fewer cards remain a grid. Four or more get previous/next controls and three/two/one visible cards across desktop/tablet/phone.
+Rotation begins after half the carousel is visible for three seconds, then advances every four seconds. Scrolling, swiping, clicking, using the keyboard, or pressing an arrow pauses rotation for ten seconds after the most recent interaction.
 
-Rotation begins after half the carousel is visible for three seconds, then advances every four seconds. Scrollbar use, swiping, wheel scrolling, clicks, keyboard input, or arrow buttons pause it for ten seconds after the last interaction. It resumes while visible; reduced-motion preferences disable autoplay. No separate pause button is required.
+## Running the site locally
 
-## Uploading your changes to GitHub
-
-Your repository is [Alex-something-something/portfolio](https://github.com/Alex-something-something/portfolio). The configured remote is `origin`, and the working branch is `main`.
-
-These steps upload the pages, scripts, and pictures on your computer. Run them again whenever you want to publish another batch of changes to the repository.
-
-### 1. Open PowerShell in the portfolio folder
-
-Open PowerShell and paste:
+Open PowerShell in this folder:
 
 ```powershell
 cd "C:\Users\aleto\OneDrive\Documents\Desktop\Gemini_Portfolio"
 ```
 
-### 2. Stage your changes
+Install [Node.js LTS](https://nodejs.org/en/download) first, then close and reopen PowerShell. Confirm that Node and npm are available:
 
-Staging selects the changes that will go into your next saved version:
+```powershell
+node --version
+npm --version
+```
+
+If `corepack` is not recognized, install and enable it once:
+
+```powershell
+npm install --global corepack
+corepack enable
+```
+
+Install the project dependencies:
+
+```powershell
+yarn install
+```
+
+Start the local development site:
+
+```powershell
+yarn dev
+```
+
+Then open `http://localhost:3000`.
+
+## Checking the production build
+
+```powershell
+yarn build
+```
+
+A successful build creates the static website in `out/`.
+
+## Uploading changes to GitHub
+
+The configured repository is [Alex-something-something/portfolio](https://github.com/Alex-something-something/portfolio), using the `main` branch.
+
+Stage the portfolio changes:
 
 ```powershell
 git add -A
 ```
 
-This includes new files, edits, and deletions. It includes the Pictures folder and any images or videos you have added there.
+The repository’s `.gitignore` already excludes local planning notes, the separate blueprint draft, generated build folders, and the old review screenshot.
 
-Keep internal working notes, the separate animation draft, and the old review screenshot out of the upload:
-
-```powershell
-git restore --staged -- portfolio-decisions.md portfolio-content-audit.md portfolio-final-review.md argo-blueprint-draft.html review-320.png
-```
-
-This leaves those files on your computer. Repeat this exclusion step each time you use `git add -A`. If one of these files no longer exists and Git reports an unmatched path, remove that filename from the command and rerun it.
-
-### 3. Review what will be uploaded
+Review, save, and upload the changes:
 
 ```powershell
 git status
-```
-
-Look under **Changes to be committed**. Check that the pages, scripts, and pictures you intended to upload are listed. The excluded files may still appear as untracked files; they will not be included in this commit.
-
-For the first upload of this revised portfolio, deletion of `Gemini_Portfolio_HTML.html` is expected because the homepage is now `index.html`. Review any other unexpected deletions before continuing.
-
-### 4. Save a version with a short description
-
-```powershell
-git commit -m "Update portfolio pages, animations, and project media"
-```
-
-A commit records the staged changes locally. For later updates, change the description to match what you did, for example:
-
-```powershell
-git commit -m "Add recovery assembly photos"
-```
-
-If Git says there is nothing to commit, no new changes were staged. You can still perform the push step if you have an earlier local commit that has not been uploaded.
-
-### 5. Upload to GitHub
-
-```powershell
+git commit -m "Update portfolio"
 git push origin main
 ```
 
-Complete GitHub sign-in if prompted. You do not need to create another repository or configure the remote again.
+The workflow at `.github/workflows/deploy-pages.yml` builds and publishes the Next.js static export after each push to `main`. In the repository’s **Settings → Pages**, set the source to **GitHub Actions** the first time you deploy.
 
-### 6. Confirm the upload
-
-Open the [repository on GitHub](https://github.com/Alex-something-something/portfolio) and check that your latest commit and files appear. You can also run:
-
-```powershell
-git status -sb
-```
-
-If it no longer shows your branch as ahead of `origin/main`, there are no remaining local commits waiting to be pushed.
-
-### If the push is rejected
-
-If Git says the remote contains newer changes, retrieve and apply them first:
+If a push is rejected because GitHub contains newer work, run:
 
 ```powershell
 git pull --rebase origin main
+git push origin main
 ```
-
-If this finishes successfully, run `git push origin main` again. If it reports conflicts, stop and resolve those before pushing. To cancel that rebase and return to the state before the pull, use `git rebase --abort`. Do not use a force push as a routine fix.
-
-### Repository upload versus website publication
-
-A push updates the GitHub repository. The public website updates automatically only if GitHub Pages or another hosting service is configured to deploy from this repository and branch. If the repository changed but the website did not, check the repository's deployment status and refresh the website with Ctrl + F5.

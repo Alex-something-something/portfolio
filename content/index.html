@@ -215,6 +215,10 @@
         .mobile-labels .contribution-label { fill: #E63946; }
         .schematic-part { transition: filter .16s ease; }
         .is-highlighting-recovery [data-part="recovery"], .is-highlighting-aerocover [data-part="aerocover"] { filter: drop-shadow(0 0 7px #E63946) drop-shadow(0 0 2px #ff9da5); }
+        .argo-blueprint.is-schematic-focus { border-color: #E63946; box-shadow: 0 0 0 1px rgba(230,57,70,.22), 0 18px 48px rgba(0,0,0,.32); transition: border-color .35s ease, box-shadow .45s ease; }
+        .argo-blueprint.is-schematic-focus [data-part] { transition: filter .35s ease, opacity .35s ease; }
+        .argo-blueprint.is-highlighting-recovery [data-part="aerocover"], .argo-blueprint.is-highlighting-aerocover [data-part="recovery"] { opacity: .28; }
+        .project-card.is-opening-project { border-color: #E63946 !important; box-shadow: 0 10px 28px rgba(230,57,70,.16) !important; }
         @media (max-width: 650px) {
             .argo-blueprint svg.argo-horizontal { display: none; }
             .argo-blueprint svg.argo-vertical { display: block; max-height: calc(100svh - var(--site-nav-height, 140px) - 110px); }
@@ -275,11 +279,11 @@
             <div class="headshot-img media-slot" data-media="Pictures/Headshot.jpg" data-media-type="image" data-fit="cover" data-alt="Portrait of Alexander Tong" title="Pictures/Headshot.jpg"><span class="media-filename">Pictures/Headshot.jpg</span></div>
         </div>
         <div class="hero-content">
-            <span class="hero-eyebrow">Mechanical Engineering Portfolio</span>
-            <h1 class="fade-in-up delay-2" style="display: table; padding-bottom: 18px; position: relative;">WELCOME!
+            <span class="hero-eyebrow">Engineering Portfolio</span>
+            <h1 class="fade-in-up delay-2" style="display: table; padding-bottom: 18px; position: relative;">Hi! I’m Alex.
                 <span class="welcome-underline" aria-hidden="true" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 5px; background: #E63946; clip-path: polygon(0 0, 100% 0, calc(100% - 8px) 100%, 0 100%);"></span>
             </h1>
-            <p class="fade-in-up delay-3">I’m a Boston University mechanical engineering student focused on structures and spaceflight hardware. I co-lead BURPG’s separation and recovery work and lead its Argo aerocover design, alongside my professional experience in research fixtures, manufacturing, and vacuum systems.</p>
+            <p class="fade-in-up delay-3">I’m a mechanical engineering student at Boston University with a focus in structures and spaceflight hardware. I co-lead BURPG’s separation and recovery work and lead its Argo aerocover design, alongside my professional experience in research fixtures, manufacturing, and vacuum systems.</p>
             <div class="fade-in-up delay-4" style="margin-top: 30px;">
                 <a href="#BURPG" class="btn">View Projects</a>
                 <a href="#contact" class="btn" style="background: transparent; border: 1px solid #E63946; margin-left: 15px;">Contact</a>
@@ -505,7 +509,7 @@
                 <div class="card-img media-slot" data-media="Pictures/AIAA/Aircraft.jpg" data-media-type="image" data-fit="cover" data-alt="Wing design image" title="Pictures/AIAA/Aircraft.jpg"><span class="media-filename">Pictures/AIAA/Aircraft.jpg</span></div>
                 <span class="project-status">Design & fabrication</span>
                 <h4>Wing Structural Lead (AIAA)</h4>
-                <p>Led two wing designs, achieving a 50% lighter prototype and 300% faster manufacturing turnaround.</p>
+                <p>Led two wing designs, achieving a 50% lighter prototype and cutting build time from three months to one.</p>
                 <p class="card-skills">Fusion 360 · Wing Structures · Manufacturing</p>
                             <span class="project-action">View project <span aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span>
             </a>

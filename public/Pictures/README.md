@@ -2,7 +2,7 @@
 
 ## Adding or replacing media
 
-1. Put your file in the folder listed below, with the exact filename and extension.
+1. Put your file in the folder listed below, inside `public/Pictures`, with the exact filename and extension.
 2. Refresh the page. Use Ctrl + F5 if a replaced image remains cached.
 3. The filename placeholder disappears automatically once its image or video loads.
 
@@ -10,7 +10,7 @@ Use real JPG, PNG and MP4 files matching the extensions. Renaming an extension d
 
 The headshot already exists. The same file can appear on a homepage card and its project page, so it only needs to be supplied once. The animated Argo blueprint and hero launch are drawn in code; they do not need picture files.
 
-To change a slot later, edit its `data-media` path and `data-alt` description in the corresponding HTML file. Captions remain in the HTML.
+To change a slot later, edit its `data-media` path and `data-alt` description in the corresponding file under `content/`. Captions remain in those content files.
 
 ## Required filenames by folder
 

@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+.yarn/cache/
+.yarn/install-state.gz
+.pnp.*
+.pnpm-store/
+*.log
+
+# Local planning and review files
+argo-blueprint-draft.html
+portfolio-content-audit.md
+portfolio-decisions.md
+portfolio-final-review.md
+review-320.png

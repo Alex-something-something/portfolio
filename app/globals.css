@@ -2,6 +2,7 @@
    GENERAL RESET & TYPOGRAPHY
    ========================================= */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+html { scroll-behavior: smooth; }
 body { background-color: #0b0b0b; color: #fff; line-height: 1.6; scroll-behavior: smooth; font-size: 16px; }
 
 /* =========================================
@@ -43,7 +44,7 @@ nav ul li a:hover {
     justify-content: space-between;
     padding: 4rem 10%;
     border-bottom: 1px solid #333;
-    background-image: linear-gradient(rgba(11, 11, 11, 0.85), rgba(11, 11, 11, 0.95)), url('hero-bg.jpg');
+    background-image: linear-gradient(rgba(11, 11, 11, 0.85), rgba(11, 11, 11, 0.95));
     background-size: cover;
     background-position: center;
     gap: 40px;
@@ -157,6 +158,18 @@ nav ul li a:hover {
     transition: 0.3s;
 }
 .back-link:hover { color: #E63946; }
+.detail-return {
+    padding: 2rem 10% 3.5rem;
+    background: #0b0b0b;
+    border-top: 1px solid #222;
+}
+.detail-return .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    margin-bottom: 0;
+}
 .project-hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
 .project-hero h1 span { color: #E63946; }
 .project-meta {
@@ -228,4 +241,180 @@ nav ul li a:hover {
     .project-content { grid-template-columns: 1fr; }
     .project-gallery { position: relative; top: 0; }
     .project-hero h1 { font-size: 2.5rem; }
+}
+
+/* =========================================
+   PORTFOLIO MOTION SYSTEM
+   Keeps the hero launch and Argo drawing timelines independent.
+   ========================================= */
+:root {
+    --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --motion-fast: 220ms;
+    --motion-medium: 620ms;
+}
+
+.portfolio-motion-ready .portfolio-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity var(--motion-medium) var(--motion-ease) var(--portfolio-reveal-delay, 0ms),
+        transform var(--motion-medium) var(--motion-ease) var(--portfolio-reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+.portfolio-motion-ready .portfolio-reveal.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+    will-change: auto;
+}
+
+.portfolio-motion-ready .project-header.portfolio-reveal > * {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 520ms var(--motion-ease), transform 520ms var(--motion-ease);
+}
+
+.portfolio-motion-ready .project-header.portfolio-reveal.is-revealed > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.portfolio-motion-ready .project-header.portfolio-reveal.is-revealed > :nth-child(2) { transition-delay: 90ms; }
+.portfolio-motion-ready .project-header.portfolio-reveal.is-revealed > :nth-child(3) { transition-delay: 160ms; }
+.portfolio-motion-ready .project-header.portfolio-reveal.is-revealed > :nth-child(4) { transition-delay: 230ms; }
+
+.portfolio-motion-ready .content-section.portfolio-reveal .text-block,
+.portfolio-motion-ready .content-section.portfolio-reveal .image-block {
+    opacity: 0;
+    transition: opacity 560ms var(--motion-ease), transform 680ms var(--motion-ease);
+}
+
+.portfolio-motion-ready .content-section.portfolio-reveal .text-block { transform: translateX(-18px); }
+.portfolio-motion-ready .content-section.portfolio-reveal .image-block { transform: translateX(18px); }
+
+.portfolio-motion-ready .content-section.portfolio-reveal.is-revealed .text-block,
+.portfolio-motion-ready .content-section.portfolio-reveal.is-revealed .image-block {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.portfolio-motion-ready .content-section.portfolio-reveal.is-revealed .image-block { transition-delay: 90ms; }
+
+.text-block h2::after {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 2px;
+    margin-top: 10px;
+    background: #E63946;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 540ms var(--motion-ease) 180ms;
+}
+
+.content-section.is-revealed .text-block h2::after { transform: scaleX(1); }
+
+.project-hero-media .media-slot,
+.content-section .media-slot,
+.gallery-img {
+    border-color: #3d3d3d;
+    transition: border-color var(--motion-fast) ease, box-shadow 360ms ease, transform 420ms var(--motion-ease);
+}
+
+.project-hero-media .media-slot:hover,
+.content-section .media-slot:hover,
+.gallery-img:hover {
+    border-color: rgba(230, 57, 70, 0.75);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.26);
+    transform: translateY(-3px);
+}
+
+.project-hero-media .media-slot > img,
+.content-section .media-slot > img,
+.gallery-img > img {
+    transition: transform 700ms var(--motion-ease), opacity 420ms ease;
+}
+
+.project-hero-media .media-slot:hover > img,
+.content-section .media-slot:hover > img,
+.gallery-img:hover > img { transform: scale(1.018); }
+
+.project-hero-media .media-slot.has-media > img,
+.project-hero-media .media-slot.has-media > video,
+.content-section .media-slot.has-media > img,
+.content-section .media-slot.has-media > video { animation: portfolio-media-arrive 520ms var(--motion-ease) both; }
+
+@keyframes portfolio-media-arrive {
+    from { opacity: 0; transform: scale(0.985); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.back-link .ui-arrow,
+.project-action .ui-arrow,
+.experience-link .ui-arrow,
+.content-section a .ui-arrow {
+    transition: transform var(--motion-fast) var(--motion-ease);
+}
+
+.back-link:hover .ui-arrow { transform: translateX(-4px); }
+.project-action:hover .ui-arrow,
+.experience-link:hover .ui-arrow,
+.content-section a:hover .ui-arrow { transform: translateX(4px); }
+
+.content-section a {
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
+    transition: color var(--motion-fast) ease, text-decoration-color var(--motion-fast) ease;
+}
+
+.content-section a:hover { text-decoration-color: currentColor; }
+
+.btn,
+.card,
+.experience-card,
+.contact-icon,
+.carousel-controls button {
+    transition-duration: 320ms;
+    transition-timing-function: var(--motion-ease);
+}
+
+.logo a { transition: color var(--motion-fast) ease, letter-spacing 320ms var(--motion-ease); }
+.logo a:hover { color: #fff !important; letter-spacing: 2.5px; }
+
+main {
+    opacity: 1;
+    transition: opacity 240ms ease, transform 240ms var(--motion-ease);
+}
+
+html.is-page-leaving main {
+    opacity: 0;
+    transform: translateY(-6px);
+}
+
+@media (max-width: 650px) {
+    .portfolio-motion-ready .content-section.portfolio-reveal .text-block,
+    .portfolio-motion-ready .content-section.portfolio-reveal .image-block {
+        transform: translateY(18px);
+    }
+    .portfolio-motion-ready .content-section.portfolio-reveal.is-revealed .text-block,
+    .portfolio-motion-ready .content-section.portfolio-reveal.is-revealed .image-block {
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .portfolio-reveal,
+    .portfolio-reveal > *,
+    .portfolio-reveal .text-block,
+    .portfolio-reveal .image-block {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    .text-block h2::after { transform: scaleX(1); transition: none; }
+    .project-hero-media .media-slot.has-media > img,
+    .project-hero-media .media-slot.has-media > video,
+    .content-section .media-slot.has-media > img,
+    .content-section .media-slot.has-media > video { animation: none; }
+    main { transition: none; }
 }

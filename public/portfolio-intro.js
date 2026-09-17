@@ -6,6 +6,18 @@
     const drawingReplay = document.querySelector('.argo-replay');
     const motion = matchMedia('(prefers-reduced-motion: reduce)');
     if (!hero || !replay || !blueprint || !drawingReplay) return;
+    const introKey = 'portfolio:intro-complete';
+    const schematicKey = 'portfolio:schematic-complete';
+    function isComplete(key) {
+        try { return sessionStorage.getItem(key) === 'true'; }
+        catch { return false; }
+    }
+    function markComplete(key) {
+        try { sessionStorage.setItem(key, 'true'); }
+        catch { /* Keep the animations functional when storage is unavailable. */ }
+    }
+    const introWasCompleted = isComplete(introKey);
+    const schematicWasCompleted = isComplete(schematicKey);
     let timeout;
     function hideNavigation() {
         if (!nav) return;
@@ -20,6 +32,7 @@
     function finish() {
         clearTimeout(timeout);
         hero.classList.remove('is-launching');
+        markComplete(introKey);
         revealNavigation();
     }
     function play() {
@@ -33,6 +46,7 @@
     }
     function draw() {
         blueprint.classList.remove('is-waiting');
+        markComplete(schematicKey);
         if (motion.matches) return;
         blueprint.classList.remove('is-drawing');
         void blueprint.offsetWidth;
@@ -45,14 +59,18 @@
         draw();
     });
     motion.addEventListener('change', () => {
-        if (motion.matches) { finish(); blueprint.classList.remove('is-drawing', 'is-waiting'); }
+        if (motion.matches) {
+            finish();
+            markComplete(schematicKey);
+            blueprint.classList.remove('is-drawing', 'is-waiting');
+        }
     });
     replay.hidden = false;
     drawingReplay.hidden = false;
     // Reserve the header's space while it is hidden, avoiding layout shifts.
     const initialHero = hero.getBoundingClientRect();
     const visibleHeight = Math.min(initialHero.bottom, innerHeight) - Math.max(initialHero.top, 0);
-    if (!motion.matches && visibleHeight / initialHero.height >= .25) hideNavigation();
+    if (!motion.matches && !introWasCompleted && visibleHeight / initialHero.height >= .25) hideNavigation();
     function skipOffscreenHero() {
         if (hero.getBoundingClientRect().bottom <= (nav?.getBoundingClientRect().height || 0)) {
             if (hero.classList.contains('is-launching') || nav?.classList.contains('is-awaiting-hero')) finish();
@@ -62,17 +80,24 @@
     window.addEventListener('resize', skipOffscreenHero);
     // Each fresh page load gets one launch when the hero enters view.
     // This also handles refreshes that restore a lower scroll position.
-    const heroObserver = new IntersectionObserver(entries => {
-        if (entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= .25)) {
-            play();
-            heroObserver.disconnect();
-        }
-    }, { threshold: .25 });
-    heroObserver.observe(hero);
-    if (!motion.matches) blueprint.classList.add('is-waiting');
+    if (!introWasCompleted && !motion.matches) {
+        const heroObserver = new IntersectionObserver(entries => {
+            if (entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= .25)) {
+                play();
+                heroObserver.disconnect();
+            }
+        }, { threshold: .25 });
+        heroObserver.observe(hero);
+    } else {
+        hero.classList.remove('is-launching');
+        revealNavigation();
+        if (motion.matches) markComplete(introKey);
+    }
+    if (!motion.matches && !schematicWasCompleted) blueprint.classList.add('is-waiting');
+    else blueprint.classList.remove('is-waiting');
     let blueprintTimer;
     let blueprintObserver;
-    let blueprintStarted = false;
+    let blueprintStarted = schematicWasCompleted || motion.matches;
     function stopBlueprintWatch() {
         clearTimeout(blueprintTimer);
         blueprintStarted = true;
@@ -100,5 +125,6 @@
     document.addEventListener('visibilitychange', watchBlueprint);
     window.addEventListener('resize', watchBlueprint);
     if (nav) new ResizeObserver(watchBlueprint).observe(nav);
+    if (motion.matches) markComplete(schematicKey);
     watchBlueprint();
 })();
