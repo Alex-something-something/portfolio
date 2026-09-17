@@ -224,6 +224,12 @@
             .argo-blueprint svg.argo-vertical { display: block; max-height: calc(100svh - var(--site-nav-height, 140px) - 110px); }
             .argo-vertical .argo-trace { vector-effect: non-scaling-stroke; stroke-width: 1px; }
             .argo-blueprint.is-schematic-focus .argo-vertical [data-part] { opacity: .12; filter: none; }
+            .argo-blueprint.is-schematic-focus .argo-vertical > g:first-of-type > :not([data-part]),
+            .argo-blueprint.is-schematic-focus .argo-vertical .argo-annotations > :not(.mobile-labels),
+            .argo-blueprint.is-schematic-focus .argo-vertical .mobile-labels > :not([data-part]) {
+                opacity: .08;
+                transition: opacity .35s ease;
+            }
             .argo-blueprint.is-highlighting-recovery .argo-vertical [data-part="recovery"],
             .argo-blueprint.is-highlighting-aerocover .argo-vertical [data-part="aerocover"] {
                 opacity: 1;
@@ -249,6 +255,8 @@
             .hero { gap: 24px; }
             .hero-launch { position: absolute; inset: 0; z-index: -2; width: auto; height: auto; margin: 0; }
             .hero-launch::after { background: linear-gradient(180deg, rgba(11,11,11,.2), rgba(11,11,11,.62) 58%, rgba(11,11,11,.94)); }
+            .hero-launch .launch-scene { transform: translateX(-10vw); }
+            .hero-launch .launch-stage { transform: translateX(0); }
             .hero-headshot { order: 1; position: relative; z-index: 1; }
             .hero-content { order: 2; width: 100%; }
             .hero.is-launching .hero-eyebrow, .hero.is-launching h1 { animation-delay: 4.7s; }
@@ -283,7 +291,7 @@
                 <linearGradient id="launch-exhaust" x2="0" y2="1"><stop stop-color="#fff5df"/><stop offset=".25" stop-color="#ffb783"/><stop offset=".7" stop-color="#E63946" stop-opacity=".8"/><stop offset="1" stop-color="#E63946" stop-opacity="0"/></linearGradient>
             </defs>
             <rect width="1200" height="800" fill="#0b0b0b"/>
-            <g transform="translate(160 0)"><ellipse cx="600" cy="530" rx="530" ry="380" fill="url(#launch-haze)" opacity=".7"/>
+            <g class="launch-stage" transform="translate(160 0)"><ellipse cx="600" cy="530" rx="530" ry="380" fill="url(#launch-haze)" opacity=".7"/>
             <g fill="#b8adb0" opacity=".35"><circle cx="310" cy="190" r="1"/><circle cx="710" cy="125" r="1"/><circle cx="875" cy="330" r=".8"/><circle cx="520" cy="280" r=".8"/><circle cx="980" cy="150" r="1"/><circle cx="210" cy="390" r=".7"/></g>
             <ellipse class="launch-glow" cx="600" cy="600" rx="250" ry="200" fill="url(#launch-light)"/>
             <path d="M0 613 L90 600 170 607 260 590 370 605 475 598 580 613 730 594 820 604 930 588 1040 605 1200 593 V800 H0Z" fill="#080809"/>
