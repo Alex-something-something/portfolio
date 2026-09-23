@@ -94,13 +94,16 @@ export default function PageEnhancements({ isHome }) {
     document.querySelectorAll('.scroll-fade').forEach((element) => observer.observe(element));
 
     const revealSelector = isHome
-      ? '.project-grid > .section-title, #contact'
+      ? '.project-grid > .section-title, .project-grid > .container, .project-grid > .project-carousel, #Experience > div, #contact'
       : 'main > nav, .project-header, .project-hero-media, .content-section, main > .detail-return, main > footer';
     const revealElements = [...document.querySelectorAll(revealSelector)]
       .filter((element) => !element.closest('.hero, .argo-blueprint'));
 
     revealElements.forEach((element, index) => {
       element.classList.add('portfolio-reveal');
+      if (element.matches('.project-grid > .container, .project-grid > .project-carousel, #Experience > div')) {
+        element.classList.add('portfolio-project-row');
+      }
       element.style.setProperty('--portfolio-reveal-delay', `${Math.min(index % 3, 2) * 70}ms`);
     });
 
