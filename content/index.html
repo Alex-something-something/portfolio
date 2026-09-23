@@ -255,12 +255,18 @@
             .hero { gap: 24px; }
             .hero-launch { position: absolute; inset: 0; z-index: -2; width: auto; height: auto; margin: 0; }
             .hero-launch::after { background: linear-gradient(180deg, rgba(11,11,11,.2), rgba(11,11,11,.62) 58%, rgba(11,11,11,.94)); }
+            .hero.is-launching .hero-launch::after { animation: mobile-launch-dim 3.8s 1.1s ease-in both; }
             .hero-headshot { order: 1; position: relative; z-index: 1; }
             .hero-content { order: 2; width: 100%; }
             .hero.is-launching .hero-eyebrow, .hero.is-launching h1 { animation-delay: 4.7s; }
             .hero.is-launching .welcome-underline { animation-delay: 4.7s; }
             .hero.is-launching .hero-content > p { animation-delay: 5.3s; }
             .hero.is-launching .hero-content > div { animation-delay: 5.9s; }
+        }
+        @keyframes mobile-launch-dim {
+            from { opacity: .18; }
+            55% { opacity: .34; }
+            to { opacity: 1; }
         }
     </style>
     <script src="portfolio-schematic.js" defer></script>
@@ -516,7 +522,7 @@
 
             <a href="appt.html" class="scroll-fade experience-card" style="padding: 20px 20px 12px; background: #1a1a1a; border-left: 3px solid #E63946; color: inherit; text-decoration: none; display: block;">
                 <h3 style="margin-bottom: 5px;">Ablative Pulsed Plasma Thruster</h3>
-                <p style="color: #E63946; font-size: .9rem; font-weight: bold; margin-bottom: 15px;">Volunteer · May–June 2026</p>
+                <p style="color: #E63946; font-size: .9rem; font-weight: bold; margin-bottom: 15px;">Volunteer · University of Sydney · Sydney, Australia · May–June 2026</p>
                 <p style="color: #bbb; font-size: .9rem;">Designed an ABS inductor spool, performed coil-winding calculations, checked outgassing suitability, and assisted with operating-procedure documentation.</p>
                 <span class="experience-link"><span class="experience-open" aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span> View experience</span>
             </a>

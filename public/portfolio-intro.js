@@ -20,7 +20,7 @@
     }
     function positionLaunchStage() {
         if (!launchStage) return;
-        launchStage.setAttribute('transform', mobile.matches ? 'translate(0 -35)' : 'translate(160 0)');
+        launchStage.setAttribute('transform', mobile.matches ? 'translate(0 -80)' : 'translate(160 0)');
     }
     positionLaunchStage();
     const introWasCompleted = isComplete(introKey);
@@ -121,16 +121,16 @@
         if (blueprintStarted || document.hidden) return;
         // Exclude the sticky navigation so it cannot cover part of the box.
         const topInset = Math.ceil(nav?.getBoundingClientRect().height || 0);
+        const requiredVisibility = mobile.matches ? .4 : .999;
         blueprintObserver = new IntersectionObserver(entries => {
             clearTimeout(blueprintTimer);
-            if (entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= .999)) {
-                const drawingDelay = mobile.matches ? 225 : 300;
+            if (entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= requiredVisibility)) {
                 blueprintTimer = setTimeout(() => {
                     stopBlueprintWatch();
                     draw();
-                }, drawingDelay);
+                }, 300);
             }
-        }, { threshold: [0, .999, 1], rootMargin: `-${topInset}px 0px 0px 0px` });
+        }, { threshold: [0, requiredVisibility, 1], rootMargin: `-${topInset}px 0px 0px 0px` });
         blueprintObserver.observe(blueprint);
     }
     document.addEventListener('visibilitychange', watchBlueprint);
