@@ -39,6 +39,7 @@
     function finish() {
         clearTimeout(timeout);
         hero.classList.remove('is-launching');
+        hero.classList.remove('is-intro-pending');
         markComplete(introKey);
         revealNavigation();
     }
@@ -49,6 +50,7 @@
         hideNavigation();
         void hero.offsetWidth;
         hero.classList.add('is-launching');
+        hero.classList.remove('is-intro-pending');
         timeout = setTimeout(finish, mobile.matches ? 7100 : 4700);
     }
     function draw() {
@@ -88,6 +90,7 @@
         positionLaunchStage();
         skipOffscreenHero();
     });
+    skipOffscreenHero();
     // Each fresh page load gets one launch when the hero enters view.
     // This also handles refreshes that restore a lower scroll position.
     if (!introWasCompleted && !motion.matches) {
@@ -100,6 +103,7 @@
         heroObserver.observe(hero);
     } else {
         hero.classList.remove('is-launching');
+        hero.classList.remove('is-intro-pending');
         revealNavigation();
         if (motion.matches) markComplete(introKey);
     }
