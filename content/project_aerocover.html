@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Argo Aerocover Design | Alexander Tong</title>
+    <title>Aerodynamic Downcomer Fairing | Alexander Tong</title>
     <link rel="stylesheet" href="Gemini_CSS.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
@@ -106,18 +106,20 @@
     <nav><div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">ALEXANDER TONG <span>// MECHE</span></a></div></nav>
     <header class="project-header">
         <a href="index.html#flight-hardware" class="back-link"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4M10 6l-6 6 6 6"/></svg> Flight Hardware</a>
-        <h1>Argo Aerocover <span>Design</span></h1>
+        <h1>Aerodynamic <span>Downcomer Fairing</span></h1>
         <p class="project-meta-line">Project Lead · BURPG · In progress</p>
-        <p class="project-overview">Leading aerocover development to protect Argo’s external downcomer and wiring while reducing drag.</p>
+        <p class="project-overview">Leading aerodynamic and composite development of a fairing that protects Argo’s external downcomer and wiring while reducing drag.</p>
+        <p class="project-status-line">Current status: hands-on Ansys CFD and adjoint optimization underway; directing a team member's comparative SolidWorks Flow Simulation study; heated static-load testing in development</p>
     </header>
-    <div class="project-hero-media" style="padding: 0 10%; margin-top: -1px;"><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Assembly.png" data-media-type="image" data-fit="contain" data-alt="Argo Aerocover Assembly CAD" title="Pictures/Aerocover/Assembly.png"><span class="media-filename">Pictures/Aerocover/Assembly.png</span></div></div>
+    <div class="project-hero-media" style="padding: 0 10%; margin-top: -1px;"><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Assembly.png" data-media-type="image" data-fit="contain" data-alt="Argo aerodynamic downcomer fairing assembly CAD" title="Pictures/Aerocover/Assembly.png"><span class="media-filename">Pictures/Aerocover/Assembly.png</span></div></div>
     <section class="content-section">
         <div class="text-block">
             <h2>Project Scope &amp; Leadership</h2>
-            <p style="color: #ccc;">I am leading BURPG’s Argo aerocover design project. The cover is intended to protect the external downcomer pipe and wiring from aerodynamic and thermal loading while reducing the drag associated with the protruding hardware.</p>
-            <p style="color: #ccc; margin-top: 16px;">The team is developing multiple candidate profiles in parallel, comparing leading edges, midsections, and boattails against the previous Icarus aerocover. Concept selection also considers mounting, composite fabrication, surface finish, and cost.</p>
+            <p style="color: #ccc;">I lead BURPG’s development of an aerodynamic downcomer fairing for Argo. The fairing encloses the external propellant downcomer and adjacent wiring to reduce drag and protect the routed hardware from the flight environment.</p>
+            <p style="color: #ccc; margin-top: 16px;">I use set-based design to compare multiple candidate leading-edge, midsection, and boattail profiles against the previous Icarus fairing before final selection. Selection criteria include aerodynamic performance, downcomer and wiring clearance, bolted attachment behavior, composite manufacturability, surface finish, and cost.</p>
             <h2 style="margin-top: 40px;">Current Status</h2>
-            <p style="color: #ccc;">The September 2026 conceptual design review documents candidate geometries and manufacturing approaches. Detailed CAD, simulation, optimization, and validation remain in progress; final performance results will be added as the design develops.</p>
+            <p style="color: #ccc;">I am developing the current flow model in Ansys CFD and continuing adjoint CFD work to refine the fairing geometry within packaging, mounting, and manufacturing constraints. I am also directing a team member's independent SolidWorks Flow Simulation study and will review the two models for consistency in predicted flow behavior and aerodynamic loads.</p>
+            <p style="color: #ccc;">The September 2026 conceptual design review established the candidate geometries and manufacturing approaches. CFD comparison, geometry optimization, composite testing, and final design selection remain in progress, so the page does not yet claim final aerodynamic or structural performance.</p>
         </div>
         <div class="image-block">
             <div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Profile-Comparison.png" data-media-type="image" data-fit="contain" data-alt="Candidate Profile Comparison" title="Pictures/Aerocover/Profile-Comparison.png"><span class="media-filename">Pictures/Aerocover/Profile-Comparison.png</span></div>
@@ -128,31 +130,26 @@
     </section>
     <section class="content-section">
         <div class="text-block">
-            <h2>Analysis &amp; Design Plan</h2>
+            <h2>Aerodynamic Analysis &amp; Validation</h2>
             <ul>
-                <li><strong>SolidWorks Design:</strong> Model candidate cover profiles and their interfaces with Argo, allowing clearance for the downcomer and wiring.</li>
-                <li><strong>CFD:</strong> Characterize flow and loading at Mach 2, 2.5, and 2.81, comparing candidate designs with the baseline.</li>
-                <li><strong>Adjoint CFD:</strong> Explore leading-edge optimization while checking the resulting geometry against physical and manufacturing constraints.</li>
-                <li><strong>FEA:</strong> Use aerodynamic loads from CFD to evaluate structural response.</li>
-                <li><strong>Flight Performance:</strong> Investigate the effect of aerocover drag using OpenRocket.</li>
+                <li><strong>CAD &amp; Integration:</strong> Model candidate fairing profiles and their interfaces with Argo while preserving clearance for the downcomer, wiring, fasteners, and surrounding vehicle structure.</li>
+                <li><strong>Solver Comparison:</strong> Develop the current model in Ansys CFD, direct a team member's SolidWorks Flow Simulation study at Mach 2, 2.5, and 2.81, and review the results for consistency before using them for design decisions.</li>
+                <li><strong>Adjoint CFD:</strong> Continue geometry optimization while constraining the resulting profile to physically packageable and manufacturable shapes.</li>
+                <li><strong>Structural Analysis:</strong> Transfer aerodynamic loading from the validated flow model into structural evaluation of the fairing and its bolted interfaces.</li>
+                <li><strong>Vehicle Performance:</strong> Evaluate the effect of fairing drag on the Argo trajectory using OpenRocket.</li>
             </ul>
-        </div>
-        <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Aerocover/CFD.png" data-media-type="image" data-fit="contain" data-alt="CFD Visualization" title="Pictures/Aerocover/CFD.png"><span class="media-filename">Pictures/Aerocover/CFD.png</span></div>
-            <p class="caption">Flow Characterization: Results Pending</p>
-            <div class="img-placeholder media-slot" data-media="Pictures/Aerocover/FEA.png" data-media-type="image" data-fit="contain" data-alt="Structural Analysis" title="Pictures/Aerocover/FEA.png"><span class="media-filename">Pictures/Aerocover/FEA.png</span></div>
-            <p class="caption">Aerodynamic Load Transfer and FEA: Results Pending</p>
         </div>
     </section>
     <section class="content-section" style="border-bottom: none;">
         <div class="text-block">
-            <h2>Manufacturing &amp; Integration</h2>
-            <p style="color: #ccc;">The design review considers composite wet layup over 3D-printed or machined foam molds, with attention to surface finish, dimensional control, and material cost. Mounting concepts address protruding fasteners and their aerodynamic effects.</p>
-            <p style="color: #ccc; margin-top: 16px;">Open work includes resin temperature limits, mounting feasibility, layup trials, and practical validation methods. These studies will inform the final geometry and manufacturing process.</p>
+            <h2>Composite Manufacturing &amp; Thermal-Mechanical Testing</h2>
+            <p style="color: #ccc;">The current manufacturing study considers carbon-fiber wet layup over 3D-printed or machined foam molds, with attention to curvature, surface finish, dimensional control, material cost, and the aerodynamic effects of protruding fasteners.</p>
+            <p style="color: #ccc; margin-top: 16px;">I am designing a representative curved carbon-fiber test article with a bolted interface to evaluate whether the laminate locally dimples or sinks around the fasteners. The article will be held under a sustained static load while temperature is increased, creating a deliberately conservative combined thermal-mechanical test of the attachment region.</p>
+            <p style="color: #ccc; margin-top: 16px;">The test is intended to establish a conservative allowable temperature under load and observe structural behavior as the epoxy approaches softening. It is not presented as a direct material-property measurement, and no test results are claimed yet.</p>
             <p style="color: #888; font-size: .85rem; margin-top: 30px;">Project context: Aerocover Design Doc and Argo Aerocover CoDR, September 3, 2026. Candidate concepts and analysis plans are preliminary.</p>
         </div>
-        <div class="image-block"><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Mold-Mounting.png" data-media-type="image" data-fit="contain" data-alt="Mold or Mounting Concept" title="Pictures/Aerocover/Mold-Mounting.png"><span class="media-filename">Pictures/Aerocover/Mold-Mounting.png</span></div><p class="caption">Composite Manufacturing and Mounting Development</p></div>
+        <div class="image-block"><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Carbon-Fiber-Thermal-Load-Test.jpg" data-media-type="image" data-fit="contain" data-alt="Curved carbon-fiber test article and heated static-load setup" title="Pictures/Aerocover/Carbon-Fiber-Thermal-Load-Test.jpg"><span class="media-filename">Pictures/Aerocover/Carbon-Fiber-Thermal-Load-Test.jpg</span></div><p class="caption">Curved Carbon-Fiber Test Article and Heated Static-Load Setup: In Development</p></div>
     </section>
-    <footer style="padding: 5rem 10%; background: #000; color: #666; font-size: .8rem; border-top: 1px solid #333; margin-top: 50px;">ALEXANDER TONG // BU MECHANICAL ENGINEERING // ARGO AEROCOVER</footer>
+    <footer style="padding: 5rem 10%; background: #000; color: #666; font-size: .8rem; border-top: 1px solid #333; margin-top: 50px;">ALEXANDER TONG // BU MECHANICAL ENGINEERING // AERODYNAMIC DOWNCOMER FAIRING</footer>
 </body>
 </html>

@@ -3,8 +3,8 @@
 import { useEffect } from 'react';
 
 const scripts = [
-  'portfolio-media.js',
-  'portfolio-carousel.js',
+  'portfolio-media.js?v=20260923-2',
+  'portfolio-carousel.js?v=20260923-2',
   'portfolio-intro.js',
   'portfolio-schematic.js'
 ];
@@ -95,7 +95,7 @@ export default function PageEnhancements({ isHome }) {
 
     const revealSelector = isHome
       ? '.project-grid > .section-title, .project-grid > .container, .project-grid > .project-carousel, #Experience > div, #contact'
-      : 'main > nav, .project-header, .project-hero-media, .content-section, main > .detail-return, main > footer';
+      : 'main > nav, .project-header, .project-hero-media, .project-metrics, .project-brief, .content-section, main > .detail-return, main > footer';
     const revealElements = [...document.querySelectorAll(revealSelector)]
       .filter((element) => !element.closest('.hero, .argo-blueprint'));
 
@@ -172,7 +172,7 @@ export default function PageEnhancements({ isHome }) {
     restorePage();
 
     async function startEnhancements() {
-      const requiredScripts = isHome ? scripts : scripts.slice(0, 1);
+      const requiredScripts = isHome ? scripts : scripts.slice(0, 2);
       for (const script of requiredScripts) {
         if (controller.signal.aborted) return;
         await loadScript(`${prefix}${script}`);

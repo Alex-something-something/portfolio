@@ -26,7 +26,11 @@
         const status = controls.querySelector('.carousel-status');
         const nav = document.querySelector('nav');
         const motion = matchMedia('(prefers-reduced-motion: reduce)');
-        let visible = false, held = false, moving = false;
+        const isProjectPage = Boolean(document.querySelector('.project-header'));
+        const visibilityRatio = isProjectPage ? 0.2 : 0.5;
+        const firstRotationDelay = isProjectPage ? 4000 : 3000;
+        const rotationInterval = isProjectPage ? 4500 : 4000;
+        let visible = false, held = false, moving = false, manuallyPaused = false;
         let visibleSince = 0, pauseUntil = 0, nextRotation = 0, timer, motionTimer;
         const step = () => cards[1].offsetLeft - cards[0].offsetLeft;
         const count = () => Math.max(1, Math.round((track.clientWidth + 30) / step()));
@@ -36,17 +40,18 @@
         }
         function schedule() {
             clearTimeout(timer);
-            if (!visible || held || motion.matches || document.hidden) return;
-            const due = Math.max(visibleSince + 3000, pauseUntil, nextRotation);
+            if (!visible || held || manuallyPaused || motion.matches || document.hidden) return;
+            const due = Math.max(visibleSince + firstRotationDelay, pauseUntil, nextRotation);
             timer = setTimeout(() => {
                 status.setAttribute('aria-live', 'off');
                 move(1);
-                nextRotation = Date.now() + 4000;
+                nextRotation = Date.now() + rotationInterval;
                 schedule();
             }, Math.max(0, due - Date.now()));
         }
         function pause(cancelMotion = false) {
-            pauseUntil = Date.now() + 10000;
+            if (isProjectPage) manuallyPaused = true;
+            else pauseUntil = Date.now() + 10000;
             nextRotation = 0;
             status.setAttribute('aria-live', 'polite');
             if (cancelMotion && moving) {
@@ -72,7 +77,7 @@
             const navBottom = nav && getComputedStyle(nav).visibility !== 'hidden'
                 ? Math.max(0, nav.getBoundingClientRect().bottom) : 0;
             const shown = Math.max(0, Math.min(innerHeight, rect.bottom) - Math.max(navBottom, rect.top));
-            const nextVisible = !document.hidden && rect.height > 0 && shown >= rect.height / 2 && rect.right > 0 && rect.left < innerWidth;
+            const nextVisible = !document.hidden && rect.height > 0 && shown >= rect.height * visibilityRatio && rect.right > 0 && rect.left < innerWidth;
             if (nextVisible !== visible) {
                 visible = nextVisible;
                 if (visible) visibleSince = Date.now();
@@ -82,14 +87,18 @@
         }
         controls.querySelector('[data-carousel="previous"]').addEventListener('click', () => { pause(); move(-1); });
         controls.querySelector('[data-carousel="next"]').addEventListener('click', () => { pause(); move(1); });
-        region.addEventListener('pointerdown', () => { held = true; pause(true); });
+        region.addEventListener('pointerdown', (event) => {
+            if (isProjectPage && !event.target.closest('.carousel-controls')) return;
+            held = true;
+            pause(true);
+        });
         const release = () => { if (held) { held = false; pause(); } };
         window.addEventListener('pointerup', release);
         window.addEventListener('pointercancel', release);
         window.addEventListener('blur', release);
-        region.addEventListener('wheel', () => pause(true), { passive: true });
+        if (!isProjectPage) region.addEventListener('wheel', () => pause(true), { passive: true });
         region.addEventListener('keydown', () => pause(true));
-        region.addEventListener('click', () => pause());
+        if (!isProjectPage) region.addEventListener('click', () => pause());
         region.addEventListener('focusin', () => pause());
         track.addEventListener('scroll', () => {
             label();

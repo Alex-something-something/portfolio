@@ -1,0 +1,66 @@
+Alexander Tong
+860-706-3624 | alto335@bu.edu | alexandertong.space | linkedin.com/in/alto335
+
+EDUCATION
+Boston University, Boston, MA | Expected May 2028
+B.S. Mechanical Engineering, Aerospace Engineering Concentration | GPA: 3.71/4.00
+73 earned semester hours of BU coursework; 24 AP test credits listed separately on transcript
+Completed: Energy and Thermodynamics; Mechanics of Materials; CAD and Machine Components
+In progress: Fluid Mechanics; Manufacturing Processes; Electromechanical Design
+
+Argo Separation and Recovery Subsystem | 06/2025 - Present
+Co-Lead Engineer | Boston University Rocket Propulsion Group | Boston, MA
+Student club project | Total BURPG commitment: 10-30 hours/week, variable
+- Designed redundant recovery for a 135 lb liquid rocket targeting 100,000 ft; achieved 18.7 lbm against a 20 lbm budget and presented four iterative design reviews
+- Compared system architectures, commercial flight computers, and separation mechanisms against mass, cost, and development constraints; recovery system cost was $1,076
+- Calculated 823 lbf parachute shock and 1,230 lbf snatch loads by synthesizing five research-paper methods; introduced and dynamically tested Brummel eye splices to replace knots and reduce quick-links, confirming minimum 1.5 FOS
+- Developed CO2 deployment hardware after recurring integrated-test failures and parachute damage; contributed pressure and Lamé thick-wall stress calculations, Fusion 360 CAD, drawings, machining, and hardware tests in a three-person team; integrated CO2 validation remains planned
+- Led recovery test operations: test plans, safety protocols, crew assignments, briefings, firing authorization, abort decisions, and post-test analysis
+- Built and operated a 352 L vacuum chamber at 0.011 atm using salvaged pumps and available stock; integrated LabJack data acquisition, a pressure transducer, and two-amplifier signal conditioning for deployment-hardware and avionics tests
+- Redesigned and machined cable cutters on manual mill and lathe, reducing mass 49.5% with a calculated 2.01 FOS; documented assembly and recovery-system packing procedures
+
+Boston University Plummer Laboratory | 06/2026 - Present
+Mechanical Engineering Intern | Boston, MA
+06/2026 - 08/2026: full-time, 40 hours/week | 09/2026 - Present: part-time, 10 hours/week
+- CNC-machined a 6061-T6 shaker adapter on a Haas VF-2; reduced stock mass 40.4%, from 3.19 to 1.90 kg, with a conical underside chamfer, corner fillets, and 12 drilled holes
+- Generated G-code, engineering drawings, and tolerance stack-ups for +/-0.005 in holes; reduced estimated plate-and-fastener cost from $1,170 outsourced to $71.11 through in-house fabrication and fastener selection
+- Predicted 0.44 mm fixture deflection under a 3 kg load at 20.1 Hz using SolidWorks dynamic finite element analysis (FEA); analyzed fastener preload and joint failure modes
+- Independently measured 50-120 mN forces with an Instron 68SC-5 to investigate physical Ising models and support ongoing comparison with mathematical predictions
+- Presented shaker-adapter design iterations, finished hardware, and results in a flash-talk update at a meeting involving multiple laboratories
+
+Culturon | 02/2026 - 06/2026
+Mechanical Engineering Intern | Sydney, Australia
+Part-time | 10 hours/week
+- Planned and executed the company's first full-scale nanoparticle deposition mapping across chamber locations and magnetic configurations; used scanning electron microscopy (SEM), optical microscopy, and ImageJ to characterize polarity-dependent deposition and asymmetric flow behavior
+- Formed a working hypothesis for contamination cause and pattern from sample-plate SEM/ImageJ results, optical microscopy, and direct visual evidence
+- Presented turbomolecular- and roughing-pump port, chamber-bottom, and electron-curtain prevention concepts based on the hypothesis and fluid/electromagnetic first principles in a technical design review; full-system implementation remained conceptual
+- Designed Onshape sheet-metal sample racks and coupons for reactor-port insertion and adhesive-free mounting; incorporated bend reliefs, fabrication tolerances, assembly clearances, and flow-disturbance considerations
+- Compared observations with published research and presented findings and design recommendations to technical teams; proprietary results and parameters are protected by NDA
+
+AIAA Design-Build-Fly Aircraft | 06/2025 - 12/2025
+Wing Structural Lead | Boston University | Boston, MA
+Student club project | 10-20 hours/week, variable
+- Led two wing designs in Fusion 360; compared structure, material, and manufacturing options to produce a 50% lighter XPS prototype and reduce build time from three months to one
+- Designed a split NACA 2412 wing with 0.52 taper ratio and 5-degree dihedral using aerodynamic-team specifications and manufacturing lessons from the first prototype; developed the servo flap system
+- Led structural and manufacturing reviews, mentored nine members in laser cutting, waterjet operation, and Fusion 360, and coached the succeeding wing lead in manufacturing logistics
+
+Hybrid Rocket Nozzle | 09/2024 - 11/2024
+Lead Engineer | Boston University Rocket Propulsion Group | Boston, MA
+Part-time student club project | Approximately 5 hours/week
+- Led five members through three design reviews to develop a parabolic nozzle using isentropic flow relations, Rao contour methods, and SolidWorks CAD/FEA
+- Reduced nozzle mass 73% from the initial design and calculated a 7.8 FOS under mechanical loads alone; incorporated review feedback on manufacturing and assembly fragility
+- Led the team developing the launch computer and completed an approximately two-second hotfire; a load-cell malfunction prevented thrust-data collection
+
+Ablative Anode Pulsed Plasma Thruster Laboratory | 05/2026 - 06/2026
+Volunteer | University of Sydney | Sydney, Australia
+Part-time volunteer work | Approximately 5 hours/week
+- Designed an ABS inductor spool, performed coil-winding calculations, and checked vacuum-outgassing suitability; provided limited assistance with the established thruster operating procedure
+
+Space Physics and Technology Laboratory | 10/2025 - 12/2025
+COSSMo Research Experience | Boston University | Boston, MA
+Part-time student research | Approximately 5 hours/week
+- Assisted with and observed flight-spare laser calibration; combined existing research tools, pySPEDAS, and self-written Python functions for limited analysis of live and historical spacecraft data
+
+TECHNICAL SKILLS
+Design and analysis: SolidWorks, Fusion 360, Onshape, FEA, GD&T, engineering drawings, MATLAB, Python
+Fabrication and testing: CNC and manual machining, composite layup, 3D printing, vacuum systems, LabJack data acquisition, pressure instrumentation, test planning and operations

@@ -101,6 +101,53 @@
         .ui-arrow { display: inline-block; width: 1em; height: 1em; flex-shrink: 0; vertical-align: -.12em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
         .back-link { gap: 8px; }
     </style>
+    <style>
+        .nozzle-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; margin: 0 10%; background: #333; border: 1px solid #333; }
+        .nozzle-metric { min-width: 0; padding: 22px; background: #111; }
+        .nozzle-metric strong { display: block; color: #E63946; font-size: clamp(1.35rem, 2.5vw, 2rem); line-height: 1.1; }
+        .nozzle-metric span { display: block; margin-top: 8px; color: #bbb; font-size: .82rem; line-height: 1.45; }
+        .nozzle-gallery { min-width: 0; width: 100%; }
+        .nozzle-gallery .carousel-controls { display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-bottom: 12px; }
+        .nozzle-gallery .carousel-controls[hidden] { display: none; }
+        .nozzle-gallery .carousel-controls button { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; padding: 0; background: #171717; color: #fff; border: 1px solid #555; cursor: pointer; }
+        .nozzle-gallery .carousel-controls button:hover { border-color: #E63946; color: #E63946; }
+        .nozzle-gallery .carousel-controls button:focus-visible { outline: 2px solid #E63946; outline-offset: 3px; }
+        .nozzle-gallery .carousel-status { min-width: 4.5rem; color: #bbb; font-size: .85rem; text-align: center; }
+        .nozzle-gallery .carousel-track { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; gap: 30px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; scrollbar-color: #E63946 #222; }
+        .nozzle-gallery .media-slide { min-width: 0; scroll-snap-align: start; }
+        .nozzle-gallery .media-slot { min-height: 360px !important; background: #151515; border: 1px solid #333; }
+        .nozzle-gallery .media-slot > img { width: 100%; height: clamp(320px, 42vw, 540px); max-height: none; object-fit: contain; }
+        .nozzle-gallery .caption { margin: 10px 0 2px; color: #bbb; font-size: .9rem; text-align: left; }
+        .calculation-section { display: block; }
+        .calculation-intro { max-width: 820px; margin-bottom: 26px; color: #ccc; }
+        .calculation-details { border-top: 1px solid #333; }
+        .calculation-details details { border-bottom: 1px solid #333; }
+        .calculation-details summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 0; color: #fff; font-weight: 700; cursor: pointer; list-style: none; }
+        .calculation-details summary::-webkit-details-marker { display: none; }
+        .calculation-details summary::after { content: '+'; color: #E63946; font-size: 1.35rem; font-weight: 400; }
+        .calculation-details details[open] summary::after { content: '−'; }
+        .calculation-table { width: 100%; margin: 0 0 22px; border-collapse: collapse; color: #ccc; font-size: .92rem; }
+        .calculation-table th, .calculation-table td { padding: 11px 12px; border-bottom: 1px solid #292929; text-align: left; vertical-align: top; }
+        .calculation-table th { width: 45%; color: #aaa; font-weight: 400; }
+        .source-sheet { padding-bottom: 24px; }
+        .source-sheet .media-slot { min-height: 180px !important; }
+        @media (max-width: 850px) {
+            .nozzle-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (max-width: 650px) {
+            .nozzle-metrics { margin: 0 6%; grid-template-columns: minmax(0, 1fr); }
+            .nozzle-metric { padding: 18px; }
+            .nozzle-gallery .carousel-controls { justify-content: flex-start; }
+            .nozzle-gallery .media-slot { min-height: 240px !important; }
+            .nozzle-gallery .media-slot > img { height: 300px; }
+            .calculation-table, .calculation-table tbody, .calculation-table tr, .calculation-table th, .calculation-table td { display: block; width: 100%; }
+            .calculation-table tr { padding: 10px 0; border-bottom: 1px solid #292929; }
+            .calculation-table th, .calculation-table td { padding: 3px 0; border: 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .nozzle-gallery .carousel-track { scroll-behavior: auto; }
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -111,55 +158,156 @@
         <a href="index.html#ground-systems" class="back-link"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4M10 6l-6 6 6 6"/></svg> Ground Systems &amp; Testing</a>
         <h1>Hybrid Parabolic <span>Rocket Nozzle</span></h1>
         <p class="project-meta-line">Lead Engineer · BURPG · September–November 2024 · Hotfire tested</p>
-        <p class="project-overview">Led design and hotfire testing of a de Laval nozzle optimized for 45,000 ft, reducing mass by 73% relative to the initial design.</p>
+        <p class="project-overview">Led a five-person team through the design and hotfire testing of a de Laval nozzle optimized for 45,000 ft, reducing mass by 73% relative to my initial design.</p>
     </header>
 
     <div class="project-hero-media" style="padding: 0 10%; margin-top: -1px;">
-        <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Hotfire.mp4" data-media-type="video" data-fit="cover" data-alt="Hotfire Test Slow Motion Video/GIF" title="Pictures/Nozzle/Hotfire.mp4"><span class="media-filename">Pictures/Nozzle/Hotfire.mp4</span></div>
+        <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Hotfire.mp4" data-media-type="video" data-autoplay="true" data-fit="cover" data-alt="Hotfire Test Slow Motion Video/GIF" title="Pictures/Nozzle/Hotfire.mp4"><span class="media-filename">Pictures/Nozzle/Hotfire.mp4</span></div>
+        <p class="caption" style="margin-top: 10px; text-align: left;">Approximately two-second hybrid-nozzle hotfire, shown in slow motion</p>
     </div>
+
+    <div class="nozzle-metrics project-metrics" aria-label="Project results at a glance">
+        <div class="nozzle-metric project-metric"><strong>73%</strong><span>mass reduction from my initial design</span></div>
+        <div class="nozzle-metric project-metric"><strong>7.86 lbf</strong><span>predicted thrust at the 45,000 ft design condition</span></div>
+        <div class="nozzle-metric project-metric"><strong>2.65 lbf</strong><span>predicted thrust at sea level</span></div>
+        <div class="nozzle-metric project-metric"><strong>7.8 FOS</strong><span>calculated yield margin under modeled mechanical loads</span></div>
+    </div>
+
+    <section class="project-brief" aria-labelledby="nozzle-design-brief">
+        <h2 id="nozzle-design-brief">Design Brief &amp; Constraints</h2>
+        <p>BURPG’s Hybrid Introductory Project challenged new members to calculate, design, manufacture, and test a nozzle and launch computer that maximized predicted thrust while minimizing mass within fixed chamber pressure, mass-flow-rate, maximum-diameter, and 45,000 ft design-altitude constraints.</p>
+    </section>
 
     <section class="content-section">
         <div class="text-block">
             <h2>Contribution &amp; Results</h2>
-            <p style="color: #ccc;">As my first project with BURPG in Fall 2024, I led a five-person team to design, optimize, and physically hotfire a parabolic hybrid rocket nozzle with a 7.86 lbf design thrust. Relative to my initial design, the final geometry reduced mass by 73% and increased predicted thrust by 5%. Mechanical stress analysis gave a calculated 7.8 FOS under mechanical loads alone. The nozzle survived an approximately two-second hotfire, but a load-cell malfunction prevented thrust-data collection.</p>
+            <p style="color: #ccc;">As my first BURPG project, I led a five-person team to design, optimize, manufacture, and physically hotfire a parabolic hybrid rocket nozzle. The final geometry reduced mass by 73% relative to my initial design and increased predicted thrust by 5%. Analysis predicted 7.86 lbf at the 45,000 ft design condition and 2.65 lbf at sea level. Mechanical stress analysis gave a calculated 7.8 FOS under modeled mechanical loads.</p>
+            <p style="color: #ccc;">The ABS-like resin nozzle survived an approximately two-second hotfire. A load-cell malfunction prevented usable thrust-data collection, so the thrust improvement remains a prediction rather than a measured result.</p>
             
-            <h2 style="margin-top: 40px;">Experience & Skills</h2>
-            <p style="color: #ccc;"><strong>Role:</strong> Overall and Design Lead</p>
+            <h2 style="margin-top: 40px;">Role &amp; Technical Scope</h2>
+            <p style="color: #ccc;"><strong>Role:</strong> Lead Engineer</p>
             <p style="color: #ccc;">I directed the project through three iterative design reviews, coordinating the subteams responsible for the test fire computer, engineering drawings, and FEA. I coordinated cross-team communication and intermediate milestones to keep design reviews and testing on schedule.</p>
             <ul>
-                <li><strong>Nozzle Design & CAD:</strong> Modeled an 80%-length Rao parabolic de Laval nozzle in SolidWorks using isentropic-flow equations, G.V.R. Rao’s contour methods, <em>Rocket Propulsion Elements</em>, and ANSI standards. Mapped a Bézier curve across three points for the diverging section and used circular curves for the converging and throat sections.</li>
-                <li><strong>FEA & Structural Optimization:</strong> Assessed nozzle stresses using SolidWorks FEA, which I learned and troubleshooted from scratch. Initially optimized the contour to a 2.0 FOS to aggressively cut weight, but after a design review raised manufacturing and assembly fragility concerns, I thickened the geometry to a final 7.8 FOS in yield under the modeled mechanical loads. Thermal effects were not included.</li>
-                <li><strong>Manufacturing:</strong> The nozzle was manufactured using a Formlabs SLA printer in ABS-like resin, intended for a single-use hotfire.</li>
+                <li><strong>Nozzle Design &amp; CAD:</strong> Modeled an 80%-length Rao parabolic de Laval nozzle in SolidWorks using isentropic-flow equations, G.V.R. Rao’s contour method, <em>Rocket Propulsion Elements</em>, and ANSI standards.</li>
+                <li><strong>FEA &amp; Structural Optimization:</strong> Learned and troubleshot SolidWorks FEA from scratch, then assessed stresses using sourced ABS-like resin yield strength, density, Poisson’s ratio, and elastic modulus.</li>
+                <li><strong>Manufacturing:</strong> Prepared the single-use nozzle for Formlabs SLA printing in ABS-like resin.</li>
             </ul>
         </div>
         <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Isometric.png" data-media-type="image" data-fit="contain" data-alt="Isometric View of Nozzle" title="Pictures/Nozzle/Isometric.png"><span class="media-filename">Pictures/Nozzle/Isometric.png</span></div>
-            <p class="caption">SolidWorks Isometric View</p>
-            
-            <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Drawing.png" data-media-type="image" data-fit="contain" data-alt="SolidWorks Drawing" title="Pictures/Nozzle/Drawing.png"><span class="media-filename">Pictures/Nozzle/Drawing.png</span></div>
-            <p class="caption">Engineering Drawing & Dimensions</p>
+            <div class="project-carousel nozzle-gallery" role="region" aria-roledescription="carousel" aria-label="Nozzle hardware and integration views">
+                <div class="carousel-controls" hidden>
+                    <button type="button" data-carousel="previous" aria-label="Previous hardware view" aria-controls="nozzle-hardware-gallery"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></button>
+                    <span class="carousel-status" aria-live="off"></span>
+                    <button type="button" data-carousel="next" aria-label="Next hardware view" aria-controls="nozzle-hardware-gallery"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+                </div>
+                <div id="nozzle-hardware-gallery" class="carousel-track">
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Isometric.png" data-media-type="image" data-fit="contain" data-alt="SolidWorks isometric view of the nozzle" title="Pictures/Nozzle/Isometric.png"><span class="media-filename">Pictures/Nozzle/Isometric.png</span></div><figcaption class="caption">SolidWorks isometric view</figcaption></figure>
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Mounting-Cross-Section.png" data-media-type="image" data-fit="contain" data-alt="Nozzle and mounting-adapter cross-section" title="Pictures/Nozzle/Mounting-Cross-Section.png"><span class="media-filename">Pictures/Nozzle/Mounting-Cross-Section.png</span></div><figcaption class="caption">Nozzle and mounting-adapter cross-section</figcaption></figure>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="content-section" style="border-bottom: none;">
-        <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/FEA.png" data-media-type="image" data-fit="contain" data-alt="FEA Meshing Image" title="Pictures/Nozzle/FEA.png"><span class="media-filename">Pictures/Nozzle/FEA.png</span></div>
-            <p class="caption">SolidWorks FEA: Calculated 7.8 FOS Under Mechanical Loads Alone</p>
-
-            <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Calculations.png" data-media-type="image" data-fit="contain" data-alt="Calculation Spreadsheet" title="Pictures/Nozzle/Calculations.png"><span class="media-filename">Pictures/Nozzle/Calculations.png</span></div>
-            <p class="caption">Isentropic Flow & Parameter Calculations</p>
-        </div>
+    <section class="content-section">
         <div class="text-block">
-            <h2>Testing & Validation</h2>
-            <p style="color: #ccc;"><strong>Hotfire &amp; Data Acquisition:</strong> The system fired successfully for approximately two seconds. A load-cell malfunction on the day of the test prevented collection of usable thrust data. The 5% thrust improvement therefore remains a prediction, not a measured result.</p>
-            <p style="color: #ccc;"><strong>Launch Computer:</strong> I led the team responsible for designing, soldering, and programming the launch computer used to actuate the test. The planned measurement setup included LabJack acquisition and a load cell.</p>
-            
-            <h2 style="margin-top: 40px;">Motivation & Constraints</h2>
-            <p style="color: #ccc;"><strong>Objective:</strong> The Hybrid Introductory Project (HIP) is BURPG's hands-on trial for new members to learn compressible flow, nozzle design, and FEA. The goal was to calculate, design, and build a nozzle and test computer that maximized thrust and minimized weight.</p>
-            <ul>
-                <li><strong>Optimization Target:</strong> 45,000 feet</li>
-                <li><strong>Design Constraints:</strong> Strict parameters for optimization pressure, mass flow rate, and maximum diameter.</li>
-            </ul>
+            <h2>Contour Development</h2>
+            <p style="color: #ccc;">I selected an 80%-length parabolic de Laval contour to retain the performance of a longer conical nozzle while reducing axial length. The converging-diverging geometry chokes the flow at the throat and expands it through the diverging section to produce thrust.</p>
+            <p style="color: #ccc;">I calculated the area ratio and candidate nozzle lengths, then constructed the diverging contour from a three-point Bézier curve using G.V.R. Rao’s geometric method. Circular arcs define the converging and throat regions.</p>
+        </div>
+        <div class="image-block">
+            <div class="project-carousel nozzle-gallery" role="region" aria-roledescription="carousel" aria-label="Nozzle contour development gallery">
+                <div class="carousel-controls" hidden>
+                    <button type="button" data-carousel="previous" aria-label="Previous contour view" aria-controls="nozzle-contour-gallery"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></button>
+                    <span class="carousel-status" aria-live="off"></span>
+                    <button type="button" data-carousel="next" aria-label="Next contour view" aria-controls="nozzle-contour-gallery"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+                </div>
+                <div id="nozzle-contour-gallery" class="carousel-track">
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Drawing.png" data-media-type="image" data-fit="contain" data-alt="Nozzle engineering drawing and dimensions" title="Pictures/Nozzle/Drawing.png"><span class="media-filename">Pictures/Nozzle/Drawing.png</span></div><figcaption class="caption">Engineering drawing and dimensions</figcaption></figure>
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Rao-Angle-Reference.png" data-media-type="image" data-fit="contain" data-alt="Rao parabolic-nozzle angle reference chart" title="Pictures/Nozzle/Rao-Angle-Reference.png"><span class="media-filename">Pictures/Nozzle/Rao-Angle-Reference.png</span></div><figcaption class="caption">Rao angle reference at a constant expansion ratio</figcaption></figure>
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Bezier-Geometry.png" data-media-type="image" data-fit="contain" data-alt="CAD view of the nozzle Bézier-curve geometry" title="Pictures/Nozzle/Bezier-Geometry.png"><span class="media-filename">Pictures/Nozzle/Bezier-Geometry.png</span></div><figcaption class="caption">CAD Bézier-curve geometry</figcaption></figure>
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Bezier-Points.png" data-media-type="image" data-fit="contain" data-alt="Published geometric construction of a Rao parabolic nozzle contour" title="Pictures/Nozzle/Bezier-Points.png"><span class="media-filename">Pictures/Nozzle/Bezier-Points.png</span></div><figcaption class="caption">Published Rao parabolic-contour construction reference</figcaption></figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="text-block">
+            <h2>Structural Analysis</h2>
+            <p style="color: #ccc;">I initially reduced wall thickness until the modeled geometry retained a 2.0 yield FOS. A design review identified fragility risks during print removal, handling, and assembly, so I strengthened the outer contour. The final SolidWorks analysis calculated a 7.8 yield FOS under the modeled mechanical pressure loads.</p>
+            <p style="color: #ccc;">The analysis used pressure regions for the chamber, throat, diverging surface, and external environment. Bolt fixtures represented the interface with the mounting adapter. Material inputs were sourced for the selected ABS-like resin.</p>
+        </div>
+        <div class="image-block">
+            <div class="project-carousel nozzle-gallery" role="region" aria-roledescription="carousel" aria-label="Nozzle structural analysis gallery">
+                <div class="carousel-controls" hidden>
+                    <button type="button" data-carousel="previous" aria-label="Previous analysis view" aria-controls="nozzle-analysis-gallery"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></button>
+                    <span class="carousel-status" aria-live="off"></span>
+                    <button type="button" data-carousel="next" aria-label="Next analysis view" aria-controls="nozzle-analysis-gallery"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+                </div>
+                <div id="nozzle-analysis-gallery" class="carousel-track">
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Nozzle/FEA-FOS.png" data-media-type="image" data-fit="contain" data-alt="Calculated yield FOS result" title="Pictures/Nozzle/FEA-FOS.png"><span class="media-filename">Pictures/Nozzle/FEA-FOS.png</span></div><figcaption class="caption">Calculated yield FOS</figcaption></figure>
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Nozzle/FEA-Von-Mises.png" data-media-type="image" data-fit="contain" data-alt="von Mises stress result" title="Pictures/Nozzle/FEA-Von-Mises.png"><span class="media-filename">Pictures/Nozzle/FEA-Von-Mises.png</span></div><figcaption class="caption">von Mises stress result</figcaption></figure>
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Nozzle/FEA-Fixturing.png" data-media-type="image" data-fit="contain" data-alt="Bolt-fixture boundary conditions" title="Pictures/Nozzle/FEA-Fixturing.png"><span class="media-filename">Pictures/Nozzle/FEA-Fixturing.png</span></div><figcaption class="caption">Bolt-fixture boundary conditions</figcaption></figure>
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Nozzle/FEA.png" data-media-type="image" data-fit="contain" data-alt="SolidWorks finite-element mesh on the nozzle" title="Pictures/Nozzle/FEA.png"><span class="media-filename">Pictures/Nozzle/FEA.png</span></div><figcaption class="caption">Finite-element mesh</figcaption></figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="text-block">
+            <h2>Testing &amp; Data Acquisition</h2>
+            <p style="color: #ccc;"><strong>Hotfire:</strong> The nozzle survived an approximately two-second firing. The test demonstrated successful physical operation of the printed hardware, but it did not validate the calculated thrust or the full analytical margin.</p>
+            <p style="color: #ccc;"><strong>Launch Computer:</strong> I led the team responsible for designing, soldering, and programming the launch computer used to actuate the test. The measurement architecture used LabJack acquisition and a load cell, but a load-cell malfunction on the day of the test prevented usable thrust data.</p>
+        </div>
+    </section>
+
+    <section class="content-section calculation-section" style="border-bottom: none;">
+        <div class="text-block">
+            <h2>Calculation Basis</h2>
+            <p class="calculation-intro">The original spreadsheet is reorganized below into the inputs and results most useful for reviewing the design. The full source screenshot remains available in the final expandable section.</p>
+            <div class="calculation-details">
+                <details open>
+                    <summary>Predicted performance</summary>
+                    <table class="calculation-table"><tbody>
+                        <tr><th>Optimized thrust at 45,000 ft</th><td>34.98 N / 7.86 lbf</td></tr>
+                        <tr><th>Predicted sea-level thrust</th><td>11.77 N / 2.65 lbf</td></tr>
+                        <tr><th>Specific impulse</th><td>92.31 s</td></tr>
+                        <tr><th>Optimal specific impulse</th><td>274.4 s</td></tr>
+                        <tr><th>Exit velocity</th><td>2,691 m/s / 8,828.74 ft/s</td></tr>
+                        <tr><th>Expansion-area ratio</th><td>6.521</td></tr>
+                    </tbody></table>
+                </details>
+                <details>
+                    <summary>Operating inputs</summary>
+                    <table class="calculation-table"><tbody>
+                        <tr><th>Target altitude</th><td>45,000 ft above sea level</td></tr>
+                        <tr><th>Optimization pressure</th><td>14,479 Pa / 2.1 psi</td></tr>
+                        <tr><th>Chamber pressure</th><td>551,581 Pa / 80 psi</td></tr>
+                        <tr><th>Chamber temperature</th><td>3,250 K / 5,390.33 °F</td></tr>
+                        <tr><th>Combined mass flow rate</th><td>0.013 kg/s / 0.02866 lb/s</td></tr>
+                        <tr><th>Combustion-gas specific heat ratio</th><td>1.13</td></tr>
+                    </tbody></table>
+                </details>
+                <details>
+                    <summary>Calculated geometry</summary>
+                    <table class="calculation-table"><tbody>
+                        <tr><th>Throat diameter</th><td>0.0072 m / 0.024 ft</td></tr>
+                        <tr><th>Exit diameter</th><td>0.018 m / 0.059 ft</td></tr>
+                        <tr><th>Equivalent conical length</th><td>0.021 m / 0.069 ft</td></tr>
+                        <tr><th>80% bell length</th><td>0.017 m / 0.056 ft</td></tr>
+                        <tr><th>Parabolic contour length</th><td>0.0168 m</td></tr>
+                        <tr><th>Initial and exit contour angles</th><td>0.42 rad / 0.21 rad</td></tr>
+                    </tbody></table>
+                </details>
+                <details>
+                    <summary>Original calculation spreadsheet</summary>
+                    <div class="source-sheet">
+                        <div class="img-placeholder media-slot" data-media="Pictures/Nozzle/Calculations.png" data-media-type="image" data-fit="contain" data-alt="Original nozzle calculation spreadsheet" title="Pictures/Nozzle/Calculations.png"><span class="media-filename">Pictures/Nozzle/Calculations.png</span></div>
+                        <p class="caption" style="margin-top: 10px; text-align: left;">Original isentropic-flow and geometric-method calculation sheet</p>
+                    </div>
+                </details>
+            </div>
         </div>
     </section>
 

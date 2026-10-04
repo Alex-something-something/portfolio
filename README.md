@@ -22,7 +22,7 @@ A statically exported React and Next.js portfolio for GitHub Pages.
 
 ## Adding pictures and videos
 
-Open [public/Pictures/README.md](public/Pictures/README.md) for every required filename and folder. Copy a file into the matching location, keeping the filename exactly as shown. Empty media slots display the same path on the website.
+Open [public/Pictures/README.md](public/Pictures/README.md) for every required filename and folder. Copy a file into the matching location, keeping the filename exactly as shown. Missing media stays hidden on the public site and appears automatically after the matching file is added.
 
 Example:
 
@@ -44,10 +44,35 @@ Rotation begins after half the carousel is visible for three seconds, then advan
 
 ## Running the site locally
 
-Open PowerShell in this folder:
+### For future sessions: start here
+
+Open **PowerShell as Administrator**, paste this entire block, and press Enter:
+
+```powershell
+Set-Location -LiteralPath "C:\Users\aleto\OneDrive\Documents\Desktop\Gemini_Portfolio"
+& "C:\Program Files\nodejs\corepack.cmd" yarn dev
+```
+
+Then open [http://localhost:3000](http://localhost:3000). Keep PowerShell open while viewing the portfolio. Press `Ctrl+C` in PowerShell when you want to stop the local website.
+
+### First-time setup or troubleshooting
+
+To open PowerShell as Administrator:
+
+1. Open the Windows Start menu.
+2. Search for `PowerShell`.
+3. Right-click **Windows PowerShell** and select **Run as administrator**.
+
+PowerShell normally opens in your user folder, which does not contain this project's `package.json`. Change into the portfolio folder before running any Yarn command:
 
 ```powershell
 cd "C:\Users\aleto\OneDrive\Documents\Desktop\Gemini_Portfolio"
+```
+
+The prompt should now begin with:
+
+```text
+PS C:\Users\aleto\OneDrive\Documents\Desktop\Gemini_Portfolio>
 ```
 
 Install [Node.js LTS](https://nodejs.org/en/download) first, then close and reopen PowerShell. Confirm that Node and npm are available:
@@ -70,13 +95,19 @@ Install the project dependencies:
 yarn install
 ```
 
-Start the local development site:
+Start the local development site from that folder:
 
 ```powershell
-yarn dev
+corepack yarn dev
 ```
 
-Then open `http://localhost:3000`.
+If `corepack` is not found even after installing it, run:
+
+```powershell
+& "C:\Program Files\nodejs\corepack.cmd" yarn dev
+```
+
+Then open [http://localhost:3000](http://localhost:3000). Keep PowerShell open while viewing the site. Press `Ctrl+C` in PowerShell to stop the local server.
 
 ## Checking the production build
 

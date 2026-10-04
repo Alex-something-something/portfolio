@@ -108,12 +108,6 @@
     "type": "image"
   },
   {
-    "path": "Pictures/Manufacturing/Rings.jpg",
-    "page": "manufacturing.html",
-    "location": "Turned Rings Photo",
-    "type": "image"
-  },
-  {
     "path": "Pictures/Plummer/Lab-Overview.jpg",
     "page": "plummer.html",
     "location": "Dynamic-Test Fixture or Laboratory Photo",
@@ -159,24 +153,6 @@
     "path": "Pictures/Aerocover/Baseline-Comparison.png",
     "page": "project_aerocover.html",
     "location": "Icarus Baseline and Argo Concept",
-    "type": "image"
-  },
-  {
-    "path": "Pictures/Aerocover/CFD.png",
-    "page": "project_aerocover.html",
-    "location": "CFD Visualization",
-    "type": "image"
-  },
-  {
-    "path": "Pictures/Aerocover/FEA.png",
-    "page": "project_aerocover.html",
-    "location": "Structural Analysis",
-    "type": "image"
-  },
-  {
-    "path": "Pictures/Aerocover/Mold-Mounting.png",
-    "page": "project_aerocover.html",
-    "location": "Mold or Mounting Concept",
     "type": "image"
   },
   {
@@ -296,7 +272,19 @@
   {
     "path": "Pictures/Vacuum/Pressure-Data.png",
     "page": "project_vacuum.html",
-    "location": "PT Data Graph",
+    "location": "Pressure-transducer output, analyzed by project partner",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Vacuum/Door-CAD.png",
+    "page": "project_vacuum.html",
+    "location": "Vacuum-Chamber Door and Tube-Adapter CAD",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Vacuum/Door-FEA.png",
+    "page": "project_vacuum.html",
+    "location": "Door FEA Model and Stress Review",
     "type": "image"
   },
   {

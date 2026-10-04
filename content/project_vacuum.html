@@ -140,9 +140,15 @@
     <header class="project-header">
         <a href="index.html#ground-systems" class="back-link"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4M10 6l-6 6 6 6"/></svg> Ground Systems &amp; Testing</a>
         <h1>Vacuum <span>Test Chamber</span></h1>
-        <p class="project-meta-line">Chamber Design &amp; Testing · BURPG · Test infrastructure</p>
-        <p class="project-overview">Developed ground-test infrastructure for recovery charges and flight-computer evaluation at reduced pressure.</p>
+        <p class="project-meta-line">Chamber Design &amp; Testing · BURPG · Operational test infrastructure · Upgrade in design</p>
+        <p class="project-overview">Built and operated reduced-pressure recovery-test infrastructure, then designed a structurally analyzed door, adapter, and face-seal upgrade.</p>
     </header>
+    <div class="project-metrics" aria-label="Vacuum chamber capabilities at a glance">
+        <div class="project-metric"><strong>352 L</strong><span>square-cross-section chamber volume</span></div>
+        <div class="project-metric"><strong>0.011 atm</strong><span>demonstrated operating pressure</span></div>
+        <div class="project-metric"><strong>1,663 lbf</strong><span>full-atmospheric door design load</span></div>
+        <div class="project-metric"><strong>2.72 FOS</strong><span>analytical door-bending margin</span></div>
+    </div>
     <section class="content-section">
         <div class="text-block">
             <h2>Purpose &amp; Contribution</h2>
@@ -151,8 +157,8 @@
             <ul>
                 <li><strong>Vacuum Chamber Validation:</strong> Developed a 352 L test vacuum chamber operating at 0.011 atm to evaluate sealed separation charges and avionics at reduced pressure for a rocket targeting 100,000 ft. Designed a size 381 square-cross-section face seal using the Parker O-Ring Handbook.</li>
                 <li><strong>Pump Architecture:</strong> Used a Robinair 15310 3 CFM pump for faster initial roughing and an Alcatel 2008A for slower evacuation to a deeper vacuum. This describes their observed behavior in our setup: the Alcatel reached a lower final absolute pressure.</li>
-                <li><strong>Pressure Measurements:</strong> Tested BP charges inside the vacuum chamber using a Pressure Transducer (PT) to track pressure spikes and validate shear pin failure loads.</li>
-                <li><strong>DAQ &amp; Signal Conditioning:</strong> Built and used a LabJack data-acquisition system with a pressure transducer and two-amplifier signal conditioning. A physical gauge provided a secondary indication, not an independent redundant DAQ path.</li>
+                <li><strong>Pressure Measurements:</strong> Integrated a pressure transducer into reduced-pressure BP charge tests. My project partner performed the resulting pressure-data analysis.</li>
+                <li><strong>DAQ &amp; Signal Conditioning:</strong> Built and used the LabJack acquisition hardware with a pressure transducer and two-amplifier signal conditioning. A physical gauge provided a secondary indication, not an independent redundant measurement path.</li>
                 <li><strong>Resourceful Fabrication:</strong> Reused pumps and other equipment found in the lab, along with available stock for the adapter and door assembly.</li>
             </ul>
             <p style="margin-top: 24px;"><a href="project_recovery.html" style="color: #E63946;">View the separation and recovery system <svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></p>
@@ -161,8 +167,54 @@
             <div class="img-placeholder media-slot" data-media="Pictures/Vacuum/Chamber.jpg" data-media-type="image" data-fit="cover" data-alt="BP Vacuum Testing Photo" title="Pictures/Vacuum/Chamber.jpg"><span class="media-filename">Pictures/Vacuum/Chamber.jpg</span></div>
             <p class="caption">Custom 352 L Vacuum Chamber at 0.011 atm</p>
 
-            <div class="img-placeholder media-slot" data-media="Pictures/Vacuum/Pressure-Data.png" data-media-type="image" data-fit="contain" data-alt="PT Data Graph" title="Pictures/Vacuum/Pressure-Data.png"><span class="media-filename">Pictures/Vacuum/Pressure-Data.png</span></div>
-            <p class="caption">Pressure Transducer Data for BP Charge Validation</p>
+            <div class="img-placeholder media-slot" data-media="Pictures/Vacuum/Pressure-Data.png" data-media-type="image" data-fit="contain" data-alt="Pressure-transducer output analyzed by project partner" title="Pictures/Vacuum/Pressure-Data.png"><span class="media-filename">Pictures/Vacuum/Pressure-Data.png</span></div>
+            <p class="caption">Pressure-Transducer Output · Data Analysis by Project Partner</p>
+        </div>
+    </section>
+    <section class="content-section" id="vacuum-upgrades">
+        <div class="text-block">
+            <h2>Vacuum Chamber Upgrades</h2>
+            <p style="color: #ccc;">I developed an upgraded door, tube adapter, and face-seal concept around a full atmospheric pressure differential. The calculation set screened flexible plate options, sized the selected aluminum door, checked local adapter failure modes, and established an initial O-ring gland geometry before CAD and FEA review.</p>
+
+            <div class="test-evidence two-column-evidence" aria-label="Vacuum chamber upgrade design calculations">
+                <div class="test-evidence-item"><strong>14.7 psi</strong><span>full atmospheric differential used for the door design case</span></div>
+                <div class="test-evidence-item"><strong>12.0 in</strong><span>unsupported circular diameter in the plate model</span></div>
+                <div class="test-evidence-item"><strong>16.5 ksi</strong><span>calculated bending stress in the selected 0.25 in 6061 door</span></div>
+                <div class="test-evidence-item"><strong>0.0848 in</strong><span>calculated maximum door deflection</span></div>
+            </div>
+
+            <h3 class="project-subheading">Roark Large-Deflection Screening</h3>
+            <p style="color: #ccc;">I used large-deflection circular-plate relationships from Roark’s formulas to compare candidate door materials and thicknesses. These values are analytical screening results, rather than measured performance or FEA output. The predicted deflections made the thinner acrylic and sheet-steel alternatives poor fits for a rigid, repeatable chamber door.</p>
+            <div class="engineering-table-wrap">
+                <table class="engineering-table">
+                    <thead>
+                        <tr><th>Candidate</th><th>Thickness</th><th>Center stress</th><th>Maximum deflection</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Acrylic</td><td>0.250 in</td><td>1,588 psi</td><td>4.120 in</td></tr>
+                        <tr><td>Acrylic</td><td>0.375 in</td><td>1,212 psi</td><td>3.364 in</td></tr>
+                        <tr><td>Acrylic</td><td>0.500 in</td><td>1,000 psi</td><td>2.913 in</td></tr>
+                        <tr><td>Acrylic</td><td>0.750 in</td><td>763 psi</td><td>2.379 in</td></tr>
+                        <tr><td>16-gauge steel</td><td>0.0625 in</td><td>4,357 psi</td><td>1.091 in</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="project-subheading">Selected Door, Adapter &amp; Seal Checks</h3>
+            <ul>
+                <li><strong>6061 Aluminum Door:</strong> Selected a 0.25 in plate with 45 ksi yield strength. The analytical model predicts 16.5 ksi bending stress, 2.72 FOS, 0.0848 in maximum deflection, and a 3.65 lbm door mass.</li>
+                <li><strong>Tube Adapter:</strong> Applied a 1,627 lbf atmospheric load across the 11.87 in chamber opening. The adapter checks returned 5.26 FOS against punching shear and 2.66 FOS against pull-through; the lug and bearing modes were non-governing.</li>
+                <li><strong>Size 381 Face Seal:</strong> The initial square-cross-section O-ring gland targets 19.2% squeeze and 0.50% stretch using a 0.164 in gland depth, 0.244 in radial groove width, and ±0.004 in machining tolerance.</li>
+            </ul>
+            <p class="engineering-note"><strong>Open design item:</strong> The initial gland-fill calculation is 102.1%, so the groove geometry requires revision or verification before machining. The seal dimensions shown here are an in-progress design, not released hardware.</p>
+            <p style="margin-top: 16px; color: #888; font-size: .82rem;">Calculation source: Argo Separation and Recovery workbook, “Vacuum Chamber Upgrades.” Values shown are engineering calculations and are not presented as measured chamber performance.</p>
+        </div>
+        <div class="image-block">
+            <div class="img-placeholder media-slot" data-media="Pictures/Vacuum/Door-CAD.png" data-media-type="image" data-fit="contain" data-alt="CAD model of the vacuum chamber door and tube adapter" title="Pictures/Vacuum/Door-CAD.png"><span class="media-filename">Pictures/Vacuum/Door-CAD.png</span></div>
+            <p class="caption">Vacuum-Chamber Door and Tube-Adapter CAD</p>
+
+            <div class="img-placeholder media-slot" data-media="Pictures/Vacuum/Door-FEA.png" data-media-type="image" data-fit="contain" data-alt="Vacuum chamber door finite-element model and stress result" title="Pictures/Vacuum/Door-FEA.png"><span class="media-filename">Pictures/Vacuum/Door-FEA.png</span></div>
+            <p class="caption">Door FEA Model and Stress Review</p>
         </div>
     </section>
     <section class="content-section">
@@ -170,7 +222,7 @@
             <h2>Deployment Test Progression</h2>
             <p style="color: #ccc;">I built and used the chamber to test three successive deployment approaches: legacy black-powder glove-tip charges, vinyl-tubing charges based on Jim Jarvis’s method, and CO₂-canister piercing devices. All three were tested at reduced pressure in this chamber.</p>
             <h2 style="margin-top: 32px;">Completed Tests &amp; Planned Integration</h2>
-            <p style="color: #ccc;">The chamber supported completed sealed-charge firings, pressure-spike recording, shear-pin failure-load validation, flight-computer tests, and fully integrated separation and recovery tests using the previous vinyl-charge configuration.</p>
+            <p style="color: #ccc;">The chamber supported completed sealed-charge firings, pressure-transducer data collection, flight-computer tests, and fully integrated separation and recovery tests using the previous vinyl-charge configuration. My project partner performed the pressure-data analysis.</p>
             <p style="color: #ccc;">Integrated testing revealed reliability issues that informed the transition to CO₂-cartridge deployment. The <a href="project_co2.html" style="color: #E63946;">CO₂ deployment hardware</a> has been tested in the vacuum chamber and is being refined ahead of a planned, fully integrated test of the entire recovery system in the chamber.</p>
             <h2 style="margin-top: 32px;">Measurement Limitations</h2>
             <p style="color: #ccc;">The physical gauge and pressure transducer rarely agreed within 0.5 inHg. I treat them as separate indications with an unresolved discrepancy, rather than claiming that one validated the accuracy of the other.</p>

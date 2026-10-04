@@ -1,0 +1,327 @@
+% Alexander Tong | NASA Pathways Engineering Resume
+% Compile with pdfLaTeX in Overleaf
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\input{glyphtounicode}
+
+\pdfgentounicode=1
+\pagestyle{empty}
+\urlstyle{same}
+\raggedright
+\raggedbottom
+\setlength{\parindent}{0pt}
+
+\titleformat{\section}
+  {\large\scshape\raggedright}
+  {}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{7pt}{4pt}
+
+\newcommand{\resumeEntry}[4]{
+  {\small\textbf{#1 \textbar{} #2}}\\[-1pt]
+  {\small\textit{#3}}\\[-1pt]
+  {\small #4}
+}
+
+\newcommand{\resumeItem}[1]{\item \small{#1}}
+\newcommand{\resumeItemListStart}{
+  \begin{itemize}[
+    leftmargin=0.17in,
+    label=\textbullet,
+    itemsep=1.5pt,
+    topsep=2pt,
+    parsep=0pt,
+    partopsep=0pt
+  ]
+}
+\newcommand{\resumeItemListEnd}{
+  \end{itemize}\vspace{3pt}
+}
+
+\begin{document}
+
+\begin{center}
+  {\Huge\bfseries\scshape Alexander Tong}\\[3pt]
+  \small
+  860-706-3624
+  \enspace\textbar\enspace
+  \href{mailto:alto335@bu.edu}{alto335@bu.edu}
+  \enspace\textbar\enspace
+  \href{https://alexandertong.space}{alexandertong.space}
+  \enspace\textbar\enspace
+  \href{https://www.linkedin.com/in/alto335/}
+  {linkedin.com/in/alto335}
+\end{center}
+\vspace{-8pt}
+
+\section{Education}
+
+{\small
+\textbf{Boston University, College of Engineering}
+\textbar{} Boston, MA
+\hfill Expected May 2028\\
+B.S. Mechanical Engineering, Aerospace Concentration
+\textbar{} GPA: 3.71/4.00
+}\\
+{\small
+97 semester credits awarded: 73 from BU coursework and 24 from AP examinations
+}
+
+\section{Relevant Engineering Experience}
+
+\resumeEntry
+  {Argo Separation and Recovery Subsystem}
+  {06/2025 -- Present}
+  {Co-Lead Engineer, Boston University Rocket Propulsion Group
+   \textbar{} Boston, MA}
+  {Part-time student club project
+   \textbar{} Total BURPG commitment: 10--30 hours/week, variable}
+
+\resumeItemListStart
+  \resumeItem{
+    Designed redundant single-separation, dual-deploy recovery for a
+    liquid rocket with a 135 lbm dry mass targeting 100,000 ft;
+    delivered a final 18.7 lbm system within a 20 lbm budget through
+    four iterative design reviews
+  }
+  \resumeItem{
+    Compared system architectures, commercial off-the-shelf (COTS)
+    flight computers, and vacuum-tolerant separation mechanisms
+    by mass, cost, lead time, and failure modes; finalized system cost
+    at \$1,076
+  }
+  \resumeItem{
+    Calculated 823 lbf parachute shock and 1,230 lbf snatch loads
+    using five published methods; designed functional
+    redundancy with four cable cutters, two in-series tender
+    descenders, and two flight computers
+  }
+  \resumeItem{
+    Wrote standard operating procedures (SOPs), test plans, and safety
+    protocols for black-powder separation and recovery tests; led operations by assigning crews, briefing personnel,
+    authorizing firing and abort decisions, and directing post-test analysis
+  }
+  \resumeItem{
+    Responded to integrated-test failures and parachute damage by
+    developing dual-mode black-powder/CO$_2$ deployment hardware;
+    performed pressure and Lam\'{e} thick-wall stress calculations and
+    contributed CAD, drawings, machining, pressure-data collection,
+    and component testing in a three-person team; planned integrated validation
+  }
+  \resumeItem{
+    Built and operated a 352 L vacuum chamber at 0.011 atm using
+    salvaged pumps and available stock; acquired and processed pressure
+    data using a LabJack, pressure transducer, and two-amplifier signal
+    conditioning for deployment-hardware and avionics tests
+  }
+  \resumeItem{
+    Introduced and dynamically tested Brummel eye splices to reduce
+    knots and quick-links, confirming a minimum 1.5 factor of safety
+    (FOS); redesigned and machined 49.5\%-lighter cable cutters with a
+    calculated 2.01 FOS
+  }
+\resumeItemListEnd
+
+\resumeEntry
+  {Boston University Plummer Laboratory}
+  {06/2026 -- Present}
+  {Mechanical Engineering Intern \textbar{} Boston, MA}
+  {06/2026 -- 08/2026: full-time, 40 hours/week
+   \textbar{} 09/2026 -- Present: part-time, 10 hours/week}
+
+\resumeItemListStart
+  \resumeItem{
+    CNC-milled a 6061-T6 shaker adapter on a Haas VF-2; removed
+    40.4\% of starting stock mass, from 3.19 to 1.90 kg, using a conical
+    underside chamfer, corner fillets, and 12 drilled holes
+  }
+  \resumeItem{
+    Generated G-code, engineering drawings, and tolerance stack-ups
+    for $\pm$0.005 in holes; reduced estimated plate-and-fastener cost
+    from \$1,170 outsourced to \$71.11 through in-house fabrication
+  }
+  \resumeItem{
+    Predicted 0.44 mm fixture deflection under a 3 kg load at
+    20.1 Hz using SolidWorks dynamic finite element analysis (FEA);
+    analyzed bolt preload and joint failure modes, including 1.49 and
+    2.46 minimum factors of safety
+  }
+  \resumeItem{
+    Designed and executed 48 tests across four physical Ising-model
+    designs using an Instron 68SC-5; processed 0--181 mN force data
+    and presented methods, hardware, and initial results at a
+    multi-laboratory meeting
+  }
+\resumeItemListEnd
+
+\resumeEntry
+  {Culturon}
+  {02/2026 -- 06/2026}
+  {Mechanical Engineering Intern \textbar{} Sydney, Australia}
+  {Part-time \textbar{} 10 hours/week}
+
+\resumeItemListStart
+  \resumeItem{
+    Planned and executed the company's first full-scale nanoparticle
+    deposition map across chamber locations and magnetic configurations;
+    used scanning electron microscopy (SEM), optical microscopy, and
+    ImageJ to characterize polarity-dependent deposition and asymmetric flow
+  }
+  \resumeItem{
+    Formed a working hypothesis for contamination cause and pattern
+    from sample-plate SEM/ImageJ results, optical microscopy, and direct
+    visual evidence
+  }
+  \resumeItem{
+    Presented pump-port/chamber and electron-curtain prevention concepts
+    based on the hypothesis and fluid/electromagnetic first principles
+    in a technical design review
+  }
+  \resumeItem{
+    Designed Onshape sheet-metal sample racks and coupons for
+    reactor-port insertion and adhesive-free mounting with bend reliefs,
+    fabrication tolerances, assembly clearances, and limited flow disturbance
+  }
+\resumeItemListEnd
+
+\newpage
+
+\section{Selected Engineering Projects}
+
+\resumeEntry
+  {Aerodynamic Downcomer Fairing}
+  {08/2026 -- Present}
+  {Project Lead, Boston University Rocket Propulsion Group
+   \textbar{} Boston, MA}
+  {Part-time student club project
+   \textbar{} Included in total BURPG commitment listed above}
+
+\resumeItemListStart
+  \resumeItem{
+    Leading set-based design of an aerodynamic and composite fairing to protect
+    Argo's external downcomer and wiring; evaluating leading-edge,
+    midsection, and boattail profiles for Mach 2.81 max-Q flow using
+    wave-, skin-friction-, and base-drag considerations
+  }
+  \resumeItem{
+    Developing Ansys computational fluid dynamics (CFD) models at Mach
+    2.0, 2.5, and 2.81 and applying adjoint optimization under packaging
+    and manufacturability constraints; directing an independent
+    SolidWorks Flow Simulation comparison
+  }
+\resumeItemListEnd
+
+\resumeEntry
+  {AIAA Design-Build-Fly Aircraft}
+  {06/2025 -- 12/2025}
+  {Wing Structural Lead, Boston University \textbar{} Boston, MA}
+  {Part-time student club project
+   \textbar{} 10--20 hours/week, variable}
+
+\resumeItemListStart
+  \resumeItem{
+    Led two wing designs in Fusion 360; produced an
+    extruded-polystyrene (XPS) prototype 50\% lighter than the prior
+    year's wing and cut build time from three months to one
+  }
+  \resumeItem{
+    Designed a split NACA 2412 wing with 0.52 taper ratio and
+    5-degree dihedral from aerodynamic-team specifications and
+    first-prototype manufacturing lessons; developed the servo flap
+    system
+  }
+  \resumeItem{
+    Led structural and manufacturing reviews, mentored nine members
+    in laser cutting, waterjet operation, and Fusion 360, and trained
+    the succeeding wing lead
+  }
+\resumeItemListEnd
+
+\resumeEntry
+  {Hybrid Rocket Nozzle}
+  {09/2024 -- 11/2024}
+  {Lead Engineer, Boston University Rocket Propulsion Group
+   \textbar{} Boston, MA}
+  {Part-time student club project
+   \textbar{} Approximately 5 hours/week}
+
+\resumeItemListStart
+  \resumeItem{
+    Led five members through three design reviews to develop a
+    7.86 lbf nozzle optimized for 45,000 ft using isentropic flow
+    relations, an 80\%-length Rao contour, and SolidWorks CAD/FEA
+  }
+  \resumeItem{
+    Reduced mass 73\% from the initial design, increased predicted
+    thrust 5\%, and calculated a 7.8 FOS under mechanical loads
+    alone; incorporated review feedback on manufacturability and fragility
+  }
+  \resumeItem{
+    Led the team that designed, soldered, and programmed the launch
+    computer and completed an approximately two-second hotfire;
+    identified a load-cell malfunction that prevented thrust-data
+    collection
+  }
+\resumeItemListEnd
+
+\resumeEntry
+  {Rocket Test Stand Fire Suppression System}
+  {02/2025 -- 05/2025}
+  {Project Contributor, Boston University Rocket Propulsion Group
+   \textbar{} Boston, MA}
+  {Part-time student club project
+   \textbar{} Included in total BURPG commitment listed above}
+
+\resumeItemListStart
+  \resumeItem{
+    Planned fabrication and designed the SolidWorks assembly,
+    mounting, adapter pieces, 3D-printed mounts, and sheet-metal
+    fixtures for a remote CO$_2$ fire-suppression system targeting
+    0.23 kg/s flow
+  }
+  \resumeItem{
+    Developed stainless-steel pipe routing under SAE AS130B guidance
+    and translated project-supplied requirements of 1,070 psi and a
+    minimum 4.0 FOS into the mechanical layout
+  }
+\resumeItemListEnd
+
+\resumeEntry
+  {Ablative Anode Pulsed Plasma Thruster Laboratory}
+  {05/2026 -- 06/2026}
+  {Volunteer, University of Sydney \textbar{} Sydney, Australia}
+  {Part-time volunteer work
+   \textbar{} Approximately 5 hours/week}
+
+\resumeItemListStart
+  \resumeItem{
+    Designed an acrylonitrile butadiene styrene (ABS) inductor spool,
+    performed coil-winding calculations, checked vacuum-outgassing
+    suitability, and supported the established thruster operating
+    procedure
+  }
+\resumeItemListEnd
+
+\section{Technical Skills and Recognition}
+
+{\small
+\textbf{Design and analysis:}
+SolidWorks, Fusion 360, Onshape, Ansys CFD, adjoint optimization,
+compressible-flow analysis, FEA, geometric dimensioning and
+tolerancing (GD\&T), engineering drawings, MATLAB, Python\\
+\textbf{Fabrication and testing:}
+CNC and manual machining, composite layup, 3D printing, vacuum
+systems, LabJack data acquisition, pressure instrumentation, test
+planning and operations\\
+\textbf{Recognition:}
+Boston University Distinguished Summer Research Fellowship, 2024
+}
+
+\end{document}

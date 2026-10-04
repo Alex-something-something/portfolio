@@ -111,10 +111,54 @@
         <a href="index.html#Experience" class="back-link"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4M10 6l-6 6 6 6"/></svg> Experience &amp; Research</a>
         <h1>Plummer Laboratory <span>Mechanical Engineering Internship</span></h1>
         <p class="project-meta-line">June 2026–Present</p>
-        <p class="project-overview">Structural design, dynamic-test fixtures, precision manufacturing, and research laboratory development.</p>
+        <p class="project-overview">Experimental mechanics for physical Ising systems, dynamic-test fixtures, precision manufacturing, and research laboratory development.</p>
     </header>
 
     <div class="project-hero-media" style="padding: 0 10%; margin-top: -1px;"><div class="img-placeholder media-slot" data-media="Pictures/Plummer/Lab-Overview.jpg" data-media-type="image" data-fit="cover" data-alt="Dynamic-Test Fixture or Laboratory Photo" title="Pictures/Plummer/Lab-Overview.jpg"><span class="media-filename">Pictures/Plummer/Lab-Overview.jpg</span></div></div>
+
+    <div class="project-metrics" aria-label="Plummer Laboratory engineering results at a glance">
+        <div class="project-metric"><strong>40.4%</strong><span>stock-to-part mass reduction</span></div>
+        <div class="project-metric"><strong>$1,170 → $71.11</strong><span>estimated outsourced to in-house hardware cost</span></div>
+        <div class="project-metric"><strong>±0.005 in</strong><span>machined feature tolerance</span></div>
+        <div class="project-metric"><strong>48 tests</strong><span>across four Ising-model designs</span></div>
+    </div>
+
+    <section class="content-section" id="ising-testing">
+        <div class="text-block">
+            <h2>Measuring Coupling in a Bistable Physical Ising Model</h2>
+            <p style="color: #ccc;">This one-dimensional physical Ising system uses bistable buckling beams as two-state mechanical elements. The effective coupling coefficient, <em>J</em><sub>effective</sub>, describes how the energy and preferred state of a beam are influenced by its nearest neighbors. I developed a new “perfect pin” model from the experimental restrictions and possible sources of inaccuracy identified in the previous thesis.</p>
+            <p style="color: #ccc;">I designed the specimen and configuration test matrix, developed the test procedure, operated the Instron 68SC-5, processed the force data, and produced the resulting plots. The campaign comprised 48 tests across four models: one legacy model and three concepts I developed. It included eight initial configurations per model, synchronized camera trials of high and low energy configurations, three additional trials of each of four high energy configurations, and two reversed uneven-neighbor configurations.</p>
+            <p style="color: #ccc;">Measured forces spanned 0–181 mN, with peak buckling forces of 9–181 mN. Comparisons between configurations with identical immediate neighbors but different next-nearest-neighbor states confirmed that the next-nearest-neighbor contribution to buckling energy is minimal within the tested system. The percentage difference remains withheld while data processing continues.</p>
+            <p style="color: #ccc;">Before this campaign, the laboratory's empirical input for the model came from measurements of buckled-beam curvature; coupling had not been directly investigated through force testing. Because the force required to trigger buckling is directly proportional to the relevant derivative of internal energy, I synchronized camera recordings with the force response to correlate beam curvature and force. The resulting dataset provides the laboratory's first direct force measurements intended to support a future empirical calculation of <em>J</em><sub>effective</sub> and a more representative analytical or simulation model. Coupling coefficients have not yet been calculated.</p>
+            <p style="color: #ccc;">The joint trade study compared ball-bearing, tight-tolerance LEGO-based, and fixed resin-printed concepts. Instron results showed greater scatter, inconsistent behavior, and cases in which an adjacent beam buckled instead of the directly loaded beam in the rotating concepts. My fixed pins, printed on an Elegoo Mars 5 Ultra and installed through a screw-retained slide-in interface, produced more controlled buckling while restricting unintended translation, rotation, and off-axis twisting.</p>
+            <p style="color: #ccc;">Comparison with the mathematical model is ongoing. The resulting force plot is being evaluated for inclusion in future laboratory publication; exact configuration data, force comparisons, and model parameters remain unpublished.</p>
+        </div>
+        <div class="image-block">
+            <div class="engineering-visual">
+                <svg viewBox="0 0 620 470" role="img" aria-labelledby="ising-setup-title ising-setup-desc">
+                    <title id="ising-setup-title">Sanitized Instron and bistable Ising-model test setup</title>
+                    <desc id="ising-setup-desc">Instron crosshead and load cell apply force to the center beam of a one-dimensional bistable array while a synchronized camera records curvature.</desc>
+                    <path d="M100 55V410M520 55V410M100 75H520M100 410H520" fill="none" stroke="#222" stroke-width="9"/>
+                    <rect x="180" y="92" width="260" height="42" rx="5" fill="#ddd" stroke="#222" stroke-width="4"/>
+                    <path d="M310 134v55" stroke="#222" stroke-width="8"/>
+                    <rect x="275" y="184" width="70" height="42" rx="5" fill="#E63946" stroke="#9f1e29" stroke-width="3"/>
+                    <text x="310" y="211" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#fff">LOAD CELL</text>
+                    <path d="M310 226v62" stroke="#222" stroke-width="7"/>
+                    <path d="M174 350q28-86 56 0t56 0t56 0t56 0t56 0" fill="none" stroke="#222" stroke-width="7" stroke-linecap="round"/>
+                    <circle cx="174" cy="350" r="9" fill="#E63946"/><circle cx="230" cy="350" r="9" fill="#E63946"/><circle cx="286" cy="350" r="9" fill="#E63946"/><circle cx="342" cy="350" r="9" fill="#E63946"/><circle cx="398" cy="350" r="9" fill="#E63946"/><circle cx="454" cy="350" r="9" fill="#E63946"/>
+                    <path d="M310 288l-12-20h24z" fill="#E63946"/>
+                    <rect x="430" y="242" width="102" height="62" rx="8" fill="#fff" stroke="#222" stroke-width="4"/>
+                    <circle cx="458" cy="273" r="14" fill="none" stroke="#E63946" stroke-width="5"/>
+                    <path d="M532 258l38-22v74l-38-22z" fill="#777"/>
+                    <path d="M430 273H368" stroke="#777" stroke-width="3" stroke-dasharray="7 6"/>
+                    <text x="310" y="34" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#161616">SYNCHRONIZED FORCE AND CURVATURE TESTING</text>
+                    <text x="310" y="444" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" fill="#555">Center-beam loading · bistable array · camera-tracked curvature</text>
+                </svg>
+                <p class="engineering-visual-note">Sanitized test architecture. Exact specimen geometry, configuration data, and force comparisons remain unpublished.</p>
+            </div>
+            <p class="caption">Instron 68SC-5 and Synchronized Camera Test Architecture</p>
+        </div>
+    </section>
 
     <section class="content-section">
         <div class="text-block">
@@ -127,7 +171,7 @@
             </ul>
 
             <h2 id="precision-manufacturing" style="margin-top: 40px;">Precision Manufacturing</h2>
-            <p style="color: #ccc;">Generated G-code and machined the 6061-T6 adapter on a Haas VF-2 CNC mill. The finished geometry included a circular, chopped-end conical chamfer across the underside, corner fillets, and 12 drilled and tapped holes held to ± 0.005 in tolerances. Removing material from the 3.19 kg stock produced a 1.90 kg finished part, a 40.4% stock-to-part mass reduction.</p>
+            <p style="color: #ccc;">Generated G-code and machined the 6061-T6 adapter on a Haas VF-2 CNC mill. The finished geometry included a circular, chopped-end conical chamfer across the underside, corner fillets, and 12 drilled holes held to ± 0.005 in tolerances. Removing material from the 3.19 kg stock produced a 1.90 kg finished part, a 40.4% stock-to-part mass reduction.</p>
             <p style="color: #ccc;">Applied GD&amp;T and worst-case tolerance-stack analysis, calculated ISO 273 clearances for ISO 4017 M10 hardware, and added 0.5 mm edge breaks.</p>
             <p style="color: #ccc;">I presented a mini design review of the shaker adapter, covering design iterations, finished hardware, and results, as my flash-talk update at a multi-lab research meeting.</p>
         </div>
@@ -150,16 +194,7 @@
             <ul>
                 <li><strong>High-Speed Camera Mount:</strong> Designed, built, and used an adjustable overhead stand from 45 × 45 mm 80/20 aluminum extrusion. Calculated deflection below 0.1 mm under a conservative load of twice the expected 2.0 kg static camera mass. Rigidity and axial-buckling calculations used a 68 GPa Young’s modulus and 106,217 mm⁴ area moment of inertia; this was calculated performance, not a measured deflection result.</li>
                 <li><strong>Cost-Conscious Design:</strong> Prioritized long, modular extrusion stock that could be reused in more stable future apparatus. Balanced a $390 budget, six-foot stock lengths, and freight constraints while preserving 100% material reusability. The stand was an investment in the laboratory’s future equipment-building capability.</li>
-                <li><strong>Metamaterials Research:</strong> Iterated resin-printed pins for mechanical Ising models to maintain ± 0.02 mm clearances, using ball bearings to constrain all degrees of freedom except rotation. The modular hardware was designed to transition from one-dimensional to two-dimensional experiments without revising the individual pins.</li>
             </ul>
-        </div>
-    </section>
-
-    <section class="content-section" id="ising-testing">
-        <div class="text-block">
-            <h2>Ising-Model Testing &amp; Investigation</h2>
-            <p style="color: #ccc;">I independently collect force measurements of approximately 50–120 mN using an Instron 68SC-5 on pin-based physical Ising systems, investigating buckling energy and coupling between neighboring nodes across buckled-up and buckled-down states.</p>
-            <p style="color: #ccc;">Comparison with the mathematical models is ongoing. The investigation aims to validate or lend support to the current models, identify where they may need adjustment, and guide further “perfect pin” physical Ising designs. More repeatable hardware also supports investigation of a previously observed data anomaly.</p>
         </div>
     </section>
 

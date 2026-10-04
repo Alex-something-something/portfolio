@@ -101,9 +101,16 @@ nav ul li a:hover {
     box-shadow: 0 10px 20px rgba(230, 57, 70, 0.1) !important; 
 }
 
-.card-img { height: 200px; background-size: cover; background-position: center; margin-bottom: 15px; background-color: #222; }
+.card-img { height: 240px; background-size: cover; background-position: center; margin-bottom: 15px; background-color: #222; }
 .card h3, .card p { padding: 0 20px; }
 .card p { font-size: 0.85rem; color: #999; margin-top: 10px; }
+
+/* CAD renders, plots, drawings, and screenshots blend into a clean white media canvas. */
+.card-img.media-slot.has-image-media,
+.img-placeholder.media-slot.has-image-media,
+.gallery-img.media-slot.has-image-media {
+    background: #fff !important;
+}
 
 /* =========================================
    LINKS & ICONS (BURPG & FOOTER)
@@ -184,6 +191,195 @@ nav ul li a:hover {
 }
 .project-meta strong { color: #fff; }
 
+.project-status-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 18px;
+    color: #ddd;
+    font-size: .9rem;
+    font-weight: 700;
+    letter-spacing: .03em;
+}
+.project-status-line::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: #E63946;
+    box-shadow: 0 0 0 4px rgba(230, 57, 70, .12);
+}
+.project-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    margin: 0 10%;
+    background: #333;
+    border: 1px solid #333;
+}
+.project-metric {
+    min-width: 0;
+    padding: 22px;
+    background: #111;
+}
+.project-metric strong {
+    display: block;
+    color: #E63946;
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+    line-height: 1.1;
+}
+.project-metric span {
+    display: block;
+    margin-top: 8px;
+    color: #bbb;
+    font-size: .82rem;
+    line-height: 1.45;
+}
+
+.test-evidence {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    margin-top: 24px;
+    overflow: hidden;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: #333;
+}
+
+.test-evidence-item {
+    min-width: 0;
+    padding: 20px;
+    background: #151515;
+}
+
+.test-evidence-item strong {
+    display: block;
+    margin-bottom: 7px;
+    color: #fff;
+    font-size: 1.35rem;
+    line-height: 1.1;
+}
+
+.test-evidence-item span {
+    display: block;
+    color: #aaa;
+    font-size: .82rem;
+    line-height: 1.45;
+}
+
+.two-column-evidence {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.engineering-visual {
+    width: 100%;
+    padding: 18px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: #f5f5f2;
+    color: #161616;
+}
+
+.engineering-visual svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.engineering-visual-note {
+    margin-top: 12px;
+    color: #777;
+    font-size: .78rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.engineering-table-wrap {
+    margin-top: 22px;
+    overflow-x: auto;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+
+.engineering-table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    background: #111;
+    color: #ccc;
+    font-size: .86rem;
+}
+
+.engineering-table th,
+.engineering-table td {
+    padding: 13px 15px;
+    border-bottom: 1px solid #292929;
+    text-align: left;
+    vertical-align: top;
+}
+
+.engineering-table th {
+    color: #fff;
+    background: #191919;
+    font-size: .75rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.engineering-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.engineering-note {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-left: 3px solid #E63946;
+    background: rgba(230, 57, 70, .07);
+    color: #bbb;
+    font-size: .88rem;
+    line-height: 1.6;
+}
+
+/* Media filenames remain useful in source and README files, but unresolved
+   assets never appear as public-facing placeholder boxes. */
+.media-slot[data-media] {
+    display: none !important;
+}
+
+.media-slot[data-media].has-media {
+    display: flex !important;
+}
+
+.media-slot[data-media] + .caption {
+    display: none !important;
+}
+
+.media-slot[data-media].has-media + .caption {
+    display: block !important;
+}
+.project-brief {
+    margin: 0 10%;
+    padding: 28px 0 30px;
+    border-bottom: 1px solid #333;
+}
+.project-brief h2 {
+    margin-bottom: 10px;
+    color: #E63946;
+    font-size: 1.25rem;
+}
+.project-brief p {
+    max-width: 900px;
+    color: #ccc;
+}
+.project-subheading {
+    margin-top: 32px;
+    margin-bottom: 12px;
+    color: #fff;
+    font-size: 1.12rem;
+}
+
 .project-content {
     padding: 4rem 10%;
     display: grid;
@@ -241,6 +437,7 @@ nav ul li a:hover {
     .project-content { grid-template-columns: 1fr; }
     .project-gallery { position: relative; top: 0; }
     .project-hero h1 { font-size: 2.5rem; }
+    .project-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* =========================================
@@ -398,6 +595,12 @@ html.is-page-leaving main {
 }
 
 @media (max-width: 650px) {
+    .project-metrics {
+        margin: 0 6%;
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .project-metric { padding: 18px; }
+    .project-brief { margin: 0 6%; }
     .portfolio-motion-ready .content-section.portfolio-reveal .text-block,
     .portfolio-motion-ready .content-section.portfolio-reveal .image-block {
         transform: translateY(18px);

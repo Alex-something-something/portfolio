@@ -144,21 +144,39 @@
         <a href="index.html#flight-hardware" class="back-link"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4M10 6l-6 6 6 6"/></svg> Flight Hardware</a>
         <h1>Separation and <span>Recovery Subsystem</span></h1>
         <p class="project-meta-line">Co-Lead Engineer · BURPG · June 2025–Present · In progress</p>
-        <p class="project-overview">Co-leading the design and validation of a single-separation, dual-deploy recovery architecture for a 135 lb liquid rocket targeting a 100,000 ft apogee.</p>
+        <p class="project-overview">Co-leading the design and validation of a single-separation, dual-deploy recovery architecture for a liquid rocket with a 135 lb dry mass targeting a 100,000 ft apogee.</p>
+        <p class="project-status-line">Current status: CO₂ component hardware tested; integrated CO₂ recovery-system validation planned</p>
     </header>
 
     <div class="project-hero-media" style="padding: 0 10%; margin-top: -1px;">
         <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Subscale-Test.mp4" data-media-type="video" data-fit="cover" data-alt="Hero Image/GIF of Subscale Testing" title="Pictures/Recovery/Subscale-Test.mp4"><span class="media-filename">Pictures/Recovery/Subscale-Test.mp4</span></div>
     </div>
 
+    <div class="project-metrics" aria-label="Recovery system requirements and analysis at a glance">
+        <div class="project-metric"><strong>135 lb</strong><span>vehicle dry mass</span></div>
+        <div class="project-metric"><strong>100,000 ft</strong><span>target apogee</span></div>
+        <div class="project-metric"><strong>2.0 FOS</strong><span>target structural margin</span></div>
+        <div class="project-metric"><strong>823 / 1,230 lbf</strong><span>calculated shock / snatch loads</span></div>
+    </div>
+
     <section class="content-section">
         <div class="text-block">
-            <h2>Contribution &amp; Results</h2>
-            <p style="color: #ccc;">As co-lead engineer, I designed a single-separation, dual-deploy parachute recovery system for a 135 lb, 100,000 ft apogee liquid rocket. The architecture targets a 2.0 factor of safety (FOS) per NASA standards and has been presented through four iterative design reviews to club executives. Completed testing includes sealed-charge and avionics evaluation under vacuum and integrated testing of the previous vinyl-charge configuration. The revised CO₂ deployment hardware has been tested and is being refined ahead of its integrated system test.</p>
+            <h2>System Architecture</h2>
+            <p style="color: #ccc;">As co-lead engineer, I designed a single-separation, dual-deploy parachute recovery system for a liquid rocket with a 135 lb dry mass and 100,000 ft target apogee. The architecture targets a 2.0 factor of safety (FOS) and has been presented through four iterative design reviews to club executives. Completed testing includes sealed-charge and avionics evaluation under vacuum and integrated testing of the previous vinyl-charge configuration. The revised CO₂ component hardware has been tested and is being refined ahead of integrated system validation.</p>
+            <p style="color: #ccc;">Argo is designed to separate once, deploy its drogue near the 100,000 ft target apogee, and keep the main parachute packed in the downward freestream until its planned deployment at 2,000 ft above ground level. Paired flight computers and deployment components provide functional redundancy.</p>
+
+            <h3 class="project-subheading">Parachute &amp; Recovery-Line Selection</h3>
+            <p style="color: #ccc;">I compared 23 commercial main and drogue parachute candidates across drag coefficient, descent rate, packing volume, mass, rated load, and cost. The selected architecture uses a 42 in heavy-duty Spherachute drogue and an existing 144 in high-performance main. The analytical model predicts approximately 118 ft/s during drogue-only descent and 21.4 ft/s at landing under the main.</p>
+            <p style="color: #ccc;">I carried the calculated opening and snatch loads into recovery-line sizing. The line-strength study required approximately 2,905–4,938 lbf depending on termination efficiency, supporting selection of 6,000 lbf Kevlar line and subsequent Brummel-splice verification.</p>
+            <div class="test-evidence" aria-label="Parachute and recovery-line trade study results">
+                <div class="test-evidence-item"><strong>23 candidates</strong><span>main and drogue parachutes screened across performance, packaging, strength, and cost</span></div>
+                <div class="test-evidence-item"><strong>21.4 ft/s</strong><span>predicted landing descent rate under the selected main parachute</span></div>
+                <div class="test-evidence-item"><strong>6,000 lbf</strong><span>selected Kevlar recovery-line rating carried into splice testing</span></div>
+            </div>
             
-            <h2 style="margin-top: 40px;">Experience & Skills</h2>
+            <h3 class="project-subheading">Role &amp; Technical Scope</h3>
             <p style="color: #ccc;"><strong>Role:</strong> Co-Lead Engineer, Separation and Recovery</p>
-            <p style="color: #ccc;">I conducted a trade study of system architectures, COTS flight computers, and vacuum-tolerant separation mechanisms, balancing an 18.7 lbm mass within a 20 lbm budget and a $1,076 system cost.</p>
+            <p style="color: #ccc;">I conducted a trade study of system architectures, COTS flight computers, and vacuum-tolerant separation mechanisms, delivering a final 18.7 lbm system within a 20 lbm budget and a final $1,076 bill-of-materials cost.</p>
             <ul>
                 <li><strong>Functional Redundancy:</strong> Designed the architecture around four cable cutters, two in-series tender descenders, and two flight computers.</li>
                 <li><strong>Hardware Development:</strong> Redesigned, manufactured, and tested legacy cable cutters, supported by engineering drawings and load analysis.</li>
@@ -174,24 +192,12 @@
         </div>
     </section>
 
-    <section class="content-section" id="recovery-sequence">
-        <div class="text-block">
-            <h2>How the Recovery System Works</h2>
-            <p style="color: #ccc;">Argo uses a single-separation, dual-deploy recovery architecture: one vehicle separation and two stages of parachute deployment.</p>
-            <ul>
-                <li><strong>Drogue Deployment:</strong> For Argo, drogue deployment is planned near its target apogee of 100,000 ft to control the initial descent.</li>
-                <li><strong>Main Deployment:</strong> The main parachute is intended to remain packed in the downward freestream during drogue-only descent, then deploy at a planned 2,000 ft above ground level to slow Argo for landing.</li>
-            </ul>
-            <p style="color: #ccc; margin-top: 16px;">The line and connection diagrams describe the system architecture; the shock- and snatch-load calculations above inform the structural requirements. Redundancy is provided through the paired flight computers and deployment components.</p>
-        </div>
-    </section>
-
     <section class="content-section" id="assembly">
         <div class="text-block">
-            <h2>Assembly CAD &amp; Packaging</h2>
+            <h3 class="project-subheading" style="margin-top: 0;">Architecture Development &amp; Packaging</h3>
             <p style="color: #ccc;">The recovery assembly brings together the parachutes, recovery lines, deployment components, and their interfaces within Argo’s available packaging space. The design balances load paths, component arrangement, and the 20 lbm subsystem mass budget.</p>
             <p style="color: #ccc;">The assembly CAD and hardware views will document how the system fits together, complementing the line diagrams and nosecone packing plan.</p>
-            <h2 style="margin-top: 32px;">Design Roadmap &amp; Reviews</h2>
+            <h3 class="project-subheading">Design Roadmap &amp; Reviews</h3>
             <p style="color: #ccc;">I compared system architectures, flight computers, and separation mechanisms throughout subsystem development. Four iterative design reviews with club executives supported development of the subsystem, followed by component and integrated testing.</p>
         </div>
         <div class="image-block">
@@ -199,14 +205,22 @@
             <p class="caption">Overall Recovery Assembly and Component Arrangement</p>
             <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Hardware-Assembly.jpg" data-media-type="image" data-fit="cover" data-alt="Recovery Hardware Assembly Photo" title="Pictures/Recovery/Hardware-Assembly.jpg"><span class="media-filename">Pictures/Recovery/Hardware-Assembly.jpg</span></div>
             <p class="caption">Physical Assembly and Packaging</p>
+            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Packing-Plan.png" data-media-type="image" data-fit="contain" data-alt="Detailed Packing Plan / Nosecone Diagram" title="Pictures/Recovery/Packing-Plan.png"><span class="media-filename">Pictures/Recovery/Packing-Plan.png</span></div>
+            <p class="caption">Nosecone &amp; Shell Packing Plan</p>
         </div>
     </section>
 
     <section class="content-section" id="separation-components">
         <div class="text-block" id="machining">
-            <h2>Cable-Cutter Redesign &amp; Testing</h2>
+            <h2>Hardware Development</h2>
+            <h3 class="project-subheading">Cable-Cutter Redesign &amp; Testing</h3>
             <p style="color: #ccc;">I redesigned legacy cable cutters and created an engineering drawing to support manufacturing. I machined the aluminum hardware on a manual mill and lathe and tested it using hoop-stress and cord-failure analysis.</p>
             <p style="color: #ccc;">The cable-cutter work achieved a 2.01 FOS over six trials and a 49.5% mass reduction from the previous vehicle’s design.</p>
+            <div class="test-evidence" aria-label="Cable-cutter verification evidence">
+                <div class="test-evidence-item"><strong>6 trials</strong><span>manufactured cable-cutter test campaign</span></div>
+                <div class="test-evidence-item"><strong>2.01 FOS</strong><span>verified margin for the tested configuration</span></div>
+                <div class="test-evidence-item"><strong>49.5%</strong><span>mass reduction from the previous vehicle design</span></div>
+            </div>
             <p><a href="project_co2.html" style="color: #E63946;">View the separate CO₂ deployment mechanism <svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></p>
         </div>
         <div class="image-block">
@@ -219,11 +233,18 @@
 
     <section class="content-section" id="deployment-hardware">
         <div class="text-block">
-            <h2>Vacuum Testing &amp; Deployment Iteration</h2>
+            <h2>Testing &amp; Iteration</h2>
+            <h3 class="project-subheading">Vacuum Testing &amp; Deployment Iteration</h3>
             <p style="color: #ccc;">I built and used a 352 L vacuum chamber operating at 0.011 atm to evaluate recovery hardware at reduced pressure. Testing progressed from legacy black-powder glove-tip charges to vinyl-tubing charges based on Jim Jarvis’s method, then to CO₂-canister piercing devices. All three approaches were tested in the vacuum chamber.</p>
             <p style="color: #ccc;">After months of charge fabrication and individual testing, configurations that worked in isolation still experienced one charge failure in each of two integrated tests. The later test also revealed parachute damage: one vinyl charge penetrated the parachute bag and parachute, and only two of three charges burst properly. A communication breakdown had left a shield absent and a structurally weaker bag in use than in the earlier test. These findings showed that confidence from previous tests did not transfer to the changed configuration and motivated the CO₂ redesign. I used the summer development window and available team capacity to calculate, design, create manufacturing drawings, machine, and test cartridge-piercing hardware with a three-person team.</p>
-            <h2 style="margin-top: 32px;">Test Operations Leadership</h2>
-            <p style="color: #ccc;">I led a series of black-powder separation and recovery test operations, owning test plans and safety protocols, crew assignments, briefings, firing authorization, abort decisions, and post-test analysis. I am now organizing the next CO₂ test operation under BURPG’s established test-operation standards. Current testing uses volume placeholders for parachutes and other equipment to avoid exposing the actual hardware during development.</p>
+            <div class="test-evidence" aria-label="Recovery deployment test evidence">
+                <div class="test-evidence-item"><strong>2 tests</strong><span>integrated vinyl-charge configurations, each with one failed charge</span></div>
+                <div class="test-evidence-item"><strong>2 of 3</strong><span>charges burst successfully in the later integrated test</span></div>
+                <div class="test-evidence-item"><strong>Observed damage</strong><span>vinyl charge penetrated both the parachute bag and parachute</span></div>
+                <div class="test-evidence-item"><strong>Design response</strong><span>manufactured CO₂ piercing hardware tested under reduced pressure</span></div>
+            </div>
+            <h3 class="project-subheading">Test Operations Leadership</h3>
+            <p style="color: #ccc;">I led a series of black-powder separation and recovery test operations, writing standard operating procedures (SOPs), test plans, and safety protocols. I assigned crews, conducted briefings, authorized firing or abort decisions, and directed post-test hardware inspection and review. My project partner handled the pressure-transducer data analysis. I am now organizing the next CO₂ test operation under BURPG’s established test-operation standards. Current testing uses volume placeholders for parachutes and other equipment to avoid exposing the actual hardware during development.</p>
             <p style="color: #ccc;">CO₂ component hardware has been tested in the vacuum chamber. A fully integrated test of the entire recovery system with the CO₂ configuration remains planned.</p>
             <p><a href="project_vacuum.html" style="color: #E63946;">View the vacuum chamber: design, instrumentation, and testing <svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></p>
         </div>
@@ -235,9 +256,14 @@
 
     <section class="content-section" id="recovery-line-verification">
         <div class="text-block">
-            <h2>Recovery-Line Verification</h2>
+            <h3 class="project-subheading" style="margin-top: 0;">Recovery-Line Verification</h3>
             <p style="color: #ccc;">I introduced Brummel eye splices as a new recovery-line approach for BURPG, replacing knots and reducing the number of quick-links required in the load path. Published strength-retention comparisons motivated the concept; the published values were not results from my testing.</p>
             <p style="color: #ccc;">I carried the idea through dynamic testing of the spliced lines, confirming a minimum 1.5 FOS. Fewer quick-links also slightly reduced system mass, although that reduction was not separately quantified. Further test details are limited at the project director’s request.</p>
+            <div class="test-evidence" aria-label="Recovery-line verification evidence">
+                <div class="test-evidence-item"><strong>≥1.5 FOS</strong><span>confirmed through dynamic testing of the spliced recovery line</span></div>
+                <div class="test-evidence-item"><strong>Brummel splice</strong><span>replaced knots and reduced quick-links in the load path</span></div>
+                <div class="test-evidence-item"><strong>Details limited</strong><span>additional test conditions withheld at the project director’s request</span></div>
+            </div>
         </div>
         <div class="image-block">
             <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Line-Verification.mp4" data-media-type="video" data-fit="cover" data-alt="Recovery-Line Verification Video" title="Pictures/Recovery/Line-Verification.mp4"><span class="media-filename">Pictures/Recovery/Line-Verification.mp4</span></div>
@@ -247,29 +273,13 @@
 
     <section class="content-section" id="subscale-flight-testing">
         <div class="text-block">
-            <h2>Subscale Rocket Retrofit &amp; Flight Testing</h2>
+            <h3 class="project-subheading" style="margin-top: 0;">Subscale Rocket Retrofit &amp; Flight Testing</h3>
             <p style="color: #ccc;">My fellow lead and I co-led the retrofit and launch of a subscale solid rocket to test our new separation and recovery architecture.</p>
             <p style="color: #ccc;">The subscale flight work evaluates the recovery approach intended for Argo: keeping the main parachute packed in the downward freestream during drogue-only descent before releasing it for landing. Argo’s planned drogue deployment at 100,000 ft and main deployment at 2,000 ft above ground are full-scale targets, not the subscale rocket’s test altitudes.</p>
         </div>
         <div class="image-block">
             <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Subscale-Launch.jpg" data-media-type="image" data-fit="cover" data-alt="Subscale Rocket Retrofit and Launch Photo" title="Pictures/Recovery/Subscale-Launch.jpg"><span class="media-filename">Pictures/Recovery/Subscale-Launch.jpg</span></div>
             <p class="caption">Subscale Flight Testing of the Recovery Architecture</p>
-        </div>
-    </section>
-
-    <section class="content-section" style="border-bottom: none;">
-        <div class="text-block">
-            <h2>Motivation & Constraints</h2>
-            <p style="color: #ccc;"><strong>Objective:</strong> Safely recover a 135-lbm dry mass vehicle from 100k feet.</p>
-            <p style="color: #ccc; margin-top: 15px;">The design balances reliable deployment, structural margin, mass, packaging, and testability. Ground-test infrastructure supports the club’s continuing development of high-altitude liquid-rocket recovery systems.</p>
-            <ul>
-                <li><strong>Mass Budget:</strong> &lt; 20 lbm (Achieved 18.7 lbm)</li>
-                <li><strong>Financial Budget:</strong> $1,076</li>
-            </ul>
-        </div>
-        <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Packing-Plan.png" data-media-type="image" data-fit="contain" data-alt="Detailed Packing Plan / Nosecone Diagram" title="Pictures/Recovery/Packing-Plan.png"><span class="media-filename">Pictures/Recovery/Packing-Plan.png</span></div>
-            <p class="caption">Nosecone & Shell Packing Plan</p>
         </div>
     </section>
 

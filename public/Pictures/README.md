@@ -4,7 +4,7 @@
 
 1. Put your file in the folder listed below, inside `public/Pictures`, with the exact filename and extension.
 2. Refresh the page. Use Ctrl + F5 if a replaced image remains cached.
-3. The filename placeholder disappears automatically once its image or video loads.
+3. Missing media stays hidden. The image or video appears automatically once the matching file loads.
 
 Use real JPG, PNG and MP4 files matching the extensions. Renaming an extension does not convert the file. Match capitalization for future web hosting. Photos on cards are cropped to fit; PNG diagrams and detail-page images show the whole image. Videos use playback controls and do not autoplay.
 
@@ -35,12 +35,12 @@ To change a slot later, edit its `data-media` path and `data-alt` description in
 
 | Exact filename | Used on | Image/video |
 | --- | --- | --- |
-| Assembly.png | index.html, project_aerocover.html | Aerocover CAD Image |
+| Assembly.png | index.html, project_aerocover.html | Aerodynamic downcomer fairing CAD |
 | Profile-Comparison.png | project_aerocover.html | Candidate Profile Comparison |
 | Baseline-Comparison.png | project_aerocover.html | Icarus Baseline and Argo Concept |
-| CFD.png | project_aerocover.html | CFD Visualization |
-| FEA.png | project_aerocover.html | Structural Analysis |
-| Mold-Mounting.png | project_aerocover.html | Mold or Mounting Concept |
+| CFD.png | Reserved until results are approved | CFD visualization |
+| FEA.png | Reserved until results are approved | Structural analysis |
+| Carbon-Fiber-Thermal-Load-Test.jpg | project_aerocover.html | Curved carbon-fiber test article and heated static-load setup |
 
 ### Pictures/CO2
 
@@ -60,7 +60,6 @@ To change a slot later, edit its `data-media` path and `data-alt` description in
 | Exact filename | Used on | Image/video |
 | --- | --- | --- |
 | Hammer.jpg | index.html, manufacturing.html | Machining image |
-| Rings.jpg | manufacturing.html | Turned Rings Photo |
 
 ### Pictures/Nozzle
 
@@ -68,8 +67,18 @@ To change a slot later, edit its `data-media` path and `data-alt` description in
 | --- | --- | --- |
 | Isometric.png | index.html, project_nozzle.html | Nozzle CAD image |
 | Hotfire.mp4 | project_nozzle.html | Hotfire Test Slow Motion Video/GIF |
+| Mounting-Cross-Section.png | project_nozzle.html | Nozzle and mounting-adapter cross-section |
 | Drawing.png | project_nozzle.html | SolidWorks Drawing |
+| Rao-Angle-Reference.png | project_nozzle.html | Parabolic-nozzle angle reference chart |
+| Bezier-Geometry.png | project_nozzle.html | CAD Bézier-curve geometry |
+| Bezier-Points.png | project_nozzle.html | Published Rao parabolic-contour construction reference |
 | FEA.png | project_nozzle.html | FEA Meshing Image |
+| FEA-FOS.png | project_nozzle.html | Calculated yield FOS result |
+| FEA-Von-Mises.png | project_nozzle.html | von Mises stress result |
+| FEA-Fixturing.png | project_nozzle.html | Bolt-fixture boundary conditions |
+| Pressure-Chamber.png | Archived; not displayed | Chamber-pressure load region |
+| Pressure-Throat.png | Archived; not displayed | Throat-pressure load region |
+| Pressure-External.png | Archived; not displayed | External and diverging-section pressure loads |
 | Calculations.png | project_nozzle.html | Calculation Spreadsheet |
 
 ### Pictures/Plummer
@@ -110,18 +119,20 @@ To change a slot later, edit its `data-media` path and `data-alt` description in
 
 | Exact filename | Used on | Image/video |
 | --- | --- | --- |
-| Assembly.png | index.html | VEGAS image |
+| Assembly.png | index.html | VEGAS fire-suppression assembly mounted to the test stand |
 
 ### Pictures/Vacuum
 
 | Exact filename | Used on | Image/video |
 | --- | --- | --- |
 | Chamber.jpg | index.html, project_recovery.html, project_vacuum.html | Vacuum chamber image |
-| Pressure-Data.png | project_vacuum.html | PT Data Graph |
+| Pressure-Data.png | project_vacuum.html | Pressure-transducer output, analyzed by project partner |
+| Door-CAD.png | project_vacuum.html | Vacuum-chamber door and tube-adapter CAD |
+| Door-FEA.png | project_vacuum.html | Door finite-element model and stress result |
 
-## Pages with no existing picture slots
+## Pages using code-drawn visuals
 
-Culturon, APPT, and COSSMo currently have text-only layouts, so no image files are required for them. ME 360 has a homepage image slot; its detail page remains a course placeholder.
+Culturon and Plummer include sanitized, code-drawn engineering diagrams that require no image files. APPT and COSSMo currently have text-only layouts. ME 360 has a homepage image slot; its detail page remains a course placeholder.
 
 ## Accessibility
 
