@@ -18,6 +18,7 @@ A statically exported React and Next.js portfolio for GitHub Pages.
 - `lib/portfolio-content.js` maps that content to clean Next.js routes.
 - `public/Pictures/` contains portfolio images, videos, and the exact-filename guide.
 - `public/Resume/` is the resume folder. The build uses the first PDF found there.
+- `public/Reports/Alexander_Tong_Technical_Portfolio.pdf` is the four-page technical portfolio, linked from the homepage contact section. This copy is tracked in Git and published with the website; replace it when updating the application portfolio.
 - `public/portfolio-*.js` contains the existing launch, carousel, media, and schematic interactions.
 
 ## Adding pictures and videos
