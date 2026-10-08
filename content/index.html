@@ -15,13 +15,22 @@
         .vegas-details .card-description { display: block; padding: 0 20px; color: #999; font-size: .85rem; margin-top: 10px; }
         .vegas-details .expand-icon { float: right; color: #E63946; }
         .vegas-details[open] .expand-icon { transform: rotate(180deg); }
-        .experience-card { border: 1px solid #333; transition: border-color .2s, background-color .2s, box-shadow .2s; }
-        .experience-card:hover, .experience-card:focus-visible { background-color: #222 !important; border-color: #E63946; box-shadow: 0 6px 20px rgba(0, 0, 0, .25); }
+        .experience-card { border: 1px solid #555; cursor: pointer; box-shadow: 0 2px 10px rgba(0, 0, 0, .12); transition: opacity .8s cubic-bezier(.2, .8, .2, 1), transform .8s cubic-bezier(.2, .8, .2, 1), translate .22s ease, border-color .22s ease, background-color .22s ease, box-shadow .22s ease; }
+        .experience-card:hover, .experience-card:focus-visible { background-color: #242424 !important; border-color: #d84b55; box-shadow: 0 14px 32px rgba(0, 0, 0, .32), 0 0 0 1px rgba(230, 57, 70, .16); translate: 0 -3px; }
+        .experience-card:active { translate: 0 -1px; }
         .experience-card:focus-visible { outline: 2px solid #E63946; outline-offset: 4px; }
-        .experience-link { display: flex; justify-content: flex-start; align-items: center; gap: 10px; margin-top: 10px; padding-top: 8px; border-top: 1px solid #333; color: #E63946; font-size: 1rem; font-weight: 700; }
-        .experience-card:hover .experience-link, .experience-card:focus-visible .experience-link { text-decoration: underline; text-underline-offset: 4px; }
-        .experience-open { display: inline-flex; width: 30px; height: 30px; flex-shrink: 0; align-items: center; justify-content: center; background: #E63946; color: #fff; border-radius: 50%; font-size: 1rem; }
-        .experience-card:hover .experience-open, .experience-card:focus-visible .experience-open { background: #fff; color: #111; }
+        #Experience .section-title { margin-bottom: 24px; }
+        .experience-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 22px; margin-bottom: 16px; }
+        .experience-card-heading { min-width: 0; }
+        .experience-link { display: inline-flex; flex-shrink: 0; align-items: center; gap: 10px; min-height: 44px; padding: 8px 10px 8px 15px; border: 1px solid #E63946; border-radius: 4px; background: #C92B38; color: #fff; font-size: .9rem; font-weight: 700; line-height: 1.2; white-space: nowrap; transition: background-color .22s ease, border-color .22s ease, color .22s ease; }
+        .experience-open { display: inline-flex; width: 24px; height: 24px; flex-shrink: 0; align-items: center; justify-content: center; border-radius: 50%; background: rgba(0, 0, 0, .2); color: #fff; font-size: 1rem; transition: background-color .22s ease, color .22s ease, translate .22s ease; }
+        .experience-card:hover .experience-link, .experience-card:focus-visible .experience-link { border-color: #fff; background: #fff; color: #151515; }
+        .experience-card:hover .experience-open, .experience-card:focus-visible .experience-open { background: #C92B38; color: #fff; translate: 2px -2px; }
+        .experience-summary { border: 1px solid #3e3e3e; border-left: 3px solid #8f3038; background: #171717; padding: 18px 20px; cursor: default; }
+        .experience-summary .experience-card-top { margin-bottom: 8px; }
+        .experience-summary p:last-child { margin-bottom: 0; }
+        @media (max-width: 650px) { .experience-card-top { flex-direction: column; gap: 12px; } }
+        @media (prefers-reduced-motion: reduce) { .experience-card, .experience-link, .experience-open { transition: none; } .experience-card:hover, .experience-card:focus-visible, .experience-card:active, .experience-card:hover .experience-open, .experience-card:focus-visible .experience-open { translate: none; } }
         .card .card-skills { color: #E63946; font-size: .75rem; margin-top: 14px; line-height: 1.7; }
     </style>
 
@@ -214,6 +223,7 @@
         .card-img.media-slot { padding: 0; }
         .card-img.media-slot > img { width: 100%; height: 100%; object-fit: cover; }
         .card-img.media-slot[data-fit="contain"] > img { object-fit: contain; }
+        .card-img.media-slot.robot-index-photo.has-image-media { background: #080808 !important; }
         .headshot-img.media-slot > img { width: 100%; height: 100%; object-fit: cover; object-position: 62% center; }
     </style>
     <script src="portfolio-media.js" defer></script>
@@ -332,7 +342,7 @@
                 <button type="button" class="launch-replay" hidden>Replay launch <svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
             </div>
         </div>
-        
+
 
     </header>
 
@@ -428,29 +438,29 @@
 
         <div class="container" data-project-category="Flight Hardware">
             <a href="project_recovery.html" data-schematic-part="recovery" class="card scroll-fade project-card" style="text-decoration: none; color: inherit;">
-                    <div class="card-img media-slot" data-media="Pictures/Recovery/Assembly.png" data-media-type="image" data-fit="contain" data-alt="Recovery system image" title="Pictures/Recovery/Assembly.png"><span class="media-filename">Pictures/Recovery/Assembly.png</span></div>
+                    <div class="card-img media-slot" data-media="Pictures/Recovery/SepRec-Top-Down.webp" data-media-type="image" data-fit="contain" data-alt="Top-down CAD view of Argo separation and recovery hardware" title="Pictures/Recovery/SepRec-Top-Down.webp"><span class="media-filename">Pictures/Recovery/SepRec-Top-Down.webp</span></div>
                     <span class="project-status">In progress</span>
                 <h4>Separation and Recovery Subsystem</h4>
-                    <p>Co-leading redundant parachute recovery for a liquid rocket with a 135 lb dry mass targeting 100,000 ft.</p>
+                    <p>Delivered an 18.7 lbm recovery subsystem within a 20 lbm allocation; calculated opening/snatch loads and co-led integrated testing.</p>
                 <p class="card-skills">Recovery Systems · Load Analysis · Testing</p>
                             <span class="project-action">View project <span aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span>
             </a>
 
             <a href="project_co2.html" data-schematic-part="recovery" class="card scroll-fade project-card" style="text-decoration: none; color: inherit;">
-                <div class="card-img media-slot" data-media="Pictures/CO2/Assembly.png" data-media-type="image" data-fit="contain" data-alt="CO₂ deployment hardware image" title="Pictures/CO2/Assembly.png"><span class="media-filename">Pictures/CO2/Assembly.png</span></div>
-                <span class="project-status">Hardware tested; integration in progress</span>
+                <div class="card-img media-slot" data-media="Pictures/CO2/Manufactured-Piercer-Card.webp" data-media-type="image" data-fit="cover" data-alt="Manufactured CO₂ cartridge-piercing hardware" title="Pictures/CO2/Manufactured-Piercer-Card.webp"><span class="media-filename">Pictures/CO2/Manufactured-Piercer-Card.webp</span></div>
+                <span class="project-status">Chamber tested · full-system test planned</span>
                 <h4>CO₂ Deployment Mechanism</h4>
-                <p>Designed, manufactured, and tested CO₂-cartridge deployment hardware with a three-person team.</p>
+                <p>Designed and machined CO₂ piercers with a three-person team; completed a reduced-pressure component firing. Integrated testing is pending.</p>
                 <p class="card-skills">Fusion 360 · Stress Analysis · Machining · Testing</p>
                 <span class="project-action">View project <span aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span>
             </a>
 
             <a href="project_aerocover.html" data-schematic-part="aerocover" class="card scroll-fade project-card" style="text-decoration: none; color: inherit; display: flex;">
-                <div class="card-img media-slot" data-media="Pictures/Aerocover/Assembly.png" data-media-type="image" data-fit="contain" data-alt="Aerodynamic downcomer fairing CAD" title="Pictures/Aerocover/Assembly.png"><span class="media-filename">Pictures/Aerocover/Assembly.png</span></div>
+                <div class="card-img media-slot" data-media="Pictures/Aerocover/Profile-Trade-Thumbnail.svg" data-media-type="image" data-fit="contain" data-alt="Illustrative long, shallow aerocover: 63 in long and 1.6 in tall; final contour under study" title="Pictures/Aerocover/Profile-Trade-Thumbnail.svg"><span class="media-filename">Pictures/Aerocover/Profile-Trade-Thumbnail.svg</span></div>
                 <span class="project-status">In progress</span>
                 <h4>Aerodynamic Downcomer Fairing</h4>
-                <p>Leading development of an aerodynamic fairing to protect Argo’s external downcomer and reduce drag.</p>
-                <p class="card-skills">Ansys CFD · Adjoint Optimization · Supersonic Flow · Solver Comparison</p>
+                <p>Led three fairing concepts, aerodynamic/thermal screening, and the CoDR; the Icarus baseline/backup-candidate simulation in Ansys CFD is converged and under review.</p>
+                <p class="card-skills">Ansys CFD converged and under review · Supersonic Trades · Planned Adjoint Optimization</p>
                             <span class="project-action">View project <span aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span>
             </a>
 
@@ -459,19 +469,19 @@
         <h3 id="ground-systems" style="color: #E63946; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; margin-top: 48px; margin-bottom: 20px;">Ground Systems &amp; Testing</h3>
         <div class="container" data-project-category="Ground Systems &amp; Testing">
             <a href="project_vacuum.html" class="card scroll-fade project-card" style="text-decoration: none; color: inherit; display: flex;">
-                <div class="card-img media-slot" data-media="Pictures/Vacuum/Chamber.jpg" data-media-type="image" data-fit="cover" data-alt="Vacuum chamber image" title="Pictures/Vacuum/Chamber.jpg"><span class="media-filename">Pictures/Vacuum/Chamber.jpg</span></div>
-                <span class="project-status">Operational · Upgrade in design</span>
+                <div class="card-img media-slot" data-media="Pictures/Vacuum/Port-Valve-Side.webp" data-media-type="image" data-fit="cover" data-alt="Operational vacuum chamber viewed from the port and valve side" title="Pictures/Vacuum/Port-Valve-Side.webp"><span class="media-filename">Pictures/Vacuum/Port-Valve-Side.webp</span></div>
+                <span class="project-status">Operational · 0.011 atm demonstrated</span>
                 <h4>Vacuum Test Chamber</h4>
-                <p>Built and operated a 352 L chamber, then designed a 6061 door and sealed adapter upgrade for full atmospheric differential.</p>
-                <p class="card-skills">Vacuum Systems · Plate Analysis · Seal Design · Test Instrumentation</p>
+                <p>Designed the installed 6061-T6 door, tube adapter, and seal for a 352 L chamber; operated it at 0.011 atm.</p>
+                <p class="card-skills">Vacuum Systems · Plate Analysis · Seal Design · Test Operations</p>
                             <span class="project-action">View project <span aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span>
             </a>
 
             <a href="project_nozzle.html" class="card scroll-fade project-card" style="text-decoration: none; color: inherit;">
-                    <div class="card-img media-slot" data-media="Pictures/Nozzle/Isometric.png" data-media-type="image" data-fit="contain" data-alt="Nozzle CAD image" title="Pictures/Nozzle/Isometric.png"><span class="media-filename">Pictures/Nozzle/Isometric.png</span></div>
+                    <div class="card-img media-slot" data-media="Pictures/Nozzle/Hotfire-Thumbnail.webp" data-media-type="image" data-fit="cover" data-alt="Hybrid rocket nozzle firing during its hotfire test" title="Pictures/Nozzle/Hotfire-Thumbnail.webp"><span class="media-filename">Pictures/Nozzle/Hotfire-Thumbnail.webp</span></div>
                     <span class="project-status">Hotfire tested</span>
                 <h4>Hybrid Rocket Nozzle</h4>
-                    <p>Led a five-person team to design and hotfire a mass-optimized hybrid rocket nozzle.</p>
+                    <p>Reduced nozzle mass 73% from my initial design; the printed nozzle survived an approximately two-second hotfire.</p>
                 <p class="card-skills">SolidWorks · Nozzle Design · Hotfire Testing</p>
                             <span class="project-action">View project <span aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span>
             </a>
@@ -502,49 +512,47 @@
 
 
     <section id="Experience" class="project-grid">
-        <h2 class="section-title scroll-fade">Experience & Research</h2>
-        
-        <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;">
-            
-            <a href="plummer.html" class="scroll-fade experience-card" style="padding: 20px 20px 12px; background: #1a1a1a; border-left: 3px solid #E63946; color: inherit; text-decoration: none; display: block;">
-                <h3 style="margin-bottom: 5px;">BU Plummer Laboratory</h3>
-                <p style="color: #E63946; font-size: 0.9rem; font-weight: bold; margin-bottom: 15px;">Mechanical Engineering Intern · June 2026–Present</p>
+        <h2 class="section-title scroll-fade">Professional Experience &amp; Research</h2>
+
+        <div style="width: 100%; display: flex; flex-direction: column; gap: 30px;">
+
+            <a href="plummer.html" class="scroll-fade experience-card" aria-label="View BU Plummer Laboratory experience" style="padding: 20px 20px 12px; background: #1a1a1a; border-left: 3px solid #E63946; color: inherit; text-decoration: none; display: block;">
+                <div class="experience-card-top">
+                    <div class="experience-card-heading"><h3 style="margin-bottom: 5px;">BU Plummer Laboratory</h3><p style="color: #E63946; font-size: 0.9rem; font-weight: bold; margin-bottom: 0;">Mechanical Design Assistant · June 2026–Present</p></div>
+                    <span class="experience-link" aria-hidden="true">View experience <span class="experience-open"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></span>
+                </div>
                 <ul style="list-style-position: inside; color: #bbb; font-size: 0.9rem; line-height: 1.8;">
-                    <li>Designing and machining dynamic-test fixtures, experimental apparatus, and precision components.</li>
-                    <li>Designed and executed a 48-test Instron campaign across four bistable physical Ising models, producing the lab's first direct force dataset intended for empirical coupling analysis.</li>
-                    <li>Building modular camera infrastructure and developing hydrogel-test equipment.</li>
+                    <li>Designed and executed 48 Instron tests across four bistable physical Ising models, producing the lab's first direct force dataset for future empirical coupling analysis.</li>
+                    <li>CNC-machined a shaker adapter held to ±0.005 in; reduced estimated plate-and-bolt cost from $1,170 outsourced to $71.11 in-house.</li>
+                    <li>Built modular camera and hydrogel-test apparatus for ongoing research.</li>
                 </ul>
-                <span class="experience-link"><span class="experience-open" aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span> View experience</span>
             </a>
 
-            <a href="culturon.html" class="scroll-fade experience-card" style="padding: 20px 20px 12px; background: #1a1a1a; border-left: 3px solid #E63946; transition-delay: 0.1s; color: inherit; text-decoration: none; display: block;">
-                <h3 style="margin-bottom: 5px;">Culturon</h3>
-                <p style="color: #E63946; font-size: 0.9rem; font-weight: bold; margin-bottom: 15px;">Mechanical Engineering Intern · February–June 2026</p>
+            <a href="culturon.html" class="scroll-fade experience-card" aria-label="View Culturon experience" style="padding: 20px 20px 12px; background: #1a1a1a; border-left: 3px solid #E63946; transition-delay: 0.1s; color: inherit; text-decoration: none; display: block;">
+                <div class="experience-card-top">
+                    <div class="experience-card-heading"><h3 style="margin-bottom: 5px;">Culturon</h3><p style="color: #E63946; font-size: 0.9rem; font-weight: bold; margin-bottom: 0;">Mechanical Engineering Intern · February–June 2026</p></div>
+                    <span class="experience-link" aria-hidden="true">View experience <span class="experience-open"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></span>
+                </div>
                 <ul style="list-style-position: inside; color: #bbb; font-size: 0.9rem; line-height: 1.8;">
-                    <li>Designed Onshape sample racks and personally planned and executed full-scale nanoparticle deposition mapping.</li>
-                    <li>Developed a working hypothesis for contamination cause and pattern from SEM/ImageJ, optical microscopy, visual evidence, and fluid/electromagnetic first principles; presented resulting prevention concepts.</li>
+                    <li>Designed adhesive-free sample racks in Onshape and ran full-scale nanoparticle deposition mapping.</li>
+                    <li>Used SEM/ImageJ and optical microscopy to characterize deposition patterns and present contamination-prevention concepts to technical leads.</li>
                     <li style="font-style: italic;">Experimental work and component-level design; public details limited by NDA.</li>
                 </ul>
-                <span class="experience-link"><span class="experience-open" aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span> View experience</span>
             </a>
 
-            <a href="appt.html" class="scroll-fade experience-card" style="padding: 20px 20px 12px; background: #1a1a1a; border-left: 3px solid #E63946; color: inherit; text-decoration: none; display: block;">
-                <h3 style="margin-bottom: 5px;">Ablative Pulsed Plasma Thruster</h3>
-                <p style="color: #E63946; font-size: .9rem; font-weight: bold; margin-bottom: 15px;">Volunteer · University of Sydney · Sydney, Australia · May–June 2026</p>
-                <p style="color: #bbb; font-size: .9rem;">Designed an ABS inductor spool, performed coil-winding calculations, checked outgassing suitability, and assisted with operating-procedure documentation.</p>
-                <span class="experience-link"><span class="experience-open" aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span> View experience</span>
-            </a>
+            <div class="scroll-fade experience-summary">
+                <div class="experience-card-top">
+                    <div class="experience-card-heading"><h3 style="margin-bottom: 5px;">Ablative Pulsed Plasma Thruster</h3><p style="color: #E63946; font-size: .9rem; font-weight: bold; margin-bottom: 0;">Volunteer · University of Sydney · Sydney, Australia · May–June 2026</p></div>
+                </div>
+                <p style="color: #bbb; font-size: .9rem;">Designed an ABS inductor spool, performed coil-winding calculations, checked outgassing suitability, and provided limited support using the established operating procedure.</p>
+            </div>
 
-            <a href="cossmo.html" class="scroll-fade experience-card" style="padding: 20px 20px 12px; background: #1a1a1a; border-left: 3px solid #E63946; color: inherit; text-decoration: none; display: block;">
-                <h3 style="margin-bottom: 5px;">BU Space Physics &amp; Technology Lab (SPTL)</h3>
-                <p style="color: #E63946; font-size: .9rem; font-weight: bold; margin-bottom: 15px;">Research Experience · October–December 2025</p>
-                <ul style="list-style-position: inside; color: #bbb; font-size: .9rem; line-height: 1.8;">
-                    <li>Performed limited analysis of live and historical COSSMo instrument data using pySPEDAS, shared lab tools, and Python functions I assembled.</li>
-                    <li>Assisted with and observed laser calibration of the flight-spare instrument.</li>
-                    <li>Shadowed the CDF skeleton-file workflow used to prepare scientific data products.</li>
-                </ul>
-                <span class="experience-link"><span class="experience-open" aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span> View experience</span>
-            </a>
+            <div class="scroll-fade experience-summary">
+                <div class="experience-card-top">
+                    <div class="experience-card-heading"><h3 style="margin-bottom: 5px;">BU Space Physics &amp; Technology Lab (SPTL)</h3><p style="color: #E63946; font-size: .9rem; font-weight: bold; margin-bottom: 0;">Research Experience · October–December 2025</p></div>
+                </div>
+                <p style="color: #bbb; font-size: .9rem;">Analyzed COSSMo instrument data with Python and pySPEDAS; assisted with flight-spare laser calibration and observed the CDF data-product workflow.</p>
+            </div>
 
         </div>
     </section>
@@ -559,10 +567,10 @@
         </div>
         <div id="additional-projects-track" class="container carousel-track">
             <a href="dbf.html" class="card project-card" style="text-decoration: none; color: inherit; display: flex;">
-                <div class="card-img media-slot" data-media="Pictures/AIAA/Aircraft.jpg" data-media-type="image" data-fit="cover" data-alt="Wing design image" title="Pictures/AIAA/Aircraft.jpg"><span class="media-filename">Pictures/AIAA/Aircraft.jpg</span></div>
+                <div class="card-img media-slot" data-media="Pictures/AIAA/Prototype-1-Assembled.webp" data-media-type="image" data-fit="cover" data-alt="Fully assembled Prototype 1 aircraft" title="Pictures/AIAA/Prototype-1-Assembled.webp"><span class="media-filename">Pictures/AIAA/Prototype-1-Assembled.webp</span></div>
                 <span class="project-status">Design & fabrication</span>
                 <h4>Wing Structural Lead (AIAA)</h4>
-                <p>Led two wing designs, achieving a 50% lighter prototype and cutting build time from three months to one.</p>
+                <p>Built a complete Prototype 1 wing 42.7% lighter than the previous wing; cut build time from three months to one. Prototype 2 remained proposed.</p>
                 <p class="card-skills">Fusion 360 · Wing Structures · Manufacturing</p>
                             <span class="project-action">View project <span aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span>
             </a>
@@ -570,16 +578,16 @@
 
 
             <a href="robot.html" class="card project-card" style="text-decoration: none; color: inherit; display: flex; transition-delay: 0.1s;">
-                <div class="card-img media-slot" data-media="Pictures/Robot/Vehicle.jpg" data-media-type="image" data-fit="cover" data-alt="Vehicle image" title="Pictures/Robot/Vehicle.jpg"><span class="media-filename">Pictures/Robot/Vehicle.jpg</span></div>
+                <div class="card-img media-slot robot-index-photo" data-media="Pictures/Robot/Vehicle.jpg" data-media-type="image" data-fit="contain" data-alt="Full completed line-following car" title="Pictures/Robot/Vehicle.jpg"><span class="media-filename">Pictures/Robot/Vehicle.jpg</span></div>
                 <span class="project-status">Tested</span>
                 <h4>Line-Following Autonomous Vehicle</h4>
-                <p>Led a four-person team and completed all wiring and programming for an autonomous payload vehicle.</p>
+                <p>Led the vehicle design, build, programming, and testing; carried 250 g through six 12 ft runs in 70–86 seconds against a 90-second limit.</p>
                 <p class="card-skills">Arduino · Motor Control · Testing</p>
                             <span class="project-action">View project <span aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span>
             </a>
 
             <a href="manufacturing.html" class="card project-card" style="text-decoration: none; color: inherit;">
-                <div class="card-img media-slot" data-media="Pictures/Manufacturing/Hammer.jpg" data-media-type="image" data-fit="cover" data-alt="Machining image" title="Pictures/Manufacturing/Hammer.jpg"><span class="media-filename">Pictures/Manufacturing/Hammer.jpg</span></div>
+                <div class="card-img media-slot" data-media="Pictures/Manufacturing/Hammer.jpg" data-media-type="image" data-fit="contain" data-alt="Machinist’s hammer I turned and milled" title="Pictures/Manufacturing/Hammer.jpg"><span class="media-filename">Pictures/Manufacturing/Hammer.jpg</span></div>
                 <span class="project-status">Fabricated &amp; used</span>
                 <h4>Manufacturing &amp; Machining</h4>
                 <p>Manual and CNC machining, composite layups, and fixtures for research and flight hardware.</p>
@@ -589,10 +597,10 @@
 
             <a href="me360.html" class="card project-card" style="text-decoration: none; color: inherit; display: flex;">
                 <div class="card-img media-slot" data-media="Pictures/ME360/Project.jpg" data-media-type="image" data-fit="cover" data-alt="Course Project Photo" title="Pictures/ME360/Project.jpg"><span class="media-filename">Pictures/ME360/Project.jpg</span></div>
-                <span class="project-status">Course placeholder</span>
+                <span class="project-status">Course project underway</span>
                 <h4>ME 360: Electromechanical Design</h4>
-                <p><strong>Placeholder:</strong> Course portfolio beginning with a Cartesian motion system.</p>
-                <p class="card-skills">Course focus: CAD · Arduino · Motion Control</p>
+                <p>Cartesian motion-system project in progress; design and test evidence forthcoming.</p>
+                <p class="card-skills">CAD · Arduino · Motion Control</p>
                             <span class="project-action">View project <span aria-hidden="true"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></span>
             </a>
         </div>
@@ -601,23 +609,23 @@
 
     <footer id="contact" class="scroll-fade" style="padding: 5rem 10%; background: #000; color: #fff; border-top: 1px solid #333;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px;">
-            
+
             <div>
                 <p style="font-size: 1.2rem; font-weight: 800; color: #fff; letter-spacing: 1px; margin-bottom: 5px;">ALEXANDER TONG</p>
                 <p style="color: #E63946;">BU MECHANICAL ENGINEERING</p>
             </div>
-            
+
             <div style="display: flex; gap: 40px; text-align: center;">
                 <div>
                     <a href="https://www.linkedin.com/in/alto335/" target="_blank" aria-label="LinkedIn profile" class="contact-icon" style="background: #000; color: #fff; border-color: #fff;"><i class="fa-brands fa-linkedin-in"></i></a>
                     <p style="font-size: 0.8rem; margin-top: 10px; color: #fff;">LinkedIn</p>
                 </div>
-                
+
                 <div>
                     <a href="mailto:alto335@bu.edu" aria-label="Email Alexander Tong" class="contact-icon" style="background: #000; color: #fff; border-color: #fff;"><i class="fa-solid fa-envelope"></i></a>
                     <p style="font-size: 0.8rem; margin-top: 10px; color: #fff;">alto335@bu.edu</p>
                 </div>
-                
+
                 <div>
                     <a href="Alexander_Tong_Resume.pdf" target="_blank" aria-label="View resume PDF" class="contact-icon" style="background: #000; color: #fff; border-color: #fff;"><i class="fa-solid fa-file-lines"></i></a>
                     <p style="font-size: 0.8rem; margin-top: 10px; color: #fff;">Resume</p>

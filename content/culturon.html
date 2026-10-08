@@ -96,90 +96,154 @@
         <a href="index.html#Experience" class="back-link"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4M10 6l-6 6 6 6"/></svg> Experience &amp; Research</a>
         <h1>Culturon <span>Mechanical Engineering Internship</span></h1>
         <p class="project-meta-line">February–June 2026 · Sydney, Australia</p>
-        <p class="project-overview">Mechanical design and experimental investigation of plasma-polymer nanoparticle deposition, supporting vacuum-reactor development and contamination control.</p>
+        <p class="project-overview">Executed the company’s first full-scale nanoparticle deposition map and presented contamination-prevention concepts to the scale-up team. Designed adhesive-free sampling racks for reactor-port insertion; prevention concepts remained unbuilt during my internship.</p>
     </header>
     <main>
     <section class="content-section">
         <div class="text-block">
             <h2>Scope &amp; Contribution</h2>
-            <p style="color: #ccc;">I designed sample-collection hardware, planned and executed nanoparticle deposition experiments, and developed a working hypothesis for the cause and spatial pattern of particle contamination. That hypothesis informed proposals for reducing contamination at the turbomolecular- and roughing-pump ports and through geometry at the bottom of the chamber. My work connected mechanical design, experimental characterization, fluid dynamics, and electromagnetic first principles to support the technical scale-up team.</p>
-            <p style="color: #E63946; margin-top: 20px;">Onshape · Sheet-Metal Design · DFMA · Experimental Testing · SEM · ImageJ · Optical Microscopy · Fluid Dynamics · Electromagnetics</p>
+            <p style="color: #ccc;">I designed adhesive-free sample hardware, ran a full-scale deposition-mapping study, and presented a working hypothesis for particle contamination to the scale-up team. The findings informed component-level proposals for both pump ports and the chamber floor.</p>
+
             <p style="color: #aaa; font-style: italic;">Project details are limited by a signed NDA; proprietary numerical results and design parameters cannot be disclosed.</p>
+        </div>
+        <div class="image-block">
+            <div class="img-placeholder media-slot published-reference-media" data-media="Pictures/Culturon/Published-Reactor-Schematic.png" data-media-type="image" data-fit="contain" data-alt="Published schematic of an analogous plasma-polymer nanoparticle reactor with gas inlets, RF electrode, substrate holder, and vacuum connection" title="Pictures/Culturon/Published-Reactor-Schematic.png"><span class="media-filename">Pictures/Culturon/Published-Reactor-Schematic.png</span></div>
+            <p class="caption">Published analogue for system context, not Culturon’s proprietary reactor or a drawing I created. Figure 1 from <a href="https://doi.org/10.1021/acsanm.2c03213" target="_blank" rel="noopener noreferrer" style="color: #E63946;">Haidar et al., ACS Applied Nano Materials 5 (2022), 17576–17591</a>. Reproduced unchanged under CC BY-NC-ND 4.0.</p>
         </div>
     </section>
     <section class="content-section">
         <div class="text-block">
             <h2>Deposition Mapping &amp; Characterization</h2>
             <p style="color: #ccc;">I planned and executed the company’s first full-scale nanoparticle deposition mapping across chamber locations and magnetic configurations.</p>
-            <p style="color: #ccc;">Using SEM with ImageJ, Olympus DP74 optical microscopy, and direct visual evidence, I analyzed sample plates and racks to characterize deposition patterns, polarity-dependent accumulation, and asymmetric flow behavior. I combined those observations with first-principles reasoning about fluid and electromagnetic interactions to form a working hypothesis for the contamination's cause and spatial pattern.</p>
+            <p style="color: #ccc;">Using SEM with ImageJ, Olympus DP74 optical microscopy, and direct visual evidence, I analyzed sample plates and racks to characterize deposition patterns, polarity-dependent accumulation, and asymmetric flow behavior. I used the observed polarity and spatial patterns to develop a working hypothesis for particle transport and deposition.</p>
             <p style="color: #ccc;">I presented the working hypothesis, supporting evidence, and resulting contamination-prevention concepts in a technical design review with internal technical leads and the scale-up team.</p>
         </div>
         <div class="image-block">
             <div class="engineering-visual">
                 <svg viewBox="0 0 620 390" role="img" aria-labelledby="culturon-map-title culturon-map-desc">
-                    <title id="culturon-map-title">Sanitized chamber deposition-mapping plan</title>
-                    <desc id="culturon-map-desc">Conceptual vacuum chamber with horizontal and vertical sample locations and two pump interfaces. Proprietary geometry and dimensions are omitted.</desc>
-                    <rect x="110" y="55" width="400" height="270" rx="26" fill="#fff" stroke="#202020" stroke-width="5"/>
-                    <path d="M110 145H48M110 245H48M510 145H572M510 245H572" fill="none" stroke="#555" stroke-width="9"/>
-                    <path d="M48 145l22-13v26zM48 245l22-13v26zM572 145l-22-13v26zM572 245l-22-13v26z" fill="#555"/>
-                    <path d="M175 95V285M445 95V285" stroke="#bbb" stroke-width="3" stroke-dasharray="8 7"/>
-                    <path d="M165 120h20M165 190h20M165 260h20M435 120h20M435 190h20M435 260h20" stroke="#E63946" stroke-width="8" stroke-linecap="round"/>
-                    <path d="M235 290h54M331 290h54M235 90h54M331 90h54" stroke="#E63946" stroke-width="8" stroke-linecap="round"/>
-                    <text x="310" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#161616">DEPOSITION MAPPING</text>
-                    <text x="310" y="355" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" fill="#555">Horizontal and vertical coupon locations</text>
-                    <text x="24" y="112" font-family="Inter, sans-serif" font-size="13" fill="#555">Pump</text>
-                    <text x="548" y="112" font-family="Inter, sans-serif" font-size="13" fill="#555">Pump</text>
-                    <circle cx="310" cy="190" r="45" fill="none" stroke="#777" stroke-width="3"/>
-                    <path d="M288 190h44M310 168v44" stroke="#777" stroke-width="3"/>
+                    <title id="culturon-map-title">Sanitized elevation sampling map</title>
+                    <desc id="culturon-map-desc">Four abstract sampling elevations within a generic chamber envelope. Dimensions, proportions, ports, hardware, and exact positions are intentionally omitted.</desc>
+                    <defs>
+                        <linearGradient id="culturon-chamber-fill" x1="0" x2="1">
+                            <stop offset="0" stop-color="#c9d0d8"/>
+                            <stop offset=".5" stop-color="#eef0f2"/>
+                            <stop offset="1" stop-color="#b8c0ca"/>
+                        </linearGradient>
+                    </defs>
+                    <text x="310" y="28" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#161616">ELEVATION SAMPLING MAP</text>
+                    <rect x="180" y="48" width="300" height="292" rx="34" fill="url(#culturon-chamber-fill)" stroke="#202020" stroke-width="6"/>
+                    <rect x="208" y="72" width="244" height="244" rx="22" fill="#dbe1e8" stroke="#7d8793" stroke-width="2" stroke-dasharray="8 8"/>
+                    <g fill="none" stroke="#E63946" stroke-width="7" stroke-linecap="round" stroke-dasharray="34 18">
+                        <path d="M155 284H505"/>
+                        <path d="M155 211H505"/>
+                        <path d="M155 190H505"/>
+                        <path d="M155 92H505"/>
+                    </g>
+                    <g font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#333" text-anchor="end">
+                        <text x="138" y="289">Elevation A</text>
+                        <text x="138" y="216">Elevation B</text>
+                        <text x="138" y="195">Elevation C</text>
+                        <text x="138" y="97">Elevation D</text>
+                    </g>
+                    <g fill="#E63946">
+                        <circle cx="270" cy="284" r="6"/><circle cx="330" cy="284" r="6"/><circle cx="390" cy="284" r="6"/>
+                        <circle cx="270" cy="211" r="6"/><circle cx="330" cy="211" r="6"/><circle cx="390" cy="211" r="6"/>
+                        <circle cx="270" cy="190" r="6"/><circle cx="330" cy="190" r="6"/><circle cx="390" cy="190" r="6"/>
+                        <circle cx="270" cy="92" r="6"/><circle cx="330" cy="92" r="6"/><circle cx="390" cy="92" r="6"/>
+                    </g>
+                    <text x="330" y="369" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#555">Relative elevation only · geometry and scale intentionally abstracted</text>
                 </svg>
-                <p class="engineering-visual-note">Sanitized experimental map. Proprietary chamber geometry, dimensions, and results are omitted.</p>
+                <p class="engineering-visual-note">Sanitized from the elevation plan used during testing. Exact dimensions, proportions, ports, fixtures, and sampling coordinates are omitted under NDA.</p>
             </div>
-            <p class="caption">Full-Scale Sampling Plan Across Chamber Locations</p>
+            <p class="caption">Elevation-Based Deposition Mapping Plan</p>
         </div>
     </section>
     <section class="content-section">
         <div class="text-block">
             <h2>Particle-Contamination Mitigation Proposals</h2>
-            <p style="color: #ccc;">I used the working contamination hypothesis to propose geometry changes at both the turbomolecular- and roughing-pump ports and at the bottom of the chamber, along with an electron-curtain concept. The proposals connected sample-plate and rack results from SEM with ImageJ and optical microscopy, direct visual evidence, and first-principles reasoning about fluid and electromagnetic interactions.</p>
+            <p style="color: #ccc;">The deposition map and working hypothesis led to proposed geometry changes at the turbomolecular- and roughing-pump ports and the chamber floor, plus an electron-curtain concept.</p>
             <ul>
-                <li>First-principles fluid dynamics, particle-inertia reasoning, and Stokes-number analysis.</li>
-                <li>An electron-curtain particle-control concept informed by electromagnetic first principles and permanent-magnet experiments within the chamber.</li>
+                <li>Used particle-inertia and Stokes-number analysis to assess whether particles would follow the flow around proposed port geometries.</li>
+                <li>Proposed an electron-curtain concept using electromagnetic reasoning and permanent-magnet experiments; effectiveness remained untested.</li>
                 <li>Mechanical integration, chamber geometry, and contamination-management considerations at both pump interfaces.</li>
             </ul>
-            <p style="color: #ccc; margin-top: 20px;">The causal explanation remained a working hypothesis, and the prevention concepts were proposals rather than a manufactured or validated contamination-control system. As the final design deliverables of my internship, selected component-level ideas were developed far enough to prepare for fabrication and testing.</p>
+            <p style="color: #ccc; margin-top: 20px;">The contamination explanation remained a working hypothesis. I presented prevention concepts and prepared selected component designs for subsequent fabrication and testing; they were not built or validated during my internship.</p>
         </div>
     </section>
-    <section class="content-section" style="border-bottom: none;">
+    <section class="content-section full-width-visual-section" style="border-bottom: none;">
         <div class="text-block">
             <h2>Sample-Rack Design &amp; Manufacturing Considerations</h2>
-            <p style="color: #ccc;">I designed multi-configuration sheet-metal sample racks and deposition coupons in Onshape that could be inserted through the reactor ports and mounted without adhesives. The designs supported sampling across horizontal and vertical chamber locations while accounting for fabrication, assembly, and the material and geometrical constraints of the experiments.</p>
+            <p style="color: #ccc;">I designed multi-configuration sheet-metal racks and deposition coupons in Onshape for adhesive-free mounting through reactor ports. They supported horizontal and vertical sampling while respecting fabrication and experimental constraints.</p>
             <p style="color: #ccc;">I considered conductivity and streamlined geometry along the chamber walls so the samples could act as an analogue for part of the chamber wall.</p>
             <ul>
                 <li>Bend reliefs, minimum flange dimensions, and fabrication tolerances.</li>
-                <li>Insertion through reactor ports, assembly clearances, and adhesive-free mounting.</li>
-                <li>Sample placement across horizontal and vertical chamber locations.</li>
+                <li>Port insertion and assembly clearances.</li>
                 <li>Conductivity, wall geometry, and minimizing flow and field disturbance.</li>
             </ul>
         </div>
         <div class="image-block">
             <div class="engineering-visual">
-                <svg viewBox="0 0 620 390" role="img" aria-labelledby="culturon-rack-title culturon-rack-desc">
-                    <title id="culturon-rack-title">Sanitized adhesive-free sample-rack concept</title>
-                    <desc id="culturon-rack-desc">Conceptual sheet-metal rack with removable coupons, wall-conforming profile, and mechanical retention. Proprietary dimensions are omitted.</desc>
-                    <path d="M95 315V82Q95 52 125 52H510" fill="none" stroke="#202020" stroke-width="8"/>
-                    <path d="M142 286V125Q142 105 162 105H475" fill="none" stroke="#666" stroke-width="7"/>
-                    <path d="M165 125l35 38h238l37-58" fill="none" stroke="#E63946" stroke-width="6" stroke-linejoin="round"/>
-                    <rect x="218" y="142" width="54" height="86" rx="4" fill="#fff" stroke="#202020" stroke-width="4"/>
-                    <rect x="292" y="142" width="54" height="86" rx="4" fill="#fff" stroke="#202020" stroke-width="4"/>
-                    <rect x="366" y="142" width="54" height="86" rx="4" fill="#fff" stroke="#202020" stroke-width="4"/>
-                    <path d="M245 228v40M319 228v40M393 228v40" stroke="#E63946" stroke-width="7"/>
-                    <circle cx="165" cy="125" r="8" fill="#E63946"/><circle cx="475" cy="105" r="8" fill="#E63946"/>
-                    <text x="310" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#161616">ADHESIVE-FREE SAMPLE RACK</text>
-                    <text x="310" y="350" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" fill="#555">Mechanical retention · removable coupons · wall-conforming profile</text>
+                <svg viewBox="0 0 760 440" role="img" aria-labelledby="culturon-rack-title culturon-rack-desc">
+                    <title id="culturon-rack-title">Sanitized two-view sample-rack function diagram</title>
+                    <desc id="culturon-rack-desc">A simplified front view shows a circular carrier plate, two access windows, two coupon supports, a central clearance, and three bent support arms. A simplified side view shows the carrier plate and abstract arm directions. Dimensions and production geometry are omitted.</desc>
+                    <defs>
+                        <linearGradient id="rack-carrier-fill" x1="0" x2="1">
+                            <stop offset="0" stop-color="#cbd1d8"/>
+                            <stop offset="1" stop-color="#eef0f2"/>
+                        </linearGradient>
+                        <marker id="rack-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                            <path d="M0 0L8 4L0 8z" fill="#E63946"/>
+                        </marker>
+                    </defs>
+
+                    <text x="380" y="28" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#161616">SANITIZED SAMPLE-RACK FUNCTION</text>
+                    <text x="205" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#555">FRONT / FUNCTIONAL VIEW</text>
+                    <text x="565" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#555">SIDE / SUPPORT VIEW</text>
+
+                    <!-- Functionally recognizable front view; all proportions are intentionally altered. -->
+                    <g>
+                        <circle cx="205" cy="218" r="116" fill="url(#rack-carrier-fill)" stroke="#252525" stroke-width="6"/>
+                        <rect x="188" y="72" width="34" height="58" rx="8" fill="#8f98a3" stroke="#252525" stroke-width="4"/>
+                        <rect x="188" y="306" width="34" height="58" rx="8" fill="#8f98a3" stroke="#252525" stroke-width="4"/>
+                        <path d="M308 190h62q18 0 18 18v20q0 18-18 18h-62z" fill="#8f98a3" stroke="#252525" stroke-width="4"/>
+
+                        <rect x="132" y="150" width="54" height="120" rx="10" fill="#f7f7f4" stroke="#343434" stroke-width="5"/>
+                        <rect x="224" y="150" width="54" height="120" rx="10" fill="#f7f7f4" stroke="#343434" stroke-width="5"/>
+                        <circle cx="205" cy="132" r="21" fill="#f7f7f4" stroke="#343434" stroke-width="5"/>
+
+                        <path d="M141 234h36v28h-36zM233 234h36v28h-36z" fill="#E63946" stroke="#7e2028" stroke-width="3"/>
+                        <path d="M141 234l13-12h36l-13 12M233 234l13-12h36l-13 12" fill="#f06a73" stroke="#7e2028" stroke-width="3" stroke-linejoin="round"/>
+                    </g>
+
+                    <!-- Simplified side view communicates arrangement without production dimensions. -->
+                    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M512 112v216" stroke="#292929" stroke-width="18"/>
+                        <path d="M512 132q18-20 40-20h120" stroke="#737d88" stroke-width="16"/>
+                        <path d="M512 304q18 20 40 20h120" stroke="#737d88" stroke-width="16"/>
+                        <path d="M512 224q-18 0-35-10l-72-42" stroke="#737d88" stroke-width="16"/>
+                        <path d="M496 207h32M496 242h32" stroke="#E63946" stroke-width="9"/>
+                    </g>
+
+                    <!-- Plain-language callouts identify function without disclosing interfaces. -->
+                    <g font-family="Inter, sans-serif" font-size="13" fill="#333">
+                        <text x="26" y="112">Circular carrier plate</text>
+                        <path d="M139 108L165 132" stroke="#E63946" stroke-width="2.5" marker-end="url(#rack-arrow)"/>
+
+                        <text x="24" y="304">Two coupon supports</text>
+                        <path d="M150 298L158 264" stroke="#E63946" stroke-width="2.5" marker-end="url(#rack-arrow)"/>
+
+                        <text x="269" y="92">Three bent support arms</text>
+                        <path d="M341 98L294 145" stroke="#E63946" stroke-width="2.5" marker-end="url(#rack-arrow)"/>
+
+                        <text x="420" y="372">Arm directions shown schematically</text>
+                        <path d="M534 355L554 326" stroke="#E63946" stroke-width="2.5" marker-end="url(#rack-arrow)"/>
+                    </g>
+
+                    <text x="380" y="414" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#666">No dimensions or production geometry shown</text>
                 </svg>
-                <p class="engineering-visual-note">Sanitized concept. Proprietary dimensions, interfaces, and reactor geometry are omitted under NDA.</p>
+                <p class="engineering-visual-note">Functionally representative, not production geometry. Dimensions, proportions, arm lengths, bend radii, cutout profiles, mating interfaces, and chamber fit are intentionally changed or omitted.</p>
             </div>
-            <p class="caption">Sheet-Metal Sampling Hardware and Mechanical Retention</p>
+            <p class="caption">NDA-Safe Two-View Sample-Rack Diagram</p>
         </div>
     </section>
     </main>

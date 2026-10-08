@@ -6,33 +6,27 @@
     "type": "image"
   },
   {
-    "path": "Pictures/Recovery/Assembly.png",
+    "path": "Pictures/Recovery/SepRec-Top-Down.webp",
     "page": "index.html",
-    "location": "Recovery system image",
+    "location": "Top-down Argo recovery packaging CAD",
     "type": "image"
   },
   {
-    "path": "Pictures/CO2/Assembly.png",
+    "path": "Pictures/CO2/Manufactured-Piercer-Card.webp",
     "page": "index.html",
-    "location": "CO₂ deployment hardware image",
+    "location": "Centered manufactured CO₂ piercer thumbnail",
     "type": "image"
   },
   {
-    "path": "Pictures/Aerocover/Assembly.png",
+    "path": "Pictures/Vacuum/Port-Valve-Side.webp",
     "page": "index.html",
-    "location": "Aerocover CAD Image",
+    "location": "Operational vacuum chamber, port and valve side",
     "type": "image"
   },
   {
-    "path": "Pictures/Vacuum/Chamber.jpg",
+    "path": "Pictures/Nozzle/Hotfire-Thumbnail.webp",
     "page": "index.html",
-    "location": "Vacuum chamber image",
-    "type": "image"
-  },
-  {
-    "path": "Pictures/Nozzle/Isometric.png",
-    "page": "index.html",
-    "location": "Nozzle CAD image",
+    "location": "Nozzle hotfire video frame",
     "type": "image"
   },
   {
@@ -42,21 +36,21 @@
     "type": "image"
   },
   {
-    "path": "Pictures/AIAA/Aircraft.jpg",
+    "path": "Pictures/AIAA/Prototype-1-Assembled.webp",
     "page": "index.html",
-    "location": "Wing design image",
+    "location": "Fully assembled Prototype 1 aircraft",
     "type": "image"
   },
   {
     "path": "Pictures/Robot/Vehicle.jpg",
     "page": "index.html",
-    "location": "Vehicle image",
+    "location": "Completed line-following vehicle photograph",
     "type": "image"
   },
   {
     "path": "Pictures/Manufacturing/Hammer.jpg",
     "page": "index.html",
-    "location": "Machining image",
+    "location": "Machinist’s hammer for BURPG Machining Intro Project",
     "type": "image"
   },
   {
@@ -68,25 +62,55 @@
   {
     "path": "Pictures/AIAA/Aircraft.jpg",
     "page": "dbf.html",
-    "location": "Aircraft or Wing Assembly Photo",
+    "location": "Prototype 1 aircraft assembly CAD",
     "type": "image"
   },
   {
     "path": "Pictures/AIAA/Prototype-1.png",
     "page": "dbf.html",
-    "location": "Prototype 1 Wing CAD or Photo",
+    "location": "Initial Prototype 1 wing one-pager",
     "type": "image"
   },
   {
     "path": "Pictures/AIAA/Design-Review.png",
     "page": "dbf.html",
-    "location": "Trade Study or Design Review Graphic",
+    "location": "Final wing design review center-section CAD",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/AIAA/Design-Review-Spar.png",
+    "page": "dbf.html",
+    "location": "Final wing design review spar CAD",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/AIAA/Design-Review-Servo.png",
+    "page": "dbf.html",
+    "location": "Final wing design review servo-box CAD",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/AIAA/Wing-Halves.jpg",
+    "page": "dbf.html",
+    "location": "Manufactured XPS wing halves",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/AIAA/Wing-Fabrication.jpg",
+    "page": "dbf.html",
+    "location": "Prototype 1 wing assembly workbench photo",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/AIAA/Wing-Workbench.jpg",
+    "page": "dbf.html",
+    "location": "Wide prototype 1 wing-fabrication workbench photo",
     "type": "image"
   },
   {
     "path": "Pictures/AIAA/Prototype-2.png",
     "page": "dbf.html",
-    "location": "Prototype 2 Wing CAD or Drawing",
+    "location": "Proposed Prototype 2 split-wing design one-pager",
     "type": "image"
   },
   {
@@ -104,31 +128,85 @@
   {
     "path": "Pictures/Manufacturing/Hammer.jpg",
     "page": "manufacturing.html",
-    "location": "Machinist’s Hammer Photo",
+    "location": "Machinist’s hammer for BURPG Machining Intro Project",
     "type": "image"
   },
   {
-    "path": "Pictures/Plummer/Lab-Overview.jpg",
+    "path": "Pictures/Plummer/Lab-Overview.webp",
     "page": "plummer.html",
-    "location": "Dynamic-Test Fixture or Laboratory Photo",
+    "location": "Plummer Research Group header",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Plummer/Solid-Plate-Top.png",
+    "page": "plummer.html",
+    "location": "Chosen solid shaker plate, top CAD view",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Plummer/Solid-Plate-Underside.png",
+    "page": "plummer.html",
+    "location": "Chosen solid shaker plate, underside CAD view",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Plummer/Honeycomb-Concept.png",
+    "page": "plummer.html",
+    "location": "Initial honeycomb plate concept CAD",
     "type": "image"
   },
   {
     "path": "Pictures/Plummer/Shaker-Analysis.png",
     "page": "plummer.html",
-    "location": "Shaker-Adapter CAD or FEA",
+    "location": "Plate FEA displacement result from design review",
     "type": "image"
+  },
+  {
+    "path": "Pictures/Plummer/Ising-Model-FEA.png",
+    "page": "plummer.html",
+    "location": "Ising-model FEA displacement result from design review",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Plummer/Shaker-Engineering-Drawing.png",
+    "page": "plummer.html",
+    "location": "Dimensioned plate drawing from design review",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Plummer/Machining-CAM.png",
+    "page": "plummer.html",
+    "location": "Shaker-plate CAM setup and toolpath simulation",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Plummer/Shaker-Plate-Machining.mp4",
+    "page": "plummer.html",
+    "location": "Haas VF-2 machining footage",
+    "type": "video"
   },
   {
     "path": "Pictures/Plummer/Machined-Plate.jpg",
     "page": "plummer.html",
-    "location": "Machined Plate Photo",
+    "location": "Finished machined plate underside",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Plummer/Shaker-Plate-On-Shaker.jpg",
+    "page": "plummer.html",
+    "location": "Final machined plate on the shaker",
     "type": "image"
   },
   {
     "path": "Pictures/Plummer/Camera-Stand.jpg",
     "page": "plummer.html",
-    "location": "Camera-Mount or Lab Buildout Photo",
+    "location": "Integrated camera stand mounted over shaker table",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Plummer/Camera-Enclosure-CAD.webp",
+    "page": "plummer.html",
+    "location": "Camera enclosure and adjustable support frame CAD",
     "type": "image"
   },
   {
@@ -138,33 +216,15 @@
     "type": "image"
   },
   {
-    "path": "Pictures/Aerocover/Assembly.png",
-    "page": "project_aerocover.html",
-    "location": "Argo Aerocover Assembly CAD",
-    "type": "image"
-  },
-  {
-    "path": "Pictures/Aerocover/Profile-Comparison.png",
-    "page": "project_aerocover.html",
-    "location": "Candidate Profile Comparison",
-    "type": "image"
-  },
-  {
-    "path": "Pictures/Aerocover/Baseline-Comparison.png",
-    "page": "project_aerocover.html",
-    "location": "Icarus Baseline and Argo Concept",
-    "type": "image"
-  },
-  {
-    "path": "Pictures/CO2/Assembly.png",
+    "path": "Pictures/CO2/Manufactured-Piercer.webp",
     "page": "project_co2.html",
-    "location": "CO₂ Deployment Assembly CAD",
+    "location": "Manufactured CO₂ cartridge-piercing hardware",
     "type": "image"
   },
   {
-    "path": "Pictures/CO2/Machined-Parts.jpg",
+    "path": "Pictures/CO2/Piercer-Cross-Section-Vertical.webp",
     "page": "project_co2.html",
-    "location": "Machined CO₂ Deployment Hardware Photo",
+    "location": "Vertical piercer section with CO₂ cartridge upward and charge location highlighted",
     "type": "image"
   },
   {
@@ -172,6 +232,12 @@
     "page": "project_nozzle.html",
     "location": "Hotfire Test Slow Motion Video/GIF",
     "type": "video"
+  },
+  {
+    "path": "Pictures/Nozzle/Printed-Nozzle.jpg",
+    "page": "project_nozzle.html",
+    "location": "Fully resin-printed ABS-like nozzle before hotfire",
+    "type": "image"
   },
   {
     "path": "Pictures/Nozzle/Isometric.png",
@@ -198,15 +264,15 @@
     "type": "image"
   },
   {
-    "path": "Pictures/Recovery/Subscale-Test.mp4",
-    "page": "project_recovery.html",
-    "location": "Hero Image/GIF of Subscale Testing",
+    "path": "Pictures/Recovery/Vinyl-Charge-Nosecone-Test-Trimmed.mp4",
+    "page": "project_recovery.html, project_co2.html",
+    "location": "Trimmed slow-motion black-powder nosecone firing and damage-test context",
     "type": "video"
   },
   {
-    "path": "Pictures/Recovery/Lines-Diagram.png",
+    "path": "Pictures/Recovery/Lines-Diagram-Web.webp",
     "page": "project_recovery.html",
-    "location": "Lines Diagram",
+    "location": "System Architecture & Lines Diagram",
     "type": "image"
   },
   {
@@ -216,99 +282,303 @@
     "type": "image"
   },
   {
-    "path": "Pictures/Recovery/Assembly.png",
+    "path": "Pictures/Recovery/SepRec-CAD.webp",
     "page": "project_recovery.html",
-    "location": "Recovery Assembly CAD",
+    "location": "Nosecone recovery assembly CAD",
     "type": "image"
   },
   {
-    "path": "Pictures/Recovery/Hardware-Assembly.jpg",
+    "path": "Pictures/Recovery/Cable-Cutter-Drawing.webp",
     "page": "project_recovery.html",
-    "location": "Recovery Hardware Assembly Photo",
+    "location": "Argo cable-cutter engineering drawing",
     "type": "image"
   },
   {
-    "path": "Pictures/Recovery/Cable-Cutter-Drawing.png",
+    "path": "Pictures/Recovery/Cable-Cutter-Assembly.webp",
     "page": "project_recovery.html",
-    "location": "Cable-Cutter Engineering Drawing",
+    "location": "Manufactured cable-cutter assembly photo",
     "type": "image"
   },
   {
-    "path": "Pictures/Recovery/Cable-Cutters.jpg",
+    "path": "Pictures/Recovery/Splice-Dynamic-Test.mp4",
     "page": "project_recovery.html",
-    "location": "Machined Cable-Cutter Hardware Photo",
-    "type": "image"
-  },
-  {
-    "path": "Pictures/Vacuum/Chamber.jpg",
-    "page": "project_recovery.html",
-    "location": "Vacuum-Chamber Recovery Test Photo",
-    "type": "image"
-  },
-  {
-    "path": "Pictures/Recovery/Line-Verification.mp4",
-    "page": "project_recovery.html",
-    "location": "Recovery-Line Verification Video",
+    "location": "Slow-motion dynamic recovery-line splice test",
     "type": "video"
   },
   {
-    "path": "Pictures/Recovery/Subscale-Launch.jpg",
+    "path": "Pictures/Recovery/CDR-BP-Packing-Plan.webp",
     "page": "project_recovery.html",
-    "location": "Subscale Rocket Retrofit and Launch Photo",
+    "location": "Earlier CDR black-powder nosecone packing plan",
     "type": "image"
   },
   {
-    "path": "Pictures/Recovery/Packing-Plan.png",
-    "page": "project_recovery.html",
-    "location": "Detailed Packing Plan / Nosecone Diagram",
-    "type": "image"
-  },
-  {
-    "path": "Pictures/Vacuum/Chamber.jpg",
+    "path": "Pictures/Vacuum/Port-Valve-Side.webp",
     "page": "project_vacuum.html",
-    "location": "BP Vacuum Testing Photo",
+    "location": "Full chamber, port and valve side",
     "type": "image"
   },
   {
-    "path": "Pictures/Vacuum/Pressure-Data.png",
+    "path": "Pictures/CO2/First-Vacuum-Charge-Pressure.webp",
     "page": "project_vacuum.html",
-    "location": "Pressure-transducer output, analyzed by project partner",
+    "location": "First CO₂ charge pressure trace; co-lead instrumentation and analysis",
     "type": "image"
   },
   {
     "path": "Pictures/Vacuum/Door-CAD.png",
     "page": "project_vacuum.html",
-    "location": "Vacuum-Chamber Door and Tube-Adapter CAD",
-    "type": "image"
-  },
-  {
-    "path": "Pictures/Vacuum/Door-FEA.png",
-    "page": "project_vacuum.html",
-    "location": "Door FEA Model and Stress Review",
+    "location": "Upgraded 6061-T6 vacuum-chamber door and tube-adapter CAD",
     "type": "image"
   },
   {
     "path": "Pictures/Robot/Vehicle.jpg",
     "page": "robot.html",
-    "location": "Vehicle Photo or Test Video",
+    "location": "Completed line-following vehicle photograph",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Robot/Front-CAD.jpg",
+    "page": "robot.html",
+    "location": "Front CAD view of final vehicle",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Robot/Sensors-And-Drive.jpg",
+    "page": "robot.html",
+    "location": "Assembled motor, wheel, and IR sensors",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Robot/Remote-IR.jpg",
+    "page": "robot.html",
+    "location": "Soldered remote-control IR receiver",
     "type": "image"
   },
   {
     "path": "Pictures/Robot/Chassis.png",
     "page": "robot.html",
-    "location": "Chassis CAD or Assembly Photo",
+    "location": "Internal chassis and electronics CAD",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Robot/Rear-CAD.jpg",
+    "page": "robot.html",
+    "location": "Rear CAD with switch and IR receiver",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Robot/Course-Time.png",
+    "page": "robot.html",
+    "location": "Six course completion times",
     "type": "image"
   },
   {
     "path": "Pictures/Robot/Course-Test.jpg",
     "page": "robot.html",
-    "location": "Course-Test Photo or Results Plot",
+    "location": "Six obstacle stopping-distance trials",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Robot/Battery-Test.png",
+    "page": "robot.html",
+    "location": "Battery voltage during one-hour idle test after two traversals",
     "type": "image"
   },
   {
     "path": "Pictures/Robot/Wiring.png",
     "page": "robot.html",
-    "location": "Sensor Layout or Wiring Diagram",
+    "location": "Final electrical wiring diagram from EK210 final report",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Robot/Control-Logic.png",
+    "page": "robot.html",
+    "location": "Line-following, obstacle-detection, and remote-start control logic",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Robot/Course-Run.mp4",
+    "page": "robot.html",
+    "location": "Silent 77-second course traversal",
+    "type": "video"
+  },
+  {
+    "path": "Pictures/Robot/Course-Run-Poster.jpg",
+    "page": "robot.html",
+    "location": "Video poster frame",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Culturon/Published-Reactor-Schematic.png",
+    "page": "culturon.html",
+    "location": "Published analogue for plasma-reactor system context",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/AIAA/Prototype-1-Assembled.webp",
+    "page": "dbf.html",
+    "location": "Fully assembled Prototype 1 aircraft",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/AIAA/Hot-Wire-Method.webp",
+    "page": "dbf.html",
+    "location": "Hot-wire cutting approach and airfoil templates",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Recovery/SepRec-Top-Down.webp",
+    "page": "project_recovery.html",
+    "location": "Top-down nosecone packaging CAD",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Vacuum/Port-Detail.webp",
+    "page": "project_vacuum.html",
+    "location": "Chamber port, gauge, and valve detail",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Vacuum/Door-Removed.webp",
+    "page": "project_vacuum.html",
+    "location": "Detached door with black-powder test residue",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Vacuum/Door-Clamped.webp",
+    "page": "project_vacuum.html",
+    "location": "Installed door with mounting clamps",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Vacuum/Chamber-Full.webp",
+    "page": "project_vacuum.html",
+    "location": "Full chamber from door side",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Recovery/Main-Parachute-Diagram.webp",
+    "page": "project_recovery.html",
+    "location": "Earlier CDR main-parachute packing diagram",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Recovery/Cable-Cutter-Closeup.webp",
+    "page": "project_recovery.html",
+    "location": "Machined cable-cutter detail",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Recovery/Pre-CO2-Coldflow-Setup.webp",
+    "page": "project_recovery.html",
+    "location": "Integrated recovery hardware staged before CO₂ cold-flow operation",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/CO2/First-Vacuum-Charge-Pressure.webp",
+    "page": "project_co2.html",
+    "location": "First CO₂ charge pressure trace; co-lead instrumentation and analysis",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/Icarus-Built-Cover.webp",
+    "page": "project_aerocover.html",
+    "location": "Original figure extracted from Argo Aerocover CoDR; see page caption for authorship",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/Icarus-Mold-CAD.webp",
+    "page": "project_aerocover.html",
+    "location": "Original figure extracted from Argo Aerocover CoDR; see page caption for authorship",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/Icarus-Side-Profile.webp",
+    "page": "project_aerocover.html",
+    "location": "Original figure extracted from Argo Aerocover CoDR; see page caption for authorship",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/Icarus-Fastener-Detail.webp",
+    "page": "project_aerocover.html",
+    "location": "Original figure extracted from Argo Aerocover CoDR; see page caption for authorship",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/CoDR-Flight-Profile.webp",
+    "page": "project_aerocover.html",
+    "location": "Original figure extracted from Argo Aerocover CoDR; see page caption for authorship",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/Quinn-Concept.webp",
+    "page": "project_aerocover.html",
+    "location": "Original figure extracted from Argo Aerocover CoDR; see page caption for authorship",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/Hannah-Leading-Profile.webp",
+    "page": "project_aerocover.html",
+    "location": "Original figure extracted from Argo Aerocover CoDR; see page caption for authorship",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/Hannah-Aft-Profile.webp",
+    "page": "project_aerocover.html",
+    "location": "Original figure extracted from Argo Aerocover CoDR; see page caption for authorship",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/Aaron-Body-Junction.webp",
+    "page": "project_aerocover.html",
+    "location": "Original figure extracted from Argo Aerocover CoDR; see page caption for authorship",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/Aaron-Boattail.webp",
+    "page": "project_aerocover.html",
+    "location": "Original figure extracted from Argo Aerocover CoDR; see page caption for authorship",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/Legacy-Mount-Detail.webp",
+    "page": "project_aerocover.html",
+    "location": "Original figure extracted from Argo Aerocover CoDR; see page caption for authorship",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/Icarus-CFD-Domain-Mesh.png",
+    "page": "project_aerocover.html",
+    "location": "In-progress Ansys baseline domain and mesh",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/Icarus-CFD-Flow-Results.png",
+    "page": "project_aerocover.html",
+    "location": "Pending Ansys baseline contours and drag",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/Carbon-Fiber-Thermal-Load-Test.jpg",
+    "page": "project_aerocover.html",
+    "location": "Planned curved-coupon heated-load test",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/Profile-Trade-Thumbnail.svg",
+    "page": "index.html",
+    "location": "Illustrative fairing envelope with 63:1.6 side-profile proportions; no selected final contour",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/First-Principles-Regions.webp",
+    "page": "project_aerocover.html",
+    "location": "Alexander’s supplied first-principles CoDR diagram; qualified in caption and prose",
+    "type": "image"
+  },
+  {
+    "path": "Pictures/Aerocover/NACA-Nose-Shape-Comparison.webp",
+    "page": "project_aerocover.html",
+    "location": "NACA Report 1386 Fig. 16, extracted from CoDR; reference for related nosecone study",
     "type": "image"
   }
 ]

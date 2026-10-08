@@ -22,13 +22,17 @@ A statically exported React and Next.js portfolio for GitHub Pages.
 
 ## Adding pictures and videos
 
-Open [public/Pictures/README.md](public/Pictures/README.md) for every required filename and folder. Copy a file into the matching location, keeping the filename exactly as shown. Missing media stays hidden on the public site and appears automatically after the matching file is added.
+Open [public/Pictures/README.md](public/Pictures/README.md) for every required filename and folder. Copy a file into the matching location, keeping the filename exactly as shown. Missing media remains visible as an exact-filename placeholder and is replaced automatically after the matching file is added.
 
 Example:
 
 ```text
-public/Pictures/Recovery/Assembly.png
+public/Pictures/AIAA/Prototype-1-Assembled.webp
 ```
+
+### Media layout safeguard
+
+The shared media loader must leave a missing media slot, its caption, and its surrounding carousel or image block visible. Do not hide `.media-slot`, `.project-carousel`, or `.image-block` when a file fails to load. Hiding those elements can remove the Additional Projects section and compress project-page text into a narrow column.
 
 ## Updating portfolio content
 

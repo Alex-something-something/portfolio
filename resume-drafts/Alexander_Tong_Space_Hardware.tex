@@ -33,8 +33,8 @@
 % Single-column headings preserve a straightforward reading order.
 \newcommand{\resumeSubheading}[4]{
   \item
-  {\small\textbf{#1}\hfill #2}\\
-  {\small\textit{#3}\hfill\textit{#4}}
+  {\small\textbf{#1}\hfill\mbox{\space #2}}\\
+  {\small\textit{#3}\hfill\mbox{\space\textit{#4}}}
 }
 
 \newcommand{\resumeItem}[1]{
@@ -83,6 +83,7 @@
   \enspace\textbar\enspace
   \href{https://www.linkedin.com/in/alto335/}{linkedin.com/in/alto335}
   \par}
+  
 \vspace{-4pt}
 
 %----------EDUCATION----------
@@ -93,17 +94,18 @@ B.S. Mechanical Engineering, Aerospace Concentration
 \hfill GPA: 3.71/4.00
 }
 
-\section{Experience}
+\section{Professional Experience}
 \resumeSubHeadingListStart
 \resumeSubheading
   {Boston University Plummer Laboratory}
   {June 2026 - Present}
-  {Mechanical Engineering Intern}
+  {Mechanical Engineering Assistant}
   {Boston, MA}
 \resumeItemListStart
-  \resumeItem{Designed a dynamic-test fixture in SolidWorks; predicted 0.44 mm deflection at 3 kg and 20.1 Hz using FEA and analyzed bolt preload, thread shear, plate bearing, and pull-through}
-  \resumeItem{CNC-machined 6061-T6 plate adapter on a Haas VF-2 CNC Mill to $\pm$0.005 in; generated G-code, engineering drawings, and worst-case tolerance stacks}
-  \resumeItem{Reduced plate-and-fastener cost from a \$1,170 outsourced estimate to \$71.11 through fully in-house fabrication}
+  \resumeItem{Designed a vibration test fixture in SolidWorks; predicted 0.44 mm deflection at 3 kg and 20.1 Hz using dynamic FEA and analyzed bolt preload, thread shear, plate bearing, and pull-through}
+  \resumeItem{CNC-machined Al 6061-T6 shaker adapter via Haas VF-2 CNC Mill to a 0.005 in tolerance; generated G-code and engineering drawing}
+
+  \resumeItem{Reduced fixture system cost from a \$1,170 outsourced estimate to \$71.11 (93.9\% reduction) through in-house fabrication}
   \resumeItem{Designed the test matrix, procedure, and three of four specimen concepts for 48 Instron 68SC-5 tests; processed 0--181 mN force data to investigate physical Ising models}
 \resumeItemListEnd
 
@@ -119,8 +121,18 @@ B.S. Mechanical Engineering, Aerospace Concentration
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
-\section{Engineering Projects}
+\section{Projects}
 \resumeSubHeadingListStart
+
+\resumeSubheading
+  {Aerodynamic Downcomer Fairing}
+  {August 2026 - Present}
+  {Project Lead, Boston University Rocket Propulsion Group}
+  {}
+\resumeItemListStart
+  \resumeItem{Leading set-based design of a fairing based in missile design philosophy to protect Argo vehicle's downcomer from thermal and aerodynamic loads; comparing three concepts for supersonic drag, loading, thermal effects, and geometric constraints}
+  \resumeItem{Performing Ansys CFD at Mach 2.0--2.81 across candidates and applying adjoint optimization}
+\resumeItemListEnd
 \resumeSubheading
   {Argo Separation and Recovery Subsystem}
   {June 2025 - Present}
@@ -130,21 +142,13 @@ B.S. Mechanical Engineering, Aerospace Concentration
   \resumeItem{Designed redundant recovery for a 135 lb dry-mass rocket targeting 100,000 ft through four design reviews; final subsystem mass 18.7 lbm within a 20 lbm budget, final BOM \$1,076}
   \resumeItem{Calculated 823 lbf parachute shock and 1,230 lbf snatch loads using five published methods}
   \resumeItem{Wrote standard operating procedures (SOPs) for system tests; led crew briefings, fire/abort calls, and post-test analysis}
-  \resumeItem{Developed CO$_2$ deployment hardware after integrated-test failures, performing pressure and thick-wall stress calculations, CAD, drawings, manual lathe machining, and component testing}
+  \resumeItem{Developed CO2 deployment hardware after integrated-test failures, performing pressure and thick-wall stress calculations, CAD, drawings, manual lathe machining, and component testing}
   \resumeItem{Built 352 L vacuum chamber operating at 0.011 atm with LabJack pressure acquisition testing CO2/BP deployment}
-  \resumeItem{Introduced Brummel eye splices for 100\% line strength increase; dynamically verified a minimum 1.5 FOS}
+  \resumeItem{Dynamically tested Brummel eye splices up to 1.5 FOS; Projected 90--110\% strength gain over knots from published data}
   \resumeItem{Redesigned and machined cable cutters, reducing mass 49.5\% with a calculated 2.01 FOS}
 \resumeItemListEnd
 
-\resumeSubheading
-  {Aerodynamic Downcomer Fairing}
-  {August 2026 - Present}
-  {Project Lead, Boston University Rocket Propulsion Group}
-  {}
-\resumeItemListStart
-  \resumeItem{Leading set-based design of a fairing based in missile design philosophy to protect Argo vehicle's downcomer from thermal and aerodynamic loads; comparing three concepts for supersonic drag, loading, thermal effects, and geometric constraints}
-  \resumeItem{Performing and directing Ansys CFD at Mach 2.0--2.81 across candidates and applying adjoint optimization}
-\resumeItemListEnd
+
 
 \resumeSubheading
   {AIAA Design-Build-Fly Aircraft}
@@ -153,7 +157,7 @@ B.S. Mechanical Engineering, Aerospace Concentration
   {}
 \resumeItemListStart
   \resumeItem{Led material, structural, and manufacturing trade studies for two Fusion 360 wing designs; produced an XPS prototype 50\% lighter than the prior year's wing and cut build time from three months to one}
-  \resumeItem{Mentored nine members in laser cutting, waterjet operation, and Fusion 360}
+  \resumeItem{Mentored nine members and next wing design lead in Fusion 360, DFMA principles, and laser cutting}
 \resumeItemListEnd
 
 \resumeSubheading
@@ -168,6 +172,6 @@ B.S. Mechanical Engineering, Aerospace Concentration
 \resumeSubHeadingListEnd
 \section{Technical Skills}
 {\small
-SolidWorks, Ansys CFD, FEA, GD\&T, CNC \& Manual Machining, Composite Layup, LabJack DAQ, Python
+SolidWorks, Ansys CFD, FEA, CNC \& Manual Machining, DFMA, Composite Layup, LabJack DAQ, Python
 }
 \end{document}

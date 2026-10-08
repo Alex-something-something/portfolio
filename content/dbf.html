@@ -100,8 +100,43 @@
     <style>
         .ui-arrow { display: inline-block; width: 1em; height: 1em; flex-shrink: 0; vertical-align: -.12em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
         .back-link { gap: 8px; }
+        .dbf-gallery { width: 100%; min-width: 0; }
+        .dbf-gallery .carousel-controls { display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-bottom: 12px; }
+        .dbf-gallery .carousel-controls[hidden] { display: none; }
+        .dbf-gallery .carousel-controls button { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; padding: 0; background: #171717; color: #fff; border: 1px solid #555; cursor: pointer; }
+        .dbf-gallery .carousel-controls button:hover { color: #E63946; border-color: #E63946; }
+        .dbf-gallery .carousel-controls button:focus-visible { outline: 2px solid #E63946; outline-offset: 3px; }
+        .dbf-gallery .carousel-status { min-width: 5rem; color: #bbb; font-size: .85rem; text-align: center; }
+        .dbf-gallery .carousel-track { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-color: #E63946 #222; }
+        .dbf-gallery .media-slide { min-width: 0; margin: 0; scroll-snap-align: start; }
+        .dbf-gallery .media-slot { min-height: 300px !important; }
+        .dbf-gallery .media-slot > img { width: 100%; height: clamp(280px, 38vw, 500px); max-height: none; object-fit: contain; }
+        .dbf-gallery .caption { margin: 10px 0 2px; text-align: left; }
+        .content-section.media-below > .image-block.dbf-prototype-media { display: block; }
+        .dbf-prototype-media > figure { width: min(100%, 900px); margin: 0 auto 28px; }
+        .dbf-prototype-media > figure .media-slot > img { width: 100%; max-height: 680px; object-fit: contain; }
+        .dbf-prototype-media figure .caption { margin: 10px 0 0; text-align: left; }
+        .dbf-prototype-media h3 { color: #eee; margin: 30px 0 14px; font-size: 1.15rem; }
+        .dbf-paired-views, .dbf-build-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px; align-items: start; }
+        .dbf-paired-views figure, .dbf-build-grid figure { min-width: 0; margin: 0; }
+        .dbf-paired-views .media-slot > img, .dbf-build-grid .media-slot > img { width: 100%; height: 320px; max-height: none; object-fit: contain; }
+        .dbf-prototype-media .dbf-gallery { max-width: 850px; margin: 0 auto; }
+        @media (max-width: 650px) { .dbf-gallery .media-slot { min-height: 230px !important; } .dbf-gallery .media-slot > img { height: 290px; } .dbf-paired-views .media-slot > img, .dbf-build-grid .media-slot > img { height: 260px; } }
     </style>
-</head>
+    <style>
+        .calculation-details { border-top: 1px solid #333; }
+        .calculation-details details { border-bottom: 1px solid #333; }
+        .calculation-details summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 0; color: #fff; font-weight: 700; cursor: pointer; list-style: none; }
+        .calculation-details summary::-webkit-details-marker { display: none; }
+        .calculation-details summary::after { content: '+'; color: #E63946; font-size: 1.35rem; }
+        .calculation-details details[open] summary::after { content: '−'; }
+        .calculation-details p { color: #ccc; margin: 0 0 18px; }
+        .calculation-table { width: 100%; margin: 0 0 22px; border-collapse: collapse; color: #ccc; font-size: .92rem; }
+        .calculation-table th, .calculation-table td { padding: 11px 12px; border-bottom: 1px solid #292929; text-align: left; vertical-align: top; }
+        .calculation-table th { width: 45%; color: #aaa; font-weight: 400; }
+        @media (max-width: 650px) { .calculation-table, .calculation-table tbody, .calculation-table tr, .calculation-table th, .calculation-table td { display: block; width: 100%; } .calculation-table td { padding-top: 0; } }
+    </style>
+<style>@media(min-width:651px){.project-metrics{grid-template-columns:repeat(3,minmax(0,1fr));}}</style></head>
 <body>
     <nav>
         <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">ALEXANDER TONG <span>// MECHE</span></a></div>
@@ -111,51 +146,73 @@
         <a href="index.html#projects" class="back-link"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4M10 6l-6 6 6 6"/></svg> Additional Projects</a>
         <h1>AIAA Design-Build-Fly <span>Wing Structural Lead</span></h1>
         <p class="project-meta-line">June–December 2025</p>
-        <p class="project-overview">Structural design and CAD for two iterations of Boston University’s AIAA Design-Build-Fly aircraft.</p>
+        <p class="project-overview">Built a complete XPS/carbon-fiber Prototype 1 wing 42.7% lighter than the previous year’s complete balsa/film wing; reduced build time from three months to one. Led the wing design, fabrication, and nine members’ CAD/manufacturing training.</p>
     </header>
 
-    <div class="project-hero-media" style="padding: 0 10%; margin-top: -1px;"><div class="img-placeholder media-slot" data-media="Pictures/AIAA/Aircraft.jpg" data-media-type="image" data-fit="cover" data-alt="Aircraft or Wing Assembly Photo" title="Pictures/AIAA/Aircraft.jpg"><span class="media-filename">Pictures/AIAA/Aircraft.jpg</span></div></div>
+    <div class="project-hero-media" style="padding: 0 10%; margin-top: -1px;"><div class="img-placeholder media-slot" data-media="Pictures/AIAA/Prototype-1-Assembled.webp" data-media-type="image" data-fit="contain" data-alt="Fully assembled Prototype 1 Design-Build-Fly aircraft" title="Pictures/AIAA/Prototype-1-Assembled.webp"><span class="media-filename">Pictures/AIAA/Prototype-1-Assembled.webp</span></div><p class="caption" style="margin-top: 10px; text-align: left;">Fully assembled Prototype 1 aircraft</p></div>
 
     <div class="project-metrics" aria-label="Wing program results at a glance">
-        <div class="project-metric"><strong>2</strong><span>wing-design iterations led</span></div>
-        <div class="project-metric"><strong>50%</strong><span>lighter Prototype 1 wing</span></div>
+
+        <div class="project-metric"><strong>42.7%</strong><span>lighter Prototype 1 wing</span></div>
         <div class="project-metric"><strong>1 month</strong><span>build time, reduced from three months</span></div>
         <div class="project-metric"><strong>9 members</strong><span>mentored in CAD and manufacturing</span></div>
     </div>
 
-    <section class="content-section">
+    <section class="content-section media-below" id="prototype-1">
         <div class="text-block">
             <h2>Contribution &amp; Results</h2>
-            <p style="color: #ccc;">As Wing Structural Lead, I led the structural design and CAD development of two iterations of Boston University AIAA Design-Build-Fly's flagship aircraft. Through material, structural, and manufacturing trade studies, the first XPS foam prototype wing was 50% lighter than the previous year's wing, with build time reduced from three months to one.</p>
+            <p style="color: #ccc;">I owned the Prototype 1 wing’s structure and CAD, then developed a proposed split-wing Prototype 2 using lessons from the build. Prototype 2 was not manufactured.</p>
 
             <h2 style="margin-top: 40px;">Prototype 1</h2>
-            <p style="color: #ccc;">I conducted trade studies and presented a design review on structural configuration, material selection, and manufacturing method. The resulting XPS foam wing established a lighter, faster-to-build baseline for the next iteration.</p>
+            <p style="color: #ccc;">Trade studies on structure, material, and manufacturing led to an XPS foam wing that informed the Prototype 2 concept. I hot-wire cut the foam sections and assembled them with a carbon-fiber main spar, smaller spars to resist torsion, a 3D-printed center section, and printed aileron servo boxes.</p>
             <ul>
-                <li><strong>Mass Reduction:</strong> 50% lighter XPS foam prototype wing than the previous year's aircraft.</li>
-                <li><strong>Manufacturing Throughput:</strong> Reduced wing build time from three months to one, a 67% reduction, through design and process improvements.</li>
+                <li><strong>Complete-wing comparison:</strong> Prototype 1 was 42.7% lighter than the prior balsa/film wing, including spars, center section, servos, and hardware in both assemblies.</li>
+                <li><strong>Build time:</strong> Reduced elapsed wing build time from three months to one through material and manufacturing trades.</li>
+                <li><strong>Assembly &amp; Serviceability:</strong> Designed a printed PLA center section with 4-40 spar-retention screws and access holes to check carbon-fiber spar alignment and epoxy placement. Taped-over wiring channels retained the airfoil surface while routing servo leads to the fuselage.</li>
+                <li><strong>Control Integration:</strong> Integrated printed PLA servo boxes and control rods, laser-cut control horns, and tape-hinged XPS ailerons. The review documented separate servo-lid and spar-attachment holes so actuation hardware could be located and secured during assembly.</li>
                 <li><strong>Technical Communication:</strong> Presented multiple design reviews covering the new wings, supporting trade studies, and manufacturing processes.</li>
             </ul>
         </div>
-        <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/AIAA/Prototype-1.png" data-media-type="image" data-fit="contain" data-alt="Prototype 1 Wing CAD or Photo" title="Pictures/AIAA/Prototype-1.png"><span class="media-filename">Pictures/AIAA/Prototype-1.png</span></div>
-            <p class="caption">Prototype 1: XPS Foam Wing</p>
-            <div class="img-placeholder media-slot" data-media="Pictures/AIAA/Design-Review.png" data-media-type="image" data-fit="contain" data-alt="Trade Study or Design Review Graphic" title="Pictures/AIAA/Design-Review.png"><span class="media-filename">Pictures/AIAA/Design-Review.png</span></div>
-            <p class="caption">Structural and Manufacturing Trade Studies</p>
+        <div class="image-block dbf-prototype-media">
+            <figure><div class="img-placeholder media-slot" data-media="Pictures/AIAA/Prototype-1.png" data-media-type="image" data-fit="contain" data-alt="Initial Prototype 1 wing one-pager with airfoil, spar, servo, and aileron details" title="Pictures/AIAA/Prototype-1.png"><span class="media-filename">Pictures/AIAA/Prototype-1.png</span></div><figcaption class="caption">Initial wing one-pager: airfoil, spar, servo, and aileron layout</figcaption></figure>
+            <div class="dbf-paired-views">
+                <figure><div class="img-placeholder media-slot" data-media="Pictures/AIAA/Aircraft.jpg" data-media-type="image" data-fit="contain" data-alt="Prototype 1 whole-aircraft CAD showing the wing and center section" title="Pictures/AIAA/Aircraft.jpg"><span class="media-filename">Pictures/AIAA/Aircraft.jpg</span></div><figcaption class="caption">Prototype 1 aircraft assembly CAD</figcaption></figure>
+                <figure><div class="img-placeholder media-slot" data-media="Pictures/AIAA/Hot-Wire-Method.webp" data-media-type="image" data-fit="contain" data-alt="CAD illustration of the hot-wire cutting setup and airfoil templates" title="Pictures/AIAA/Hot-Wire-Method.webp"><span class="media-filename">Pictures/AIAA/Hot-Wire-Method.webp</span></div><figcaption class="caption">Hot-wire cutting approach and airfoil templates</figcaption></figure>
+            </div>
+            <h3>Final design review details</h3>
+            <div class="project-carousel dbf-gallery" role="region" aria-roledescription="carousel" aria-label="Prototype 1 wing design review details">
+                <div class="carousel-controls" hidden>
+                    <button type="button" data-carousel="previous" aria-label="Previous design-review view" aria-controls="dbf-prototype1-review"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></button>
+                    <span class="carousel-status" aria-live="off"></span>
+                    <button type="button" data-carousel="next" aria-label="Next design-review view" aria-controls="dbf-prototype1-review"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+                </div>
+                <div id="dbf-prototype1-review" class="carousel-track">
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/AIAA/Design-Review.png" data-media-type="image" data-fit="contain" data-alt="Center section and XPS main wing CAD from final wing design review" title="Pictures/AIAA/Design-Review.png"><span class="media-filename">Pictures/AIAA/Design-Review.png</span></div><figcaption class="caption">Printed center section and hot-wire-cut XPS wing</figcaption></figure>
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/AIAA/Design-Review-Spar.png" data-media-type="image" data-fit="contain" data-alt="Carbon-fiber spar and wire-channel CAD from final wing design review" title="Pictures/AIAA/Design-Review-Spar.png"><span class="media-filename">Pictures/AIAA/Design-Review-Spar.png</span></div><figcaption class="caption">Spar alignment and wire channel</figcaption></figure>
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/AIAA/Design-Review-Servo.png" data-media-type="image" data-fit="contain" data-alt="Aileron servo-box CAD from final wing design review" title="Pictures/AIAA/Design-Review-Servo.png"><span class="media-filename">Pictures/AIAA/Design-Review-Servo.png</span></div><figcaption class="caption">Printed servo box and aileron control</figcaption></figure>
+                </div>
+            </div>
+            <h3>Prototype 1 fabrication</h3>
+            <div class="dbf-build-grid">
+                <figure><div class="img-placeholder media-slot" data-media="Pictures/AIAA/Wing-Halves.jpg" data-media-type="image" data-fit="contain" data-alt="Manufactured XPS wing halves on a workbench" title="Pictures/AIAA/Wing-Halves.jpg"><span class="media-filename">Pictures/AIAA/Wing-Halves.jpg</span></div><figcaption class="caption">Hot-wire-cut XPS wing halves during assembly</figcaption></figure>
+                <figure><div class="img-placeholder media-slot" data-media="Pictures/AIAA/Wing-Fabrication.jpg" data-media-type="image" data-fit="contain" data-alt="Prototype 1 wing during spar and center-section assembly" title="Pictures/AIAA/Wing-Fabrication.jpg"><span class="media-filename">Pictures/AIAA/Wing-Fabrication.jpg</span></div><figcaption class="caption">Spar and center-section assembly</figcaption></figure>
+                <figure><div class="img-placeholder media-slot" data-media="Pictures/AIAA/Wing-Workbench.jpg" data-media-type="image" data-fit="contain" data-alt="Wide workbench view of Prototype 1 wing fabrication materials and tools" title="Pictures/AIAA/Wing-Workbench.jpg"><span class="media-filename">Pictures/AIAA/Wing-Workbench.jpg</span></div><figcaption class="caption">Wing build and assembly setup</figcaption></figure>
+            </div>
         </div>
     </section>
 
     <section class="content-section" style="border-bottom: none;">
         <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/AIAA/Prototype-2.png" data-media-type="image" data-fit="contain" data-alt="Prototype 2 Wing CAD or Drawing" title="Pictures/AIAA/Prototype-2.png"><span class="media-filename">Pictures/AIAA/Prototype-2.png</span></div>
-            <p class="caption">Prototype 2: Split-Wing Geometry</p>
+            <div class="img-placeholder media-slot" data-media="Pictures/AIAA/Prototype-2.png" data-media-type="image" data-fit="contain" data-alt="Proposed Prototype 2 split-wing design one-pager" title="Pictures/AIAA/Prototype-2.png"><span class="media-filename">Pictures/AIAA/Prototype-2.png</span></div>
+            <p class="caption">Proposed Prototype 2 split-wing design one-pager</p>
         </div>
         <div class="text-block">
             <h2>Prototype 2 &amp; Leadership</h2>
-            <p style="color: #ccc;">For the second prototype, I designed a split-wing NACA 2412 configuration in Fusion 360 using aerodynamic-subteam specifications alongside manufacturing and accessibility lessons from Prototype 1.</p>
+            <p style="color: #ccc;">For the proposed second prototype, I designed a split-wing NACA 2412 configuration in Fusion 360 using aerodynamic-subteam specifications alongside manufacturing and accessibility lessons from Prototype 1. The November one-pager specifies 10 mm OD carbon-fiber spars joined by 0.5 in OD 6061-T6 aluminum tubes bent to the 5° dihedral, with M3 retention holes. Printed ABS interfaces and servo boxes, partial balsa ribs, and a fuselage-matching root cutout address assembly and surface support. The elevator and half-wing aileron annotations are options under consideration, not demonstrated features.</p>
             <ul>
                 <li><strong>Planform:</strong> 0.52 taper ratio</li>
                 <li><strong>Dihedral:</strong> 5°</li>
-                <li><strong>Winglets:</strong> 4° vertical winglets</li>
+
                 <li><strong>Servo Flap System:</strong> Designed the servo flap system as part of the wing-lead work.</li>
                 <li><strong>Technical Mentorship:</strong> Mentored nine members in laser cutting, waterjet operation, and Fusion 360.</li>
                 <li><strong>Leadership:</strong> Mentored the upcoming wing lead in manufacturing logistics and design-for-manufacture principles.</li>
@@ -176,6 +233,8 @@
             <p class="caption">2024–2025 Aircraft: Completed Composite Layup</p>
         </div>
     </section>
+
+    <section class="content-section" id="wing-design-basis"><div class="text-block"><h2>Wing Design Basis &amp; Results</h2><p style="color: #ccc; margin-bottom: 24px;">The one-pagers and final design review document geometry and manufacturing decisions. They do not provide a wing-load test, bending-stress result, or flight-performance comparison.</p><div class="calculation-details"><details><summary><span>Prototype 1: review geometry and assembly</span></summary><table class="calculation-table"><tbody><tr><th scope="row">Airfoil</th><td>NACA 2412 in the initial one-pager</td></tr><tr><th scope="row">Review wing layout</th><td>Two 28.5 in main-wing sections and a 3 in printed center section</td></tr><tr><th scope="row">Nominal assembled span</th><td>2 × 28.5 + 3 = 60 in, before any assembly gaps</td></tr><tr><th scope="row">Spar layout</th><td>10 mm OD main spar; 5 mm OD × 6 in smaller spars in the final review</td></tr><tr><th scope="row">Control hardware</th><td>D145SW servo, printed servo box and control rod, tape-hinged foam control surface</td></tr></tbody></table><p>Source: September 16 initial wing one-pager and supplied final design review. The initial sketch labels a 3 ft panel; the later review instead defines the 60 in nominal assembly above. These are different design revisions, not dimensions to combine.</p></details><details><summary><span>Prototype 2: proposed planform and center joint</span></summary><table class="calculation-table"><tbody><tr><th scope="row">Root / tip chord in the November draft</th><td>12 in / 6.25 in</td></tr><tr><th scope="row">Calculated taper ratio</th><td>6.25 / 12 ≈ 0.521, consistent with the 0.52 design specification</td></tr><tr><th scope="row">Dihedral</th><td>5° specified at the center joint</td></tr><tr><th scope="row">Center connection</th><td>0.5 in OD 6061-T6 tubes, 10 mm OD carbon-fiber spars, M3 retention holes</td></tr></tbody></table><p>Source: November 15 Prototype 2 one-pager. These are proposed dimensions and interfaces. The page does not claim that Prototype 2 was manufactured or that this joint passed a structural test.</p></details><details><summary><span>Mass and manufacturing-time comparison</span></summary><table class="calculation-table"><tbody><tr><th scope="row">Prototype 1 mass result</th><td>42.7% lighter, complete-wing comparison including all components; historical project record</td></tr><tr><th scope="row">Previous / new build time</th><td>3 months / 1 month</td></tr></tbody></table><p>The comparison includes complete wings and elapsed build time. Absolute wing masses are not available in the retained record.</p></details></div></div></section>
 
     <footer style="padding: 5rem 10%; background: #000; color: #666; font-size: 0.8rem; border-top: 1px solid #333; margin-top: 50px;"><p>ALEXANDER TONG // BU MECHANICAL ENGINEERING // AIAA DESIGN-BUILD-FLY</p></footer>
 </body>

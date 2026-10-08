@@ -3,6 +3,7 @@ node_modules/
 out/
 output/
 tmp/
+.tmp/
 .yarn/cache/
 .yarn/install-state.gz
 .pnp.*
@@ -14,4 +15,7 @@ argo-blueprint-draft.html
 portfolio-content-audit.md
 portfolio-decisions.md
 portfolio-final-review.md
+portfolio-follow-up-october-08.md
+portfolio-recruiter-audit-october-08.md
+portfolio-review-october-08.md
 review-320.png

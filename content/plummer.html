@@ -100,8 +100,44 @@
     <style>
         .ui-arrow { display: inline-block; width: 1em; height: 1em; flex-shrink: 0; vertical-align: -.12em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
         .back-link { gap: 8px; }
+        .plummer-gallery { min-width: 0; width: 100%; }
+        .plummer-gallery .carousel-controls { display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-bottom: 12px; }
+        .plummer-gallery .carousel-controls[hidden] { display: none; }
+        .plummer-gallery .carousel-controls button { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; padding: 0; background: #171717; color: #fff; border: 1px solid #555; cursor: pointer; }
+        .plummer-gallery .carousel-controls button:hover { border-color: #E63946; color: #E63946; }
+        .plummer-gallery .carousel-controls button:focus-visible { outline: 2px solid #E63946; outline-offset: 3px; }
+        .plummer-gallery .carousel-status { min-width: 4.5rem; color: #bbb; font-size: .85rem; text-align: center; }
+        .plummer-gallery .carousel-track { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; gap: 30px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; scrollbar-color: #E63946 #222; }
+        .plummer-gallery .media-slide { min-width: 0; scroll-snap-align: start; }
+        .plummer-gallery .media-slot { border: 1px solid #333; }
+        .plummer-gallery .media-slot.has-image-media { min-height: 0 !important; }
+        .plummer-gallery .media-slot > img { width: 100%; height: auto; max-height: 480px; object-fit: contain; }
+        .plummer-gallery .caption { margin: 10px 0 2px; color: #bbb; font-size: .9rem; text-align: left; }
+        .manufacturing-media-grid { flex: 1 1 100%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+        .manufacturing-media-grid figure { min-width: 0; margin: 0; }
+        .manufacturing-media-grid > figure { padding-top: 54px; }
+        .manufacturing-media-grid .media-slot { min-height: 0 !important; aspect-ratio: 4 / 3; padding: 0; }
+        .manufacturing-media-grid .media-slot > img,
+        .manufacturing-media-grid .media-slot > video { width: 100%; height: 100%; max-height: none; object-fit: contain; }
+        .manufacturing-media-grid .caption { margin: 10px 0 0; text-align: left; }
+        .lab-website-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; color: #e63946; font-weight: 700; text-decoration: none; }
+        .lab-website-link:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+        @media (max-width: 650px) { .manufacturing-media-grid { grid-template-columns: minmax(0, 1fr); order: 2; } .manufacturing-media-grid > figure { padding-top: 0; } }
     </style>
-</head>
+    <style>
+        .calculation-details { border-top: 1px solid #333; }
+        .calculation-details details { border-bottom: 1px solid #333; }
+        .calculation-details summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 0; color: #fff; font-weight: 700; cursor: pointer; list-style: none; }
+        .calculation-details summary::-webkit-details-marker { display: none; }
+        .calculation-details summary::after { content: '+'; color: #E63946; font-size: 1.35rem; }
+        .calculation-details details[open] summary::after { content: '−'; }
+        .calculation-details p { color: #ccc; margin: 0 0 18px; }
+        .calculation-table { width: 100%; margin: 0 0 22px; border-collapse: collapse; color: #ccc; font-size: .92rem; }
+        .calculation-table th, .calculation-table td { padding: 11px 12px; border-bottom: 1px solid #292929; text-align: left; vertical-align: top; }
+        .calculation-table th { width: 45%; color: #aaa; font-weight: 400; }
+        @media (max-width: 650px) { .calculation-table, .calculation-table tbody, .calculation-table tr, .calculation-table th, .calculation-table td { display: block; width: 100%; } .calculation-table td { padding-top: 0; } }
+    </style>
+<style>@media(min-width:651px){.project-metrics{grid-template-columns:repeat(3,minmax(0,1fr));}}</style></head>
 <body>
     <nav>
         <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">ALEXANDER TONG <span>// MECHE</span></a></div>
@@ -109,15 +145,16 @@
 
     <header class="project-header">
         <a href="index.html#Experience" class="back-link"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4M10 6l-6 6 6 6"/></svg> Experience &amp; Research</a>
-        <h1>Plummer Laboratory <span>Mechanical Engineering Internship</span></h1>
+        <h1>Plummer Laboratory <span>Mechanical Design Assistant</span></h1>
         <p class="project-meta-line">June 2026–Present</p>
-        <p class="project-overview">Experimental mechanics for physical Ising systems, dynamic-test fixtures, precision manufacturing, and research laboratory development.</p>
+        <p class="project-overview">Completed 48 Instron tests across four bistable models and delivered a CNC-machined shaker adapter held to ±0.005 in, reducing estimated plate-and-bolt cost from $1,170 outsourced to $71.11 in-house.</p>
+        <a class="lab-website-link" href="https://sites.bu.edu/plummer/" target="_blank" rel="noopener noreferrer">Visit the Plummer Research Group <svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
     </header>
 
-    <div class="project-hero-media" style="padding: 0 10%; margin-top: -1px;"><div class="img-placeholder media-slot" data-media="Pictures/Plummer/Lab-Overview.jpg" data-media-type="image" data-fit="cover" data-alt="Dynamic-Test Fixture or Laboratory Photo" title="Pictures/Plummer/Lab-Overview.jpg"><span class="media-filename">Pictures/Plummer/Lab-Overview.jpg</span></div></div>
+    <div class="project-hero-media" style="padding: 0 10%; margin-top: -1px;"><div class="img-placeholder media-slot" data-media="Pictures/Plummer/Lab-Overview.webp" data-media-type="image" data-fit="contain" data-alt="Plummer Research Group header showing three research images" title="Pictures/Plummer/Lab-Overview.webp"><span class="media-filename">Pictures/Plummer/Lab-Overview.webp</span></div></div>
 
     <div class="project-metrics" aria-label="Plummer Laboratory engineering results at a glance">
-        <div class="project-metric"><strong>40.4%</strong><span>stock-to-part mass reduction</span></div>
+
         <div class="project-metric"><strong>$1,170 → $71.11</strong><span>estimated outsourced to in-house hardware cost</span></div>
         <div class="project-metric"><strong>±0.005 in</strong><span>machined feature tolerance</span></div>
         <div class="project-metric"><strong>48 tests</strong><span>across four Ising-model designs</span></div>
@@ -125,13 +162,13 @@
 
     <section class="content-section" id="ising-testing">
         <div class="text-block">
-            <h2>Measuring Coupling in a Bistable Physical Ising Model</h2>
-            <p style="color: #ccc;">This one-dimensional physical Ising system uses bistable buckling beams as two-state mechanical elements. The effective coupling coefficient, <em>J</em><sub>effective</sub>, describes how the energy and preferred state of a beam are influenced by its nearest neighbors. I developed a new “perfect pin” model from the experimental restrictions and possible sources of inaccuracy identified in the previous thesis.</p>
-            <p style="color: #ccc;">I designed the specimen and configuration test matrix, developed the test procedure, operated the Instron 68SC-5, processed the force data, and produced the resulting plots. The campaign comprised 48 tests across four models: one legacy model and three concepts I developed. It included eight initial configurations per model, synchronized camera trials of high and low energy configurations, three additional trials of each of four high energy configurations, and two reversed uneven-neighbor configurations.</p>
-            <p style="color: #ccc;">Measured forces spanned 0–181 mN, with peak buckling forces of 9–181 mN. Comparisons between configurations with identical immediate neighbors but different next-nearest-neighbor states confirmed that the next-nearest-neighbor contribution to buckling energy is minimal within the tested system. The percentage difference remains withheld while data processing continues.</p>
-            <p style="color: #ccc;">Before this campaign, the laboratory's empirical input for the model came from measurements of buckled-beam curvature; coupling had not been directly investigated through force testing. Because the force required to trigger buckling is directly proportional to the relevant derivative of internal energy, I synchronized camera recordings with the force response to correlate beam curvature and force. The resulting dataset provides the laboratory's first direct force measurements intended to support a future empirical calculation of <em>J</em><sub>effective</sub> and a more representative analytical or simulation model. Coupling coefficients have not yet been calculated.</p>
-            <p style="color: #ccc;">The joint trade study compared ball-bearing, tight-tolerance LEGO-based, and fixed resin-printed concepts. Instron results showed greater scatter, inconsistent behavior, and cases in which an adjacent beam buckled instead of the directly loaded beam in the rotating concepts. My fixed pins, printed on an Elegoo Mars 5 Ultra and installed through a screw-retained slide-in interface, produced more controlled buckling while restricting unintended translation, rotation, and off-axis twisting.</p>
-            <p style="color: #ccc;">Comparison with the mathematical model is ongoing. The resulting force plot is being evaluated for inclusion in future laboratory publication; exact configuration data, force comparisons, and model parameters remain unpublished.</p>
+            <h2>48-Test Bistable-Model Campaign</h2>
+            <p style="color: #ccc;">I developed three specimen concepts for a one-dimensional physical Ising system, which uses bistable buckling beams as two-state mechanical elements. The test campaign provides force measurements for investigating how neighboring beam states affect the response.</p>
+            <p style="color: #ccc;">I designed the specimens, test matrix, and procedure; operated the Instron 68SC-5; processed the force data; and produced the plots. The 48 tests comprised 32 initial configurations across four models (one legacy and three I developed), 12 repeat tests, two reversed configurations, and two synchronized-camera trials.</p>
+            <p style="color: #ccc;">Measured forces spanned 0–181 mN, with peak buckling forces of 9–181 mN. I compared peak force immediately before node buckling for configurations with the same immediate neighbors and different next-nearest-neighbor states. This compares buckling thresholds; energy and coupling-coefficient interpretation remains preliminary.</p>
+            <p style="color: #ccc;">I synchronized camera recordings with the force response to relate beam curvature to applied force. Previous empirical work used curvature measurements; this campaign produced the laboratory’s first direct force dataset for future coupling analysis. The effective coupling coefficient, <em>J</em><sub>effective</sub>, has not yet been calculated.</p>
+            <p style="color: #ccc;">I compared ball-bearing, tight-tolerance LEGO-based, and fixed resin-printed joints. The rotating concepts showed scatter and cases where an adjacent beam buckled instead of the loaded beam. My fixed resin-printed joint, installed through a screw-retained slide-in interface, constrained unwanted motion and produced more controlled buckling.</p>
+            <p style="color: #ccc;">Exact specimen geometry, configuration data, and force comparisons remain unpublished.</p>
         </div>
         <div class="image-block">
             <div class="engineering-visual">
@@ -163,37 +200,97 @@
     <section class="content-section">
         <div class="text-block">
             <h2 id="shaker-adapter">Structural Design &amp; Dynamic Testing</h2>
-            <p style="color: #ccc;">I design and manufacture mechanical fixtures for dynamic research experiments, supporting design reviews with analysis, cost comparison, and tolerance-driven fabrication planning. I reduced estimated hardware cost from $1,170 outsourced to $71.11 through in-house fabrication and fastener selection. The in-house cost comprised $3.96 for bolts and $67.15 for the plate.</p>
+            <p style="color: #ccc;">I designed and machined a dynamic-test adapter that reduced estimated plate-and-bolt cost from $1,170 outsourced to $71.11 in-house ($67.15 plate, $3.96 bolts).</p>
             <ul>
-                <li><strong>Material Trade Study:</strong> Pivoted a shaker-adapter design from an orthotropic honeycomb matrix to a solid 1/4 in 6061-T6 aluminum plate, improving confidence in isotropic failure-mode characterization and reducing manufacturing risk.</li>
+                <li><strong>Plate trade:</strong> Selected a solid 6061-T6 plate over a honeycomb concept: $67.15 versus $159.53 quoted plate cost, simpler in-house machining, and load paths assessable with hand calculations and SolidWorks FEA. Displacement predictions for the separate cases are retained below.</li>
                 <li><strong>Dynamic Fixture Design:</strong> Designed an adapter for a physical Ising-model test fixture, predicting a 0.44 mm maximum deflection under a 3 kg load at 20.1 Hz using SolidWorks Dynamic FEA.</li>
-                <li><strong>Fastener Analysis:</strong> Calculated preload and thread-shear performance for Class 8.8 and stainless hardware, calculating a 21.7 ft·lbf tightening torque to achieve the intended Class 8.8 bolt preload and confirming a 1.49 FOS for 3,710 lbf peak forces at 11 G and a minimum 2.46 FOS for thread, plate-bearing, and pull-through modes.</li>
+                <li><strong>Fastener analysis:</strong> Modeled Class 8.8 M10 bolt preload and the 11 G external load, plus thread shear, plate bearing, and pull-through. The workbook predicts 1.50 FOS against bolt tensile yield from preload alone and 1.49 with the added external load; its geometry and load-sharing assumptions are retained below.</li>
             </ul>
+        </div>
+        <div class="image-block">
+            <div class="project-carousel plummer-gallery" role="region" aria-roledescription="carousel" aria-label="Shaker plate CAD and drawing views">
+                <div class="carousel-controls" hidden>
+                    <button type="button" data-carousel="previous" aria-label="Previous shaker plate view" aria-controls="plummer-shaker-gallery"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></button>
+                    <span class="carousel-status" aria-live="off"></span>
+                    <button type="button" data-carousel="next" aria-label="Next shaker plate view" aria-controls="plummer-shaker-gallery"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+                </div>
+                <div id="plummer-shaker-gallery" class="carousel-track">
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Plummer/Solid-Plate-Top.png" data-media-type="image" data-fit="contain" data-alt="CAD top view of the chosen solid shaker plate" title="Pictures/Plummer/Solid-Plate-Top.png"><span class="media-filename">Pictures/Plummer/Solid-Plate-Top.png</span></div><figcaption class="caption">Chosen solid plate, top CAD view</figcaption></figure>
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Plummer/Solid-Plate-Underside.png" data-media-type="image" data-fit="contain" data-alt="CAD underside view showing the shaker plate's material-removal geometry" title="Pictures/Plummer/Solid-Plate-Underside.png"><span class="media-filename">Pictures/Plummer/Solid-Plate-Underside.png</span></div><figcaption class="caption">Underside geometry used to reduce plate mass</figcaption></figure>
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Plummer/Honeycomb-Concept.png" data-media-type="image" data-fit="contain" data-alt="Initial honeycomb shaker plate concept CAD" title="Pictures/Plummer/Honeycomb-Concept.png"><span class="media-filename">Pictures/Plummer/Honeycomb-Concept.png</span></div><figcaption class="caption">Initial honeycomb concept considered in the design trade</figcaption></figure>
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Plummer/Shaker-Engineering-Drawing.png" data-media-type="image" data-fit="contain" data-alt="Dimensioned shaker plate drawing from the design review" title="Pictures/Plummer/Shaker-Engineering-Drawing.png"><span class="media-filename">Pictures/Plummer/Shaker-Engineering-Drawing.png</span></div><figcaption class="caption">Dimensioned plate drawing presented in the design review</figcaption></figure>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <h2 id="precision-manufacturing" style="margin-top: 40px;">Precision Manufacturing</h2>
-            <p style="color: #ccc;">Generated G-code and machined the 6061-T6 adapter on a Haas VF-2 CNC mill. The finished geometry included a circular, chopped-end conical chamfer across the underside, corner fillets, and 12 drilled holes held to ± 0.005 in tolerances. Removing material from the 3.19 kg stock produced a 1.90 kg finished part, a 40.4% stock-to-part mass reduction.</p>
-            <p style="color: #ccc;">Applied GD&amp;T and worst-case tolerance-stack analysis, calculated ISO 273 clearances for ISO 4017 M10 hardware, and added 0.5 mm edge breaks.</p>
+    <section class="content-section" id="shaker-fea">
+        <div class="text-block">
+            <h2>FEA &amp; Hand-Calculation Comparison</h2>
+            <p style="color: #ccc;">The design review included separate displacement analyses for the plate and the Ising-model fixture. The reported maxima were 0.173 mm and 0.080 mm, respectively, under their modeled load cases. These are distinct from the 0.44 mm dynamic fixture prediction at 3 kg and 20.1 Hz discussed above.</p>
+        </div>
+        <div class="image-block">
+            <div class="project-carousel plummer-gallery" role="region" aria-roledescription="carousel" aria-label="Shaker plate and Ising-model FEA results">
+                <div class="carousel-controls" hidden>
+                    <button type="button" data-carousel="previous" aria-label="Previous FEA view" aria-controls="plummer-fea-gallery"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></button>
+                    <span class="carousel-status" aria-live="off"></span>
+                    <button type="button" data-carousel="next" aria-label="Next FEA view" aria-controls="plummer-fea-gallery"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+                </div>
+                <div id="plummer-fea-gallery" class="carousel-track">
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Plummer/Shaker-Analysis.png" data-media-type="image" data-fit="contain" data-alt="SolidWorks FEA displacement result for the shaker plate" title="Pictures/Plummer/Shaker-Analysis.png"><span class="media-filename">Pictures/Plummer/Shaker-Analysis.png</span></div><figcaption class="caption">Plate FEA: 0.173 mm maximum displacement in the design-review load case</figcaption></figure>
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Plummer/Ising-Model-FEA.png" data-media-type="image" data-fit="contain" data-alt="SolidWorks FEA displacement result for the Ising-model fixture" title="Pictures/Plummer/Ising-Model-FEA.png"><span class="media-filename">Pictures/Plummer/Ising-Model-FEA.png</span></div><figcaption class="caption">Ising-model FEA: 0.080 mm maximum displacement in its design-review load case</figcaption></figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="precision-manufacturing">
+        <div class="text-block">
+            <h2>Precision Manufacturing</h2>
+            <p style="color: #ccc;">Generated G-code and machined the 6061-T6 adapter on a Haas VF-2 CNC mill. The finished geometry included an underside chamfer, corner fillets, and 12 drilled holes held to ±0.005 in. </p>
+            <p style="color: #ccc;">Applied GD&amp;T and worst-case tolerance-stack analysis, calculated ISO 273 clearances for ISO 4017 M10 hardware, and added 0.5 mm edge breaks. I drilled 5 mm axial bores into standard medium-carbon-steel M10 bolts for the required interface, avoiding custom-bolt procurement. Stainless-steel machining attempts failed, so I changed the bolt material and checked the reduced tensile area; the bored bolts and adapter were installed.</p>
             <p style="color: #ccc;">I presented a mini design review of the shaker adapter, covering design iterations, finished hardware, and results, as my flash-talk update at a multi-lab research meeting.</p>
         </div>
         <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Plummer/Shaker-Analysis.png" data-media-type="image" data-fit="contain" data-alt="Shaker-Adapter CAD or FEA" title="Pictures/Plummer/Shaker-Analysis.png"><span class="media-filename">Pictures/Plummer/Shaker-Analysis.png</span></div>
-            <p class="caption">Dynamic-Test Adapter Design</p>
-            <div class="img-placeholder media-slot" data-media="Pictures/Plummer/Machined-Plate.jpg" data-media-type="image" data-fit="cover" data-alt="Machined Plate Photo" title="Pictures/Plummer/Machined-Plate.jpg"><span class="media-filename">Pictures/Plummer/Machined-Plate.jpg</span></div>
-            <p class="caption">CNC-Machined Adapter Plate</p>
+            <div class="img-placeholder media-slot" data-media="Pictures/Plummer/Machining-CAM.png" data-media-type="image" data-fit="contain" data-alt="CAM toolpath simulation for machining the shaker plate" title="Pictures/Plummer/Machining-CAM.png"><span class="media-filename">Pictures/Plummer/Machining-CAM.png</span></div>
+            <p class="caption">Shaker-plate CAM setup and toolpath simulation</p>
+        </div>
+        <div class="manufacturing-media-grid" aria-label="Shaker plate machining and finished hardware">
+            <figure><div class="img-placeholder media-slot" data-media="Pictures/Plummer/Shaker-Plate-Machining.mp4" data-media-type="video" data-fit="contain" data-alt="Haas VF-2 machining the shaker plate" title="Pictures/Plummer/Shaker-Plate-Machining.mp4"><span class="media-filename">Pictures/Plummer/Shaker-Plate-Machining.mp4</span></div><figcaption class="caption">Machining the shaker plate on the Haas VF-2</figcaption></figure>
+            <div class="project-carousel plummer-gallery" role="region" aria-roledescription="carousel" aria-label="Finished shaker plate photos">
+                <div class="carousel-controls" hidden>
+                    <button type="button" data-carousel="previous" aria-label="Previous finished plate photo" aria-controls="plummer-finished-gallery"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></button>
+                    <span class="carousel-status" aria-live="off"></span>
+                    <button type="button" data-carousel="next" aria-label="Next finished plate photo" aria-controls="plummer-finished-gallery"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+                </div>
+                <div id="plummer-finished-gallery" class="carousel-track">
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Plummer/Machined-Plate.jpg" data-media-type="image" data-fit="contain" data-alt="Finished shaker plate showing the machined underside" title="Pictures/Plummer/Machined-Plate.jpg"><span class="media-filename">Pictures/Plummer/Machined-Plate.jpg</span></div><figcaption class="caption">Finished shaker plate showing the machined underside</figcaption></figure>
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Plummer/Shaker-Plate-On-Shaker.jpg" data-media-type="image" data-fit="contain" data-alt="Final machined shaker plate on the shaker" title="Pictures/Plummer/Shaker-Plate-On-Shaker.jpg"><span class="media-filename">Pictures/Plummer/Shaker-Plate-On-Shaker.jpg</span></div><figcaption class="caption">Final machined shaker plate on the shaker</figcaption></figure>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="content-section">
         <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Plummer/Camera-Stand.jpg" data-media-type="image" data-fit="cover" data-alt="Camera-Mount or Lab Buildout Photo" title="Pictures/Plummer/Camera-Stand.jpg"><span class="media-filename">Pictures/Plummer/Camera-Stand.jpg</span></div>
-            <p class="caption">Laboratory Test-Equipment Development</p>
+            <div class="project-carousel plummer-gallery" role="region" aria-roledescription="carousel" aria-label="Camera apparatus photo and CAD">
+                <div class="carousel-controls" hidden>
+                    <button type="button" data-carousel="previous" aria-label="Previous camera apparatus view" aria-controls="plummer-camera-gallery"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></button>
+                    <span class="carousel-status" aria-live="off"></span>
+                    <button type="button" data-carousel="next" aria-label="Next camera apparatus view" aria-controls="plummer-camera-gallery"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+                </div>
+                <div id="plummer-camera-gallery" class="carousel-track">
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Plummer/Camera-Stand.jpg" data-media-type="image" data-fit="contain" data-alt="Integrated aluminum-extrusion camera stand mounted over the shaker table" title="Pictures/Plummer/Camera-Stand.jpg"><span class="media-filename">Pictures/Plummer/Camera-Stand.jpg</span></div><figcaption class="caption">Integrated camera stand mounted to the shaker table with four M6 bolts</figcaption></figure>
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Plummer/Camera-Enclosure-CAD.webp" data-media-type="image" data-fit="contain" data-alt="CAD view of the camera enclosure and adjustable support frame" title="Pictures/Plummer/Camera-Enclosure-CAD.webp"><span class="media-filename">Pictures/Plummer/Camera-Enclosure-CAD.webp</span></div><figcaption class="caption">Camera enclosure and adjustable support frame CAD</figcaption></figure>
+                </div>
+            </div>
         </div>
         <div class="text-block">
             <h2>Laboratory Commissioning &amp; Apparatus</h2>
             <p style="color: #ccc;">I supported the operational build-out of a mechanics-of-materials research laboratory by evaluating and procuring equipment, tooling, and supplies against a $3,500 startup budget.</p>
             <ul>
-                <li><strong>High-Speed Camera Mount:</strong> Designed, built, and used an adjustable overhead stand from 45 × 45 mm 80/20 aluminum extrusion. Calculated deflection below 0.1 mm under a conservative load of twice the expected 2.0 kg static camera mass. Rigidity and axial-buckling calculations used a 68 GPa Young’s modulus and 106,217 mm⁴ area moment of inertia; this was calculated performance, not a measured deflection result.</li>
-                <li><strong>Cost-Conscious Design:</strong> Prioritized long, modular extrusion stock that could be reused in more stable future apparatus. Balanced a $390 budget, six-foot stock lengths, and freight constraints while preserving 100% material reusability. The stand was an investment in the laboratory’s future equipment-building capability.</li>
+                <li><strong>High-speed camera mount:</strong> Designed, built, and used an adjustable 45 × 45 mm extrusion stand attached to the shaker table with four M6 bolts. A simply supported top-beam model including self-weight predicts approximately 0.107 mm deflection at the 2 kg camera load, or 0.178 mm at a doubled 4 kg design load. These are static predictions, not measured vibration response.</li>
+                <li><strong>Reusable Test Infrastructure:</strong> Chose long, modular extrusion members so the stand could be reconfigured for future experiments while staying within the $390 budget.</li>
             </ul>
         </div>
     </section>
@@ -201,15 +298,16 @@
     <section class="content-section" style="border-bottom: none;">
         <div class="text-block">
             <h2>Research Infrastructure</h2>
-            <p style="color: #ccc;"><strong>Objective:</strong> Increase experimental reliability and laboratory throughput through structurally sound, manufacturable apparatus and a well-equipped, organized workspace.</p>
             <ul>
                 <li>Developed a hydrogel-saturation fixture with custom 3D-printed hexagonal airflow platforms and COTS fluid hardware. Improved drying uniformity is the design objective; testing is ongoing. Separately performed thermal calibration on legacy ovens up to 68°C for plastics processing.</li>
                 <li>Designed tiered contamination-control stations for SLA resin printing, with separated uncured, washed, and cured zones, spill trays, and dedicated tool holders.</li>
                 <li>Implemented acrylic chemistry/soldering dividers, custom hazardous-material fixtures, 5S workstation topology, and foam-shadowed tool drawers.</li>
             </ul>
         </div>
-        <div class="image-block"><div class="img-placeholder media-slot" data-media="Pictures/Plummer/Lab-Fixtures.jpg" data-media-type="image" data-fit="cover" data-alt="Laboratory Layout or Fixture Photo" title="Pictures/Plummer/Lab-Fixtures.jpg"><span class="media-filename">Pictures/Plummer/Lab-Fixtures.jpg</span></div><p class="caption">Experimental Infrastructure and Fixtures</p></div>
+
     </section>
+
+    <section class="content-section" id="fixture-calculations"><div class="text-block"><h2>Fixture Calculation Basis</h2><p style="color: #ccc; margin-bottom: 24px;">Design-review predictions, later dynamic analysis, and manufacturing results refer to different cases and are kept separate below.</p><div class="calculation-details"><details><summary><span>Plate trade and displacement cases</span></summary><table class="calculation-table"><tbody><tr><th scope="row">Initial honeycomb concept</th><td>0.832 kg; 0.002 mm predicted deflection; $159.53 plate quote</td></tr><tr><th scope="row">Selected solid plate</th><td>1.90 kg; $67.15 plate cost</td></tr><tr><th scope="row">Selected plate displacement criterion</th><td>L/240 for the 12 in span: 12/240 = 0.050 in (1.27 mm). I selected this span-based serviceability criterion for the 12 × 12 in plate.</td></tr><tr><th scope="row">Review displacement results</th><td>0.173 mm for the plate; 0.080 mm for the Ising-model fixture</td></tr><tr><th scope="row">Later dynamic case</th><td>0.44 mm maximum predicted fixture deflection at 3 kg and 20.1 Hz</td></tr></tbody></table><p>Source: August 5 shaker-plate review and subsequent project record. Displacements come from different modeled load cases and cannot be added or treated as a controlled stiffness comparison. The selected L/240 limit is a displacement criterion, not a yield or fatigue check. The review’s 0.173 mm plate prediction is below the 1.27 mm limit for that modeled case. The review describes conservative cantilever-corner hand calculations checked against FEA.</p></details><details><summary><span>Manufacturing and hardware cost</span></summary><table class="calculation-table"><tbody><tr><th scope="row">In-house plate and bolts</th><td>$67.15 + $3.96 = $71.11</td></tr><tr><th scope="row">Estimated saving from outsourced scope</th><td>$1,170 − $71.11 = $1,098.89, or approximately 93.9%</td></tr></tbody></table><p>The estimated 93.9% saving compares plate-and-bolt hardware only; labor and total fixture-system cost are outside this comparison.</p></details><details><summary><span>Fastener and camera-support analysis</span></summary><table class="calculation-table"><tbody><tr><th scope="row">Fastener tightening torque</th><td>21.7 ft·lbf to achieve the intended Class 8.8 preload</td></tr><tr><th scope="row">Reported fastener load case</th><td>16.36 kN preload + 0.135 kN external load = 16.50 kN (approximately 3,709 lbf) per bolt; 1.49 FOS against tensile yield</td></tr><tr><th scope="row">Preload model</th><td>Fᵢ = (2/3) Sᵧ Aₜ = 16.36 kN per bolt; 1.50 FOS against bolt tensile yield</td></tr><tr><th scope="row">External-load model</th><td>Fₑ = (2 kg plate allowance + 3 kg fixture) × 11g / 4 = 134.9 N per bolt</td></tr><tr><th scope="row">Torque estimate</th><td>T = KdFᵢ, with K = 0.18 and d = 10 mm: 29.46 N·m (21.7 ft·lbf). K is an assumed nut factor for wet threadlocker.</td></tr><tr><th scope="row">Other reported failure modes</th><td>Recorded model: plate bearing 2.46; pull-through 4.99; external-thread shear 3.71; internal-thread shear 3.60 FOS</td></tr><tr><th scope="row">Camera-support design mass</th><td>2 × 2.0 kg = 4.0 kg conservative static load</td></tr><tr><th scope="row">Camera-support displacement model</th><td>δ = PL³/(48EI) + 5wL⁴/(384EI): approximately 0.107 mm at 2 kg, or 0.178 mm at 4 kg, including top-beam self-weight</td></tr><tr><th scope="row">Extrusion model inputs</th><td>E = 68 GPa; I = 106,217 mm⁴; simply supported 1,080 mm top beam with center camera load and distributed self-weight</td></tr></tbody></table><p>Source: DSRF Calcs, Class 8.8 M10 sheet. The model uses 5 kg at 11 G, shared equally by four bolts, and conservatively adds the full per-bolt external force to preload. It assumes an M10 × 1.5 tensile area reduced by a 5 mm axial bore (38.35 mm²), 640 MPa bolt yield, and 9.7 mm local bearing thickness. The 5 mm bore and 9.7 mm local bearing thickness match the installed joint. These remain nominal-property calculations, not a measured bolt-strength result.</p></details></div></div></section>
 
     <footer style="padding: 5rem 10%; background: #000; color: #666; font-size: 0.8rem; border-top: 1px solid #333; margin-top: 50px;"><p>ALEXANDER TONG // BU MECHANICAL ENGINEERING // PLUMMER LABORATORY</p></footer>
 </body>

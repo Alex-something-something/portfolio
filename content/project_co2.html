@@ -15,7 +15,7 @@
         }
         .project-header h1 { font-size: 3rem; margin-bottom: 15px; }
         .project-header h1 span { color: #E63946; }
-        
+
         .content-section {
             padding: 50px 10%;
             display: flex;
@@ -27,7 +27,7 @@
         .text-block h2 { color: #E63946; margin-bottom: 20px; font-size: 1.8rem; }
         .text-block ul { margin-left: 20px; margin-top: 15px; }
         .text-block li { margin-bottom: 10px; color: #ccc; }
-        
+
         .image-block {
             flex: 1;
             min-width: 300px;
@@ -133,6 +133,13 @@
     <style>
         .ui-arrow { display: inline-block; width: 1em; height: 1em; flex-shrink: 0; vertical-align: -.12em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
         .back-link { gap: 8px; }
+        .piercer-vertical { width: min(100%, 220px); margin: 0 auto; }
+        .piercer-vertical > img { max-height: 760px; }
+        .co2-pressure-figure { grid-column: 1 / -1; width: min(100%, 900px); justify-self: center; }
+        .co2-intro-photo { margin: 26px 0 0; max-width: 540px; }
+        .co2-intro-photo .caption { margin: 10px 0 0; text-align: left; }
+        .co2-intro-video { max-width: 480px; margin: 0 auto; }
+        .co2-intro-video .caption { margin: 10px 0 0; text-align: left; }
     </style>
 </head>
 <body>
@@ -140,34 +147,33 @@
     <header class="project-header">
         <a href="index.html#flight-hardware" class="back-link"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4M10 6l-6 6 6 6"/></svg> Flight Hardware</a>
         <h1>CO₂ <span>Deployment Mechanism</span></h1>
-        <p class="project-meta-line">Design, Manufacturing &amp; Testing · BURPG · Hardware tested; integration in progress</p>
-        <p class="project-overview">Designed, manufactured, and tested CO₂-cartridge deployment hardware with a three-person team for Argo’s separation and recovery subsystem.</p>
-        <p class="project-status-line">Current status: hardware tested in vacuum; minor refinements underway before integrated system testing</p>
+        <p class="project-meta-line">Design, Manufacturing &amp; Testing · BURPG</p>
+        <p class="project-overview">Designed and machined CO₂ deployment hardware with a three-person team; completed a component firing at a reported chamber pressure of 0.011 atm. Integrated CO₂ separation testing is pending.</p>
+        <p class="project-status-line">Reduced-pressure charge test complete; integrated CO₂ test in preparation</p>
     </header>
     <main>
         <section class="content-section">
             <div class="text-block">
-                <h2>Reliability-Driven Redesign</h2>
-                <p style="color: #ccc;">Months of charge fabrication and individual testing established configurations that worked in isolation, but one charge failed in each of two integrated tests. The later test also exposed configuration-control problems. After returning from abroad, I led a test in which a communication breakdown left a shield missing. The parachute bag used my originally intended material, which was structurally weaker than the bag tested while I was away. This exposed a material-selection mistake as well as a failure to reconcile the changed test configuration. One vinyl charge penetrated the bag and damaged the parachute; only two of three charges burst properly. Individual test successes did not translate into consistent integrated operation, and the changed hardware configuration introduced additional concerns. Together, the repeated activation failures and observed damage motivated the CO₂ redesign.</p>
-                <p style="color: #ccc;">I used the summer development window and newly available team capacity to advance CO₂-cartridge piercing hardware with a three-person team. My work covered pressure and stress calculations, CAD, manufacturing drawings, machining, and vacuum testing. This turned the test findings into a manufactured and tested alternative, with full-system integration still ahead.</p>
+                <h2>Component Firing &amp; Redesign Basis</h2>
+                <p style="color: #ccc;">Two sea-level integrated black-powder tests exposed a failed deployment charge in each test and parachute damage in the second. I helped replace that deployment method with cartridge-piercing hardware; the Catclaw tie-cutting releases remain separate components.</p>
+                <p style="color: #ccc;">I sized the mechanism and contributed CAD, drawings, machining, and component testing. All three teammates contributed to the design and fabrication; we iterated one another’s work.</p>
                 <p style="color: #ccc;">This mechanism is part of the wider separation and recovery subsystem. The overall architecture, parachute-load analysis, redundancy, and vehicle integration are documented on the subsystem page.</p>
                 <p><a href="project_recovery.html" style="color: #E63946;">View the separation and recovery subsystem <svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></p>
+                <figure class="co2-intro-photo"><div class="img-placeholder media-slot" data-media="Pictures/CO2/Manufactured-Piercer.webp" data-media-type="image" data-fit="contain" data-alt="Manufactured CO₂ cartridge-piercing hardware on a workbench" title="Pictures/CO2/Manufactured-Piercer.webp"><span class="media-filename">Pictures/CO2/Manufactured-Piercer.webp</span></div><figcaption class="caption">Manufactured cartridge-piercing hardware</figcaption></figure>
             </div>
             <div class="image-block">
-                <div class="img-placeholder media-slot" data-media="Pictures/CO2/Assembly.png" data-media-type="image" data-fit="contain" data-alt="CO₂ Deployment Assembly CAD" title="Pictures/CO2/Assembly.png"><span class="media-filename">Pictures/CO2/Assembly.png</span></div>
-                <p class="caption">Cartridge-Piercing Mechanism</p>
+                <figure class="co2-intro-video"><div class="img-placeholder media-slot" data-media="Pictures/Recovery/Vinyl-Charge-Nosecone-Test-Trimmed.mp4" data-media-type="video" data-fit="contain" data-alt="Slow-motion black-powder nosecone firing in the integrated test that exposed parachute damage" title="Pictures/Recovery/Vinyl-Charge-Nosecone-Test-Trimmed.mp4"><span class="media-filename">Pictures/Recovery/Vinyl-Charge-Nosecone-Test-Trimmed.mp4</span></div><figcaption class="caption">Slow-motion black-powder deployment from the test that exposed parachute-bag and canopy damage</figcaption></figure>
             </div>
         </section>
         <section class="content-section" id="design-manufacturing">
             <div class="text-block">
                 <h2>Design, Analysis &amp; Manufacturing</h2>
-                <p style="color: #ccc;">I designed the hardware in Fusion 360, created and iterated manufacturing drawings, fabricated parts, and conducted tests. All three teammates contributed across the process, developing and revising one another’s designs and drawings.</p>
+
                 <ul>
-                    <li><strong>Mechanical Design:</strong> Developed and iterated the CO₂-cartridge piercing hardware in Fusion 360.</li>
                     <li><strong>System Sizing:</strong> Calculated a 4.66 psi separation requirement for four nylon shear pins plus the estimated interface friction. Ideal-gas sizing predicted 10.9 g of CO₂ for the modeled free volume, providing analytical margin with a 16 g cartridge.</li>
                     <li><strong>Pressure &amp; Stress Analysis:</strong> Calculated maximum pressure and Lamé stresses for the thick-wall piercer housing. The governing analytical result was 2.01 FOS in hoop stress, with 6.31 FOS against internal-thread shear.</li>
-                    <li><strong>Manufacturing:</strong> Created and revised engineering drawings and fabricated the mechanism’s parts through the team’s shared design-and-build process.</li>
-                    <li><strong>Testing &amp; Iteration:</strong> Tested the manufactured hardware and contributed to refinements ahead of system integration.</li>
+                    <li><strong>Manufacturing:</strong> Produced Fusion 360 CAD, engineering drawings, and machined parts for the piercing mechanism.</li>
+                    <li><strong>Testing &amp; Iteration:</strong> Tested the charge hardware under reduced pressure and prepared the complete subsystem for an upcoming integrated CO₂ test.</li>
                 </ul>
                 <div class="test-evidence two-column-evidence" aria-label="CO2 deployment mechanism design calculations">
                     <div class="test-evidence-item"><strong>4.66 psi</strong><span>calculated separation pressure for the modeled four-pin configuration</span></div>
@@ -175,27 +181,30 @@
                     <div class="test-evidence-item"><strong>2.01 FOS</strong><span>governing Lamé hoop-stress margin for the thick-wall housing</span></div>
                     <div class="test-evidence-item"><strong>6.31 FOS</strong><span>calculated internal-thread shear margin</span></div>
                 </div>
-                <p class="engineering-note"><strong>Calculation scope:</strong> These values are analytical design estimates used to size and screen the mechanism. Vacuum testing establishes component operation; integrated recovery-system validation remains pending.</p>
-                <p style="color: #E63946; margin-top: 20px;">Fusion 360 · Stress Analysis · Engineering Drawings · Machining · Testing</p>
+                <p class="engineering-note"><strong>Calculation basis:</strong> The 4.66 psi separation estimate includes four nylon shear pins and estimated interface friction. The 10.9 g ideal-gas estimate and housing margins are analytical screening results; free volume, gas temperature, pressure convention, and governing housing pressure must be stated before reproducing the model. Full-system verification is pending.</p>
+
             </div>
             <div class="image-block">
-                <div class="img-placeholder media-slot" data-media="Pictures/CO2/Machined-Parts.jpg" data-media-type="image" data-fit="cover" data-alt="Machined CO₂ Deployment Hardware Photo" title="Pictures/CO2/Machined-Parts.jpg"><span class="media-filename">Pictures/CO2/Machined-Parts.jpg</span></div>
-                <p class="caption">Manufactured Components and Assembly</p>
+                <div class="img-placeholder media-slot piercer-vertical" data-media="Pictures/CO2/Piercer-Cross-Section-Vertical.webp" data-media-type="image" data-fit="contain" data-alt="Vertical section view of the cartridge-piercing mechanism with the CO₂ cartridge upward and glove-tip charge location highlighted blue" title="Pictures/CO2/Piercer-Cross-Section-Vertical.webp"><span class="media-filename">Pictures/CO2/Piercer-Cross-Section-Vertical.webp</span></div>
+                <p class="caption">Piercer section view with cartridge upward; blue marks the glove-tip charge location</p>
             </div>
         </section>
-        <section class="content-section" style="border-bottom: none;">
+        <section class="content-section media-below" style="border-bottom: none;">
             <div class="text-block">
                 <h2>Test Status &amp; Next Steps</h2>
-                <p style="color: #ccc;">I led the black-powder test operations, writing standard operating procedures (SOPs), test plans, and safety protocols. I assigned crews, conducted briefings, authorized firing or abort decisions, and directed post-test hardware inspection and review. My project partner handled the pressure-transducer data analysis. I am now organizing CO₂ testing under BURPG’s established test-operation standards. Current tests use volume placeholders for the parachutes and other equipment rather than the actual hardware.</p>
-                <p style="color: #ccc;">The CO₂ deployment hardware has been manufactured and tested in the vacuum chamber. Minor refinements are underway before a planned, fully integrated test of the entire recovery system with the CO₂ configuration in that chamber.</p>
-                <p style="color: #ccc;">Completed integrated recovery tests used the previous vinyl-charge configuration. They do not establish integrated validation of the new CO₂ mechanism.</p>
+                <p style="color: #ccc;">I helped initiate and operate the reduced-pressure component tests and am preparing the integrated-test SOP. My co-lead designed the instrumentation, wrote the acquisition script, and analyzed the pressure trace below.</p>
+                <p style="color: #ccc;">The upcoming test will evaluate the piercers in the full recovery assembly, including shear pins, parachutes, lines, release devices, and wiring. See the recovery page for the architecture and integrated-test history.</p>
+                <p class="engineering-note">For equal internal pressure, lower ambient pressure increases the differential across the nosecone interface. Released gas mass alone does not establish that internal pressure: temperature, leakage, free volume, and release timing also govern deployment.</p>
                 <div class="test-evidence" aria-label="CO2 redesign test evidence">
-                    <div class="test-evidence-item"><strong>2 tests</strong><span>previous integrated black-powder configurations, each with one failed charge</span></div>
-                    <div class="test-evidence-item"><strong>2 of 3</strong><span>vinyl charges burst successfully in the later integrated test</span></div>
-                    <div class="test-evidence-item"><strong>Vacuum tested</strong><span>manufactured CO₂ component hardware operated under reduced pressure</span></div>
-                    <div class="test-evidence-item"><strong>Integration pending</strong><span>results do not yet establish full-system CO₂ validation</span></div>
+                    <div class="test-evidence-item"><strong>0.011 atm</strong><span>initial chamber pressure for the first CO₂ charge test</span></div>
+
+
+
                 </div>
                 <p><a href="project_vacuum.html" style="color: #E63946;">View the recovery system’s vacuum-test infrastructure <svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></p>
+            </div>
+            <div class="image-block">
+                <figure class="co2-pressure-figure"><div class="img-placeholder media-slot" data-media="Pictures/CO2/First-Vacuum-Charge-Pressure.webp" data-media-type="image" data-fit="contain" data-alt="Pressure trace from the first CO₂ charge test at an initial chamber pressure of 0.011 atm" title="Pictures/CO2/First-Vacuum-Charge-Pressure.webp"><span class="media-filename">Pictures/CO2/First-Vacuum-Charge-Pressure.webp</span></div><figcaption class="caption">First CO₂ charge test at 0.011 atm initial pressure · instrumentation and analysis by my co-lead</figcaption></figure>
             </div>
         </section>
     </main>

@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 
 const scripts = [
-  'portfolio-media.js?v=20260923-2',
+  'portfolio-media.js?v=20261008-1',
   'portfolio-carousel.js?v=20260923-2',
   'portfolio-intro.js',
   'portfolio-schematic.js'

@@ -15,7 +15,7 @@
         }
         .project-header h1 { font-size: 3rem; margin-bottom: 15px; }
         .project-header h1 span { color: #E63946; }
-        
+
         .content-section {
             padding: 50px 10%;
             display: flex;
@@ -27,7 +27,7 @@
         .text-block h2 { color: #E63946; margin-bottom: 20px; font-size: 1.8rem; }
         .text-block ul { margin-left: 20px; margin-top: 15px; }
         .text-block li { margin-bottom: 10px; color: #ccc; }
-        
+
         .image-block {
             flex: 1;
             min-width: 300px;
@@ -133,6 +133,33 @@
     <style>
         .ui-arrow { display: inline-block; width: 1em; height: 1em; flex-shrink: 0; vertical-align: -.12em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
         .back-link { gap: 8px; }
+        .recovery-architecture-visuals { gap: 32px; }
+        .recovery-architecture-visuals figure { margin: 0 auto; min-width: 0; }
+        .recovery-architecture-visuals figure .caption { display: block; margin: 12px 0 0; padding: 0 6px; text-align: center; line-height: 1.5; }
+        .recovery-architecture-visuals .connection-diagram { width: 100%; }
+        .recovery-architecture-visuals .nosecone-cad { max-width: 320px; margin: 0 auto; }
+        .recovery-architecture-visuals .nosecone-cad img { max-height: 520px; }
+        .recovery-architecture-visuals .topdown-cad { width: min(100%, 450px); margin: 0 auto; }
+        #assembly > .image-block { grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); gap: 28px; align-items: start; max-width: 1100px; margin-inline: auto; }
+        .recovery-bp-figure { width: min(100%, 500px); justify-self: center; }
+        .recovery-bag-figure { width: min(100%, 560px); justify-self: center; }
+        .recovery-bag-figure .media-slot > img { max-height: 580px; }
+        .recovery-bag-figure .caption { text-align: center !important; }
+        @media (max-width: 850px) { #assembly > .image-block { grid-template-columns: minmax(0, 1fr); } }
+        @media (max-width: 650px) { .recovery-architecture-visuals .nosecone-cad { max-width: 280px; } #assembly > .image-block { grid-template-columns: minmax(0, 1fr); } }
+    </style>
+    <style>
+        .calculation-details { border-top: 1px solid #333; }
+        .calculation-details details { border-bottom: 1px solid #333; }
+        .calculation-details summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 0; color: #fff; font-weight: 700; cursor: pointer; list-style: none; }
+        .calculation-details summary::-webkit-details-marker { display: none; }
+        .calculation-details summary::after { content: '+'; color: #E63946; font-size: 1.35rem; }
+        .calculation-details details[open] summary::after { content: '−'; }
+        .calculation-details p { color: #ccc; margin: 0 0 18px; }
+        .calculation-table { width: 100%; margin: 0 0 22px; border-collapse: collapse; color: #ccc; font-size: .92rem; }
+        .calculation-table th, .calculation-table td { padding: 11px 12px; border-bottom: 1px solid #292929; text-align: left; vertical-align: top; }
+        .calculation-table th { width: 45%; color: #aaa; font-weight: 400; }
+        @media (max-width: 650px) { .calculation-table, .calculation-table tbody, .calculation-table tr, .calculation-table th, .calculation-table td { display: block; width: 100%; } .calculation-table td { padding-top: 0; } }
     </style>
 </head>
 <body>
@@ -144,17 +171,18 @@
         <a href="index.html#flight-hardware" class="back-link"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4M10 6l-6 6 6 6"/></svg> Flight Hardware</a>
         <h1>Separation and <span>Recovery Subsystem</span></h1>
         <p class="project-meta-line">Co-Lead Engineer · BURPG · June 2025–Present · In progress</p>
-        <p class="project-overview">Co-leading the design and validation of a single-separation, dual-deploy recovery architecture for a liquid rocket with a 135 lb dry mass targeting a 100,000 ft apogee.</p>
-        <p class="project-status-line">Current status: CO₂ component hardware tested; integrated CO₂ recovery-system validation planned</p>
+        <p class="project-overview">Delivered an 18.7 lbm recovery subsystem within a 20 lbm allocation and a $1,076 bill of materials. Calculated 823 lbf opening and 1,230 lbf snatch loads, redesigned Catclaw releases, and co-led component and integrated testing for Argo.</p>
+        <p class="project-status-line">Current status: two black-powder integrated tests complete; CO₂ full-system test in preparation</p>
     </header>
 
-    <div class="project-hero-media" style="padding: 0 10%; margin-top: -1px;">
-        <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Subscale-Test.mp4" data-media-type="video" data-fit="cover" data-alt="Hero Image/GIF of Subscale Testing" title="Pictures/Recovery/Subscale-Test.mp4"><span class="media-filename">Pictures/Recovery/Subscale-Test.mp4</span></div>
+    <div class="project-hero-media architecture-hero" style="padding: 0 6%; margin-top: -1px;">
+        <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Lines-Diagram-Web.webp" data-media-type="image" data-fit="contain" data-alt="Argo separation and recovery system architecture and lines diagram" title="Pictures/Recovery/Lines-Diagram-Web.webp"><span class="media-filename">Pictures/Recovery/Lines-Diagram-Web.webp</span></div>
+        <p class="caption">System Architecture &amp; Lines Diagram</p>
     </div>
 
     <div class="project-metrics" aria-label="Recovery system requirements and analysis at a glance">
-        <div class="project-metric"><strong>135 lb</strong><span>vehicle dry mass</span></div>
-        <div class="project-metric"><strong>100,000 ft</strong><span>target apogee</span></div>
+        <div class="project-metric"><strong>18.7 lbm</strong><span>subsystem mass within a 20 lbm allocation</span></div>
+        <div class="project-metric"><strong>$1,076</strong><span>final bill of materials</span></div>
         <div class="project-metric"><strong>2.0 FOS</strong><span>target structural margin</span></div>
         <div class="project-metric"><strong>823 / 1,230 lbf</strong><span>calculated shock / snatch loads</span></div>
     </div>
@@ -162,9 +190,11 @@
     <section class="content-section">
         <div class="text-block">
             <h2>System Architecture</h2>
-            <p style="color: #ccc;">As co-lead engineer, I designed a single-separation, dual-deploy parachute recovery system for a liquid rocket with a 135 lb dry mass and 100,000 ft target apogee. The architecture targets a 2.0 factor of safety (FOS) and has been presented through four iterative design reviews to club executives. Completed testing includes sealed-charge and avionics evaluation under vacuum and integrated testing of the previous vinyl-charge configuration. The revised CO₂ component hardware has been tested and is being refined ahead of integrated system validation.</p>
-            <p style="color: #ccc;">Argo is designed to separate once, deploy its drogue near the 100,000 ft target apogee, and keep the main parachute packed in the downward freestream until its planned deployment at 2,000 ft above ground level. Paired flight computers and deployment components provide functional redundancy.</p>
+            <p style="color: #ccc;">The subsystem passed through four design reviews. Its design structural-margin target is 2.0 FOS; component proof testing and integrated deployment tests are separate verification steps.</p>
+            <p style="color: #ccc;">For the 135 lb dry-mass rocket targeting 100,000 ft, the planned sequence is nosecone separation and drogue deployment near apogee, followed by main-parachute release at 2,000 ft above ground. The main stays packed during drogue descent. Paired flight computers and release devices provide separate actuation paths; the component arrangement is shown below.</p>
 
+            <h3 class="project-subheading">Nosecone Shape &amp; Recovery Integration</h3>
+            <p style="color: #ccc;">The nosecone is a recovery-system component, so any shape change must preserve parachute packaging, attachment interfaces, and separation behavior. I am also comparing candidate nose shapes in RASAero II as part of the aerodynamic investigation that grew out of the aerocover trade. No replacement profile has been selected. <a href="project_aerocover.html#nosecone-investigation" style="color: #E63946;">See the nosecone aerodynamic trade, recorded simulation results, and comparison limits</a>.</p>
             <h3 class="project-subheading">Parachute &amp; Recovery-Line Selection</h3>
             <p style="color: #ccc;">I compared 23 commercial main and drogue parachute candidates across drag coefficient, descent rate, packing volume, mass, rated load, and cost. The selected architecture uses a 42 in heavy-duty Spherachute drogue and an existing 144 in high-performance main. The analytical model predicts approximately 118 ft/s during drogue-only descent and 21.4 ft/s at landing under the main.</p>
             <p style="color: #ccc;">I carried the calculated opening and snatch loads into recovery-line sizing. The line-strength study required approximately 2,905–4,938 lbf depending on termination efficiency, supporting selection of 6,000 lbf Kevlar line and subsequent Brummel-splice verification.</p>
@@ -173,115 +203,99 @@
                 <div class="test-evidence-item"><strong>21.4 ft/s</strong><span>predicted landing descent rate under the selected main parachute</span></div>
                 <div class="test-evidence-item"><strong>6,000 lbf</strong><span>selected Kevlar recovery-line rating carried into splice testing</span></div>
             </div>
-            
-            <h3 class="project-subheading">Role &amp; Technical Scope</h3>
-            <p style="color: #ccc;"><strong>Role:</strong> Co-Lead Engineer, Separation and Recovery</p>
+
+            <h3 class="project-subheading">Architecture Trade Study &amp; Load Analysis</h3>
             <p style="color: #ccc;">I conducted a trade study of system architectures, COTS flight computers, and vacuum-tolerant separation mechanisms, delivering a final 18.7 lbm system within a 20 lbm budget and a final $1,076 bill-of-materials cost.</p>
             <ul>
-                <li><strong>Functional Redundancy:</strong> Designed the architecture around four cable cutters, two in-series tender descenders, and two flight computers.</li>
-                <li><strong>Hardware Development:</strong> Redesigned, manufactured, and tested legacy cable cutters, supported by engineering drawings and load analysis.</li>
-                <li><strong>Analytical Calculations:</strong> Synthesized five research-paper methods to calculate an 823 lbf parachute shock load and a 1,230 lbf snatch load. For the earlier configuration, calculated pyrotechnic-charge values from shear-pin failure and system volume, resulting in 270 lbf across all three charges. Current load verification includes in-house stress-strain testing.</li>
+                <li><strong>Release hardware:</strong> Four Catclaw cable cutters, two tender descenders arranged in series along the release line, and two flight computers. Paired Catclaws act on the same zip tie; either cutter can sever that restraint. Either in-series tender descender can open the release line. Each deployment charge, Catclaw, and tender descender has two e-matches, one connected to each flight computer, providing two firing paths per device.</li>
+                <li><strong>Hardware Development:</strong> Redesigned, manufactured, and tested the Catclaw cutters, supported by engineering drawings and load analysis.</li>
+                <li><strong>Load analysis:</strong> Compared five published methods to calculate an 823 lbf parachute opening load and a 1,230 lbf snatch load, then carried the governing loads into recovery-line selection and component checks.</li>
             </ul>
         </div>
-        <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Lines-Diagram.png" data-media-type="image" data-fit="contain" data-alt="Lines Diagram" title="Pictures/Recovery/Lines-Diagram.png"><span class="media-filename">Pictures/Recovery/Lines-Diagram.png</span></div>
-            <p class="caption">System Architecture & Lines Diagram</p>
-            
-            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Connections.png" data-media-type="image" data-fit="contain" data-alt="Simplified Connection Diagram" title="Pictures/Recovery/Connections.png"><span class="media-filename">Pictures/Recovery/Connections.png</span></div>
-            <p class="caption">Simplified Component Connection Diagram</p>
+        <div class="image-block recovery-architecture-visuals">
+            <figure class="connection-diagram"><div class="img-placeholder media-slot" data-media="Pictures/Recovery/Connections.png" data-media-type="image" data-fit="contain" data-alt="Simplified Connection Diagram" title="Pictures/Recovery/Connections.png"><span class="media-filename">Pictures/Recovery/Connections.png</span></div><figcaption class="caption">Simplified Component Connection Diagram</figcaption></figure>
+            <figure class="nosecone-cad"><div class="img-placeholder media-slot" data-media="Pictures/Recovery/SepRec-CAD.webp" data-media-type="image" data-fit="contain" data-alt="Current nosecone assembly CAD with hoist rings and CO₂ deployment cartridges" title="Pictures/Recovery/SepRec-CAD.webp"><span class="media-filename">Pictures/Recovery/SepRec-CAD.webp</span></div><figcaption class="caption">Current nosecone CAD with hoist rings and CO₂ cartridges</figcaption></figure>
+            <figure class="topdown-cad"><div class="img-placeholder media-slot" data-media="Pictures/Recovery/SepRec-Top-Down.webp" data-media-type="image" data-fit="contain" data-alt="Top-down recovery packaging CAD with the nosecone hidden" title="Pictures/Recovery/SepRec-Top-Down.webp"><span class="media-filename">Pictures/Recovery/SepRec-Top-Down.webp</span></div><figcaption class="caption">Current top-down packaging with nosecone hidden</figcaption></figure>
         </div>
     </section>
 
-    <section class="content-section" id="assembly">
+    <section class="content-section media-below" id="assembly">
         <div class="text-block">
             <h3 class="project-subheading" style="margin-top: 0;">Architecture Development &amp; Packaging</h3>
-            <p style="color: #ccc;">The recovery assembly brings together the parachutes, recovery lines, deployment components, and their interfaces within Argo’s available packaging space. The design balances load paths, component arrangement, and the 20 lbm subsystem mass budget.</p>
-            <p style="color: #ccc;">The assembly CAD and hardware views will document how the system fits together, complementing the line diagrams and nosecone packing plan.</p>
-            <h3 class="project-subheading">Design Roadmap &amp; Reviews</h3>
-            <p style="color: #ccc;">I compared system architectures, flight computers, and separation mechanisms throughout subsystem development. Four iterative design reviews with club executives supported development of the subsystem, followed by component and integrated testing.</p>
+            <p style="color: #ccc;">The assembly and top-down CAD views above show the current nosecone packaging with hoist rings and CO₂ deployment cartridges. The diagrams below record the earlier black-powder packing plan and main-parachute arrangement; they explain the design progression rather than the current charge layout.</p>
         </div>
         <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Assembly.png" data-media-type="image" data-fit="contain" data-alt="Recovery Assembly CAD" title="Pictures/Recovery/Assembly.png"><span class="media-filename">Pictures/Recovery/Assembly.png</span></div>
-            <p class="caption">Overall Recovery Assembly and Component Arrangement</p>
-            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Hardware-Assembly.jpg" data-media-type="image" data-fit="cover" data-alt="Recovery Hardware Assembly Photo" title="Pictures/Recovery/Hardware-Assembly.jpg"><span class="media-filename">Pictures/Recovery/Hardware-Assembly.jpg</span></div>
-            <p class="caption">Physical Assembly and Packaging</p>
-            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Packing-Plan.png" data-media-type="image" data-fit="contain" data-alt="Detailed Packing Plan / Nosecone Diagram" title="Pictures/Recovery/Packing-Plan.png"><span class="media-filename">Pictures/Recovery/Packing-Plan.png</span></div>
-            <p class="caption">Nosecone &amp; Shell Packing Plan</p>
+            <figure class="recovery-bp-figure"><div class="img-placeholder media-slot" data-media="Pictures/Recovery/CDR-BP-Packing-Plan.webp" data-media-type="image" data-fit="contain" data-alt="CDR nosecone packing plan from the earlier black-powder configuration" title="Pictures/Recovery/CDR-BP-Packing-Plan.webp"><span class="media-filename">Pictures/Recovery/CDR-BP-Packing-Plan.webp</span></div><figcaption class="caption">CDR nosecone packing plan · earlier black-powder design</figcaption></figure>
+            <figure class="recovery-bag-figure"><div class="img-placeholder media-slot" data-media="Pictures/Recovery/Main-Parachute-Diagram.webp" data-media-type="image" data-fit="contain" data-alt="Main-parachute bag and line diagram from the earlier black-powder configuration" title="Pictures/Recovery/Main-Parachute-Diagram.webp"><span class="media-filename">Pictures/Recovery/Main-Parachute-Diagram.webp</span></div><figcaption class="caption">CDR main-parachute bag and line arrangement · earlier black-powder design</figcaption></figure>
         </div>
     </section>
 
-    <section class="content-section" id="separation-components">
+    <section class="content-section media-below" id="separation-components">
         <div class="text-block" id="machining">
-            <h2>Hardware Development</h2>
-            <h3 class="project-subheading">Cable-Cutter Redesign &amp; Testing</h3>
-            <p style="color: #ccc;">I redesigned legacy cable cutters and created an engineering drawing to support manufacturing. I machined the aluminum hardware on a manual mill and lathe and tested it using hoop-stress and cord-failure analysis.</p>
-            <p style="color: #ccc;">The cable-cutter work achieved a 2.01 FOS over six trials and a 49.5% mass reduction from the previous vehicle’s design.</p>
-            <div class="test-evidence" aria-label="Cable-cutter verification evidence">
-                <div class="test-evidence-item"><strong>6 trials</strong><span>manufactured cable-cutter test campaign</span></div>
-                <div class="test-evidence-item"><strong>2.01 FOS</strong><span>verified margin for the tested configuration</span></div>
+            <h2>Catclaw Cable Cutters</h2>
+            <p style="color: #ccc;">The Catclaw is a separate black-powder-actuated release device: it holds a zip tie and drives a piston through it to break the tie. It is not part of the CO₂ nosecone-deployment mechanism.</p>
+            <p style="color: #ccc;">I trimmed down the earlier Catclaw design and reshaped its slot to retain the piston after firing. I produced the manufacturing drawing and machined the aluminum body on a manual mill and lathe. The redesign reduced mass 49.5%, with a calculated 2.01 FOS.</p>
+            <p style="color: #ccc;">All eight trials at the selected 0.7 g black-powder charge broke the tie. The 0.65 g setting usually worked but was not repeatable enough to select.</p>
+            <div class="test-evidence" aria-label="Catclaw cable-cutter verification evidence">
+                <div class="test-evidence-item"><strong>8 / 8</strong><span>successful Catclaw firings at the selected 0.7 g charge</span></div>
+                <div class="test-evidence-item"><strong>2.01 FOS</strong><span>calculated structural margin for the Catclaw body</span></div>
                 <div class="test-evidence-item"><strong>49.5%</strong><span>mass reduction from the previous vehicle design</span></div>
             </div>
-            <p><a href="project_co2.html" style="color: #E63946;">View the separate CO₂ deployment mechanism <svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></p>
         </div>
         <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Cable-Cutter-Drawing.png" data-media-type="image" data-fit="contain" data-alt="Cable-Cutter Engineering Drawing" title="Pictures/Recovery/Cable-Cutter-Drawing.png"><span class="media-filename">Pictures/Recovery/Cable-Cutter-Drawing.png</span></div>
-            <p class="caption">Legacy Cable-Cutter Redesign and Manufacturing Drawing</p>
-            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Cable-Cutters.jpg" data-media-type="image" data-fit="cover" data-alt="Machined Cable-Cutter Hardware Photo" title="Pictures/Recovery/Cable-Cutters.jpg"><span class="media-filename">Pictures/Recovery/Cable-Cutters.jpg</span></div>
-            <p class="caption">Manufactured and Tested Cable Cutters</p>
+            <figure><div class="img-placeholder media-slot" data-media="Pictures/Recovery/Cable-Cutter-Drawing.webp" data-media-type="image" data-fit="contain" data-alt="Argo Catclaw cable-cutter manufacturing drawing" title="Pictures/Recovery/Cable-Cutter-Drawing.webp"><span class="media-filename">Pictures/Recovery/Cable-Cutter-Drawing.webp</span></div><figcaption class="caption">Catclaw body manufacturing drawing</figcaption></figure>
+            <figure><div class="img-placeholder media-slot" data-media="Pictures/Recovery/Cable-Cutter-Assembly.webp" data-media-type="image" data-fit="contain" data-alt="Manufactured Catclaw with zip tie passing through the release slot" title="Pictures/Recovery/Cable-Cutter-Assembly.webp"><span class="media-filename">Pictures/Recovery/Cable-Cutter-Assembly.webp</span></div><figcaption class="caption">Manufactured Catclaw with zip tie in the release slot</figcaption></figure>
+            <figure><div class="img-placeholder media-slot" data-media="Pictures/Recovery/Cable-Cutter-Closeup.webp" data-media-type="image" data-fit="contain" data-alt="Close view of the Catclaw body and piston-retaining slot" title="Pictures/Recovery/Cable-Cutter-Closeup.webp"><span class="media-filename">Pictures/Recovery/Cable-Cutter-Closeup.webp</span></div><figcaption class="caption">Piston-retaining slot and zip-tie path</figcaption></figure>
         </div>
     </section>
 
-    <section class="content-section" id="deployment-hardware">
+    <section class="content-section media-below" id="deployment-hardware">
         <div class="text-block">
             <h2>Testing &amp; Iteration</h2>
             <h3 class="project-subheading">Vacuum Testing &amp; Deployment Iteration</h3>
-            <p style="color: #ccc;">I built and used a 352 L vacuum chamber operating at 0.011 atm to evaluate recovery hardware at reduced pressure. Testing progressed from legacy black-powder glove-tip charges to vinyl-tubing charges based on Jim Jarvis’s method, then to CO₂-canister piercing devices. All three approaches were tested in the vacuum chamber.</p>
-            <p style="color: #ccc;">After months of charge fabrication and individual testing, configurations that worked in isolation still experienced one charge failure in each of two integrated tests. The later test also revealed parachute damage: one vinyl charge penetrated the parachute bag and parachute, and only two of three charges burst properly. A communication breakdown had left a shield absent and a structurally weaker bag in use than in the earlier test. These findings showed that confidence from previous tests did not transfer to the changed configuration and motivated the CO₂ redesign. I used the summer development window and available team capacity to calculate, design, create manufacturing drawings, machine, and test cartridge-piercing hardware with a three-person team.</p>
+            <p style="color: #ccc;">I designed the installed door, adapter, and face seal for the 352 L vacuum chamber and operated component trials with my co-lead. The first CO₂ charge test began at a reported 0.011 atm; chamber design and pressure-measurement context are documented on the vacuum page.</p>
+            <p style="color: #ccc;">One of three deployment charges failed in each of two sea-level black-powder integrated tests; the second also damaged the parachute bag and canopy. These results drove the separate CO₂ nosecone-deployment redesign. The Catclaws remain distinct black-powder-actuated releases.</p>
             <div class="test-evidence" aria-label="Recovery deployment test evidence">
-                <div class="test-evidence-item"><strong>2 tests</strong><span>integrated vinyl-charge configurations, each with one failed charge</span></div>
-                <div class="test-evidence-item"><strong>2 of 3</strong><span>charges burst successfully in the later integrated test</span></div>
-                <div class="test-evidence-item"><strong>Observed damage</strong><span>vinyl charge penetrated both the parachute bag and parachute</span></div>
-                <div class="test-evidence-item"><strong>Design response</strong><span>manufactured CO₂ piercing hardware tested under reduced pressure</span></div>
+                <div class="test-evidence-item"><strong>2 full-system tests</strong><span>black-powder assemblies tested at sea-level atmospheric conditions</span></div>
+                <div class="test-evidence-item"><strong>2 of 3</strong><span>black-powder charges actuated in each of the first two integrated tests</span></div>
+
             </div>
             <h3 class="project-subheading">Test Operations Leadership</h3>
-            <p style="color: #ccc;">I led a series of black-powder separation and recovery test operations, writing standard operating procedures (SOPs), test plans, and safety protocols. I assigned crews, conducted briefings, authorized firing or abort decisions, and directed post-test hardware inspection and review. My project partner handled the pressure-transducer data analysis. I am now organizing the next CO₂ test operation under BURPG’s established test-operation standards. Current testing uses volume placeholders for parachutes and other equipment to avoid exposing the actual hardware during development.</p>
-            <p style="color: #ccc;">CO₂ component hardware has been tested in the vacuum chamber. A fully integrated test of the entire recovery system with the CO₂ configuration remains planned.</p>
+            <p style="color: #ccc;">I wrote the SOP for the summer integrated test, helped lead crew briefings and fire/abort decisions, and inspected the hardware afterward. I am preparing the CO₂ integrated-test SOP. My co-lead designed and programmed the pressure acquisition and analyzed its data.</p>
+            <p><a href="project_co2.html" style="color: #E63946;">See why we redesigned nosecone deployment around CO₂, and how the piercer was sized and tested <svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></p>
             <p><a href="project_vacuum.html" style="color: #E63946;">View the vacuum chamber: design, instrumentation, and testing <svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></p>
         </div>
         <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Vacuum/Chamber.jpg" data-media-type="image" data-fit="cover" data-alt="Vacuum-Chamber Recovery Test Photo" title="Pictures/Vacuum/Chamber.jpg"><span class="media-filename">Pictures/Vacuum/Chamber.jpg</span></div>
-            <p class="caption">Reduced-Pressure Testing Across Deployment Iterations</p>
+            <figure><div class="img-placeholder media-slot" data-media="Pictures/Recovery/Vinyl-Charge-Nosecone-Test-Trimmed.mp4" data-media-type="video" data-fit="contain" data-alt="Slow-motion nosecone firing with a suboptimal vinyl black-powder charge" title="Pictures/Recovery/Vinyl-Charge-Nosecone-Test-Trimmed.mp4"><span class="media-filename">Pictures/Recovery/Vinyl-Charge-Nosecone-Test-Trimmed.mp4</span></div><figcaption class="caption">Slow-motion nosecone firing during the black-powder test that contributed to the CO₂ pivot; the first eight inactive seconds are removed</figcaption></figure>
+            <figure><div class="img-placeholder media-slot" data-media="Pictures/Recovery/Pre-CO2-Coldflow-Setup.webp" data-media-type="image" data-fit="contain" data-alt="Integrated separation and recovery hardware staged before CO₂ cold-flow operations" title="Pictures/Recovery/Pre-CO2-Coldflow-Setup.webp"><span class="media-filename">Pictures/Recovery/Pre-CO2-Coldflow-Setup.webp</span></div><figcaption class="caption">Integrated recovery hardware staged before CO₂ cold-flow operations; this is a pretest photo</figcaption></figure>
         </div>
     </section>
 
     <section class="content-section" id="recovery-line-verification">
         <div class="text-block">
             <h3 class="project-subheading" style="margin-top: 0;">Recovery-Line Verification</h3>
-            <p style="color: #ccc;">I introduced Brummel eye splices as a new recovery-line approach for BURPG, replacing knots and reducing the number of quick-links required in the load path. Published strength-retention comparisons motivated the concept; the published values were not results from my testing.</p>
-            <p style="color: #ccc;">I carried the idea through dynamic testing of the spliced lines, confirming a minimum 1.5 FOS. Fewer quick-links also slightly reduced system mass, although that reduction was not separately quantified. Further test details are limited at the project director’s request.</p>
+            <p style="color: #ccc;">I introduced Brummel eye splices as a new recovery-line approach for BURPG to replace knots and reduce quick-links in the load path. Published strength comparisons motivated the change, but those estimates are not measurements of our line or our workmanship.</p>
+            <p style="color: #ccc;">I selected Brummel eye splices to replace knots and reduce quick-links, then tested whether the non-braided cord termination would slip. The dynamic proof test reached the setup’s capacity at an estimated 1.5 FOS. This establishes the applied proof-load level, not ultimate strength or a measured strength gain over knots. Further setup details are withheld at the project director’s request.</p>
             <div class="test-evidence" aria-label="Recovery-line verification evidence">
-                <div class="test-evidence-item"><strong>≥1.5 FOS</strong><span>confirmed through dynamic testing of the spliced recovery line</span></div>
+                <div class="test-evidence-item"><strong>1.5 FOS</strong><span>estimated dynamic proof-load level; no slip observed in that test</span></div>
                 <div class="test-evidence-item"><strong>Brummel splice</strong><span>replaced knots and reduced quick-links in the load path</span></div>
-                <div class="test-evidence-item"><strong>Details limited</strong><span>additional test conditions withheld at the project director’s request</span></div>
+
             </div>
         </div>
         <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Line-Verification.mp4" data-media-type="video" data-fit="cover" data-alt="Recovery-Line Verification Video" title="Pictures/Recovery/Line-Verification.mp4"><span class="media-filename">Pictures/Recovery/Line-Verification.mp4</span></div>
-            <p class="caption">Dynamic Testing of Spliced Recovery Lines</p>
+            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Splice-Dynamic-Test.mp4" data-media-type="video" data-fit="contain" data-alt="Slow-motion dynamic recovery-line splice test" title="Pictures/Recovery/Splice-Dynamic-Test.mp4"><span class="media-filename">Pictures/Recovery/Splice-Dynamic-Test.mp4</span></div>
+            <p class="caption">Slow-motion dynamic test of the spliced recovery line</p>
         </div>
     </section>
 
     <section class="content-section" id="subscale-flight-testing">
         <div class="text-block">
-            <h3 class="project-subheading" style="margin-top: 0;">Subscale Rocket Retrofit &amp; Flight Testing</h3>
-            <p style="color: #ccc;">My fellow lead and I co-led the retrofit and launch of a subscale solid rocket to test our new separation and recovery architecture.</p>
-            <p style="color: #ccc;">The subscale flight work evaluates the recovery approach intended for Argo: keeping the main parachute packed in the downward freestream during drogue-only descent before releasing it for landing. Argo’s planned drogue deployment at 100,000 ft and main deployment at 2,000 ft above ground are full-scale targets, not the subscale rocket’s test altitudes.</p>
-        </div>
-        <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Subscale-Launch.jpg" data-media-type="image" data-fit="cover" data-alt="Subscale Rocket Retrofit and Launch Photo" title="Pictures/Recovery/Subscale-Launch.jpg"><span class="media-filename">Pictures/Recovery/Subscale-Launch.jpg</span></div>
-            <p class="caption">Subscale Flight Testing of the Recovery Architecture</p>
+            <h3 class="project-subheading" style="margin-top: 0;">Planned Subscale Flight Test</h3>
+            <p style="color: #ccc;">Subscale testing has not started. The planned test will evaluate the recovery approach intended for Argo: keeping the main parachute packed during drogue-only descent before releasing it for landing. Argo’s planned drogue deployment at 100,000 ft and main deployment at 2,000 ft above ground are full-scale targets, not demonstrated subscale results.</p>
         </div>
     </section>
+
+    <section class="content-section" id="recovery-analysis"><div class="text-block"><h2>Recovery Analysis &amp; Verification Basis</h2><p style="color: #ccc; margin-bottom: 24px;">These calculations summarize the recorded design margins. Component and line tests remain distinct from pending CO₂ full-system and flight verification.</p><div class="calculation-details"><details><summary><span>Mass budget and line-strength selection</span></summary><table class="calculation-table"><tbody><tr><th scope="row">Subsystem mass / allocation</th><td>18.7 lbm / 20 lbm</td></tr><tr><th scope="row">Calculated shock / snatch loads</th><td>823 lbf / 1,230 lbf from five published methods</td></tr><tr><th scope="row">Line-rating requirement</th><td>Approximately 2,905–4,938 lbf, depending on termination efficiency</td></tr><tr><th scope="row">Selected nominal line rating</th><td>6,000 lbf</td></tr></tbody></table><p>Nominal line rating is not the assembled termination strength. The dynamic proof test reached an estimated 1.5 FOS at the setup’s capacity, with no slip observed in that test. This does not establish ultimate strength or verify the 2.0 FOS design target.</p></details><details><summary><span>Catclaw redesign and test scope</span></summary><table class="calculation-table"><tbody><tr><th scope="row">Mass reduction</th><td>49.5% versus the previous design</td></tr><tr><th scope="row">Calculated body margin</th><td>2.01 FOS in the recorded analysis</td></tr><tr><th scope="row">Selected-setting test result</th><td>8 successful tie breaks in 8 trials</td></tr><tr><th scope="row">Design change</th><td>Reduced body material and reshaped the slot to retain the piston</td></tr></tbody></table><p>The observed 8/8 result applies to the tested Catclaw configuration and selected setting. It does not establish universal 100% reliability or validate the separate CO₂ deployment mechanism.</p></details></div></div></section>
 
     <footer style="padding: 5rem 10%; background: #000; color: #666; font-size: 0.8rem; border-top: 1px solid #333; margin-top: 50px;">
         <p>ALEXANDER TONG // BU MECHANICAL ENGINEERING // 135-LBM RECOVERY SYSTEM</p>

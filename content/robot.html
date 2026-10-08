@@ -100,6 +100,43 @@
     <style>
         .ui-arrow { display: inline-block; width: 1em; height: 1em; flex-shrink: 0; vertical-align: -.12em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
         .back-link { gap: 8px; }
+        .robot-gallery { width: 100%; min-width: 0; }
+        .robot-gallery .carousel-controls { display: flex; gap: 12px; align-items: center; justify-content: flex-end; margin-bottom: 12px; }
+        .robot-gallery .carousel-controls[hidden] { display: none; }
+        .robot-gallery .carousel-controls button { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; padding: 0; color: #fff; background: #171717; border: 1px solid #555; cursor: pointer; }
+        .robot-gallery .carousel-controls button:hover { color: #E63946; border-color: #E63946; }
+        .robot-gallery .carousel-controls button:focus-visible { outline: 2px solid #E63946; outline-offset: 3px; }
+        .robot-gallery .carousel-status { min-width: 5rem; color: #bbb; font-size: .85rem; text-align: center; }
+        .robot-gallery .carousel-track { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-color: #E63946 #222; }
+        .robot-gallery .media-slide { min-width: 0; margin: 0; scroll-snap-align: start; }
+        .robot-gallery .media-slot { min-height: 280px !important; }
+        .robot-gallery .media-slot > img { width: 100%; height: clamp(270px, 35vw, 430px); max-height: none; object-fit: contain; }
+        .robot-gallery .caption { margin: 10px 0 2px; text-align: left; }
+        .robot-hardware-hero { padding: 24px 10% 36px; background: #111; border-bottom: 1px solid #222; }
+        .robot-hardware-hero .robot-gallery { max-width: 940px; margin: 0 auto; }
+        .robot-hardware-hero .media-slot > img { height: clamp(320px, 50vw, 560px); }
+        .robot-cad-grid, .robot-results-grid { width: 100%; }
+        .robot-cad-grid .media-slot > img, .robot-results-grid .media-slot > img { width: 100%; height: 290px; max-height: none; object-fit: contain; }
+        .robot-diagram-gallery { max-width: 900px; margin: 0 auto; }
+        .robot-diagram-gallery .media-slot > img { height: clamp(320px, 52vw, 570px); }
+        .robot-test-video { width: 100%; display: flex; flex-direction: column; align-items: center; margin-top: 12px; }
+        .robot-test-video .media-slot { width: min(100%, 360px); aspect-ratio: 406 / 720; min-height: 0 !important; padding: 0; }
+        .robot-test-video .media-slot > video { width: 100%; height: 100%; max-height: none; object-fit: contain; }
+        .robot-test-video .caption { margin: 10px 0 0; }
+        @media (max-width: 650px) { .robot-hardware-hero { padding: 20px 6% 30px; } .robot-gallery .media-slot { min-height: 220px !important; } .robot-gallery .media-slot > img { height: 260px; } .robot-cad-grid .media-slot > img, .robot-results-grid .media-slot > img { height: 260px; } }
+    </style>
+    <style>
+        .calculation-details { border-top: 1px solid #333; }
+        .calculation-details details { border-bottom: 1px solid #333; }
+        .calculation-details summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 0; color: #fff; font-weight: 700; cursor: pointer; list-style: none; }
+        .calculation-details summary::-webkit-details-marker { display: none; }
+        .calculation-details summary::after { content: '+'; color: #E63946; font-size: 1.35rem; }
+        .calculation-details details[open] summary::after { content: '−'; }
+        .calculation-details p { color: #ccc; margin: 0 0 18px; }
+        .calculation-table { width: 100%; margin: 0 0 22px; border-collapse: collapse; color: #ccc; font-size: .92rem; }
+        .calculation-table th, .calculation-table td { padding: 11px 12px; border-bottom: 1px solid #292929; text-align: left; vertical-align: top; }
+        .calculation-table th { width: 45%; color: #aaa; font-weight: 400; }
+        @media (max-width: 650px) { .calculation-table, .calculation-table tbody, .calculation-table tr, .calculation-table th, .calculation-table td { display: block; width: 100%; } .calculation-table td { padding-top: 0; } }
     </style>
 </head>
 <body>
@@ -111,61 +148,72 @@
         <a href="index.html#projects" class="back-link"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4M10 6l-6 6 6 6"/></svg> Additional Projects</a>
         <h1>Line-Following <span>Autonomous Vehicle</span></h1>
         <p class="project-meta-line">Lead Engineer · EK 210 · February–May 2025 · Tested prototype</p>
-        <p class="project-overview">A client-commissioned vehicle designed to complete a 12 ft path in under 90 seconds while avoiding obstacles and carrying a 250 g load.</p>
+        <p class="project-overview">Built and programmed a vehicle that carried 250 g through six 12 ft course runs in 70–86 seconds, below the 90-second limit. Recorded component cost: $73.94 against a $200 budget.</p>
     </header>
 
-    <div class="project-hero-media" style="padding: 0 10%; margin-top: -1px;">
-        <div class="img-placeholder media-slot" data-media="Pictures/Robot/Vehicle.jpg" data-media-type="image" data-fit="cover" data-alt="Vehicle Photo or Test Video" title="Pictures/Robot/Vehicle.jpg"><span class="media-filename">Pictures/Robot/Vehicle.jpg</span></div>
+    <div class="project-hero-media robot-hardware-hero">
+        <div class="project-carousel robot-gallery" role="region" aria-roledescription="carousel" aria-label="Built vehicle and hardware details">
+            <div class="carousel-controls" hidden>
+                <button type="button" data-carousel="previous" aria-label="Previous hardware photo" aria-controls="robot-hardware-gallery"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></button>
+                <span class="carousel-status" aria-live="off"></span>
+                <button type="button" data-carousel="next" aria-label="Next hardware photo" aria-controls="robot-hardware-gallery"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+            </div>
+            <div id="robot-hardware-gallery" class="carousel-track">
+                <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Robot/Vehicle.jpg" data-media-type="image" data-fit="contain" data-alt="Completed line-following vehicle with printed shell and wheels" title="Pictures/Robot/Vehicle.jpg"><span class="media-filename">Pictures/Robot/Vehicle.jpg</span></div><figcaption class="caption">Completed vehicle with printed shell and mounted wheels</figcaption></figure>
+                <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Robot/Sensors-And-Drive.jpg" data-media-type="image" data-fit="contain" data-alt="Built motor, wheel mount, obstacle sensor, and underside line sensors" title="Pictures/Robot/Sensors-And-Drive.jpg"><span class="media-filename">Pictures/Robot/Sensors-And-Drive.jpg</span></div><figcaption class="caption">Built drivetrain and front/underside IR sensors</figcaption></figure>
+                <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Robot/Remote-IR.jpg" data-media-type="image" data-fit="contain" data-alt="Soldered remote-control IR receiver beside the vehicle chassis" title="Pictures/Robot/Remote-IR.jpg"><span class="media-filename">Pictures/Robot/Remote-IR.jpg</span></div><figcaption class="caption">Soldered remote-control IR receiver</figcaption></figure>
+            </div>
+        </div>
     </div>
 
-    <section class="content-section">
+    <section class="content-section media-below">
         <div class="text-block">
             <h2>Contribution &amp; Results</h2>
-            <p style="color: #ccc;">As lead engineer, I led a four-person team through the design, prototyping, calibration, and performance testing of an autonomous line-following vehicle for EK 210. I performed all wiring and programming. The final vehicle carried a 250 g payload through six successful course trials, with completion times of 70–86 seconds and a mean of 78.5 seconds.</p>
+            <p style="color: #ccc;">I led a four-person team and personally designed the PLA chassis and acrylic motor mounts, assembled and wired the vehicle, programmed its Arduino control, calibrated the sensors, and ran the course tests and analysis.</p>
 
             <h2 style="margin-top: 40px;">Systems Engineering</h2>
-            <p style="color: #ccc;">I interviewed the client to define objectives, trade-offs, and feedback, then translated those needs into two design reviews and a final technical report. I managed the development timeline with a Gantt chart, coordinated system integration, and directed iterative prototyping and calibration within a $200 budget.</p>
+            <p style="color: #ccc;">I translated client interviews into requirements, two design reviews, and a final report; managed integration against a Gantt schedule; and delivered the prototype for $73.94 in components against a $200 budget.</p>
             <ul>
                 <li><strong>Sensor Architecture:</strong> Programmed one Arduino Uno to read three HiLetgo IR sensors, two for line following and one for obstacle detection. An IR remote and TSOP38238 receiver provided touchless activation. Two L298 drivers controlled four 6 V DC motors using differential steering.</li>
                 <li><strong>Measured Performance:</strong> Recorded zero errors across 60 obstacle-detection trials covering white, black, and cardboard targets, with 20 trials per target type. Separate distance tests showed 100% detection at 10 cm for flat targets, but 50% for angled/chamfered targets.</li>
                 <li><strong>Manufacturing:</strong> Designed a PLA chassis and laser-cut acrylic motor mounts, using Wago connectors for tool-free wiring connections.</li>
             </ul>
-        </div>
-        <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Robot/Wiring.png" data-media-type="image" data-fit="contain" data-alt="Sensor and power-system wiring architecture" title="Pictures/Robot/Wiring.png"><span class="media-filename">Pictures/Robot/Wiring.png</span></div>
-            <p class="caption">IR Sensor, Motor-Control, and Power-System Architecture</p>
+            <p style="margin-top: 20px;"><a href="/Reports/EK210-Final-Report.pdf" target="_blank" rel="noopener noreferrer" style="color: #E63946;">Read the EK 210 final report (PDF)</a></p>
         </div>
     </section>
 
-    <section class="content-section" id="architecture">
+    <section class="content-section media-below" id="architecture">
         <div class="text-block">
-            <h2>Drivetrain Iteration</h2>
-            <p style="color: #ccc;">The initial vehicle used two Arduino Unos, 28BYJ-48 stepper motors, and ULN2003 drivers. Speed and torque under load drove the switch to DC motors. The final vehicle used one Arduino Uno, two L298 drivers, and four 6 V DC motors.</p>
-            <h2 style="margin-top: 32px;">Testing &amp; Calibration</h2>
-            <p style="color: #ccc;">All six course trials completed successfully. After obstacle-sensor adjustment, the last four trials recorded stopping distances of 10–13 cm. The first two trials stopped closer than the 10 cm objective, making calibration an important part of the iteration.</p>
+            <h2>Vehicle Design &amp; Drivetrain Iteration</h2>
+            <p style="color: #ccc;">I designed the 3D-printed chassis and laser-cut motor mounts around the payload, sensor positions, electronics, and wheel clearance. The front carries the obstacle sensor, with line sensors mounted underneath; the rear provides the power switch and remote-control IR receiver.</p>
+            <p style="color: #ccc;">The first prototype used two Arduino Unos with 28BYJ-48 steppers and ULN2003 drivers. I measured motor speed and torque under load, then switched to the final DC-motor architecture described above.</p>
+        </div>
+        <div class="image-block robot-cad-grid">
+            <figure><div class="img-placeholder media-slot" data-media="Pictures/Robot/Front-CAD.jpg" data-media-type="image" data-fit="contain" data-alt="Front CAD view of the final vehicle showing obstacle sensing hardware" title="Pictures/Robot/Front-CAD.jpg"><span class="media-filename">Pictures/Robot/Front-CAD.jpg</span></div><figcaption class="caption">Front CAD: obstacle sensor and underside line-sensor placement</figcaption></figure>
+            <figure><div class="img-placeholder media-slot" data-media="Pictures/Robot/Chassis.png" data-media-type="image" data-fit="contain" data-alt="Open CAD view of the vehicle chassis and internal electronics" title="Pictures/Robot/Chassis.png"><span class="media-filename">Pictures/Robot/Chassis.png</span></div><figcaption class="caption">Internal layout: chassis, sensors, electronics, and motors</figcaption></figure>
+            <figure><div class="img-placeholder media-slot" data-media="Pictures/Robot/Rear-CAD.jpg" data-media-type="image" data-fit="contain" data-alt="Rear CAD view showing the power switch and IR remote receiver" title="Pictures/Robot/Rear-CAD.jpg"><span class="media-filename">Pictures/Robot/Rear-CAD.jpg</span></div><figcaption class="caption">Rear view: power switch and remote-control IR receiver</figcaption></figure>
+        </div>
+    </section>
+
+    <section class="content-section media-below" id="testing">
+        <div class="text-block">
+            <h2>Testing &amp; Calibration</h2>
+            <p style="color: #ccc;">After obstacle-sensor adjustment, stopping distances changed from 4–9 cm in the first two course trials to 10–13 cm in the final four. The measured distances are reported below; target shape remained a limitation.</p>
             <p style="color: #ccc;">Line-sensor testing recorded 100% accuracy at 0.5, 1.0, and 1.5 cm, and 95% at 2.0 cm, across 20 trials per distance. Obstacle performance depended on distance and target geometry; it was not universally 100% at 10 cm.</p>
             <p style="color: #ccc;">Power testing covered one hour of idle operation after two course runs, with power remaining. This test did not establish one hour of continuous driving.</p>
         </div>
-        <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Robot/Chassis.png" data-media-type="image" data-fit="contain" data-alt="Chassis CAD or assembly photo" title="Pictures/Robot/Chassis.png"><span class="media-filename">Pictures/Robot/Chassis.png</span></div>
-            <p class="caption">Autonomous Vehicle Chassis</p>
-            <div class="img-placeholder media-slot" data-media="Pictures/Robot/Course-Test.jpg" data-media-type="image" data-fit="cover" data-alt="Course-test photo or results plot" title="Pictures/Robot/Course-Test.jpg"><span class="media-filename">Pictures/Robot/Course-Test.jpg</span></div>
-            <p class="caption">Line-Following and Obstacle-Avoidance Validation</p>
+        <div class="image-block robot-results-grid">
+            <figure><div class="img-placeholder media-slot" data-media="Pictures/Robot/Course-Time.png" data-media-type="image" data-fit="contain" data-alt="Six measured course completion times, all under 90 seconds" title="Pictures/Robot/Course-Time.png"><span class="media-filename">Pictures/Robot/Course-Time.png</span></div><figcaption class="caption">Six course completions under the 90-second requirement</figcaption></figure>
+            <figure><div class="img-placeholder media-slot" data-media="Pictures/Robot/Course-Test.jpg" data-media-type="image" data-fit="contain" data-alt="Measured obstacle stopping distance during six course traversals" title="Pictures/Robot/Course-Test.jpg"><span class="media-filename">Pictures/Robot/Course-Test.jpg</span></div><figcaption class="caption">Obstacle stopping distance across six traversals</figcaption></figure>
+            <figure><div class="img-placeholder media-slot" data-media="Pictures/Robot/Battery-Test.png" data-media-type="image" data-fit="contain" data-alt="Battery voltage during one hour of idle operation after two course traversals" title="Pictures/Robot/Battery-Test.png"><span class="media-filename">Pictures/Robot/Battery-Test.png</span></div><figcaption class="caption">Battery voltage during idle operation after two traversals</figcaption></figure>
+        </div>
+        <div class="robot-test-video">
+            <div class="img-placeholder media-slot" data-media="Pictures/Robot/Course-Run.mp4" data-media-type="video" data-poster="Pictures/Robot/Course-Run-Poster.jpg" data-fit="contain" data-alt="Final autonomous vehicle completing the line-following course" title="Pictures/Robot/Course-Run.mp4"><span class="media-filename">Pictures/Robot/Course-Run.mp4</span></div>
+            <p class="caption">Final course traversal · silent video · approximately 77 seconds</p>
         </div>
     </section>
 
-    <section class="content-section" style="border-bottom: none;">
-        <div class="text-block">
-            <h2>Design Constraints</h2>
-            <p style="color: #ccc;"><strong>Objective:</strong> Deliver a reliable, low-cost autonomous vehicle that could follow a client-defined path, avoid obstacles, and carry its required payload without exceeding the time limit.</p>
-            <ul>
-                <li><strong>Course Length:</strong> 12 ft</li>
-                <li><strong>Time Limit:</strong> Under 90 seconds</li>
-                <li><strong>Payload:</strong> 250 g</li>
-                <li><strong>Recorded Component Cost:</strong> $73.94 of a $200 budget</li>
-            </ul>
-        </div>
-    </section>
+    <section class="content-section" id="vehicle-calculations"><div class="text-block"><h2>Recorded Test Results</h2><p style="color: #ccc; margin-bottom: 24px;">Recorded trials from the final report. The confirmed course-time requirement is 90 seconds.</p><div class="calculation-details"><details><summary><span>Course completion</span></summary><table class="calculation-table"><tbody><tr><th scope="row">Six recorded course times</th><td>77, 79, 85, 70, 74, 86 seconds</td></tr><tr><th scope="row">Mean course time</th><td>78.5 seconds</td></tr><tr><th scope="row">Slowest-run margin</th><td>4 seconds below the 90-second limit</td></tr></tbody></table><p>Source: final report Table 4. Six successful trials demonstrate the tested course and payload configuration; they do not establish a general reliability rate.</p></details><details><summary><span>Calibration evidence</span></summary><table class="calculation-table"><tbody><tr><th scope="row">Line sensing</th><td>20 trials per distance: 100% at 0.5, 1.0, and 1.5 cm; 95% at 2.0 cm</td></tr><tr><th scope="row">Final four course trials</th><td>Obstacle 1: 11, 10, 10, 11 cm; obstacle 2: 10, 13, 12, 10 cm</td></tr><tr><th scope="row">Mean stopping distance after adjustment</th><td>Approximately 10.9 cm across those eight encounters</td></tr></tbody></table><p>Recorded course distances support the effect of sensor calibration. Separate target-shape tests still showed weaker detection for angled targets, so this average is not a universal minimum clearance. Source: final report Table 6 and recorded sensor tests.</p></details></div></div></section>
 
     <footer style="padding: 5rem 10%; background: #000; color: #666; font-size: 0.8rem; border-top: 1px solid #333; margin-top: 50px;"><p>ALEXANDER TONG // BU MECHANICAL ENGINEERING // AUTONOMOUS VEHICLE</p></footer>
 </body>

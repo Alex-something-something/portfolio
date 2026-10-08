@@ -98,7 +98,9 @@
         window.addEventListener('blur', release);
         if (!isProjectPage) region.addEventListener('wheel', () => pause(true), { passive: true });
         region.addEventListener('keydown', () => pause(true));
-        if (!isProjectPage) region.addEventListener('click', () => pause());
+        region.addEventListener('click', (event) => {
+            if (!isProjectPage || event.target.closest('.is-zoomable')) pause();
+        });
         region.addEventListener('focusin', () => pause());
         track.addEventListener('scroll', () => {
             label();

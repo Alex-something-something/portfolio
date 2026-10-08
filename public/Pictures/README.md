@@ -4,9 +4,9 @@
 
 1. Put your file in the folder listed below, inside `public/Pictures`, with the exact filename and extension.
 2. Refresh the page. Use Ctrl + F5 if a replaced image remains cached.
-3. Missing media stays hidden. The image or video appears automatically once the matching file loads.
+3. Missing media remains visible as an exact-filename placeholder. The placeholder is replaced automatically once the matching file loads.
 
-Use real JPG, PNG and MP4 files matching the extensions. Renaming an extension does not convert the file. Match capitalization for future web hosting. Photos on cards are cropped to fit; PNG diagrams and detail-page images show the whole image. Videos use playback controls and do not autoplay.
+Use real JPG, PNG and MP4 files matching the extensions. Renaming an extension does not convert the file. Match capitalization for future web hosting. Photos on cards are cropped to fit; PNG diagrams and detail-page images show the whole image. Videos start muted when enough of the video is visible and retain playback controls.
 
 The headshot already exists. The same file can appear on a homepage card and its project page, so it only needs to be supplied once. The animated Argo blueprint and hero launch are drawn in code; they do not need picture files.
 
@@ -24,10 +24,17 @@ To change a slot later, edit its `data-media` path and `data-alt` description in
 
 | Exact filename | Used on | Image/video |
 | --- | --- | --- |
-| Aircraft.jpg | index.html, dbf.html | Wing design image |
-| Prototype-1.png | dbf.html | Prototype 1 Wing CAD or Photo |
-| Design-Review.png | dbf.html | Trade Study or Design Review Graphic |
-| Prototype-2.png | dbf.html | Prototype 2 Wing CAD or Drawing |
+| Prototype-1-Assembled.webp | index.html, dbf.html | Fully assembled Prototype 1 aircraft |
+| Aircraft.jpg | dbf.html | Prototype 1 aircraft assembly CAD |
+| Hot-Wire-Method.webp | dbf.html | Hot-wire cutting approach and airfoil templates |
+| Prototype-1.png | dbf.html | Initial wing one-pager |
+| Design-Review.png | dbf.html | Final design-review center-section CAD |
+| Design-Review-Spar.png | dbf.html | Final design-review spar CAD |
+| Design-Review-Servo.png | dbf.html | Final design-review servo-box CAD |
+| Wing-Halves.jpg | dbf.html | Manufactured XPS wing halves |
+| Wing-Fabrication.jpg | dbf.html | Prototype 1 wing assembly photo |
+| Wing-Workbench.jpg | dbf.html | Wide wing-fabrication workbench photo |
+| Prototype-2.png | dbf.html | Proposed Prototype 2 wing one-pager |
 | Fiberglass-Layup.jpg | dbf.html | Fiberglass Layup Process Photo |
 | Completed-Layup.jpg | dbf.html | Completed Fiberglass Layup Photo |
 
@@ -46,8 +53,11 @@ To change a slot later, edit its `data-media` path and `data-alt` description in
 
 | Exact filename | Used on | Image/video |
 | --- | --- | --- |
-| Assembly.png | index.html, project_co2.html | CO₂ deployment hardware image |
-| Machined-Parts.jpg | project_co2.html | Machined CO₂ Deployment Hardware Photo |
+| Manufactured-Piercer-Card.webp | index.html | Centered CO₂ hardware thumbnail |
+| Manufactured-Piercer.webp | project_co2.html | Manufactured CO₂ cartridge-piercing hardware |
+| Piercer-Cross-Section-Vertical.webp | project_co2.html | Vertical piercer section with the CO₂ cartridge upward |
+| First-Vacuum-Charge-Pressure.webp | project_co2.html, project_vacuum.html | First CO₂ charge pressure trace; co-lead instrumentation and analysis |
+| ../Recovery/Vinyl-Charge-Nosecone-Test-Trimmed.mp4 | project_co2.html | Slow-motion black-powder deployment video used as failure context |
 
 ### Pictures/ME360
 
@@ -59,14 +69,16 @@ To change a slot later, edit its `data-media` path and `data-alt` description in
 
 | Exact filename | Used on | Image/video |
 | --- | --- | --- |
-| Hammer.jpg | index.html, manufacturing.html | Machining image |
+| Hammer.jpg | index.html, manufacturing.html | Machinist’s hammer made for BURPG MIP |
 
 ### Pictures/Nozzle
 
 | Exact filename | Used on | Image/video |
 | --- | --- | --- |
-| Isometric.png | index.html, project_nozzle.html | Nozzle CAD image |
+| Hotfire-Thumbnail.webp | index.html | Still frame from the nozzle hotfire video |
+| Isometric.png | project_nozzle.html | Nozzle CAD image |
 | Hotfire.mp4 | project_nozzle.html | Hotfire Test Slow Motion Video/GIF |
+| Printed-Nozzle.jpg | project_nozzle.html | Fully resin-printed nozzle before hotfire |
 | Mounting-Cross-Section.png | project_nozzle.html | Nozzle and mounting-adapter cross-section |
 | Drawing.png | project_nozzle.html | SolidWorks Drawing |
 | Rao-Angle-Reference.png | project_nozzle.html | Parabolic-nozzle angle reference chart |
@@ -91,29 +103,46 @@ To change a slot later, edit its `data-media` path and `data-alt` description in
 | Camera-Stand.jpg | plummer.html | Camera-Mount or Lab Buildout Photo |
 | Lab-Fixtures.jpg | plummer.html | Laboratory Layout or Fixture Photo |
 
+### Pictures/Culturon
+
+| Exact filename | Used on | Image/video |
+| --- | --- | --- |
+| Published-Reactor-Schematic.png | culturon.html | Unmodified published analogue of a plasma-polymer nanoparticle reactor; not proprietary Culturon hardware |
+
 ### Pictures/Recovery
 
 | Exact filename | Used on | Image/video |
 | --- | --- | --- |
-| Assembly.png | index.html, project_recovery.html | Recovery system image |
-| Subscale-Test.mp4 | project_recovery.html | Hero Image/GIF of Subscale Testing |
-| Lines-Diagram.png | project_recovery.html | Lines Diagram |
+| SepRec-CAD.webp | project_recovery.html | Nosecone assembly with hoist rings and CO₂ charges |
+| SepRec-Top-Down.webp | index.html, project_recovery.html | Top-down packaging view with nosecone hidden |
+| Vinyl-Charge-Nosecone-Test-Trimmed.mp4 | project_recovery.html | Slow-motion nosecone test with first eight seconds removed |
+| Lines-Diagram.png | Source image retained for future editing | Full-resolution lines diagram |
+| Lines-Diagram-Web.webp | project_recovery.html | Web-optimized System Architecture &amp; Lines Diagram |
 | Connections.png | project_recovery.html | Simplified Connection Diagram |
-| Hardware-Assembly.jpg | project_recovery.html | Recovery Hardware Assembly Photo |
-| Cable-Cutter-Drawing.png | project_recovery.html | Cable-Cutter Engineering Drawing |
-| Cable-Cutters.jpg | project_recovery.html | Machined Cable-Cutter Hardware Photo |
-| Line-Verification.mp4 | project_recovery.html | Recovery-Line Verification Video |
-| Subscale-Launch.jpg | project_recovery.html | Subscale Rocket Retrofit and Launch Photo |
-| Packing-Plan.png | project_recovery.html | Detailed Packing Plan / Nosecone Diagram |
+| CDR-BP-Packing-Plan.webp | project_recovery.html | Earlier black-powder nosecone packing plan |
+| Main-Parachute-Diagram.webp | project_recovery.html | Earlier main-parachute bag and line diagram |
+| Pre-CO2-Coldflow-Setup.webp | project_recovery.html | Integrated hardware staged before CO₂ cold-flow operation |
+| Cable-Cutter-Drawing.webp | project_recovery.html | Catclaw cable-cutter engineering drawing |
+| Cable-Cutter-Assembly.webp | project_recovery.html | Manufactured Catclaw with zip tie in release slot |
+| Cable-Cutter-Closeup.webp | project_recovery.html | Machined body and cord-path detail |
+| Splice-Dynamic-Test.mp4 | project_recovery.html | Slow-motion dynamic recovery-line splice test |
 
 ### Pictures/Robot
 
 | Exact filename | Used on | Image/video |
 | --- | --- | --- |
-| Vehicle.jpg | index.html, robot.html | Vehicle image |
-| Chassis.png | robot.html | Chassis CAD or Assembly Photo |
-| Course-Test.jpg | robot.html | Course-Test Photo or Results Plot |
-| Wiring.png | robot.html | Sensor Layout or Wiring Diagram |
+| Vehicle.jpg | index.html, robot.html | Completed line-following car photograph |
+| Front-CAD.jpg | robot.html | Front CAD view of the final vehicle |
+| Chassis.png | robot.html | Internal chassis and electronics CAD |
+| Rear-CAD.jpg | robot.html | Rear CAD showing switch and IR receiver |
+| Sensors-And-Drive.jpg | robot.html | Motor, wheel, and IR sensor assembly |
+| Remote-IR.jpg | robot.html | Soldered remote-control IR receiver |
+| Course-Time.png | robot.html | Six course completion times |
+| Course-Test.jpg | robot.html | Obstacle stopping distances |
+| Battery-Test.png | robot.html | Battery voltage after two traversals |
+| Wiring.png | robot.html | Final electrical wiring diagram |
+| Course-Run.mp4 | robot.html | Silent course traversal video |
+| Course-Run-Poster.jpg | robot.html | Video poster frame |
 
 ### Pictures/VEGAS
 
@@ -125,14 +154,18 @@ To change a slot later, edit its `data-media` path and `data-alt` description in
 
 | Exact filename | Used on | Image/video |
 | --- | --- | --- |
-| Chamber.jpg | index.html, project_recovery.html, project_vacuum.html | Vacuum chamber image |
-| Pressure-Data.png | project_vacuum.html | Pressure-transducer output, analyzed by project partner |
+| Port-Valve-Side.webp | index.html, project_vacuum.html | Full chamber, port and valve side |
+| Port-Detail.webp | project_vacuum.html | Port, gauge, and valve detail |
+| Door-Removed.webp | project_vacuum.html | Door detached with black-powder residue visible |
+| Door-Clamped.webp | project_vacuum.html | Door installed with mounting clamps |
+| Chamber-Full.webp | project_vacuum.html | Full chamber from door side |
+| ../CO2/First-Vacuum-Charge-Pressure.webp | project_vacuum.html | First CO₂ charge pressure trace; co-lead instrumentation and analysis |
 | Door-CAD.png | project_vacuum.html | Vacuum-chamber door and tube-adapter CAD |
-| Door-FEA.png | project_vacuum.html | Door finite-element model and stress result |
+| Door calculation accordions | project_vacuum.html | Analytical plate sizing and seal review; no door FEA |
 
 ## Pages using code-drawn visuals
 
-Culturon and Plummer include sanitized, code-drawn engineering diagrams that require no image files. APPT and COSSMo currently have text-only layouts. ME 360 has a homepage image slot; its detail page remains a course placeholder.
+Culturon includes a published reference schematic plus NDA-safe code-drawn elevation and rack diagrams; Plummer includes sanitized code-drawn diagrams. APPT and COSSMo currently have text-only layouts. ME 360 has a homepage image slot; its detail page remains a course placeholder.
 
 ## Accessibility
 

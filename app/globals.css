@@ -105,11 +105,104 @@ nav ul li a:hover {
 .card h3, .card p { padding: 0 20px; }
 .card p { font-size: 0.85rem; color: #999; margin-top: 10px; }
 
-/* CAD renders, plots, drawings, and screenshots blend into a clean white media canvas. */
+/* Show loaded images on the page background instead of a gray mat. Missing
+   media retains its separate filename placeholder styling below. */
 .card-img.media-slot.has-image-media,
 .img-placeholder.media-slot.has-image-media,
 .gallery-img.media-slot.has-image-media {
-    background: #fff !important;
+    background: transparent !important;
+}
+
+.media-slot[data-fit="contain"].has-image-media > img {
+    filter: none;
+}
+
+/* Preserve the published CC BY-NC-ND reference figure exactly as supplied. */
+.published-reference-media.has-image-media > img {
+    filter: none;
+}
+
+.portfolio-detail .media-slot.is-zoomable,
+.portfolio-detail .engineering-visual.is-zoomable {
+    cursor: zoom-in;
+}
+.portfolio-detail .media-slot.is-zoomable:focus-visible,
+.portfolio-detail .engineering-visual.is-zoomable:focus-visible {
+    outline: 2px solid #E63946;
+    outline-offset: 4px;
+}
+.portfolio-detail .media-slot.is-zoomable::after,
+.portfolio-detail .engineering-visual.is-zoomable::after {
+    content: "View larger";
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    padding: 6px 10px;
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 4px;
+    background: rgba(0,0,0,.78);
+    color: #fff;
+    font-size: .75rem;
+    font-weight: 700;
+    pointer-events: none;
+}
+.portfolio-detail .engineering-visual.is-zoomable { position: relative; }
+
+.media-lightbox {
+    box-sizing: border-box;
+    width: min(96vw, 1400px);
+    max-width: 96vw;
+    max-height: 96vh;
+    max-height: 96dvh;
+    padding: 14px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background: #0b0b0b;
+    color: #fff;
+    overflow: auto;
+}
+.media-lightbox::backdrop { background: rgba(0,0,0,.9); }
+.media-lightbox-actions {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding-bottom: 10px;
+    background: #0b0b0b;
+}
+.media-lightbox-actions button {
+    padding: 7px 12px;
+    border: 1px solid #666;
+    border-radius: 4px;
+    background: #1b1b1b;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+}
+.media-lightbox-actions button:hover,
+.media-lightbox-actions button:focus-visible { border-color: #E63946; }
+.media-lightbox img {
+    display: block;
+    width: 100%;
+    max-height: calc(96vh - 110px);
+    max-height: calc(96dvh - 110px);
+    margin: 0 auto;
+    object-fit: contain;
+}
+.media-lightbox.is-diagram img { background: #fff; }
+.media-lightbox.is-zoomed img {
+    width: auto;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+}
+.media-lightbox-caption {
+    margin: 8px 0 0;
+    color: #bbb;
+    font-size: .85rem;
+    text-align: center;
 }
 
 /* =========================================
@@ -278,7 +371,7 @@ nav ul li a:hover {
     padding: 18px;
     border: 1px solid #333;
     border-radius: 10px;
-    background: #f5f5f2;
+    background: #fff;
     color: #161616;
 }
 
@@ -342,10 +435,53 @@ nav ul li a:hover {
     line-height: 1.6;
 }
 
-/* Media filenames remain useful in source and README files, but unresolved
-   assets never appear as public-facing placeholder boxes. */
+/* Keep unresolved media visible as exact-filename placeholders. Do not hide a
+   media slot or its carousel/image-block ancestor when a file is missing: that
+   can remove whole project sections and collapse the adjacent text column. */
+.media-slot {
+    position: relative;
+    overflow: hidden;
+}
+
+.media-slot .media-filename {
+    display: block;
+    padding: 16px;
+    color: #aaa;
+    font-size: .8rem;
+    line-height: 1.6;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.media-slot.has-media > .media-filename {
+    display: none;
+}
+
+.media-slot > img,
+.media-slot > video {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 560px;
+    object-fit: contain;
+}
+
+.img-placeholder.media-slot.has-media {
+    padding: 0;
+    border-style: solid;
+}
+
+.architecture-hero .media-slot > img {
+    max-height: 720px;
+}
+
+.architecture-hero .caption {
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
 .media-slot[data-media] {
-    display: none !important;
+    display: flex !important;
 }
 
 .media-slot[data-media].has-media {
@@ -353,11 +489,90 @@ nav ul li a:hover {
 }
 
 .media-slot[data-media] + .caption {
-    display: none !important;
+    display: block !important;
 }
 
 .media-slot[data-media].has-media + .caption {
     display: block !important;
+}
+
+.media-slot[data-media].is-loading,
+.media-slot[data-media].is-missing {
+    border-style: dashed;
+    border-color: #555;
+    background:
+        linear-gradient(135deg, rgba(230, 57, 70, .06), transparent 46%),
+        #171717;
+}
+
+.media-slot[data-media].is-missing .media-filename::before {
+    content: "MEDIA PLACEHOLDER  /  ";
+    color: #E63946;
+    font-weight: 700;
+}
+
+/* Give narrative copy more room beside media on desktop. The more specific
+   selector intentionally overrides the legacy one-to-one flex rule embedded
+   in the preserved HTML pages. */
+.content-section > .text-block {
+    flex: 1.35 1 520px !important;
+}
+
+.content-section > .image-block {
+    flex: .85 1 340px !important;
+    max-width: 520px;
+}
+
+.content-section > .image-block:only-child {
+    flex-basis: 100% !important;
+    max-width: none;
+}
+
+/* Sections with several visuals place them after the narrative instead of
+   stretching a narrow right column far below its accompanying text. */
+.content-section.media-below > .text-block {
+    flex: 1 1 100% !important;
+    max-width: none;
+}
+.content-section.media-below > .image-block {
+    flex: 1 1 100% !important;
+    max-width: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 24px;
+    align-items: start;
+}
+.content-section.media-below > .image-block figure {
+    min-width: 0;
+    margin: 0;
+}
+.content-section.media-below > .image-block figure .caption {
+    margin: 10px 0 0;
+    text-align: left;
+}
+
+/* Detailed sanitized diagrams need enough width for labels to remain legible. */
+.content-section.full-width-visual-section {
+    display: block;
+}
+
+.content-section.full-width-visual-section > .text-block,
+.content-section.full-width-visual-section > .image-block {
+    width: 100%;
+    max-width: none;
+}
+
+.content-section.full-width-visual-section > .image-block {
+    max-width: 760px;
+    margin: 30px auto 0;
+}
+
+@media (max-width: 1000px) {
+    .content-section > .text-block,
+    .content-section > .image-block {
+        flex: 1 1 100% !important;
+        max-width: none;
+    }
 }
 .project-brief {
     margin: 0 10%;

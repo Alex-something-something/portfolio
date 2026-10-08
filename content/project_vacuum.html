@@ -15,7 +15,7 @@
         }
         .project-header h1 { font-size: 3rem; margin-bottom: 15px; }
         .project-header h1 span { color: #E63946; }
-        
+
         .content-section {
             padding: 50px 10%;
             display: flex;
@@ -27,7 +27,7 @@
         .text-block h2 { color: #E63946; margin-bottom: 20px; font-size: 1.8rem; }
         .text-block ul { margin-left: 20px; margin-top: 15px; }
         .text-block li { margin-bottom: 10px; color: #ccc; }
-        
+
         .image-block {
             flex: 1;
             min-width: 300px;
@@ -51,6 +51,19 @@
             background-position: center;
         }
         .caption { font-size: 0.8rem; color: #888; text-align: center; margin-top: -10px; }
+        .vacuum-gallery { width: 100%; min-width: 0; }
+        .vacuum-gallery .carousel-controls { display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-bottom: 12px; }
+        .vacuum-gallery .carousel-controls[hidden] { display: none; }
+        .vacuum-gallery .carousel-controls button { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; padding: 0; background: #171717; color: #fff; border: 1px solid #555; cursor: pointer; }
+        .vacuum-gallery .carousel-controls button:hover { color: #E63946; border-color: #E63946; }
+        .vacuum-gallery .carousel-controls button:focus-visible { outline: 2px solid #E63946; outline-offset: 3px; }
+        .vacuum-gallery .carousel-status { min-width: 5rem; color: #bbb; font-size: .85rem; text-align: center; }
+        .vacuum-gallery .carousel-track { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-color: #E63946 #222; }
+        .vacuum-gallery .media-slide { min-width: 0; margin: 0; scroll-snap-align: start; }
+        .vacuum-gallery .media-slot { min-height: 260px !important; }
+        .vacuum-gallery .media-slot > img { width: 100%; height: clamp(280px, 36vw, 470px); max-height: none; object-fit: contain; }
+        .vacuum-gallery .caption { margin: 10px 0 2px; text-align: left; }
+        @media (max-width: 650px) { .vacuum-gallery .media-slot { min-height: 220px !important; } .vacuum-gallery .media-slot > img { height: 270px; } }
     </style>
 
     <style>
@@ -133,6 +146,22 @@
     <style>
         .ui-arrow { display: inline-block; width: 1em; height: 1em; flex-shrink: 0; vertical-align: -.12em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
         .back-link { gap: 8px; }
+        .door-calculation-section { display: block; }
+        .door-calculation-section > .text-block { max-width: 100%; }
+        .door-calculation-details { border-top: 1px solid #333; margin-top: 22px; }
+        .door-calculation-details details { border-bottom: 1px solid #333; }
+        .door-calculation-details summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 0; color: #fff; font-weight: 700; cursor: pointer; list-style: none; }
+        .door-calculation-details summary::-webkit-details-marker { display: none; }
+        .door-calculation-details summary::after { content: '+'; color: #E63946; font-size: 1.35rem; font-weight: 400; }
+        .door-calculation-details details[open] summary::after { content: '−'; }
+        .door-calculation-table { width: 100%; margin: 0 0 22px; border-collapse: collapse; color: #ccc; font-size: .92rem; }
+        .door-calculation-table th, .door-calculation-table td { padding: 11px 12px; border-bottom: 1px solid #292929; text-align: left; vertical-align: top; }
+        .door-calculation-table th { width: 45%; color: #aaa; font-weight: 400; }
+        @media (max-width: 650px) {
+            .door-calculation-table, .door-calculation-table tbody, .door-calculation-table tr, .door-calculation-table th, .door-calculation-table td { display: block; width: 100%; }
+            .door-calculation-table tr { padding: 10px 0; border-bottom: 1px solid #292929; }
+            .door-calculation-table th, .door-calculation-table td { padding: 3px 0; border: 0; }
+        }
     </style>
 </head>
 <body>
@@ -140,92 +169,102 @@
     <header class="project-header">
         <a href="index.html#ground-systems" class="back-link"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4M10 6l-6 6 6 6"/></svg> Ground Systems &amp; Testing</a>
         <h1>Vacuum <span>Test Chamber</span></h1>
-        <p class="project-meta-line">Chamber Design &amp; Testing · BURPG · Operational test infrastructure · Upgrade in design</p>
-        <p class="project-overview">Built and operated reduced-pressure recovery-test infrastructure, then designed a structurally analyzed door, adapter, and face-seal upgrade.</p>
+        <p class="project-meta-line">Chamber Design &amp; Testing · BURPG · Operational at 0.011 atm</p>
+        <p class="project-overview">Delivered the installed door, tube adapter, and face seal for a working 352 L recovery-test chamber operated at a reported 0.011 atm. Sized the 6061-T6 door for a 1,663 lbf full-atmospheric load with a calculated 2.12 FOS against yield.</p>
     </header>
     <div class="project-metrics" aria-label="Vacuum chamber capabilities at a glance">
-        <div class="project-metric"><strong>352 L</strong><span>square-cross-section chamber volume</span></div>
+        <div class="project-metric"><strong>352 L</strong><span>chamber volume</span></div>
         <div class="project-metric"><strong>0.011 atm</strong><span>demonstrated operating pressure</span></div>
         <div class="project-metric"><strong>1,663 lbf</strong><span>full-atmospheric door design load</span></div>
-        <div class="project-metric"><strong>2.72 FOS</strong><span>analytical door-bending margin</span></div>
+        <div class="project-metric"><strong>2.12 FOS</strong><span>analytical door-bending margin</span></div>
     </div>
-    <section class="content-section">
+    <section class="content-section media-below">
         <div class="text-block">
             <h2>Purpose &amp; Contribution</h2>
-            <p style="color: #ccc;">I developed a custom vacuum test chamber to support evaluation of sealed separation charges and flight-computer behavior at reduced pressure. The chamber provides ground-test infrastructure for BURPG’s recovery system.</p>
-            <h2 style="margin-top: 40px;">Chamber Design &amp; Instrumentation</h2>
+            <p style="color: #ccc;">The chamber let the recovery team compare deployment components under reduced pressure before system-level sea-level tests.</p>
+            <h2 style="margin-top: 40px;">Chamber Design &amp; Test Operations</h2>
             <ul>
-                <li><strong>Vacuum Chamber Validation:</strong> Developed a 352 L test vacuum chamber operating at 0.011 atm to evaluate sealed separation charges and avionics at reduced pressure for a rocket targeting 100,000 ft. Designed a size 381 square-cross-section face seal using the Parker O-Ring Handbook.</li>
-                <li><strong>Pump Architecture:</strong> Used a Robinair 15310 3 CFM pump for faster initial roughing and an Alcatel 2008A for slower evacuation to a deeper vacuum. This describes their observed behavior in our setup: the Alcatel reached a lower final absolute pressure.</li>
-                <li><strong>Pressure Measurements:</strong> Integrated a pressure transducer into reduced-pressure BP charge tests. My project partner performed the resulting pressure-data analysis.</li>
-                <li><strong>DAQ &amp; Signal Conditioning:</strong> Built and used the LabJack acquisition hardware with a pressure transducer and two-amplifier signal conditioning. A physical gauge provided a secondary indication, not an independent redundant measurement path.</li>
-                <li><strong>Resourceful Fabrication:</strong> Reused pumps and other equipment found in the lab, along with available stock for the adapter and door assembly.</li>
+                <li><strong>Completed Chamber &amp; Seal:</strong> Developed a 352 L test vacuum chamber operating at 0.011 atm to evaluate sealed separation charges and avionics at reduced pressure for a rocket targeting 100,000 ft. Designed the door, tube adapter, and size 381 square-cross-section face seal using the Parker O-Ring Handbook. My co-lead fabricated the door and adapter and designed the mounting clamps.</li>
+                <li><strong>Pump Architecture:</strong> Used a Robinair 15310 3 CFM pump for faster initial roughing and an Alcatel 2008A medium-vacuum pump for slower evacuation to a deeper vacuum. This staged procedure now reaches the test condition in approximately 30 minutes. The behavior described here is what I observed in our setup: the Alcatel reached a lower final absolute pressure.</li>
+                <li><strong>Test operations:</strong> Initiated test ideas, operated the chamber with my co-lead, and iterated the plumbing and evacuation procedure. Integrated-test leadership is documented on the recovery page.</li>
+                <li><strong>Pressure measurement:</strong> My co-lead designed the instrumentation, wrote the acquisition script, and recorded and analyzed the data.</li>
+                <li><strong>Material Reuse:</strong> Reused pumps and other equipment found in the lab, along with available stock for the adapter and door assembly.</li>
             </ul>
             <p style="margin-top: 24px;"><a href="project_recovery.html" style="color: #E63946;">View the separation and recovery system <svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></p>
         </div>
         <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Vacuum/Chamber.jpg" data-media-type="image" data-fit="cover" data-alt="BP Vacuum Testing Photo" title="Pictures/Vacuum/Chamber.jpg"><span class="media-filename">Pictures/Vacuum/Chamber.jpg</span></div>
-            <p class="caption">Custom 352 L Vacuum Chamber at 0.011 atm</p>
+            <div class="project-carousel vacuum-gallery" role="region" aria-roledescription="carousel" aria-label="Vacuum chamber hardware and test setup">
+                <div class="carousel-controls" hidden>
+                    <button type="button" data-carousel="previous" aria-label="Previous chamber view" aria-controls="vacuum-hardware-gallery"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></button>
+                    <span class="carousel-status" aria-live="off"></span>
+                    <button type="button" data-carousel="next" aria-label="Next chamber view" aria-controls="vacuum-hardware-gallery"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+                </div>
+                <div id="vacuum-hardware-gallery" class="carousel-track">
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Vacuum/Port-Valve-Side.webp" data-media-type="image" data-fit="contain" data-alt="Full vacuum chamber" title="Pictures/Vacuum/Port-Valve-Side.webp"><span class="media-filename">Pictures/Vacuum/Port-Valve-Side.webp</span></div><figcaption class="caption">Full vacuum chamber</figcaption></figure>
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Vacuum/Door-Clamped.webp" data-media-type="image" data-fit="contain" data-alt="Port, gauge, and valve detail" title="Pictures/Vacuum/Door-Clamped.webp"><span class="media-filename">Pictures/Vacuum/Door-Clamped.webp</span></div><figcaption class="caption">Port, gauge, and valve detail</figcaption></figure>
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Vacuum/Door-Removed.webp" data-media-type="image" data-fit="contain" data-alt="Vacuum chamber with door detached and visible black-powder test residue" title="Pictures/Vacuum/Door-Removed.webp"><span class="media-filename">Pictures/Vacuum/Door-Removed.webp</span></div><figcaption class="caption">Door removed; black-powder test residue visible on its inner face</figcaption></figure>
+                    <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Vacuum/Chamber-Full.webp" data-media-type="image" data-fit="contain" data-alt="Door installed with mounting clamps" title="Pictures/Vacuum/Chamber-Full.webp"><span class="media-filename">Pictures/Vacuum/Chamber-Full.webp</span></div><figcaption class="caption">Door installed with mounting clamps</figcaption></figure>
+                </div>
+            </div>
 
-            <div class="img-placeholder media-slot" data-media="Pictures/Vacuum/Pressure-Data.png" data-media-type="image" data-fit="contain" data-alt="Pressure-transducer output analyzed by project partner" title="Pictures/Vacuum/Pressure-Data.png"><span class="media-filename">Pictures/Vacuum/Pressure-Data.png</span></div>
-            <p class="caption">Pressure-Transducer Output · Data Analysis by Project Partner</p>
+            <figure><div class="img-placeholder media-slot" data-media="Pictures/CO2/First-Vacuum-Charge-Pressure.webp" data-media-type="image" data-fit="contain" data-alt="Pressure trace from the first CO₂ charge test in the chamber at an initial pressure of 0.011 atm" title="Pictures/CO2/First-Vacuum-Charge-Pressure.webp"><span class="media-filename">Pictures/CO2/First-Vacuum-Charge-Pressure.webp</span></div><figcaption class="caption">First CO₂ charge test at 0.011 atm initial pressure, reported starting condition · instrumentation and analysis by my co-lead</figcaption></figure>
         </div>
     </section>
     <section class="content-section" id="vacuum-upgrades">
         <div class="text-block">
-            <h2>Vacuum Chamber Upgrades</h2>
-            <p style="color: #ccc;">I developed an upgraded door, tube adapter, and face-seal concept around a full atmospheric pressure differential. The calculation set screened flexible plate options, sized the selected aluminum door, checked local adapter failure modes, and established an initial O-ring gland geometry before CAD and FEA review.</p>
-
-            <div class="test-evidence two-column-evidence" aria-label="Vacuum chamber upgrade design calculations">
-                <div class="test-evidence-item"><strong>14.7 psi</strong><span>full atmospheric differential used for the door design case</span></div>
-                <div class="test-evidence-item"><strong>12.0 in</strong><span>unsupported circular diameter in the plate model</span></div>
-                <div class="test-evidence-item"><strong>16.5 ksi</strong><span>calculated bending stress in the selected 0.25 in 6061 door</span></div>
-                <div class="test-evidence-item"><strong>0.0848 in</strong><span>calculated maximum door deflection</span></div>
-            </div>
-
-            <h3 class="project-subheading">Roark Large-Deflection Screening</h3>
-            <p style="color: #ccc;">I used large-deflection circular-plate relationships from Roark’s formulas to compare candidate door materials and thicknesses. These values are analytical screening results, rather than measured performance or FEA output. The predicted deflections made the thinner acrylic and sheet-steel alternatives poor fits for a rigid, repeatable chamber door.</p>
-            <div class="engineering-table-wrap">
-                <table class="engineering-table">
-                    <thead>
-                        <tr><th>Candidate</th><th>Thickness</th><th>Center stress</th><th>Maximum deflection</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Acrylic</td><td>0.250 in</td><td>1,588 psi</td><td>4.120 in</td></tr>
-                        <tr><td>Acrylic</td><td>0.375 in</td><td>1,212 psi</td><td>3.364 in</td></tr>
-                        <tr><td>Acrylic</td><td>0.500 in</td><td>1,000 psi</td><td>2.913 in</td></tr>
-                        <tr><td>Acrylic</td><td>0.750 in</td><td>763 psi</td><td>2.379 in</td></tr>
-                        <tr><td>16-gauge steel</td><td>0.0625 in</td><td>4,357 psi</td><td>1.091 in</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3 class="project-subheading">Selected Door, Adapter &amp; Seal Checks</h3>
-            <ul>
-                <li><strong>6061 Aluminum Door:</strong> Selected a 0.25 in plate with 45 ksi yield strength. The analytical model predicts 16.5 ksi bending stress, 2.72 FOS, 0.0848 in maximum deflection, and a 3.65 lbm door mass.</li>
-                <li><strong>Tube Adapter:</strong> Applied a 1,627 lbf atmospheric load across the 11.87 in chamber opening. The adapter checks returned 5.26 FOS against punching shear and 2.66 FOS against pull-through; the lug and bearing modes were non-governing.</li>
-                <li><strong>Size 381 Face Seal:</strong> The initial square-cross-section O-ring gland targets 19.2% squeeze and 0.50% stretch using a 0.164 in gland depth, 0.244 in radial groove width, and ±0.004 in machining tolerance.</li>
-            </ul>
-            <p class="engineering-note"><strong>Open design item:</strong> The initial gland-fill calculation is 102.1%, so the groove geometry requires revision or verification before machining. The seal dimensions shown here are an in-progress design, not released hardware.</p>
-            <p style="margin-top: 16px; color: #888; font-size: .82rem;">Calculation source: Argo Separation and Recovery workbook, “Vacuum Chamber Upgrades.” Values shown are engineering calculations and are not presented as measured chamber performance.</p>
+            <h2>Installed Door, Adapter &amp; Seal</h2>
+            <p style="color: #ccc;">I designed the installed 0.25 in 6061-T6 door using Roark circular-plate calculations for a full-atmospheric differential. The recorded calculation gives 2.12 FOS against yield. My co-lead fabricated the door and adapter and designed the clamps.</p>
+            <p style="color: #ccc;">I also sized the tube adapter and size 381 face seal. An initial O-ring groove exceeded the gland-fill target; the groove was corrected before the hardware was fabricated and installed. The assembled chamber operates as intended.</p>
         </div>
         <div class="image-block">
             <div class="img-placeholder media-slot" data-media="Pictures/Vacuum/Door-CAD.png" data-media-type="image" data-fit="contain" data-alt="CAD model of the vacuum chamber door and tube adapter" title="Pictures/Vacuum/Door-CAD.png"><span class="media-filename">Pictures/Vacuum/Door-CAD.png</span></div>
-            <p class="caption">Vacuum-Chamber Door and Tube-Adapter CAD</p>
+            <p class="caption">CAD of the installed 6061-T6 door and tube adapter</p>
 
-            <div class="img-placeholder media-slot" data-media="Pictures/Vacuum/Door-FEA.png" data-media-type="image" data-fit="contain" data-alt="Vacuum chamber door finite-element model and stress result" title="Pictures/Vacuum/Door-FEA.png"><span class="media-filename">Pictures/Vacuum/Door-FEA.png</span></div>
-            <p class="caption">Door FEA Model and Stress Review</p>
+        </div>
+    </section>
+    <section class="content-section door-calculation-section" id="door-calculation-basis">
+        <div class="text-block">
+            <h2>Door Calculation Basis</h2>
+            <p style="color: #ccc;">Hand calculations for sizing the door; these values are predictions for the modeled plate and pressure condition, not measured results.</p>
+            <div class="door-calculation-details">
+                <details open>
+                    <summary>Pressure load and selected plate</summary>
+                    <table class="door-calculation-table"><tbody>
+                        <tr><th>Design pressure differential</th><td>14.7 psi (full-atmospheric case)</td></tr>
+                        <tr><th>Unsupported diameter</th><td>12 in</td></tr>
+                        <tr><th>Loaded circular area</th><td>113.1 in² (π × 6² in²)</td></tr>
+                        <tr><th>Total door load</th><td>1,663 lbf (pressure × area)</td></tr>
+                        <tr><th>Selected door</th><td>0.25 in 6061-T6 aluminum plate</td></tr>
+                    </tbody></table>
+                </details>
+                <details>
+                    <summary>Roark plate results</summary>
+                    <table class="door-calculation-table"><tbody>
+                        <tr><th>Recorded peak bending stress</th><td>16.5 ksi (approximately 114 MPa)</td></tr>
+                        <tr><th>Predicted maximum deflection</th><td>0.0848 in</td></tr>
+                        <tr><th>Material yield strength used</th><td>240 MPa (approximately 34.8 ksi), selected from the BlueScope 6061-T6 data sheet; not a measured stock property</td></tr>
+                        <tr><th>Calculated minimum factor of safety</th><td>2.12 against yield, using the corrected material strength; displayed stress values are rounded</td></tr>
+                        <tr><th>Verification status</th><td>Uniform pressure on a circular plate supported around its outer circumference. Fixed-edge restraint is the recalled assumption; the exact Roark case is not confirmed. No measured door deflection or door FEA is available.</td></tr>
+                    </tbody></table>
+                    <p><a href="https://www.bluescopedistribution.com.au/products/aluminium/aluminium-6061-data-sheet/" target="_blank" rel="noopener noreferrer" style="color: #E63946;">Material source: BlueScope Distribution, Aluminium 6061 data sheet</a>. The sheet covers extruded products; 240 MPa is the selected design input, not certification of the installed plate. The predicted 0.0848 in deflection is about one-third of plate thickness; the selected plate-model assumptions need to be checked for that deflection.</p>
+                </details>
+                <details>
+                    <summary>Installed seal and groove revision</summary>
+                    <table class="door-calculation-table"><tbody>
+                        <tr><th>Installed seal</th><td>Size 381 face seal at the door and tube adapter</td></tr>
+                        <tr><th>Groove revision</th><td>Initial gland fill exceeded the target; the groove was corrected before fabrication</td></tr>
+                    </tbody></table>
+                </details>
+            </div>
         </div>
     </section>
     <section class="content-section">
         <div class="text-block">
-            <h2>Deployment Test Progression</h2>
-            <p style="color: #ccc;">I built and used the chamber to test three successive deployment approaches: legacy black-powder glove-tip charges, vinyl-tubing charges based on Jim Jarvis’s method, and CO₂-canister piercing devices. All three were tested at reduced pressure in this chamber.</p>
-            <h2 style="margin-top: 32px;">Completed Tests &amp; Planned Integration</h2>
-            <p style="color: #ccc;">The chamber supported completed sealed-charge firings, pressure-transducer data collection, flight-computer tests, and fully integrated separation and recovery tests using the previous vinyl-charge configuration. My project partner performed the pressure-data analysis.</p>
-            <p style="color: #ccc;">Integrated testing revealed reliability issues that informed the transition to CO₂-cartridge deployment. The <a href="project_co2.html" style="color: #E63946;">CO₂ deployment hardware</a> has been tested in the vacuum chamber and is being refined ahead of a planned, fully integrated test of the entire recovery system in the chamber.</p>
-            <h2 style="margin-top: 32px;">Measurement Limitations</h2>
-            <p style="color: #ccc;">The physical gauge and pressure transducer rarely agreed within 0.5 inHg. I treat them as separate indications with an unresolved discrepancy, rather than claiming that one validated the accuracy of the other.</p>
+            <h2>Deployment Test Progression &amp; Measurement Limits</h2>
+            <p style="color: #ccc;">I operated dozens of characterization and component trials spanning legacy black-powder charges and CO₂ piercers. These chamber trials evaluated pressure response and reduced-pressure operation; the integrated deployment tests were conducted separately at sea level.</p>
+            <p style="color: #ccc;">I also operated flight-computer checks and CO₂ component tests while iterating plumbing and gauge configurations.</p>
+            <p style="color: #ccc;"><a href="project_recovery.html" style="color: #E63946;">Integrated deployment results and test leadership</a> are documented on the recovery page; the <a href="project_co2.html" style="color: #E63946;">CO₂ page</a> covers the piercer sizing and pending system test.</p>
+            <p style="color: #ccc;">The physical gauge and pressure transducer rarely agreed within 0.5 inHg. The stated 0.011 atm starting condition and the trace near 0.18 psi are approximate indications with an unresolved measurement discrepancy; the instrument reference and any offset correction must be established before interpreting the pressure as a precise altitude equivalent.</p>
         </div>
     </section>
     <footer style="padding: 5rem 10%; background: #000; color: #666; font-size: .8rem; border-top: 1px solid #333; margin-top: 50px;">ALEXANDER TONG // BU MECHANICAL ENGINEERING // VACUUM TEST CHAMBER</footer>

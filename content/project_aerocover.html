@@ -101,54 +101,222 @@
         .ui-arrow { display: inline-block; width: 1em; height: 1em; flex-shrink: 0; vertical-align: -.12em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
         .back-link { gap: 8px; }
     </style>
-</head>
+    <style>
+        .project_aerocover .text-block p { color: #ccc; }
+        .project_aerocover figure { margin: 0; min-width: 0; }
+        .project_aerocover figure > .caption { margin: 12px 0 0 !important; }
+        .aerocover-concepts article { min-width: 0; }
+        .aerocover-concepts h3 { margin: 0 0 12px; color: #fff; font-size: 1.15rem; }
+        .aerocover-concepts article > p { color: #ccc; margin-bottom: 20px; }
+        .aerocover-concepts figure + figure { margin-top: 24px !important; }
+        .aerocover-calcs { margin: 20px 0; border-top: 1px solid #333; border-bottom: 1px solid #333; padding: 16px 0; }
+        .aerocover-calcs summary { cursor: pointer; color: #eee; font-weight: 700; }
+        .aerocover-calcs p { margin-top: 16px; }
+
+        .aerocover-concepts .concept-credit { color: #aaa; font-size: .82rem; line-height: 1.5; }
+        .aerocover-philosophy > .image-block { display: block !important; }
+        .aerocover-philosophy figure { max-width: 1100px; margin: 0 auto !important; }
+        .calculation-details { border-top: 1px solid #333; margin: 24px 0; }
+        .calculation-details details { border-bottom: 1px solid #333; padding-bottom: 0; }
+        .calculation-details summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 0; color: #fff; font-weight: 700; cursor: pointer; list-style: none; }
+        .calculation-details summary::-webkit-details-marker { display: none; }
+        .calculation-details summary::after { content: '+'; color: #E63946; font-size: 1.35rem; }
+        .calculation-details details[open] { padding-bottom: 22px; }
+        .calculation-details details[open] summary::after { content: '−'; }
+        .calculation-table { width: 100%; margin: 16px 0 22px; border-collapse: collapse; color: #ccc; font-size: .92rem; }
+        .calculation-table th, .calculation-table td { padding: 11px 12px; border-bottom: 1px solid #292929; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+        .calculation-table th { width: 45%; color: #aaa; font-weight: 400; }
+        .calc-equation { padding: 12px 0; font-family: Georgia, serif; font-size: 1.1rem; line-height: 1.8; overflow-wrap: anywhere; }
+        .nosecone-reference { max-width: 760px; margin: 24px auto 0 !important; }
+        .nosecone-results th { width: auto; }
+        .calc-source { font-size: .85rem; color: #aaa; }
+        .aerocover-source { color: #999 !important; font-size: .85rem; margin-top: 28px !important; }
+    </style>
+<style>
+ .pending-cfd-evidence { border-block: 1px solid #333; padding: 16px 0; }
+ .pending-cfd-evidence summary { cursor: pointer; color: #fff; font-weight: 700; min-height: 44px; }
+ .pending-cfd-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+ @media(max-width:650px) {
+ .pending-cfd-grid { grid-template-columns: minmax(0,1fr); }
+ .nosecone-results, .nosecone-results tbody, .nosecone-results tr, .nosecone-results th, .nosecone-results td { display:block; width:100%; }
+ .nosecone-results thead { display:none; }
+ .nosecone-results tr { padding:12px 0; border-bottom:1px solid #333; }
+ .nosecone-results td { border:0; padding:5px 0; overflow-wrap:normal; }
+ .nosecone-results td::before { content:attr(data-label); display:block; color:#aaa; font-size:.8rem; }
+ .nosecone-results tbody th { padding:5px 0 10px; border:0; font-weight:700; color:#fff; overflow-wrap:normal; }
+ }
+</style></head>
 <body>
     <nav><div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">ALEXANDER TONG <span>// MECHE</span></a></div></nav>
     <header class="project-header">
         <a href="index.html#flight-hardware" class="back-link"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4M10 6l-6 6 6 6"/></svg> Flight Hardware</a>
         <h1>Aerodynamic <span>Downcomer Fairing</span></h1>
         <p class="project-meta-line">Project Lead · BURPG · In progress</p>
-        <p class="project-overview">Leading aerodynamic and composite development of a fairing that protects Argo’s external downcomer and wiring while reducing drag.</p>
-        <p class="project-status-line">Current status: hands-on Ansys CFD and adjoint optimization underway; directing a team member's comparative SolidWorks Flow Simulation study; heated static-load testing in development</p>
+        <p class="project-overview">Defined the 63 in × 1.6 in fairing envelope, led three concept studies and the CoDR, and calculated preliminary drag and thermal screening inputs. The Icarus backup-candidate simulation in Ansys CFD is converged and under review.</p>
+        <p class="project-status-line">Icarus Ansys CFD converged and under review</p>
     </header>
-    <div class="project-hero-media" style="padding: 0 10%; margin-top: -1px;"><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Assembly.png" data-media-type="image" data-fit="contain" data-alt="Argo aerodynamic downcomer fairing assembly CAD" title="Pictures/Aerocover/Assembly.png"><span class="media-filename">Pictures/Aerocover/Assembly.png</span></div></div>
     <section class="content-section">
         <div class="text-block">
-            <h2>Project Scope &amp; Leadership</h2>
-            <p style="color: #ccc;">I lead BURPG’s development of an aerodynamic downcomer fairing for Argo. The fairing encloses the external propellant downcomer and adjacent wiring to reduce drag and protect the routed hardware from the flight environment.</p>
-            <p style="color: #ccc; margin-top: 16px;">I use set-based design to compare multiple candidate leading-edge, midsection, and boattail profiles against the previous Icarus fairing before final selection. Selection criteria include aerodynamic performance, downcomer and wiring clearance, bolted attachment behavior, composite manufacturability, surface finish, and cost.</p>
-            <h2 style="margin-top: 40px;">Current Status</h2>
-            <p style="color: #ccc;">I am developing the current flow model in Ansys CFD and continuing adjoint CFD work to refine the fairing geometry within packaging, mounting, and manufacturing constraints. I am also directing a team member's independent SolidWorks Flow Simulation study and will review the two models for consistency in predicted flow behavior and aerodynamic loads.</p>
-            <p style="color: #ccc;">The September 2026 conceptual design review established the candidate geometries and manufacturing approaches. CFD comparison, geometry optimization, composite testing, and final design selection remain in progress, so the page does not yet claim final aerodynamic or structural performance.</p>
-        </div>
-        <div class="image-block">
-            <div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Profile-Comparison.png" data-media-type="image" data-fit="contain" data-alt="Candidate Profile Comparison" title="Pictures/Aerocover/Profile-Comparison.png"><span class="media-filename">Pictures/Aerocover/Profile-Comparison.png</span></div>
-            <p class="caption">Leading Edge, Midsection, and Boattail Concepts</p>
-            <div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Baseline-Comparison.png" data-media-type="image" data-fit="contain" data-alt="Icarus Baseline and Argo Concept" title="Pictures/Aerocover/Baseline-Comparison.png"><span class="media-filename">Pictures/Aerocover/Baseline-Comparison.png</span></div>
-            <p class="caption">Baseline Comparison: Design in Progress</p>
-        </div>
-    </section>
-    <section class="content-section">
-        <div class="text-block">
-            <h2>Aerodynamic Analysis &amp; Validation</h2>
+            <h2>My Role: Define the Trade, Then Narrow It</h2>
+            <p>I lead development of Argo’s external downcomer fairing, setting the shared requirements and analysis plan. I developed preliminary Icarus baseline calculations, screened aerodynamic and thermal loads, investigated mounting and manufacturing options, and led the September 3, 2026 conceptual design review.</p>
+            <p>I coordinated three concept studies against shared vehicle constraints. Quinn Colleran, Hannah Ruan, and Aaron Lin own the individual concept geometries credited below; I developed the common analysis, integration, and manufacturing trade.</p>
             <ul>
-                <li><strong>CAD &amp; Integration:</strong> Model candidate fairing profiles and their interfaces with Argo while preserving clearance for the downcomer, wiring, fasteners, and surrounding vehicle structure.</li>
-                <li><strong>Solver Comparison:</strong> Develop the current model in Ansys CFD, direct a team member's SolidWorks Flow Simulation study at Mach 2, 2.5, and 2.81, and review the results for consistency before using them for design decisions.</li>
-                <li><strong>Adjoint CFD:</strong> Continue geometry optimization while constraining the resulting profile to physically packageable and manufacturable shapes.</li>
-                <li><strong>Structural Analysis:</strong> Transfer aerodynamic loading from the validated flow model into structural evaluation of the fairing and its bolted interfaces.</li>
-                <li><strong>Vehicle Performance:</strong> Evaluate the effect of fairing drag on the Argo trajectory using OpenRocket.</li>
+                <li><strong>Packaging:</strong> 63 in fairing length and a nominal 1.6 in height around the downcomer on an 8 in outer-diameter rocket, with space for external wiring. Final clearance awaits the fluids team’s released geometry.</li>
+                <li><strong>Flight environment:</strong> CoDR design point of approximately 28.75 psi maximum dynamic pressure; compare candidates through Mach 2.0–2.81.</li>
+                <li><strong>Selection criteria:</strong> Integrated drag, thermal and structural survival, attachment integrity, mold cost, dimensional control, and surface finish.</li>
             </ul>
         </div>
+        <div class="image-block"><figure><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Icarus-Built-Cover.webp" data-media-type="image" data-fit="contain" data-alt="Previously manufactured Icarus carbon-fiber fairing"><span class="media-filename">Previously manufactured Icarus carbon-fiber fairing</span></div><figcaption class="caption">Previously manufactured Icarus fairing — the baseline for my Argo trade study; legacy BURPG hardware.</figcaption></figure></div>
     </section>
-    <section class="content-section" style="border-bottom: none;">
+    <section class="content-section media-below aerocover-philosophy">
         <div class="text-block">
-            <h2>Composite Manufacturing &amp; Thermal-Mechanical Testing</h2>
-            <p style="color: #ccc;">The current manufacturing study considers carbon-fiber wet layup over 3D-printed or machined foam molds, with attention to curvature, surface finish, dimensional control, material cost, and the aerodynamic effects of protruding fasteners.</p>
-            <p style="color: #ccc; margin-top: 16px;">I am designing a representative curved carbon-fiber test article with a bolted interface to evaluate whether the laminate locally dimples or sinks around the fasteners. The article will be held under a sustained static load while temperature is increased, creating a deliberately conservative combined thermal-mechanical test of the attachment region.</p>
-            <p style="color: #ccc; margin-top: 16px;">The test is intended to establish a conservative allowable temperature under load and observe structural behavior as the epoxy approaches softening. It is not presented as a direct material-property measurement, and no test results are claimed yet.</p>
-            <p style="color: #888; font-size: .85rem; margin-top: 30px;">Project context: Aerocover Design Doc and Argo Aerocover CoDR, September 3, 2026. Candidate concepts and analysis plans are preliminary.</p>
+            <h2>Design Philosophy: Leading Edge, Midsection, Boattail</h2>
+            <p>I organized the team’s first-principles study around three regions, allowing us to compare leading profiles, midsection cross-sections, and aft tapers independently before combining promising features. We also considered complete body profiles, whose geometry is defined from front to back rather than assembled from separate regions.</p>
+            <p><strong>What the diagram means:</strong> it identifies the drag mechanisms each region initially brings into focus. The “dominates” labels are a teaching simplification, not a quantified allocation of the fairing’s drag.</p>
+            <ul>
+                <li><strong>Leading edge:</strong> Focus on wave/pressure drag, with length, blunting, heating, and fabrication considered together.</li>
+                <li><strong>Midsection:</strong> Focus on wetted area and skin friction while maintaining downcomer/wiring clearance and a smooth rocket-body junction.</li>
+                <li><strong>Boattail:</strong> Balance the smaller base/wake against pressure forces on the taper and separation risk. Expansion changes the pressure distribution; it is not an additional independent drag term to add twice.</li>
+            </ul>
+            <p><strong>Full revolution ≠ mounted fairing:</strong> an optimum isolated axisymmetric body does not necessarily remain optimal when only part of that shape is joined to the rocket. Body-junction flow, the upstream boundary layer, attachment details, and nearby fins couple the regions. Published profiles establish candidates; integrated CFD must establish their ranking.</p>
         </div>
-        <div class="image-block"><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Carbon-Fiber-Thermal-Load-Test.jpg" data-media-type="image" data-fit="contain" data-alt="Curved carbon-fiber test article and heated static-load setup" title="Pictures/Aerocover/Carbon-Fiber-Thermal-Load-Test.jpg"><span class="media-filename">Pictures/Aerocover/Carbon-Fiber-Thermal-Load-Test.jpg</span></div><p class="caption">Curved Carbon-Fiber Test Article and Heated Static-Load Setup: In Development</p></div>
+        <div class="image-block">
+            <figure><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/First-Principles-Regions.webp" data-media-type="image" data-fit="contain" data-alt="Alexander Tong’s simplified leading-edge, midsection, and trailing-edge drag diagram"><span class="media-filename">First-principles design regions</span></div><figcaption class="caption">My CoDR teaching diagram, using the Icarus profile to organize the first-principles discussion. Pressure and skin-friction forces act across the entire fairing; the region boundaries are not independent aerodynamic systems.</figcaption></figure>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="text-block">
+            <h2>Why Optimize Around Mach 2–2.81?</h2>
+            <p>I used the trajectory to prioritize the flight conditions where a drag improvement is most consequential. Drag follows <span class="calc-inline">D = q S<sub>ref</sub> C<sub>D</sub></span>, with <span class="calc-inline">q = ½ρV²</span>: time at a Mach number alone does not describe its contribution to aerodynamic loading.</p>
+
+            <p>The trajectory motivated comparison at Mach 2.0, 2.5, and 2.81 near the high-dynamic-pressure supersonic interval. Other regimes remain in the trade; their drag contribution depends on both dynamic pressure and the changing drag coefficient.</p>
+
+        </div>
+        <div class="image-block"><figure><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/CoDR-Flight-Profile.webp" data-media-type="image" data-fit="contain" data-alt="CoDR trajectory showing altitude, dynamic pressure, and Mach number"><span class="media-filename">CoDR trajectory and optimization conditions</span></div><figcaption class="caption">Trajectory used to choose analysis conditions. The peak in dynamic pressure motivates the Mach 2–2.81 focus; these are simulation inputs, not flight measurements.</figcaption></figure></div>
+    </section>
+    <section class="content-section media-below">
+        <div class="text-block">
+            <h2>Three Parallel Concept Studies</h2>
+            <p>Each designer proposed a complete aerodynamic concept. I coordinated their comparison against shared constraints; none is presented as the selected or validated final fairing.</p>
+        </div>
+        <div class="image-block aerocover-concepts">
+            <article><h3>0.66 Power-Series Leading Edge</h3><p class="concept-credit">Concept study: Quinn Colleran</p><p>0.66 power-series leading edge, constant semicircular midsection with a body fillet, and a nominal 10° conical boattail. The study balances wave drag, wetted area, and the limited aft envelope.</p><figure><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Quinn-Concept.webp" data-media-type="image" data-fit="contain" data-alt="Fairing illustration from Quinn Colleran’s concept study"><span class="media-filename">Fairing illustration from Quinn Colleran’s concept study</span></div><figcaption class="caption">Quinn’s concept study — overall geometry.</figcaption></figure></article>
+            <article><h3>Von Kármán Leading Edge</h3><p class="concept-credit">Concept study: Hannah Ruan</p><p>Von Kármán (L-D Haack) leading profile, constant-radius midsection, and a shallow aft taper of approximately 6°. The study uses published supersonic profile comparisons as its starting point.</p><figure><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Hannah-Leading-Profile.webp" data-media-type="image" data-fit="contain" data-alt="Leading-profile reference illustration used in Hannah Ruan’s concept study"><span class="media-filename">Leading-profile reference illustration used in Hannah Ruan’s concept study</span></div><figcaption class="caption">Leading-profile reference from Hannah’s study; an illustration of the proposed profile family.</figcaption></figure><figure><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Hannah-Aft-Profile.webp" data-media-type="image" data-fit="contain" data-alt="Aft-profile illustration from Hannah Ruan’s study"><span class="media-filename">Aft-profile illustration from Hannah Ruan’s study</span></div><figcaption class="caption">Aft-profile illustration from Hannah’s study.</figcaption></figure></article>
+            <article><h3>0.75 Power-Series Leading Edge</h3><p class="concept-credit">Concept study: Aaron Lin</p><p>0.75 power-series leading edge, constant midsection with a widened, filleted body junction, and a nominal 10° aft chamfer. The study considers attachment area and gradual transitions alongside drag.</p><figure><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Aaron-Body-Junction.webp" data-media-type="image" data-fit="contain" data-alt="Aaron Lin’s concept CAD showing the leading edge and rocket-body junction"><span class="media-filename">Aaron Lin’s concept CAD showing the leading edge and rocket-body junction</span></div><figcaption class="caption">Aaron’s concept CAD — leading edge and body junction.</figcaption></figure><figure><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Aaron-Boattail.webp" data-media-type="image" data-fit="contain" data-alt="Aaron Lin’s concept CAD showing the aft transition"><span class="media-filename">Aaron Lin’s concept CAD showing the aft transition</span></div><figcaption class="caption">Aaron’s concept CAD — aft transition.</figcaption></figure></article>
+        </div>
+    </section>
+    <section class="content-section media-below">
+        <div class="text-block">
+            <h2>Baseline Characterization &amp; CFD</h2>
+            <p>My Icarus review identified protruding fasteners, uneven surface finish, abrupt transitions, and an aft profile worth revisiting. I consulted the previous builder to connect these observations to practical issues in layup, vacuum consolidation, and wiring integration.</p>
+            <p>My hand calculations provide a screening baseline, followed by CFD of the actual mounted geometry. The dropdowns retain the inputs, equations, and assumptions so their limits are reviewable.</p>
+            <div class="calculation-details">
+                <details><summary><span>Baseline geometry &amp; flow inputs</span></summary>
+                    <table class="calculation-table"><tbody>
+                        <tr><th scope="row">Mach number / specific-heat ratio</th><td>2.81 / γ = 1.4</td></tr>
+                        <tr><th scope="row">Reynolds number</th><td>2.04 × 10⁸, as recorded in the CoDR</td></tr>
+                        <tr><th scope="row">Wetted area, S<sub>wet</sub></th><td>477 in²</td></tr>
+                        <tr><th scope="row">Projected reference area, S<sub>ref</sub></th><td>7.99 in²</td></tr>
+                        <tr><th scope="row">Area ratio</th><td>S<sub>wet</sub> / S<sub>ref</sub> ≈ 59.70</td></tr>
+                        <tr><th scope="row">Leading-profile surrogate</th><td>Full cone with 15° half-angle; Icarus itself has a wedge-like front.</td></tr>
+                    </tbody></table>
+                    <p>The recorded Reynolds number is retained as an input. The length and atmospheric-property basis should accompany the next model comparison. These coefficients use the cover reference area, not the full rocket’s frontal area.</p>
+                </details>
+                <details><summary><span>Skin-friction estimate — C<sub>D,f</sub> ≈ 0.0792</span></summary>
+                    <p class="calc-equation">√C<sub>f,0</sub> log₁₀(Re C<sub>f,0</sub>) = 0.242</p>
+                    <p class="calc-equation">C<sub>f</sub> = C<sub>f,0</sub> / [1 + (γ − 1)M² / 2]<sup>0.467</sup></p>
+                    <p class="calc-equation">C<sub>D,f</sub> = 1.10 C<sub>f</sub> S<sub>wet</sub> / S<sub>ref</sub></p>
+                    <table class="calculation-table"><tbody>
+                        <tr><th scope="row">Incompressible turbulent C<sub>f,0</sub></th><td>≈ 0.001879</td></tr>
+                        <tr><th scope="row">Compressibility factor</th><td>≈ 0.6424</td></tr>
+                        <tr><th scope="row">Smooth compressible C<sub>f</sub></th><td>≈ 0.001207</td></tr>
+                        <tr><th scope="row">Smooth friction-drag contribution</th><td>≈ 0.07205</td></tr>
+                        <tr><th scope="row">With book’s 10% preliminary roughness allowance</th><td>≈ 0.07925, reproducing the CoDR’s ≈ 0.0792</td></tr>
+                    </tbody></table>
+                    <p>C<sub>f</sub> is normalized by wetted area; C<sub>D,f</sub> is normalized by the chosen reference area. The smooth turbulent correlation and allowance are screening assumptions, not measurements of this cover’s roughness or junction flow.</p>
+                    <p class="calc-source">S. S. Chin, <em>Missile Configuration Design</em> (1961): <a href="https://babel.hathitrust.org/cgi/pt?id=mdp.39015015426904&amp;seq=84" target="_blank" rel="noopener noreferrer">p. 64, Eq. 4-2</a>; <a href="https://babel.hathitrust.org/cgi/pt?id=mdp.39015015426904&amp;seq=87" target="_blank" rel="noopener noreferrer">p. 67, Eqs. 4-6/4-7 and roughness allowance</a>.</p>
+                </details>
+                <details><summary><span>Conical leading-edge surrogate — pressure coefficient ≈ 0.189</span></summary>
+                    <p class="calc-equation">C<sub>p</sub> = Δp / q = (0.083 + 0.096 / M²)(σ / 10)<sup>1.69</sup></p>
+                    <table class="calculation-table"><tbody>
+                        <tr><th scope="row">Cone half-angle σ</th><td>15°, entered in degrees</td></tr>
+                        <tr><th scope="row">Mach number</th><td>2.81</td></tr>
+                        <tr><th scope="row">Calculated C<sub>p</sub></th><td>≈ 0.1888</td></tr>
+                    </tbody></table>
+                    <p>The source relates this pressure coefficient to cone pressure drag at zero incidence using the cone’s base area. Its attached-shock cone model does not directly predict the wedge-like Icarus front or its rocket-body junction. The value is a surrogate, not the mounted fairing’s verified C<sub>D</sub>.</p>
+                    <p class="calc-source"><a href="https://babel.hathitrust.org/cgi/pt?id=mdp.39015015426904&amp;seq=41" target="_blank" rel="noopener noreferrer">Chin, p. 21, Eqs. 3-4 through 3-6</a>.</p>
+                </details>
+                <details><summary><span>Boattail screening method</span></summary>
+                    <table class="calculation-table"><tbody>
+                        <tr><th scope="row">Boattail term used in CoDR</th><td>≈ 0.006, read from a published typical-boattail correlation</td></tr>
+
+
+                    </tbody></table>
+                    <p>The source assumes a sufficiently long cylindrical section ahead of the boattail so flow is approximately uniform at its entrance. The correlation also depends on geometry and reference area. It is not a universal aft-drag value. The original sum also needs consistent definitions of foredrag versus wave drag so friction is not counted twice when substituting a literature foredrag value.</p>
+                    <p><strong>Mounted-flow requirement:</strong> Rocket-body interference, boundary-layer flow, and separation can increase drag and disturb the flow reaching the fins. Candidate rankings require a combined fairing/body/fin model on a common reference area; no drag-reduction percentage is claimed from the surrogate calculations.</p>
+                    <p class="calc-source"><a href="https://babel.hathitrust.org/cgi/pt?id=mdp.39015015426904&amp;seq=50" target="_blank" rel="noopener noreferrer">Chin, p. 30, Fig. 3-14: typical boattail drag</a>; screening method from my CoDR.</p>
+                </details>
+            </div>
+            <p><strong>Ansys CFD:</strong> The legacy Icarus cover simulation is converged and under review. Icarus serves as the comparison baseline and a backup flight candidate.</p>
+            <ul>
+                <li><strong>Common comparison:</strong> Bare vehicle, Icarus cover, and new candidates under matching flow conditions and reference-area conventions.</li>
+                <li><strong>Model checks:</strong> Establish the domain, mesh sensitivity, convergence, and force accounting before interpreting differences in drag.</li>
+                <li><strong>Independent solver check:</strong> I perform the Ansys work and direct a teammate’s SolidWorks Flow Simulation comparison; I review the two models for consistency.</li>
+                <li><strong>Planned optimization:</strong> Apply Ansys adjoint optimization after the baseline and candidate models pass mesh, convergence, and force-accounting checks. Carry resulting loads into attachment checks and integrated drag into trajectory comparisons.</li>
+            </ul>
+        </div>
+        <div class="image-block"><figure><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Icarus-Mold-CAD.webp" data-media-type="image" data-fit="contain" data-alt="Legacy Icarus positive-mold CAD"><span class="media-filename">Legacy Icarus positive-mold CAD</span></div><figcaption class="caption">Legacy Icarus positive-mold CAD used in the baseline review.</figcaption></figure><figure><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Icarus-Fastener-Detail.webp" data-media-type="image" data-fit="contain" data-alt="Protruding attachment screw and surface detail on the legacy Icarus cover"><span class="media-filename">Protruding attachment screw and surface detail on the legacy Icarus cover</span></div><figcaption class="caption">Legacy hardware detail informing my mounting and surface-finish trade.</figcaption></figure></div>
+    </section>
+    <section class="content-section">
+        <div class="text-block">
+            <details class="pending-cfd-evidence"><summary>Ansys CFD evidence in progress</summary><p>Icarus baseline domain, mesh, and boundary conditions; pressure/Mach contours, integrated drag, and convergence checks. The Icarus solve has converged; reviewed results will be added here.</p><div class="pending-cfd-grid"><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Icarus-CFD-Domain-Mesh.png" data-media-type="image" data-fit="contain" data-alt="Icarus Ansys baseline domain and mesh, in progress"><span class="media-filename">Domain, mesh &amp; boundary conditions — in progress</span></div><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Icarus-CFD-Flow-Results.png" data-media-type="image" data-fit="contain" data-alt="Icarus Ansys baseline flow and drag results, in progress"><span class="media-filename">Flow, integrated drag &amp; convergence — in progress</span></div></div></details><h2 style="margin-top: 28px;">Mounting &amp; Manufacturing Trade</h2>
+            <p>I compared carbon-fiber wet layup on printed positive molds with machined insulation-foam tooling, considering cost, internal fit, release, cure conditions, and repeatable surface finish. I also evaluated mold polarity and vacuum consolidation using lessons from the previous cover.</p>
+            <p>For attachments, I investigated recessed fasteners with a flush surface treatment and underside bonded hardware. The trade includes local laminate thickness, access, load paths, and support along the cover; removing a protruding screw is only useful if the attachment remains practical and structurally sound.</p>
+            <p>The CoDR established manufacturing options and integration questions. It did not close out the final mold, laminate, or attachment design.</p>
+        </div>
+        <div class="image-block"><figure><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/Legacy-Mount-Detail.webp" data-media-type="image" data-fit="contain" data-alt="Attachment hardware beneath the legacy fairing"><span class="media-filename">Attachment hardware beneath the legacy fairing</span></div><figcaption class="caption">Legacy attachment detail reviewed for access, support, and a smoother external surface.</figcaption></figure></div>
+    </section>
+    <section class="content-section">
+        <div class="text-block">
+            <h2>Thermal Screening &amp; Validation Plan</h2>
+            <p>I calculated preliminary stagnation and recovery temperatures to flag the mismatch between the aerodynamic environment and the available epoxy’s temperature capability. These are gas-temperature screening estimates; they do not establish the laminate’s transient temperature or prove thermal failure.</p>
+            <div class="calculation-details"><details><summary><span>Thermal hand calculations &amp; assumptions</span></summary>
+                <p class="calc-equation">T₀ = T∞ [1 + (γ − 1)M∞² / 2]</p>
+                <p class="calc-equation">T<sub>local</sub> = T₀ / [1 + (γ − 1)M<sub>local</sub>² / 2]</p>
+                <p class="calc-equation">T<sub>r</sub> = T<sub>local</sub> [1 + r(γ − 1)M<sub>local</sub>² / 2]</p>
+                <p>At Mach 2.81, static temperature 236 K, and γ = 1.4, the ideal-gas stagnation relation gives approximately 609 K (636°F). A separate recovery estimate used local Mach 2 and a recovery factor of 0.89, giving approximately 579 K (583°F).</p>
+                <p>Exposure duration, heat transfer, laminate construction, and the specific cured resin still need to be assessed. The CoDR’s roughly 120–125°F epoxy limit is a preliminary material assumption to confirm for the selected resin and cure.</p>
+                <p>Reference: <a href="https://www.grc.nasa.gov/www/k-12/airplane/isentrop.html" target="_blank" rel="noopener noreferrer">NASA Glenn isentropic flow relations</a>.</p>
+            </details></div>
+            <p>I am designing a curved carbon-fiber coupon with a bolted interface, held under sustained load while heated, to observe local dimpling and loss of attachment stiffness. This will inform a conservative operating limit for that configuration; testing and final material selection remain pending.</p>
+            <p class="aerocover-source">Source: Aerocover Design Doc; Argo Aerocover CoDR, September 3, 2026; S. S. Chin, <em>Missile Configuration Design</em> (1961); and current baseline-analysis work. Concept authorship is retained above; legacy hardware and reference illustrations are identified in captions.</p>
+        </div>
+
+    </section>
+    <section class="content-section" id="nosecone-investigation">
+        <div class="text-block">
+            <h2>Related Investigation: Argo Nosecone Shape</h2>
+            <p>The nosecone belongs to the separation and recovery subsystem; this section documents the aerodynamic comparison. Any selected shape must also preserve the <a href="project_recovery.html#assembly">recovery packaging and deployment interfaces</a>.</p>
+            <p>The fairing trade led me to investigate the vehicle’s nosecone using RASAero II. I swept nine profile families and tip-radius inputs for Argo’s 40 in long, 8 in diameter nosecone (L/D = 5), then repeated the comparison at L/D = 3 to investigate a ranking difference from the published foredrag curves used in our CoDR.</p>
+            <p>RASAero II screening predicted approximately 1.1% higher apogee for the ¾-power and Von Kármán profiles than the tangent-ogive baseline. These whole-vehicle outputs do not isolate nose drag; a common-input, drag-coefficient, and stability comparison remains pending.</p>
+            <p>No replacement nosecone has been selected. The sweep and tip-radius sensitivity are retained below as preliminary simulation evidence.</p>
+            <div class="calculation-details">
+                <details><summary><span>Recorded RASAero II sweep &amp; comparison limits</span></summary>
+                    <p>Current geometry: 40 in length, 8 in diameter, 0.11 in tip radius. Values below are recorded flight-simulation outputs; they have not been independently rerun or validated by CFD.</p>
+                    <table class="calculation-table nosecone-results"><thead><tr><th data-label="Profile" scope="col">Profile</th><th data-label="Predicted apogee" scope="col">Predicted apogee</th><th data-label="Change from tangent ogive" scope="col">Change from tangent ogive</th></tr></thead><tbody>
+                        <tr><th data-label="Profile" scope="row">Tangent ogive (current)</th><td data-label="Predicted apogee">87,966 ft</td><td data-label="Change from tangent ogive">Baseline</td></tr>
+                        <tr><th data-label="Profile" scope="row">Conical</th><td data-label="Predicted apogee">88,227 ft</td><td data-label="Change from tangent ogive">+261 ft / +0.30%</td></tr>
+                        <tr><th data-label="Profile" scope="row">Von Kármán</th><td data-label="Predicted apogee">88,927 ft</td><td data-label="Change from tangent ogive">+961 ft / +1.09%</td></tr>
+                        <tr><th data-label="Profile" scope="row">¾ power</th><td data-label="Predicted apogee">88,954 ft</td><td data-label="Change from tangent ogive">+988 ft / +1.12%</td></tr>
+                    </tbody></table>
+                    <p><strong>Input sensitivity:</strong> changing the tangent-ogive tip radius from the initial 1 in input to the current 0.11 in input changed predicted apogee from 82,314 to 87,966 ft (+5,652 ft). This is a simulation-input comparison, not a measured gain from modifying hardware.</p>
+                    <p><strong>L/D = 3 check:</strong> the conical input produced the highest recorded apogee, while the worksheet explicitly notes possible instability and center-of-pressure effects. The workbook records apogee for these cases, not nose-only C<sub>D</sub> versus Mach or stability histories, so it does not yet resolve the discrepancy.</p>
+                    <p><strong>Next comparison:</strong> extract aerodynamic coefficients over Mach, separate the contributions to drag, and examine stability histories before matching the simulation to the paper’s zero-angle-of-attack foredrag data. The relative importance of each Mach range must then be evaluated over the flight trajectory.</p>
+                    <p class="calc-source">Source: my “Nosecone Sim Investigation” worksheet, current-tip-radius cases and L/D = 3 sweep. Literature: <a href="https://ntrs.nasa.gov/citations/19930091022" target="_blank" rel="noopener noreferrer">NACA Report 1386, Perkins, Jorgensen &amp; Sommer (1958)</a>. Simulation tool: <a href="https://www.rasaero.com/dl_manual_ii.htm" target="_blank" rel="noopener noreferrer">RASAero II</a>.</p>
+                    <figure class="nosecone-reference"><div class="img-placeholder media-slot" data-media="Pictures/Aerocover/NACA-Nose-Shape-Comparison.webp" data-media-type="image" data-fit="contain" data-alt="NACA Report 1386 Figure 16 showing foredrag versus Mach for tested nose shapes, mainly at L/D of 3"><span class="media-filename">NACA nose-shape comparison used in the CoDR</span></div><figcaption class="caption">NACA Report 1386, Fig. 16, as used in the CoDR. These are foredrag measurements for the listed test geometries, mostly L/D ≈ 3; they are not whole-vehicle altitude rankings or direct predictions for Argo’s L/D = 5 nosecone. Click to enlarge.</figcaption></figure>
+                </details>
+            </div>
+        </div>
     </section>
     <footer style="padding: 5rem 10%; background: #000; color: #666; font-size: .8rem; border-top: 1px solid #333; margin-top: 50px;">ALEXANDER TONG // BU MECHANICAL ENGINEERING // AERODYNAMIC DOWNCOMER FAIRING</footer>
 </body>
