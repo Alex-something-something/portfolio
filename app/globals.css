@@ -779,6 +779,11 @@ nav ul li a:hover {
 .experience-link:hover .ui-arrow,
 .content-section a:hover .ui-arrow { transform: translateX(4px); }
 
+.content-section a:not(.btn),
+.content-section a:not(.btn):visited {
+    color: #E63946;
+}
+
 .content-section a {
     text-decoration-color: transparent;
     text-underline-offset: 4px;
