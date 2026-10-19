@@ -171,7 +171,7 @@
     <section class="content-section media-below aerocover-philosophy">
         <div class="text-block">
             <h2>Design Philosophy: Leading Edge, Midsection, Boattail</h2>
-            <p>I organized the team’s first-principles study around three regions, allowing us to compare leading profiles, midsection cross-sections, and aft tapers independently before combining promising features. We also considered complete body profiles, whose geometry is defined from front to back rather than assembled from separate regions.</p>
+            <p>I adapted the component-based approach in missile-design literature for our four-person set-based design effort. Leading-edge, midsection, and boattail studies gave the team a common basis for first-order drag trades at the CoDR before combining promising features. We also considered complete body profiles, whose geometry is defined from front to back rather than assembled from separate regions.</p>
             <p><strong>What the diagram means:</strong> it identifies the drag mechanisms each region initially brings into focus. The “dominates” labels are a teaching simplification, not a quantified allocation of the fairing’s drag.</p>
             <ul>
                 <li><strong>Leading edge:</strong> Focus on wave/pressure drag, with length, blunting, heating, and fabrication considered together.</li>
@@ -208,6 +208,7 @@
     <section class="content-section media-below">
         <div class="text-block">
             <h2>Baseline Characterization &amp; CFD</h2>
+            <p>My Mach 2.81 Ansys Fluent solve for the legacy Icarus fairing has converged and is under review. Icarus is the comparison baseline and a backup flight candidate; no final fairing or drag improvement has been established.</p>
             <p>My Icarus review identified protruding fasteners, uneven surface finish, abrupt transitions, and an aft profile worth revisiting. I consulted the previous builder to connect these observations to practical issues in layup, vacuum consolidation, and wiring integration.</p>
             <p>My hand calculations provide a screening baseline, followed by CFD of the actual mounted geometry. The dropdowns retain the inputs, equations, and assumptions so their limits are reviewable.</p>
             <div class="calculation-details">
@@ -279,7 +280,7 @@
     <section class="content-section">
         <div class="text-block">
             <h2>Thermal Screening &amp; Validation Plan</h2>
-            <p>I calculated preliminary stagnation and recovery temperatures to flag the mismatch between the aerodynamic environment and the available epoxy’s temperature capability. These are gas-temperature screening estimates; they do not establish the laminate’s transient temperature or prove thermal failure.</p>
+            <p>At Mach 2.81 with 236 K ambient air, I calculated approximately 609 K stagnation temperature and 579 K recovery temperature to screen the available epoxy’s temperature capability. These gas-temperature estimates motivated the loaded, heated mounting-coupon test below; they do not predict transient laminate temperature or prove thermal failure.</p>
             <div class="calculation-details"><details><summary><span>Thermal hand calculations &amp; assumptions</span></summary>
                 <p class="calc-equation">T₀ = T∞ [1 + (γ − 1)M∞² / 2]</p>
                 <p class="calc-equation">T<sub>local</sub> = T₀ / [1 + (γ − 1)M<sub>local</sub>² / 2]</p>
