@@ -63,7 +63,7 @@ To change a slot later, edit its `data-media` path and `data-alt` description in
 
 | Exact filename | Used on | Image/video |
 | --- | --- | --- |
-| Project.jpg | index.html | Course Project Photo |
+| See [ME360/README.md](ME360/README.md) | index.html, me360.html | Completed linear-stage/CNC exercise and 2.5 DOF fishing game |
 
 ### Pictures/Manufacturing
 

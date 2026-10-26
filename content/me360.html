@@ -86,6 +86,26 @@
         }
     </style>
     <style>
+        .me360 .image-block figure { margin: 0; min-width: 0; }
+        .me360 .image-block .caption { margin: 10px 0 0; text-align: left; }
+        .me360 .image-block .media-slot > img { height: 300px; object-fit: contain; }
+        .me360 .project-hero-media { padding: 28px 10%; border-bottom: 1px solid #222; }
+        .me360 .project-hero-media figure { margin: 0; }
+        .me360 .project-hero-media .caption { margin: 12px 0 0; }
+        .me360 .project-hero-media .media-slot > img { max-height: 600px; }
+        .me360 .project-links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 22px; }
+        .me360 .project-links a, .me360 summary { color: #eee; }
+        .me360 details { width: 100%; border-top: 1px solid #333; }
+        .me360 summary { padding: 18px 0; cursor: pointer; font-weight: 700; }
+        .me360 .extra-photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 24px; }
+        .me360 .extra-photos figure { margin: 0; min-width: 0; }
+        .me360 .extra-photos .caption { margin: 10px 0 0; text-align: left; }
+        .me360 .extra-photos .media-slot > img { height: 280px; object-fit: contain; }
+        .me360 .cnc-video { flex: 1 1 100%; min-width: 0; }
+        .me360 .cnc-video .media-slot { max-width: 850px; margin: 0 auto; }
+        .me360 .cnc-video .caption { margin: 12px 0 0; }
+    </style>
+    <style>
         .ui-arrow { display: inline-block; width: 1em; height: 1em; flex-shrink: 0; vertical-align: -.12em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
         .back-link { gap: 8px; }
     </style>
@@ -95,22 +115,48 @@
     <header class="project-header">
         <a href="index.html#projects" class="back-link"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4M10 6l-6 6 6 6"/></svg> Additional Projects</a>
         <h1>ME 360 <span>Electromechanical Design</span></h1>
-        <p class="project-meta-line">Boston University · Fall 2026 · Course project underway</p>
-        <p class="project-overview">Course project in progress. My design decisions, prototype, and measured results will be added after testing.</p>
+        <p class="project-meta-line">Boston University · Fall 2026 · Five-person team</p>
+        <p class="project-overview">Completed work to date: a basic linear stage and CNC drawing exercise, followed by a 2.5 DOF fishing game.</p>
+        <div class="project-links"><a href="#cnc">Linear stage &amp; CNC drawing</a><a href="#fishing-game">2.5 DOF fishing game</a></div>
     </header>
-    <main>
-        <section class="content-section">
-            <div class="text-block">
-                <h2>Project 1: Cartesian Motion System</h2>
-                <p style="color: #ccc;">The assignment calls for a portable 2.5-degree-of-freedom motion system with a minimum 2.5 × 2.5 in work area. It must fit in a backpack and, if disassembled, be assembled by one person within 10 minutes.</p>
-                <p style="color: #ccc;">Course focus: CAD and simulation, Arduino sensing and actuation, mechanical fabrication, and control-system integration.</p>
-            </div>
-            <div class="text-block">
-                <h2>Evidence to Add After Testing</h2>
-                <p style="color: #ccc;">Planned evidence: concept sketches, CAD, fabrication, controls, and measured performance. Requirements are summarized from the Fall 2026 syllabus and Cartesian Motion System assignment.</p>
-            </div>
-        </section>
-    </main>
+    <div class="project-hero-media"><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/FullAssemblyReal.jpg" data-media-type="image" data-fit="contain" data-alt="Completed fishing game: gantry, rotating fish platform, collection cup, joystick, and electronics enclosure."><span class="media-filename">Pictures/ME360/FullAssemblyReal.jpg</span></div><figcaption class="caption">Completed fishing game: gantry, rotating fish platform, collection cup, joystick, and electronics enclosure.</figcaption></figure></div>
+    <section class="content-section media-below" id="cnc">
+        <div class="text-block">
+            <h2>Linear Stage &amp; CNC Drawing Exercise</h2>
+            <p>We built a screw-driven linear stage, then assembled a CNC plotter that drew a box using G-code and Marlin firmware. The instructor provided starter motor-control code and an example assembly approach.</p>
+            <p>I shared fabrication and alignment work equally with two teammates. The other two teammates handled programming and testing.</p>
+        </div><div class="image-block"><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/CNCDrawingProjectLinearStageOverview.jpg" data-media-type="image" data-fit="contain" data-alt="Basic linear stage: stepper motor, coupling, lead screw, and carriage."><span class="media-filename">Pictures/ME360/CNCDrawingProjectLinearStageOverview.jpg</span></div><figcaption class="caption">Basic linear stage: stepper motor, coupling, lead screw, and carriage.</figcaption></figure><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/CNCDrawingProjectLinearStage.jpg" data-media-type="image" data-fit="contain" data-alt="Basic linear-stage carriage with lead screw and bearing support."><span class="media-filename">Pictures/ME360/CNCDrawingProjectLinearStage.jpg</span></div><figcaption class="caption">Basic linear-stage carriage with lead screw and bearing support.</figcaption></figure><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/CNCDrawingProjectMotorAttachmentHEIC.jpg" data-media-type="image" data-fit="contain" data-alt="Stepper mounting and flexible coupling at the end of the linear stage."><span class="media-filename">Pictures/ME360/CNCDrawingProjectMotorAttachmentHEIC.jpg</span></div><figcaption class="caption">Stepper mounting and flexible coupling at the end of the linear stage.</figcaption></figure></div>
+        <div class="cnc-video"><div class="img-placeholder media-slot" data-media="Pictures/ME360/CNC-Drawing-Demonstration.mp4" data-media-type="video" data-poster="Pictures/ME360/CNC-Drawing-Poster.jpg" data-fit="contain" data-alt="CNC plotter drawing a box with a marker"><span class="media-filename">Pictures/ME360/CNC-Drawing-Demonstration.mp4</span></div><p class="caption">CNC drawing demonstration · G-code-controlled box drawing · silent video, 34 seconds</p></div>
+
+    </section>
+    <section class="content-section media-below" id="fishing-game">
+        <div class="text-block">
+            <h2>2.5 DOF Fishing Game</h2>
+            <p>Our game uses a joystick to position an electromagnet over fish on a rotating platform. X and Y provide planar movement; a preset down-and-up Z motion lowers and raises the magnet. The instructor provided the general approach for an individual linear stage.</p>
+            <p>My work covered the standard extrusion legs, contributions to game design and rules, electromagnet selection, and Onshape designs for the control-board enclosure and magnet attachment. I also printed the joystick housing from an online design.</p>
+        </div><div class="image-block"><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/Full-Assembly-CAD.jpg" data-media-type="image" data-fit="contain" data-alt="Team CAD assembly: extrusion gantry, fish platform, joystick, and electronics enclosure."><span class="media-filename">Pictures/ME360/Full-Assembly-CAD.jpg</span></div><figcaption class="caption">Team CAD assembly: extrusion gantry, fish platform, joystick, and electronics enclosure.</figcaption></figure><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/BackView.jpg" data-media-type="image" data-fit="contain" data-alt="Rear view of the assembled gantry and fish platform."><span class="media-filename">Pictures/ME360/BackView.jpg</span></div><figcaption class="caption">Rear view of the assembled gantry and fish platform.</figcaption></figure></div>
+    </section>
+    <section class="content-section media-below" id="magnet-mount">
+        <div class="text-block">
+            <h2>Magnet Selection &amp; Alignment</h2>
+            <p>I selected a 12 V electromagnet to match our available output, with enough lifting force to pick up fish while keeping the game challenging. I replaced a wire wedged into the rear screw hole with a printed U-hook secured by a screw, with the suspension string wrapped around the hook. This helped center the magnet and keep it vertical.</p>
+        </div><div class="image-block"><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/Magnet.jpg" data-media-type="image" data-fit="contain" data-alt="Electromagnet with my 3D-printed attachment on top, keeping the suspended magnet centered and vertical."><span class="media-filename">Pictures/ME360/Magnet.jpg</span></div><figcaption class="caption">Electromagnet with my 3D-printed attachment on top, keeping the suspended magnet centered and vertical.</figcaption></figure><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/ZAssemblyOverall.jpg" data-media-type="image" data-fit="contain" data-alt="Front view of the vertical actuator and suspended electromagnet."><span class="media-filename">Pictures/ME360/ZAssemblyOverall.jpg</span></div><figcaption class="caption">Front view of the vertical actuator and suspended electromagnet.</figcaption></figure><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/FishTopDown.jpg" data-media-type="image" data-fit="contain" data-alt="Individual printed fish with a metal pickup target."><span class="media-filename">Pictures/ME360/FishTopDown.jpg</span></div><figcaption class="caption">Individual printed fish with a metal pickup target.</figcaption></figure></div>
+        <details><summary>Gantry and platform: additional assembly views</summary><div class="extra-photos"><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/XAssemblyCloseup.jpg" data-media-type="image" data-fit="contain" data-alt="X-axis drive: stepper motor, timing pulley, and belt at the corner of the gantry."><span class="media-filename">Pictures/ME360/XAssemblyCloseup.jpg</span></div><figcaption class="caption">X-axis drive: stepper motor, timing pulley, and belt at the corner of the gantry.</figcaption></figure><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/XAssemblyCloseupSide.jpg" data-media-type="image" data-fit="contain" data-alt="Side view of the belt-driven gantry and its red printed carriage."><span class="media-filename">Pictures/ME360/XAssemblyCloseupSide.jpg</span></div><figcaption class="caption">Side view of the belt-driven gantry and its red printed carriage.</figcaption></figure><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/PulleyLatchMechanism.jpg" data-media-type="image" data-fit="contain" data-alt="Belt attachment and pulley mechanism on the gantry carriage."><span class="media-filename">Pictures/ME360/PulleyLatchMechanism.jpg</span></div><figcaption class="caption">Belt attachment and pulley mechanism on the gantry carriage.</figcaption></figure><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/ZAssemblyCloseup.jpg" data-media-type="image" data-fit="contain" data-alt="Vertical actuator and green mounting bracket above the magnet."><span class="media-filename">Pictures/ME360/ZAssemblyCloseup.jpg</span></div><figcaption class="caption">Vertical actuator and green mounting bracket above the magnet.</figcaption></figure><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/BottomOfRotationBox.jpg" data-media-type="image" data-fit="contain" data-alt="Underside of the fish platform showing its rotation motor."><span class="media-filename">Pictures/ME360/BottomOfRotationBox.jpg</span></div><figcaption class="caption">Underside of the fish platform showing its rotation motor.</figcaption></figure><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/ClampCloseup.jpg" data-media-type="image" data-fit="contain" data-alt="Printed timing-belt clamp with a screw securing the belt."><span class="media-filename">Pictures/ME360/ClampCloseup.jpg</span></div><figcaption class="caption">Printed timing-belt clamp with a screw securing the belt.</figcaption></figure></div></details>
+    </section>
+    <section class="content-section media-below" id="controls">
+        <div class="text-block">
+            <h2>Controls &amp; Electronics</h2>
+            <p>The team's Arduino program runs on an MKS Base board. The joystick moves X/Y; a single press triggers the Z dip, a double press toggles the magnet, and a long press starts or stops platform rotation. Three programmed rounds vary the platform's speed and direction.</p>
+        </div><div class="image-block"><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/BoxBestView.jpg" data-media-type="image" data-fit="contain" data-alt="Electronics enclosure I designed in Onshape and 3D printed for the control board."><span class="media-filename">Pictures/ME360/BoxBestView.jpg</span></div><figcaption class="caption">Electronics enclosure I designed in Onshape and 3D printed for the control board.</figcaption></figure><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/JoystickFurther.jpg" data-media-type="image" data-fit="contain" data-alt="Assembled joystick in a housing printed from an online design."><span class="media-filename">Pictures/ME360/JoystickFurther.jpg</span></div><figcaption class="caption">Assembled joystick in a housing printed from an online design.</figcaption></figure><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/ArduinoMakerboardV1.5.jpg" data-media-type="image" data-fit="contain" data-alt="MKS Base control board and motor wiring before enclosure."><span class="media-filename">Pictures/ME360/ArduinoMakerboardV1.5.jpg</span></div><figcaption class="caption">MKS Base control board and motor wiring before enclosure.</figcaption></figure></div>
+        <details><summary>Enclosure and joystick: additional views</summary><div class="extra-photos"><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/BoxTop.jpg" data-media-type="image" data-fit="contain" data-alt="Top view of the printed Group 7 electronics enclosure."><span class="media-filename">Pictures/ME360/BoxTop.jpg</span></div><figcaption class="caption">Top view of the printed Group 7 electronics enclosure.</figcaption></figure><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/BoxSlanted.jpg" data-media-type="image" data-fit="contain" data-alt="Electronics enclosure and joystick beside the game."><span class="media-filename">Pictures/ME360/BoxSlanted.jpg</span></div><figcaption class="caption">Electronics enclosure and joystick beside the game.</figcaption></figure><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/BoxFarTop.jpg" data-media-type="image" data-fit="contain" data-alt="Overhead view of the wired enclosure and joystick."><span class="media-filename">Pictures/ME360/BoxFarTop.jpg</span></div><figcaption class="caption">Overhead view of the wired enclosure and joystick.</figcaption></figure><figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/ME360/Joystick.jpg" data-media-type="image" data-fit="contain" data-alt="Joystick module and wiring before installation in its housing."><span class="media-filename">Pictures/ME360/Joystick.jpg</span></div><figcaption class="caption">Joystick module and wiring before installation in its housing.</figcaption></figure></div></details>
+    </section>
+    <section class="content-section">
+        <div class="text-block">
+            <h2>Demonstration &amp; Lessons</h2>
+            <p>The fishing game worked in the final demonstration. Loose, unsoldered wiring caused connection problems that we corrected shortly before presenting. The magnet attachment, added the day before, helped its alignment. More secure electrical connections would be the first improvement for another build.</p>
+            <p>We did not record quantitative performance measurements.</p>
+        </div>
+    </section>
     <footer style="padding: 3rem 10%; background: #000; color: #888; font-size: .8rem; border-top: 1px solid #333;">ALEXANDER TONG // BU MECHANICAL ENGINEERING // ME 360</footer>
 </body>
 </html>
