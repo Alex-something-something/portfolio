@@ -105,7 +105,7 @@ def footer(c,d):
     c.saveState()
     c.setStrokeColor(LINE);c.setLineWidth(.6);c.line(36,35,576,35)
     c.setFillColor(MUTED);c.setFont('Body',8)
-    c.drawString(36,23,'Alexander Tong | Technical portfolio | October 19, 2026')
+    c.drawString(36,23,'Alexander Tong | Technical portfolio | November 6, 2026')
     c.drawRightString(576,23,f'{d.page} / 4')
     c.restoreState()
 
@@ -120,22 +120,22 @@ story = [
  p('Additional Projects','h3'),
  project_index(),
  Spacer(1,10),p('Additional research &amp; coursework','h3'),
- p('Space Physics &amp; Technology Lab: instrument-data analysis with Python/pySPEDAS and assistance with flight-spare laser calibration. University of Sydney pulsed plasma thruster: inductor-spool design and coil-winding calculations. '+link('me360/','ME360 course project')+' is in progress.','small'),
+ p('Space Physics &amp; Technology Lab: instrument-data analysis with Python/pySPEDAS and assistance with flight-spare laser calibration. University of Sydney pulsed plasma thruster: inductor-spool design and coil-winding calculations. '+link('me360/','ME360 course project')+' includes completed linear-stage/CNC drawing and fishing-game builds.','small'),
  PageBreak(),
  p('01 / RECOVERY HARDWARE','label'),
  p('Argo Separation and Recovery Subsystem','h2'),
  p('Boston University Rocket Propulsion Group | Subsystem Co-Lead | June 2025-present','small'),
  metrics([('18.7 / 20 lbm','Earlier BP mass / allocation; BP BOM $1,076'),('823 / 1,230 lbf','Calculated parachute opening / snatch loads'),('352 L','Operational vacuum chamber; reported test pressure 0.011 atm')]),Spacer(1,10),
- photos([('Pictures/Recovery/Pre-CO2-Coldflow-Setup.webp','Integrated subsystem before CO2 coldflow; full-system CO2 separation testing is pending.'),('Pictures/CO2/Manufactured-Piercer-Card.webp','Manufactured CO2 cartridge/piercer assembly. Design and fabrication shared by our three-person team.'),('Pictures/Vacuum/Chamber-Full.webp','Door, adapter and seal designed by me; fabricated by my co-lead, who designed the clamps.')],[180,180,180],90),
+ photos([('Pictures/Recovery/Pre-CO2-Coldflow-Setup.webp','Subsystem before CO2 coldflow; historical pretest photo.'),('Pictures/CO2/Manufactured-Piercer-Card.webp','Manufactured CO2 cartridge/piercer assembly. Design and fabrication shared by our three-person team.'),('Pictures/Vacuum/Chamber-Full.webp','Door, adapter and seal designed by me; fabricated by my co-lead, who designed the clamps.')],[180,180,180],90),
  p('Design and Test Leadership','recovery-heading'),
- p('Co-led architecture and deployment-hardware trades through four reviews. Compared five published load methods to size lines and check hardware; paired flight computers provide separate firing paths.','recovery-body'),
+ p('Developed hardware within an inherited dual-break, dual-deploy architecture through four reviews. Compared five published load methods to size lines and check hardware; paired flight computers provide separate firing paths.','recovery-body'),
  p('Authored the integrated vinyl-charge black-powder SOP and led the second integrated test; collaborated on inspection and failure assessment. One of three charges failed in each test; the second damaged the parachute bag and canopy.','recovery-body'),
  p('Standalone vinyl-charge successes did not establish integrated reliability. End-seal manufacturing variability is the leading hypothesis; adjacent-charge damage was inferred afterward. Root cause remains unconfirmed.','small'),
  p('Designed and sized CO2 piercers using pressure, Lam\u00e9 thick-wall hoop-stress and thread-shear calculations; contributed CAD, drawings, machining and component testing in a three-person team.','recovery-body'),
  p('Calculation basis','recovery-heading'),
  recovery_calc([('Recovery lines','Selected 1/2 in, 6,000 lbf Kevlar stock. Design rationale: near-full strength retention, approximately 2× a 50%-efficient knot. Our strength gain remains unmeasured.'),('CO2 deployment sizing','Calculated 4.66 psi separation requirement for four nylon shear pins plus estimated interface friction. Ideal-gas estimate for the modeled free volume: 10.9 g versus a selected 16 g cartridge.'),('CO2 piercer housing','Minimum calculated factor of safety (FOS) 2.01 in Lam\u00e9 hoop stress; internal-thread shear FOS 6.31. Analytical margins, not proof-test results.'),('Vacuum door / Roark','12 in unsupported diameter, 0.25 in thick 6061-T6 plate; 14.7 psi differential gives 1,663 lbf total load. Recorded bending stress 16.5 ksi; deflection 0.0848 in; minimum yield FOS 2.12 using 240 MPa yield strength. Uniform pressure; simply supported around the outer circumference. Deflection uses the Roark plate model; stress is a separately entered calculator result.'),('Legacy Catclaw body','Recorded minimum body FOS 2.01 after my material reduction and piston-retention-slot modification. This tie cutter is separate from the CO2 piercer.')]),
  p('Verification Status','recovery-heading'),
- p('CO2 component firing at 0.011 atm initial chamber pressure complete. Kevlar splice proof load reached 1,800 lbf (1.46 times the 1,230 lbf snatch load) without observed slip, limited by the setup. Preparing the integrated CO2 test SOP; integrated separation and subscale testing remain pending. Chamber instrumentation and data analysis by my co-lead.','recovery-body'),
+ p('Component firing at reported 0.011 atm initial pressure complete. The integrated CO2 trial partially failed at the wiring feedthrough; our team revised the seal using an NPT fitting, epoxy and vacuum putty. Retest and subscale flight testing remain pending. Splice proof load: estimated 1,800 lbf, 1.46 times calculated snatch load, no observed slip; ultimate strength unmeasured. Chamber instrumentation and pressure-data analysis by my co-lead.','recovery-body'),
  p(link('project_recovery/','Recovery architecture, hardware &amp; tests')+' | '+link('project_co2/','CO2 sizing &amp; stress calculations')+' | '+link('project_vacuum/','Chamber design'),'small'),
  PageBreak(),
  p('02 / AERODYNAMICS','label'),

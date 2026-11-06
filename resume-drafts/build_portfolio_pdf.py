@@ -41,6 +41,7 @@ def clean(s):
     # Keep the public PDF's text layer ASCII. Some extractors fail to map
     # ReportLab's subset glyphs for bullets, typographic punctuation and ±.
     s = s.replace(r'$\pm$', '+/-').replace(r'CO$_2$', 'CO2')
+    s = s.replace(r"Lam\'e", 'Lame').replace(r"Lam\'{e}", 'Lame')
     s = s.replace(r'\%', '%').replace(r'\$', '$').replace(r'\&', '&').replace('--', '-')
     s = s.translate(str.maketrans({'’': "'", '‘': "'", '“': '"', '”': '"', '–': '-', '—': '-'}))
     return ' '.join(s.split())
@@ -85,7 +86,10 @@ body = ParagraphStyle('body', fontName='Resume', fontSize=10, leading=11.2,
 plain = ParagraphStyle('plain', fontName='Resume', fontSize=10, leading=11.2)
 name = ParagraphStyle('name', fontName='Resume-Bold', fontSize=25, leading=27, alignment=1, spaceAfter=1)
 contact = ParagraphStyle('contact', fontName='Resume', fontSize=9.5, leading=11, alignment=1, spaceAfter=3)
-text = SOURCE.read_text(encoding='utf-8').split(r'\begin{document}', 1)[1]
+source_text = SOURCE.read_text(encoding='utf-8')
+# LaTeX comments can contain old bullets and suggestions; they are never resume content.
+source_text = '\n'.join(re.sub(r'(?<!\\)%.*$', '', line) for line in source_text.splitlines())
+text = source_text.split(r'\begin{document}', 1)[1].split(r'\end{document}', 1)[0]
 education_heading = re.search(r'\\section\{(Professional Education|Education)\}', text)
 assert education_heading, 'Missing education section in LaTeX source'
 story = [Paragraph('ALEXANDER TONG', name), Paragraph(

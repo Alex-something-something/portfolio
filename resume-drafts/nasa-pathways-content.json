@@ -16,12 +16,12 @@
         "dates": "06/2025 - Present",
         "schedule": "Student club project | Total BURPG commitment: 10-30 hours/week, variable",
         "bullets": [
-          "Designed redundant recovery for a 135 lb liquid rocket targeting 100,000 ft; achieved 18.7 lbm against a 20 lbm budget and presented four iterative design reviews",
-          "Compared system architectures, commercial flight computers, and separation mechanisms against mass, cost, and development constraints; recovery system cost was $1,076",
-          "Calculated 823 lbf parachute shock and 1,230 lbf snatch loads by synthesizing five research-paper methods; introduced and dynamically tested Brummel eye splices to replace knots and reduce quick-links, confirming minimum 1.5 FOS",
-          "Developed CO2 deployment hardware after recurring integrated-test failures and parachute damage; contributed pressure and Lamé thick-wall stress calculations, Fusion 360 CAD, drawings, machining, and hardware tests in a three-person team; integrated CO2 validation remains planned",
+          "Developed hardware for inherited dual-break, dual-deploy recovery on a 135 lb dry-mass liquid rocket targeting 100,000 ft; earlier BP configuration: 18.7 lbm within a 20 lbm budget; presented four iterative design reviews",
+          "Compared recovery hardware, commercial flight computers, and separation mechanisms against mass, cost, and development constraints; recovery system cost was $1,076",
+          "Calculated 823 lbf parachute shock and 1,230 lbf snatch loads by synthesizing five research-paper methods; introduced and dynamically tested Brummel eye splices to replace knots and reduce quick-links, reaching an estimated 1,800 lbf (1.46 times calculated snatch load) without observed slip",
+          "Developed CO2 deployment hardware after recurring integrated-test failures and parachute damage; contributed pressure and Lamé thick-wall stress calculations, Fusion 360 CAD, drawings, machining, and hardware tests in a three-person team; integrated CO2 trial partially failed; revised wiring seal awaits retest",
           "Led recovery test operations: test plans, safety protocols, crew assignments, briefings, firing authorization, abort decisions, and post-test analysis",
-          "Built and operated a 352 L vacuum chamber at 0.011 atm using salvaged pumps and available stock; integrated LabJack data acquisition, a pressure transducer, and two-amplifier signal conditioning for deployment-hardware and avionics tests",
+          "Designed chamber door, adapter, and seal; operated a 352 L chamber at reported 0.011 atm using salvaged pumps; co-lead designed pressure acquisition and analyzed the data",
           "Redesigned and machined cable cutters on manual mill and lathe, reducing mass 49.5% with a calculated 2.01 FOS; documented assembly and recovery-system packing procedures"
         ]
       },
@@ -59,7 +59,7 @@
         "dates": "06/2025 - 12/2025",
         "schedule": "Student club project | 10-20 hours/week, variable",
         "bullets": [
-          "Led two wing designs in Fusion 360; compared structure, material, and manufacturing options to produce a 50% lighter XPS prototype and reduce build time from three months to one",
+          "Led two wing designs in Fusion 360; compared structure, material, and manufacturing options to produce an XPS/carbon-fiber wing 42.7% lighter than the prior complete wing and reduce build time from three months to one",
           "Designed a split NACA 2412 wing with 0.52 taper ratio and 5-degree dihedral using aerodynamic-team specifications and manufacturing lessons from the first prototype; developed the servo flap system",
           "Led structural and manufacturing reviews, mentored nine members in laser cutting, waterjet operation, and Fusion 360, and coached the succeeding wing lead in manufacturing logistics"
         ]

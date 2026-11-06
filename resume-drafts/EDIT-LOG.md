@@ -170,3 +170,20 @@ LaTeX source has not been compiled or checked for one-page fit. Portfolio synchr
 - Rebased the LaTeX source on the user's latest pasted resume.
 - Added a two-bullet Aerodynamic Downcomer Fairing entry documenting project leadership, compressible-flow reasoning at Mach 2.81, hands-on Ansys CFD, adjoint optimization, and directed SolidWorks Flow Simulation comparison.
 - Added Ansys CFD, adjoint optimization, and compressible-flow analysis to Technical Skills without claiming completed or validated aerodynamic performance.
+## November 5, 2026 architecture attribution clarification
+
+- Per Alexander, Argo uses an inherited dual-break, dual-deploy recovery architecture. His contributions concern hardware development and testing within that architecture; do not attribute the basic recovery layout to him.
+- Updated the public resume PDFs and editable Space Hardware source, Structures and Test sources/PDFs, and NASA draft sources/PDFs. Earlier single-separation wording is superseded by this clarification.
+- Retained other existing content and all original PDF page counts. Render comparisons confined changes to the relevant recovery bullets, with other pages unchanged.
+
+## November 6, 2026 factual audit and Stratolaunch review
+
+- Retained the inherited dual-break, dual-deploy architecture and restored the homepage's earlier 18.7/20 lbm mass budget and the current resume's dry-mass liquid-bipropellant vehicle context.
+- Corrected the splice result to an estimated 1,800 lbf, about 1.46 times calculated snatch load, without observed slip. This is a proof-load estimate and does not establish ultimate strength or a 1.5 FOS.
+- Updated current CO2 status to the integrated trial's partial failure at the wiring feedthrough, followed by a seal revision and pending retest. The latest seal is not claimed as validated.
+- Kept pressure acquisition and analysis credited to the co-lead, and narrowed chamber-design credit to the door, adapter and seal. Preserved Alexander's chamber operation and test responsibilities.
+- Replaced older 50% wing comparisons and six-trial cutter wording with the current recorded 42.7% complete-wing comparison and eight successful cutter trials at the selected setting.
+- Clarified stock-to-part mass reduction and the converged, under-review Ansys baseline. Retained calculation values, CAD/manufacturing tools, test leadership and team credits.
+- Restructured the Stratolaunch project summary around engineering evidence, ownership and test decisions; retained personal motivation and added the supported Python and Ansys experience relevant to the posting.
+- Fixed the resume PDF builder to exclude commented-out LaTeX suggestions and text after end-document. A source-derived preview passed one-page and text-extraction checks.
+- Preserved the existing Plummer role labels pending the user's title clarification. No new title is inferred from these technical edits.

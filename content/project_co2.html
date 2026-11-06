@@ -148,8 +148,8 @@
         <a href="index.html#flight-hardware" class="back-link"><svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4M10 6l-6 6 6 6"/></svg> Flight Hardware</a>
         <h1>CO₂ <span>Deployment Mechanism</span></h1>
         <p class="project-meta-line">Design, Manufacturing &amp; Testing · BURPG</p>
-        <p class="project-overview">Designed and machined CO₂ deployment hardware with a three-person team; completed a component firing at a reported chamber pressure of 0.011 atm. Integrated CO₂ separation testing is pending.</p>
-        <p class="project-status-line">Reduced-pressure charge test complete; integrated CO₂ test in preparation</p>
+        <p class="project-overview">Designed and machined CO₂ deployment hardware with a three-person team; completed a component firing at a reported chamber pressure of 0.011 atm. A later integrated trial partially failed at the wiring feedthrough; a revised seal awaits retest.</p>
+        <p class="project-status-line">Reduced-pressure component firing complete; integrated trial partially failed; seal retest pending</p>
     </header>
     <main>
         <section class="content-section">
@@ -158,7 +158,7 @@
                 <p style="color: #ccc;">Two sea-level integrated black-powder tests exposed a failed deployment charge in each test and parachute damage in the second. I helped replace that deployment method with cartridge-piercing hardware; the Catclaw tie-cutting releases remain separate components.</p>
                 <p style="color: #ccc;">Standalone vinyl-charge trials had appeared repeatable; the integrated results exposed a gap between component trials and the packed subsystem. I authored the integrated vinyl-charge black-powder test SOP and led the second integrated test, including crew briefings and fire/abort decisions. My co-lead led the first test while I was in Australia. Post-test inspection and failure assessment were collaborative with teammates and our team director. End-seal manufacturing variability is the leading working explanation; neighboring-charge damage is a secondary hypothesis inferred afterward. The root cause remains unconfirmed. <a href="project_recovery.html#integrated-deployment-tests" style="color: #E63946;">Integrated-test history and hypotheses</a>.</p>
                 <p style="color: #ccc;">I sized the mechanism and contributed CAD, drawings, machining, and component testing. All three teammates contributed to the design and fabrication; we iterated one another’s work.</p>
-                <p style="color: #ccc;">This mechanism is part of the wider separation and recovery subsystem. The overall architecture, parachute-load analysis, redundancy, and vehicle integration are documented on the subsystem page.</p>
+                <p style="color: #ccc;">This mechanism is a hardware improvement within Argo’s inherited dual-break, dual-deploy recovery architecture. The subsystem’s parachute-load analysis, redundancy, and vehicle integration are documented on the subsystem page.</p>
                 <p><a href="project_recovery.html" style="color: #E63946;">View the separation and recovery subsystem <svg class="ui-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></p>
                 <figure class="co2-intro-photo"><div class="img-placeholder media-slot" data-media="Pictures/CO2/Manufactured-Piercer.webp" data-media-type="image" data-fit="contain" data-alt="Manufactured CO₂ cartridge-piercing hardware on a workbench" title="Pictures/CO2/Manufactured-Piercer.webp"><span class="media-filename">Pictures/CO2/Manufactured-Piercer.webp</span></div><figcaption class="caption">Manufactured cartridge-piercing hardware</figcaption></figure>
             </div>
@@ -175,7 +175,7 @@
                     <li><strong>System Sizing:</strong> Calculated a 4.66 psi separation requirement for four nylon shear pins plus the estimated interface friction. Ideal-gas sizing predicted 10.9 g of CO₂ for the modeled free volume, providing analytical margin with a 16 g cartridge.</li>
                     <li><strong>Pressure &amp; Stress Analysis:</strong> Calculated maximum pressure and Lamé stresses to guide material removal from the thick-wall housing. The governing analytical result was 2.01 FOS in hoop stress, with 6.31 FOS against internal-thread shear.</li>
                     <li><strong>Manufacturing:</strong> Produced Fusion 360 CAD, engineering drawings, and machined parts for the piercing mechanism.</li>
-                    <li><strong>Testing &amp; Iteration:</strong> Tested the charge hardware under reduced pressure and prepared the complete subsystem for an upcoming integrated CO₂ test.</li>
+                    <li><strong>Testing &amp; Iteration:</strong> Tested the charge hardware under reduced pressure and supported integrated-test preparation. The integrated trial partially failed; a revised wiring feedthrough awaits retest.</li>
                 </ul>
                 <div class="test-evidence two-column-evidence" aria-label="CO2 deployment mechanism design calculations">
                     <div class="test-evidence-item"><strong>4.66 psi</strong><span>calculated separation pressure for the modeled four-pin configuration</span></div>
@@ -194,8 +194,8 @@
         <section class="content-section media-below" style="border-bottom: none;">
             <div class="text-block">
                 <h2>Test Status &amp; Next Steps</h2>
-                <p style="color: #ccc;">I helped initiate and operate the reduced-pressure component tests and am preparing the integrated-test SOP. My co-lead designed the instrumentation, wrote the acquisition script, and analyzed the pressure trace below.</p>
-                <p style="color: #ccc;">The upcoming test will evaluate the piercers in the full recovery assembly, including shear pins, parachutes, lines, release devices, and wiring. See the recovery page for the architecture and integrated-test history.</p>
+                <p style="color: #ccc;">I helped initiate and operate the reduced-pressure component tests and supported integrated-test preparation. My co-lead designed the instrumentation, wrote the acquisition script, and analyzed the pressure trace below.</p>
+                <p style="color: #ccc;">The subsequent integrated CO₂ test partially failed; our team attributed the failure to inadequately sealed wiring openings. We revised the feedthrough using an NPT fitting, a smaller drilled opening, epoxy around the required redundant wires, and supplemental vacuum putty. A retest is planned, with CO₂ indicators under consideration for leakage assessment. The retest will evaluate the piercers in the full recovery assembly, including shear pins, parachutes, lines, release devices, and wiring. See the recovery page for the architecture and integrated-test history.</p>
                 <p class="engineering-note">For equal internal pressure, lower ambient pressure increases the differential across the nosecone interface. Released gas mass alone does not establish that internal pressure: temperature, leakage, free volume, and release timing also govern deployment.</p>
                 <div class="test-evidence" aria-label="CO2 redesign test evidence">
                     <div class="test-evidence-item"><strong>0.011 atm</strong><span>initial chamber pressure for the first CO₂ charge test</span></div>

@@ -1,0 +1,40 @@
+Argo Separation and Recovery
+Alexander Tong
+Project summary for Stratolaunch Engineering Intern Summer 2027
+November 6, 2026
+
+Project and individual responsibility
+
+I co-lead separation and recovery development for Argo, Boston University Rocket Propulsion Group's 135 lb dry-mass liquid bipropellant rocket targeting 100,000 ft. Its inherited dual-break, dual-deploy architecture calls for drogue deployment near apogee and main release at 2,000 ft above ground. I develop hardware within that architecture through load analysis, CAD, drawings, machining, integration, and test operations. Flight performance remains unverified.
+
+Engineering evidence
+
+Recovery sizing: I compared 23 commercial parachute candidates and five published load-estimation methods. Calculated opening and snatch loads of 823 and 1,230 lbf guided hardware selection and 6,000 lbf nominal-rated Kevlar line selection. The earlier black-powder configuration was 18.7 lbm against a 20 lbm allocation, with a $1,076 bill of materials; these figures do not describe the current CO2 configuration.
+
+Manufactured hardware: I redesigned the Catclaw cable-cutter body, produced its drawing, and machined it on a manual mill and lathe. Mass fell 49.5% from the earlier design, with a calculated body factor of safety (FOS) of 2.01. The selected configuration broke the restraint in eight of eight recorded trials. I also introduced Brummel eye splices; a dynamic test reached an estimated 1,800 lbf, approximately 1.46 times the calculated snatch load, with no observed slip. This was a proof test, not an ultimate-strength measurement.
+
+CO2 redesign: I proposed the cartridge-piercing replacement after integrated vinyl-charge failures. I sized it using pressure and Lamé thick-wall stress calculations, then contributed Fusion 360 CAD, drawings, machining, and component tests in a three-person team. Calculated housing margins were 2.01 FOS in hoop stress and 6.31 against internal-thread shear. Design and fabrication were shared; my co-lead developed pressure acquisition and analyzed the data.
+
+Why I chose the project
+
+I sought recovery work because it offered a full design cycle and direct tests of my decisions. I enjoy moving from a component's material behavior to its load path, manufacturing constraints, and effect on the complete system. Comparing real hardware with first-principles predictions, then tracing the differences, is what makes this work exciting to me.
+
+Test execution and design decisions
+
+I authored the integrated black-powder test standard operating procedure (SOP) and led the second integrated test, including crew briefings and fire or abort decisions. My co-lead led the first test. Inspection and failure assessment were collaborative. One of three deployment charges failed in each test; the second also damaged the parachute bag and canopy. Documented assembly procedures and a small set of successful standalone tests had not established reliability in the packed subsystem.
+
+I helped operate reduced-pressure CO2 component trials, including a firing at a reported initial chamber pressure of 0.011 atm. The subsequent integrated CO2 test partially failed; our team attributed the failure to inadequately sealed wiring openings. We revised the feedthrough using an NPT fitting, a smaller opening, epoxy around the required redundant wiring, and supplemental vacuum putty. A retest is planned, with CO2 indicators under consideration for leakage assessment. The revised seal and full-system CO2 deployment are not yet verified.
+
+What changed in my engineering practice
+
+I now document observations, assumptions, and hypotheses separately so the team can assess a design from the same evidence. Recovery also taught me to coordinate mechanical and electrical interfaces early, write clear test procedures, and look for redundancy at each stage. When the schedule allows, I am more willing to test an alternative to inherited hardware rather than rely on its earlier success in a different configuration.
+
+Why Stratolaunch
+
+Stratolaunch's reusable Talon-A flight testing connects vehicle design and integration with the flight data needed to evaluate performance. That design-to-test responsibility is what I seek. My Argo aerocover work has expanded my interest in compressible flow and coupled thermal and structural constraints: I performed first-order drag trades and a converged Mach 2.81 Ansys Fluent baseline that remains under review. I want to apply my hardware and test experience while learning how those disciplines come together in hypersonic flight testing.
+
+Additional relevant experience
+
+At BU's Plummer Laboratory, I performed SolidWorks dynamic FEA and CNC-machined shaker hardware on a Haas VF-2. In BU Space Physics and Technology Lab research, I wrote and assembled Python functions and used pySPEDAS for instrument-data analysis.
+
+Summer 2027 availability: June 1-August 27. Available for a 10-12-week onsite internship in Mojave.
