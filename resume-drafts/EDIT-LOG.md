@@ -187,3 +187,8 @@ LaTeX source has not been compiled or checked for one-page fit. Portfolio synchr
 - Restructured the Stratolaunch project summary around engineering evidence, ownership and test decisions; retained personal motivation and added the supported Python and Ansys experience relevant to the posting.
 - Fixed the resume PDF builder to exclude commented-out LaTeX suggestions and text after end-document. A source-derived preview passed one-page and text-extraction checks.
 - Preserved the existing Plummer role labels pending the user's title clarification. No new title is inferred from these technical edits.
+
+## November 6, 2026 confirmed Plummer title
+
+- User confirmed the title Mechanical Engineering Intern. This supersedes the earlier pending-title note.
+- Standardized the homepage, Plummer page, technical portfolio and builder, editable general resume, local SpaceX resume variant, and Stratolaunch application summary. The current public resume and other resume variants already use this title.

@@ -154,7 +154,7 @@ story = [
  PageBreak(),
  p('03 / BU PLUMMER LABORATORY','label'),
  p('Shaker Adapter and Mounting Bolts','h2'),
- p('Mechanical Design Assistant | June 2026-present','small'),
+ p('Mechanical Engineering Intern | June 2026-present','small'),
  metrics([('0.173 mm','Plate displacement predicted in the design-review FEA case'),('20.1 Hz','Shaker operating frequency; analyzed with a 3 kg fixture load'),('2.46 FOS','Plate bearing under the modeled combined bolt load')]),Spacer(1,10),
  p('The adapter mounts a physical Ising-model fixture for controlled shaker vibration tests of bistable buckling elements.'),
  photos([('Pictures/Plummer/Shaker-Analysis.png','SolidWorks plate-displacement result: 0.173 mm maximum. This is a model prediction.'),('Pictures/Plummer/Shaker-Engineering-Drawing.png','My 12 \u00d7 12 in adapter drawing, including underside geometry.')],[360,180],140),

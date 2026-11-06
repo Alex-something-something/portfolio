@@ -56,7 +56,7 @@ PAGES = [
         ('heading', 'Why Stratolaunch'),
         ('body', "Stratolaunch's reusable Talon-A flight testing connects vehicle design and integration with the flight data needed to evaluate performance. That design-to-test responsibility is what I seek. My Argo aerocover work has expanded my interest in compressible flow and coupled thermal and structural constraints: I performed first-order drag trades and a converged Mach 2.81 Ansys Fluent baseline that remains under review. I want to apply my hardware and test experience while learning how those disciplines come together in hypersonic flight testing."),
         ('heading', 'Additional relevant experience'),
-        ('body', "At BU's Plummer Laboratory, I performed SolidWorks dynamic FEA and CNC-machined shaker hardware on a Haas VF-2. In BU Space Physics and Technology Lab research, I wrote and assembled Python functions and used pySPEDAS for instrument-data analysis."),
+        ('body', "As a Mechanical Engineering Intern at BU's Plummer Laboratory, I performed SolidWorks dynamic FEA and CNC-machined shaker hardware on a Haas VF-2. In BU Space Physics and Technology Lab research, I wrote and assembled Python functions and used pySPEDAS for instrument-data analysis."),
     ],
 ]
 

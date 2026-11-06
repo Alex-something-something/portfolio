@@ -35,6 +35,6 @@ Stratolaunch's reusable Talon-A flight testing connects vehicle design and integ
 
 Additional relevant experience
 
-At BU's Plummer Laboratory, I performed SolidWorks dynamic FEA and CNC-machined shaker hardware on a Haas VF-2. In BU Space Physics and Technology Lab research, I wrote and assembled Python functions and used pySPEDAS for instrument-data analysis.
+As a Mechanical Engineering Intern at BU's Plummer Laboratory, I performed SolidWorks dynamic FEA and CNC-machined shaker hardware on a Haas VF-2. In BU Space Physics and Technology Lab research, I wrote and assembled Python functions and used pySPEDAS for instrument-data analysis.
 
 Summer 2027 availability: June 1-August 27. Available for a 10-12-week onsite internship in Mojave.
