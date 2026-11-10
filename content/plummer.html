@@ -122,6 +122,15 @@
         .manufacturing-media-grid .caption { margin: 10px 0 0; text-align: left; }
         .lab-website-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; color: #e63946; font-weight: 700; text-decoration: none; }
         .lab-website-link:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+        .content-section.shaker-performance { display: block; }
+        .shaker-performance > .text-block { max-width: 960px; }
+        .shaker-performance .test-evidence { margin-bottom: 18px; }
+        .shaker-performance-figure { width: 100%; max-width: 1000px; min-width: 0; margin: 28px auto 0; }
+        .shaker-performance-figure .media-slot { min-height: 0 !important; padding: 0; aspect-ratio: 1070 / 725; border: 1px solid #333; }
+        .shaker-performance-figure .media-slot > img { width: 100%; height: auto; max-height: none; object-fit: contain; }
+        .shaker-performance-figure .caption { margin: 12px 0 0; text-align: left; }
+        .shaker-performance .calculation-details { margin-top: 24px; }
+        @media (max-width: 650px) { .shaker-performance .test-evidence { grid-template-columns: minmax(0, 1fr); } }
         @media (max-width: 650px) { .manufacturing-media-grid { grid-template-columns: minmax(0, 1fr); order: 2; } .manufacturing-media-grid > figure { padding-top: 0; } }
     </style>
     <style>
@@ -156,7 +165,7 @@
     <div class="project-metrics" aria-label="Plummer Laboratory engineering results at a glance">
 
         <div class="project-metric"><strong>$1,170 → $71.11</strong><span>estimated outsourced to in-house hardware cost</span></div>
-        <div class="project-metric"><strong>±0.005 in</strong><span>machined feature tolerance</span></div>
+        <div class="project-metric"><strong>+40.7%</strong><span>calculated force-limited acceleration capacity</span></div>
         <div class="project-metric"><strong>48 tests</strong><span>across four Ising-model designs</span></div>
     </div>
 
@@ -225,6 +234,29 @@
                     <figure class="media-slide"><div class="img-placeholder media-slot" data-media="Pictures/Plummer/Shaker-Engineering-Drawing.png" data-media-type="image" data-fit="contain" data-alt="Dimensioned shaker plate drawing from the design review" title="Pictures/Plummer/Shaker-Engineering-Drawing.png"><span class="media-filename">Pictures/Plummer/Shaker-Engineering-Drawing.png</span></div><figcaption class="caption">Dimensioned plate drawing presented in the design review</figcaption></figure>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="content-section shaker-performance" id="shaker-performance">
+        <div class="text-block">
+            <h2>Lighter Adapter, Higher Test Capacity</h2>
+            <div class="test-evidence" aria-label="Calculated benefit of shaker adapter mass optimization">
+                <div class="test-evidence-item"><strong>+40.7%</strong><span>calculated force-limited acceleration capacity</span></div>
+                <div class="test-evidence-item"><strong>22.9 → 32.2 g</strong><span>peak sine acceleration with the same 0.50 kg scientific payload</span></div>
+            </div>
+            <p style="color: #ccc;">Starting from a full-thickness plate concept, I used hand calculations and SolidWorks FEA to guide material removal beyond the mounting holes. The finished adapter weighed 1.90 kg versus the 3.19 kg plate blank. With the same 0.50 kg scientific payload, the lighter adapter raises calculated maximum acceleration from 22.9 to 32.2 g in the shaker’s force-limited operating region.</p>
+        </div>
+        <figure class="shaker-performance-figure">
+            <div class="img-placeholder media-slot" data-media="Pictures/Plummer/Shaker-Acceleration-Envelope.webp" data-media-type="image" data-fit="contain" data-alt="Shaker acceleration envelopes comparing the original 3.19 kg adapter at 22.9 g peak with the optimized 1.90 kg adapter at 32.2 g peak, each with a 0.50 kg scientific payload" title="Pictures/Plummer/Shaker-Acceleration-Envelope.webp"><span class="media-filename">Pictures/Plummer/Shaker-Acceleration-Envelope.webp</span></div>
+            <figcaption class="caption">Original and optimized adapter envelopes over the manufacturer’s shaker chart. Select the image to enlarge.</figcaption>
+        </figure>
+        <div class="calculation-details">
+            <details>
+                <summary><span>Acceleration calculation basis</span></summary>
+                <p>The 1,000 N peak sine-force rating acts on the adapter, scientific payload, and 0.77 kg built-in armature. Total moving mass falls from 4.46 to 3.17 kg; a = F/m gives 22.86 and 32.17 g, a 40.7% increase. The comparison assumes rigid-body motion and no additional moving hardware.</p>
+                <p>The rising portions of the overlays account for displacement and velocity limits. Stroke is reconstructed from the rated 12.7 mm travel and 3.04 kgf/mm suspension stiffness, assuming vertical operation without load support or recentering. The 40.7% figure describes the force-limited plateau; the gain at a lower, stroke-limited frequency is different.</p>
+                <p><a href="https://46085156.fs1.hubspotusercontent-na1.net/hubfs/46085156/pardot/DataPhysics_GW_V100_datasheet_11.29.19.pdf" target="_blank" rel="noopener noreferrer">Data Physics GW-V100 specifications</a> · <a href="Reports/Shaker_Acceleration_Comparison.csv" download>Download calculated curves (CSV)</a></p>
+            </details>
         </div>
     </section>
 

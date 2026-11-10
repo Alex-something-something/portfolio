@@ -1,5 +1,11 @@
 [
   {
+    "path": "Pictures/Plummer/Shaker-Acceleration-Envelope.webp",
+    "page": "plummer.html",
+    "location": "Standalone shaker mass-optimization acceleration comparison",
+    "type": "image"
+  },
+  {
     "path": "Pictures/Headshot.jpg",
     "page": "index.html",
     "location": "Portrait of Alexander Tong",
