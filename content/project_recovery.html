@@ -177,7 +177,7 @@
 
     <div class="project-hero-media architecture-hero" style="padding: 0 6%; margin-top: -1px;">
         <div class="img-placeholder media-slot" data-media="Pictures/Recovery/Lines-Diagram-Web.webp" data-media-type="image" data-fit="contain" data-alt="Argo separation and recovery system architecture and lines diagram" title="Pictures/Recovery/Lines-Diagram-Web.webp"><span class="media-filename">Pictures/Recovery/Lines-Diagram-Web.webp</span></div>
-        <p class="caption">Inherited single-break, dual-deploy architecture and Argo recovery-line arrangement</p>
+        <p class="caption">Single-break, dual-deploy architecture and Argo recovery-line arrangement</p>
     </div>
 
     <div class="project-metrics" aria-label="Recovery system requirements and analysis at a glance">
@@ -189,8 +189,8 @@
 
     <section class="content-section">
         <div class="text-block">
-            <h2>Inherited System Architecture</h2>
-            <p style="color: #ccc;">Argo uses an inherited single-break, dual-deploy recovery architecture. My contributions focus on hardware selection and sizing, packaging, integration, and test-led improvements within that architecture. The subsystem passed through four design reviews. Its design structural-margin target is 2.0 FOS; component proof testing and integrated deployment tests are separate verification steps.</p>
+            <h2>System Architecture</h2>
+            <p style="color: #ccc;">Argo uses a single-break, dual-deploy recovery architecture. My contributions focus on hardware selection and sizing, packaging, integration, and test-led improvements within that architecture. The subsystem passed through four design reviews. Its design structural-margin target is 2.0 FOS; component proof testing and integrated deployment tests are separate verification steps.</p>
             <p style="color: #ccc;">For the 135 lb dry-mass rocket targeting 100,000 ft, the planned sequence is nosecone separation and drogue deployment near apogee, followed by main-parachute release at 2,000 ft above ground. The main bag stays packed, partly exposed to the freestream and restrained by two zip ties. At main deployment, the tender descenders release the retained Kevlar line while cable cutters release the zip ties; both actions are commanded together. A second airframe joint does not separate. Paired flight computers and release devices provide separate actuation paths; the component arrangement is shown below.</p>
 
             <h3 class="project-subheading">Nosecone Shape &amp; Recovery Integration</h3>
@@ -205,7 +205,7 @@
             </div>
 
             <h3 class="project-subheading">Hardware Trade Study &amp; Load Analysis</h3>
-            <p style="color: #ccc;">Within the inherited architecture, I compared hardware configurations, COTS flight computers, and vacuum-tolerant separation mechanisms. The earlier black-powder configuration met the 20 lbm allocation at 18.7 lbm, with a $1,076 bill of materials.</p>
+            <p style="color: #ccc;">Within this architecture, I compared hardware configurations, COTS flight computers, and vacuum-tolerant separation mechanisms. The earlier black-powder configuration met the 20 lbm allocation at 18.7 lbm, with a $1,076 bill of materials.</p>
             <ul>
                 <li><strong>Release hardware:</strong> Four Catclaw cable cutters, two tender descenders arranged in series along the release line, and two flight computers. Paired Catclaws act on the same zip tie; either cutter can sever that restraint. Either in-series tender descender can open the release line. Each deployment charge, Catclaw, and tender descender has two e-matches, one connected to each flight computer, providing two firing paths per device.</li>
                 <li><strong>Hardware Development:</strong> Redesigned, manufactured, and tested the Catclaw cutters, supported by engineering drawings and load analysis.</li>

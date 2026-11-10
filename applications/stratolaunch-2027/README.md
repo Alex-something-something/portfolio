@@ -1,6 +1,6 @@
 # Stratolaunch Engineering Intern Summer 2027
 
-The one-page project summary describes Argo separation and recovery hardware, individual contributions, test evidence, motivation, and relevance to Stratolaunch. It records the inherited single-break, dual-deploy architecture and the integrated CO2 trial's failed nosecone separation; the revised seal remains unverified.
+The one-page project summary describes Argo separation and recovery hardware, individual contributions, test evidence, motivation, and relevance to Stratolaunch. It records the single-break, dual-deploy architecture and the integrated CO2 trial's failed nosecone separation; the revised seal remains unverified.
 
 Upload the project-summary PDF in the application's Cover Letter attachment field and the current public resume in Resume/CV. The application has no dedicated project-document attachment field, so Cover Letter is a recommended placement rather than an explicit employer instruction.
 

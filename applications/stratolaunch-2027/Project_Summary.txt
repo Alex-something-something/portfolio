@@ -2,7 +2,7 @@ Project Summary
 Alexander Tong | Argo Separation and Recovery Co-Lead
 alto335@bu.edu | alexandertong.space | Boston University Mechanical Engineering
 
-I co-lead separation and recovery for Argo, Boston University Rocket Propulsion Group's 135 lb dry-mass liquid bipropellant rocket targeting 100,000 ft. Within its inherited single-break, dual-deploy architecture, I develop hardware through analysis, CAD, machining, integration, and testing. The design calls for nosecone separation near apogee and main-parachute deployment at 2,000 ft above ground. Flight verification remains pending.
+I co-lead separation and recovery for Argo, Boston University Rocket Propulsion Group's 135 lb dry-mass liquid bipropellant rocket targeting 100,000 ft. Within its single-break, dual-deploy architecture, I develop hardware through analysis, CAD, machining, integration, and testing. The design calls for nosecone separation near apogee and main-parachute deployment at 2,000 ft above ground. Flight verification remains pending.
 
 Design and hardware
 
