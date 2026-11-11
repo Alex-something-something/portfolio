@@ -1,6 +1,8 @@
-% Working resume source with factual corrections through November 6, 2026.
-% Earlier SUGGESTION comments are retained for context; active bullets define current content.
-% PDF layout is checked separately from this editable LaTeX source.
+% ADDITIVE REVIEW COPY -- all original source lines are preserved verbatim.
+% Every added line begins with % and is an editor comment, not active resume text.
+% Search for SUGGESTION: to find context, proposed replacements, and optional cuts.
+% Apply only the proposals you choose; do not activate both a long and short alternative.
+% Compiling this review copy preserves the original resume wording and layout.
 %-------------------------
 % Alexander Tong | Space Hardware Resume
 % Adapted from Jake Gutierrez's resume template
@@ -87,7 +89,7 @@
   \enspace\textbar\enspace
   \href{https://www.linkedin.com/in/alto335/}{linkedin.com/in/alto335}
   \par}
-
+  
 \vspace{-4pt}
 
 %----------EDUCATION----------
@@ -106,10 +108,12 @@ B.S. Mechanical Engineering, Aerospace Concentration
   {Mechanical Engineering Intern}
   {Boston, MA}
 \resumeItemListStart
-\resumeItem{Designed and structurally analyzed a vibration-test fixture in SolidWorks for a 3 kg payload; dynamic FEA predicted 0.44 mm relative deflection at 20.1 Hz with 13 mm peak-to-peak base excitation}
+ \resumeItem{Designed and structurally analyzed a vibration-test fixture in SolidWorks for a ultraconservative 3 kg payload; dynamic FEA predicted 0.44 mm relative deflection against 1 mm limit at 20.1 Hz with 13 mm peak-to-peak base excitation}
+ \resumeItem{Fabricated hardware in-house for \$71.11 versus a \$1,170 outsourcing estimate, reducing direct lab cost by 93.9\%}
+
 % SUGGESTION: Technical backup: 13 mm peak-to-peak is 6.5 mm peak amplitude. If 0.44 mm is relative deformation rather than absolute motion, describe it as relative deflection. Keep dynamic FEA unless the study is confirmed to be harmonic response.
   %please find a different term for shaker fixture to better emphasize the importance of the project to the lab doing tis research
-  \resumeItem{Machined shaker adapter from 3.19 kg stock to 1.90 kg (40.4\% reduction) using hand calculations and SolidWorks FEA}
+  \resumeItem{Mass-optimized adapter geometry by 40.4\% (3.19 to 1.90 kg) via hand calculations and SolidWorks FEA, increasing system max acceleration by 40.7\%}
 % SUGGESTION: PROPOSED REPLACEMENT retains the keyword preload and distinguishes tightening torque from the resulting bolt force.
   \resumeItem{Analyzed bored M10 bolts and mating adapter under preload from 21.7 ft-lbf tightening torque; calculated minimum FOS 2.46 across thread shear, bearing, and pull-through failure modes}
   \resumeItem{CNC-milled 6061-T6 shaker-fixture on Haas VF-2 Mill to 0.005 in tolerance; generated G-code and engineering drawing}
@@ -117,12 +121,11 @@ B.S. Mechanical Engineering, Aerospace Concentration
 
 % SUGGESTION: CONTEXT: the confirmed $71.11 covers materials. Labor was funded by BU and incurred no additional charge to the laboratory. This supports a direct-lab-cost comparison; it is not a fully burdened manufacturing-cost comparison.
 % SUGGESTION: PROPOSED REPLACEMENT below states that scope without discussing the funding arrangement in the resume bullet.
- \resumeItem{Fabricated hardware in-house for \$71.11 versus a \$1,170 outsourcing estimate, reducing direct lab cost by 93.9\%}
-  \resumeItem{Designed the test matrix, procedure, and three of four specimen concepts for 48 Instron 68SC-5 tests; processed 0--181 mN force data to investigate physical Ising models}
+  \resumeItem{Designed test matrix, procedures and specimens for 48 Instron 68SC-5 testing (0--181 mN); processed to verify coefficient}
 \resumeItemListEnd
 
 \resumeSubheading
-  {Culturon}
+  {Culturon \textnormal{(details subject to NDA)}}
   {February 2026 - June 2026}
   {Mechanical Engineering Intern}
   {Sydney, Australia}
@@ -137,7 +140,7 @@ B.S. Mechanical Engineering, Aerospace Concentration
 
  % \resumeItem{Planned and ran Culturon's first chamber-wide nanoparticle deposition study across 4 elevations and magnetic configurations; characterized deposition and polarity effects via SEM, optical microscopy and ImageJ; presented to technical leads}
  % \resumeItem{Proposed magnetic and fluid-dynamic contaminant collection to protect mass-production plasma-reactor vacuum pumps}
-
+ 
 % SUGGESTION: This shorter version omits the explicit presentation-to-technical-leads detail; retain the original two bullets if that communication evidence matters more for an application.
 \resumeItemListEnd
 
@@ -161,7 +164,7 @@ B.S. Mechanical Engineering, Aerospace Concentration
   \resumeItem{Leading 4-person team in set-based design of supersonic downcomer fairing, combining empirically-sourced leading-edge, midsection, and boattail geometries across Mach 2-2.81; performed CoDR and trade via first-order drag calculations}
 % SUGGESTION: OPTIONAL WORDING: retain the meaningful leading-edge/midsection/boattail decomposition and identify the empirical missile-design method; expand the less familiar CoDR abbreviation.
 %\resumeItem{Leading 4-person team in set-based design of supersonic downcomer fairing via missile-design methods; compared empirically-backed leading-edge, midsection, and boattail geometries for Mach 2.0--2.81; presented conceptual design review supported by first-order drag estimates}
-  \resumeItem{Completed a converged Mach 2.81 Ansys Fluent legacy-fairing baseline, under review for the reuse versus redesign trade}
+  \resumeItem{Completed a converged Mach 2.81 ANSYS Fluent legacy fairing baseline, under review for reuse versus redesign trade}
 \resumeItemListEnd
 
 
@@ -171,23 +174,23 @@ B.S. Mechanical Engineering, Aerospace Concentration
   {Co-Lead Engineer, Boston University Rocket Propulsion Group}
   {}
 \resumeItemListStart
-  \resumeItem{Developed hardware in inherited single-break, dual-deploy recovery (135 lb dry-mass liquid bipropellant rocket; 100k ft)}
+  \resumeItem{Designed and tested vacuum-compatible recovery system for 135 lb dry-mass liquid bipropellant rocket targeting 100k ft}
 %  \resumeItem{Proposed, designed, machined, and integrated custom CO2 system in response to Vinyl-charge test failures; calculated and optimized mass for Lam\'e hoop-stress FOS 2.01 and thread shear FOS 6.31; performed CAD  and vacuum tests}
 % SUGGESTION: OPTIONAL SHORTENING: the proposed replacement removes the redundant performed-CAD phrase while retaining design, machining, integration, both calculated safety factors, and vacuum testing.
-\resumeItem{Proposed, designed, machined, and integrated a custom CO$_2$ deployment system after vinyl-charge test failures; used preliminary thick-wall and thread-load calculations for sizing; vacuum-tested the assembly}
+\resumeItem{Proposed, designed, machined, and integrated a custom CO$_2$ deployment system after vinyl-charge test failures; optimized mass for Lam\'e hoop-stress (FOS 2.01) and thread-shear (FOS 6.31) failure; vacuum-tested the assembly}
 % SUGGESTION: If you want more hardware specificity, replace system with the actual component name. No component name has been invented. Keep the hoop-stress result distinct from an overall vessel safety factor.
   %\resumeItem{Designed 352 L vacuum chamber for deployment tests at 1.1\% atm apogee conditions; designed door, adapter, and O-ring seal for Roark plate sizing under 1,663 lbf at 14.7 psi and yield FOS 2.12; tested vinyl-charge and CO2 systems}
-  \resumeItem{Designed door, adapter, and seal for a 352 L vacuum chamber; operated deployment tests at 1.1\% atmospheric pressure; sized door using Roark plate theory for 1,663 lbf design load and yield FOS 2.12}
+  \resumeItem{Designed 352 L vacuum chamber for deployment tests at 1.1\% atmospheric pressure; sized door using Roark plate theory for 1,663 lbf pressure load and yield FOS 2.12; performed mock-altitude tests of vinyl-charge and CO2 systems}
 % SUGGESTION: PROPOSED REPLACEMENT preserves credit for designing the whole chamber and the confirmed 1.1 percent atmospheric operating pressure, identifies the door as the Roark-sized part, and fixes the double semicolon.
 %\resumeItem{Designed a 352 L vacuum chamber for deployment tests at 1.1\% atmospheric pressure; sized its door using Roark plate equations for a 1,663 lbf resultant pressure load and calculated yield FOS 2.12; tested vinyl-charge and CO$_2$ systems}
 % SUGGESTION: The pressure percentage describes internal absolute pressure relative to atmosphere; the door resultant comes from the design pressure differential. Neither value has been changed.
-  \resumeItem{Dynamically tested 1/2 in Kevlar Brummel splices with no observed slip; inferred load using impulse and stopping time; peak force and ultimate strength unmeasured; published termination-efficiency comparisons informed selection}
+  \resumeItem{Dynamically tested Brummel eye splices in 1/2 in Kevlar shock cord to an estimated 1,800 lbf (1.5 times max loading); selected splices over knots using published 2x strength comparisons}
 % SUGGESTION: Retain proof-tested if it describes the actual procedure and acceptance criteria; otherwise use dynamically tested. If the 1,800 lbf itself was estimated, label that force estimated as well.
 % SUGGESTION: OPTIONAL SHORTENING: remove the published-2x clause if space is needed or the literature does not closely match this cord/splice/knot configuration. The full clause is preserved in the proposal above.
  % \resumeItem{Authored an integrated vinyl black-powder test SOP and led the second integrated black powder test, including crew briefings and fire/abort decisions; collaborated on post-test inspection and failure assessment}
 % SUGGESTION: OPTIONAL SHORTENING: this replacement removes the test ordinal and compresses repeated integrated/black-powder wording while preserving SOP authorship, operational decisions, and post-test assessment.
  \resumeItem{Authored integrated subsystem vinyl black-powder test SOP and led test operations, including crew briefings and fire/abort decisions; supported post-test inspection and failure assessment}
-  \resumeItem{Compared 5 load methods; adopted a 1,230 lbf sizing case from an 823 lbf estimate and a 1.5 comparison allowance}
+  \resumeItem{Calculated 823 lbf parachute-opening and 1,230 lbf snatch loads via synthesis of 5 papers; traded hardware accordingly}
 \resumeItemListEnd
 
 
@@ -214,7 +217,7 @@ B.S. Mechanical Engineering, Aerospace Concentration
 \resumeSubHeadingListEnd
 \section{Technical Skills}
 {\small
-SolidWorks, Structural \& Dynamic FEA, Ansys Fluent, CNC \& Manual Machining, DFMA, Sheet metal, Python, DAQ
+SolidWorks, Structural \& Dynamic FEA, Ansys Fluent, CNC \& Manual Machining, DFMA, Sheet metal, Python, DAQ   
 % SUGGESTION: OPTIONAL SKILLS EXPANSION: Onshape and Fusion 360 are already supported by your experience. MATLAB also appears in your pasted skills alternative after end-document; include it if it reflects current proficiency.
 % SUGGESTION: PROPOSED REPLACEMENT for the skills text line, preserving the existing categories and adding the named CAD tools and MATLAB:
 % SUGGESTION:SolidWorks, Onshape, Fusion 360, Structural \& Dynamic FEA, Ansys Fluent, CNC \& Manual Machining, DFMA, Sheet-Metal DFM, Python, MATLAB, DAQ

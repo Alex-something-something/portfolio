@@ -6,7 +6,7 @@ I co-lead separation and recovery for Argo, Boston University Rocket Propulsion 
 
 Design and hardware
 
-I compared 23 commercial parachute candidates and five published load-estimation methods. I applied a 1.5 design factor of safety (FOS) to the 823 lbf opening estimate for a 1,230 lbf line-sizing load. A separate 2.0 line-strength design FOS and termination efficiencies supported 6,000 lbf-rated Kevlar stock. Published comparisons of approximately 2x splice-versus-knot strength motivated Brummel eye splices; dynamic tests showed no observed slip. Peak force and ultimate strength were not measured.
+I compared 23 commercial parachute candidates and five published load-estimation methods. I selected an 823 lbf opening-load estimate and a conservative 1,230 lbf snatch-load design estimate. A tentative 1,187 lbf historical Icarus event informed the review; uncertain timing and damaged/restrained parachutes limit the comparison. A separate 2.0 line-strength design factor of safety (FOS) and termination efficiencies supported 6,000 lbf-rated Kevlar stock. Published comparisons of approximately 2x splice-versus-knot strength motivated Brummel eye splices; dynamic testing showed no observed slip at an estimated 1,800 lbf interval-average test load. Peak force and ultimate strength were not measured.
 
 For the Catclaw restraint release, I removed material from the existing body, reshaped its slot to retain the piston, produced the drawing, and machined the part on a manual mill and lathe. The redesigned body weighed 49.5% less and broke the zip-tie restraint in eight of eight trials at the selected setting.
 
